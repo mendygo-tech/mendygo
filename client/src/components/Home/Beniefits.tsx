@@ -11,7 +11,6 @@ import {
     BellElectric,
     Heading1,
 } from "lucide-react";
-import { Be_Vietnam_Pro } from "next/font/google";
 
 const benefits = [
     {

@@ -194,158 +194,158 @@ export const productsData = {
             }
         ]
     },
-    "pharmaceuticals": {
-        name: "PharmaTrack – Pharmaceutical Manufacturing Compliance Suite",
-        tagline: "Regulatory-compliant pharma production and quality tracking",
-        description: `PharmaTrack helps pharmaceutical manufacturers maintain strict regulatory compliance with automated batch tracking, quality checks, and production analytics.`,
+    "mendyops-utility-monitoring-automation": {
+        name: "MendyOps – Utility Monitoring & Automation",
+        tagline: "Remote industrial utility monitoring and automation with IIoT analytics",
+        description: `Monitor and control pumps, HVAC, and other utilities remotely with MendyOps. Achieve energy savings and operational efficiency through IIoT-based smart automation and real-time analytics.`,
         keywords: [
-            "pharmaceutical compliance software",
-            "GMP manufacturing",
-            "drug production tracking",
-            "FDA compliance tools",
-            "batch quality control"
+            "utility monitoring",
+            "HVAC automation",
+            "IIoT energy management",
+            "remote industrial control",
+            "smart factory automation"
         ],
-        image: "/ind5.png",
+        image: "/ind1.png",
         sections: [
             {
-                heading: "Core Modules",
+                heading: "Capabilities",
                 points: [
-                    "Batch record management",
-                    "Real-time quality analytics",
-                    "Regulatory audit reporting"
+                    "Remote monitoring of pumps, compressors, and HVAC",
+                    "IIoT integration for automated utility control",
+                    "Real-time operational analytics"
                 ]
             },
             {
-                heading: "Compliance Standards",
+                heading: "Benefits",
                 points: [
-                    "FDA 21 CFR Part 11",
-                    "WHO GMP",
-                    "EU Annex 11"
-                ]
-            },
-            {
-                heading: "Operational Gains",
-                points: [
-                    "Faster product release",
-                    "Reduced compliance errors",
-                    "Improved traceability"
-                ]
-            }
-        ]
-    },
-    "chemicals": {
-        name: "ChemSafe – Chemical Plant Safety & Compliance",
-        tagline: "Advanced chemical manufacturing safety monitoring system",
-        description: `ChemSafe enables chemical plants to operate with higher safety and compliance standards through automated monitoring, leak detection, and environmental impact tracking.`,
-        keywords: [
-            "chemical plant safety",
-            "hazardous material compliance",
-            "leak detection systems",
-            "environmental monitoring",
-            "industrial safety automation"
-        ],
-        image: "/ind2.png",
-        sections: [
-            {
-                heading: "Safety Monitoring",
-                points: [
-                    "24/7 toxic gas detection",
-                    "Chemical leak alerts",
-                    "Fire hazard prevention"
-                ]
-            },
-            {
-                heading: "Compliance Management",
-                points: [
-                    "Automated safety logs",
-                    "Regulatory documentation",
-                    "Incident investigation reports"
+                    "Reduce utility costs",
+                    "Increase equipment lifespan",
+                    "Enable proactive maintenance"
                 ]
             },
             {
                 heading: "Integration",
                 points: [
-                    "SCADA integration",
-                    "IoT sensor compatibility",
-                    "Custom APIs"
+                    "Compatible with PLCs and SCADA",
+                    "Cloud dashboard for multi-site visibility",
+                    "Custom alert configurations"
                 ]
             }
         ]
     },
-    "food-beverage": {
-        name: "FoodSure – Food & Beverage Production Quality System",
-        tagline: "Ensuring food safety, quality, and compliance in manufacturing",
-        description: `FoodSure provides end-to-end quality and safety monitoring for food and beverage manufacturers, from raw material intake to final packaging.`,
+    "gotwinx-digital-twin-platform": {
+        name: "MendyLive – Digital Twin Platform",
+        tagline: "Real-time industrial digital twin visualization and simulation",
+        description: `Visualize, simulate, and optimize industrial operations with MendyLive. This smart digital twin tool supports predictive maintenance and real-time decision-making for efficient workflows.`,
         keywords: [
-            "food safety monitoring",
-            "HACCP compliance",
-            "food production tracking",
-            "beverage manufacturing quality",
-            "traceability in food industry"
+            "digital twin platform",
+            "predictive maintenance",
+            "industrial simulation",
+            "real-time process optimization",
+            "IIoT visualization"
+        ],
+        image: "/ind2.png",
+        sections: [
+            {
+                heading: "Core Features",
+                points: [
+                    "3D visualization of industrial assets",
+                    "Live data integration from IoT sensors",
+                    "Simulation of process changes and impact"
+                ]
+            },
+            {
+                heading: "Use Cases",
+                points: [
+                    "Predictive maintenance planning",
+                    "Workflow optimization",
+                    "Operator training simulations"
+                ]
+            },
+            {
+                heading: "Technical Specs",
+                points: [
+                    "Supports CAD and BIM imports",
+                    "Web and desktop deployment",
+                    "Integrates with ERP and MES systems"
+                ]
+            }
+        ]
+    },
+    "thermendy-smart-climate-control": {
+        name: "Thermendy – Smart Climate Control",
+        tagline: "AI-powered climate control for industrial spaces",
+        description: `AI-driven climate control for industrial spaces, managing temperature, humidity, and airflow. Thermendy ensures energy-efficient comfort using real-time IoT data and predictive analytics.`,
+        keywords: [
+            "industrial climate control",
+            "AI HVAC optimization",
+            "temperature and humidity management",
+            "energy-efficient industrial cooling",
+            "IoT HVAC control"
         ],
         image: "/ind5.png",
         sections: [
             {
-                heading: "Quality Control",
+                heading: "Capabilities",
                 points: [
-                    "Automated contamination checks",
-                    "Temperature and storage monitoring",
-                    "End-product testing"
+                    "Real-time monitoring of temperature, humidity, and airflow",
+                    "AI-driven predictive adjustments",
+                    "Integration with industrial HVAC systems"
                 ]
             },
             {
-                heading: "Compliance Frameworks",
+                heading: "Benefits",
                 points: [
-                    "HACCP",
-                    "ISO 22000",
-                    "FDA food safety standards"
+                    "Reduce energy consumption",
+                    "Improve worker comfort",
+                    "Ensure stable conditions for sensitive operations"
                 ]
             },
             {
-                heading: "Efficiency Gains",
+                heading: "Integration",
                 points: [
-                    "Reduce waste through early defect detection",
-                    "Improve consumer safety confidence",
-                    "Streamline audits"
+                    "Works with Modbus and BACnet",
+                    "Cloud control and analytics",
+                    "Mobile access for remote adjustments"
                 ]
             }
         ]
     },
-    "automotive": {
-        name: "AutoProd – Automotive Production Analytics",
-        tagline: "Data-driven manufacturing insights for automotive plants",
-        description: `AutoProd equips automotive manufacturers with real-time production monitoring, predictive maintenance tools, and supply chain optimization analytics.`,
+    "mendyai-industrial-intelligence-engine": {
+        name: "MendyAI – Industrial Intelligence Engine",
+        tagline: "Machine learning-powered operational intelligence for industry",
+        description: `MendyAI turns raw IIoT data into smart, real-time insights using adaptive machine learning. Power predictive analytics, automation, and optimization across your operations.`,
         keywords: [
-            "automotive production analytics",
-            "car manufacturing monitoring",
-            "predictive maintenance in auto industry",
-            "supply chain optimization",
-            "automotive quality control"
+            "industrial AI",
+            "predictive maintenance AI",
+            "machine learning for manufacturing",
+            "IIoT data analytics",
+            "smart factory AI"
         ],
-        image: "/ind3.png",
+        image: "/ind7.png",
         sections: [
             {
-                heading: "Production Monitoring",
+                heading: "Core Features",
                 points: [
-                    "Live assembly line tracking",
-                    "Part defect identification",
-                    "Downtime analysis"
+                    "Adaptive machine learning models",
+                    "Real-time anomaly detection",
+                    "Automated optimization suggestions"
                 ]
             },
             {
-                heading: "Predictive Maintenance",
+                heading: "Benefits",
                 points: [
-                    "AI-based failure prediction",
-                    "Automated maintenance scheduling",
-                    "Spare part inventory alerts"
+                    "Reduce downtime with predictive maintenance",
+                    "Enhance decision-making with AI insights",
+                    "Automate repetitive operational tasks"
                 ]
             },
             {
-                heading: "Supply Chain",
+                heading: "Integration",
                 points: [
-                    "Real-time supplier performance tracking",
-                    "Material shortage forecasting",
-                    "Logistics optimization"
+                    "Works with existing MES and ERP systems",
+                    "Connects to IoT data lakes",
+                    "Custom AI model training for specific use cases"
                 ]
             }
         ]

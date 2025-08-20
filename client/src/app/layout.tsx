@@ -4,7 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { MyNavbar } from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -56,16 +57,35 @@ export const metadata: Metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
-    other: [
-      { rel: "manifest", url: "/site.webmanifest" },
-    ],
+    other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-  
+      <head>
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YLHBGST7H3"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YLHBGST7H3', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${figtree.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
@@ -76,18 +96,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MyNavbar />
           {children}
           <Footer />
+          <Analytics /> {/* Vercel Analytics */}
         </ThemeProvider>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1508534101075098"
-     crossorigin="anonymous" strategy="afterInteractive"></script>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLHBGST7H3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YLHBGST7H3');
-</script>
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import Hero from "@/components/Home/Hero";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Badge } from "@/components/ui/badge";
@@ -20,15 +20,20 @@ const SignUpForm = lazy(() => import("@/components/Home/Form").then(module => ({
 const Timeline = lazy(() => import("@/components/Home/Timeline"));
 
 export default function Home() {
-
-
   return (
     <div className="relative overflow-hidden min-h-screen dark:bg-black dark:text-white text-black">
       <div>
         <Hero />
         <IndustrySlideshow />
+
+
         <div className="px-4 sm:px-6 pb-0 flex justify-center relative mt-24">
-          <div className="w-full sm:w-[90%] md:w-[80%] mb-16 h-full relative rounded-t-lg overflow-hidden">
+          <div
+            className="w-full sm:w-[90%] md:w-[80%] mb-16 h-full relative rounded-lg overflow-hidden"
+            style={{
+              boxShadow: "0 0 40px rgba(171, 255, 2, 0.25)"
+            }}
+          >
             <div className="relative w-full h-full">
               <Image
                 src={DashboardLight}
@@ -46,6 +51,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
 
         <div className="px-4 py-0 sm:py-0 md:py-8">
           <Suspense>

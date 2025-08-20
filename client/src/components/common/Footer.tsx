@@ -187,8 +187,10 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm text-gray-600 dark:text-gray-500 py-3 px-4">
-        <p>© Mendygo 2025. All rights reserved.</p>
+        <p>© Mendygo Pvt. Ltd. 2025. All rights reserved.</p>
+        <p className="mt-1">ISO 9001:2015 Certified | MSME Registered</p>
       </div>
+
     </footer>
   );
 }

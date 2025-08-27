@@ -280,3 +280,34 @@ html {
 html.dark {
   background: #000;  
 }
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ul,
+  ol {
+    list-style: revert;
+  }
+  /* NEW CODE */
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-[#0A0A0A];
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#51555C] rounded-xl;
+  }
+
+}

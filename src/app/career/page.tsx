@@ -14,7 +14,7 @@ const CareerPage = () => {
         {
             id: 1,
             title: 'Senior Machine Learning Engineer',
-            location: 'San Francisco, CA',
+            location: 'Gurgaon, India',
             type: 'Full-time',
             category: 'AI/ML',
             requirements: ['Python', 'TensorFlow', 'PyTorch', '5+ years experience'],
@@ -24,7 +24,7 @@ const CareerPage = () => {
         {
             id: 2,
             title: 'Full Stack Developer',
-            location: 'New York, NY',
+            location: 'Chandigarh, India',
             type: 'Full-time',
             category: 'Web Development',
             requirements: ['React', 'Node.js', 'TypeScript', '3+ years experience'],
@@ -34,7 +34,7 @@ const CareerPage = () => {
         {
             id: 3,
             title: 'Data Scientist',
-            location: 'Austin, TX',
+            location: 'Gurgaon, India',
             type: 'Full-time',
             category: 'AI/ML',
             requirements: ['Python', 'R', 'SQL', 'Statistics', '4+ years experience'],
@@ -44,7 +44,7 @@ const CareerPage = () => {
         {
             id: 4,
             title: 'React Native Developer',
-            location: 'Seattle, WA',
+            location: 'Chandigarh, India',
             type: 'Contract',
             category: 'Mobile App',
             requirements: ['React Native', 'JavaScript', 'iOS/Android', '2+ years experience'],
@@ -54,7 +54,7 @@ const CareerPage = () => {
         {
             id: 5,
             title: 'HR Business Partner',
-            location: 'Chicago, IL',
+            location: 'Gurgaon, India',
             type: 'Full-time',
             category: 'HR',
             requirements: ['HR Management', 'Employee Relations', 'SHRM Certification', '5+ years experience'],
@@ -64,7 +64,7 @@ const CareerPage = () => {
         {
             id: 6,
             title: 'UI/UX Designer',
-            location: 'Los Angeles, CA',
+            location: 'Chandigarh, India',
             type: 'Full-time',
             category: 'Design',
             requirements: ['Figma', 'Adobe Creative Suite', 'User Research', '3+ years experience'],
@@ -74,7 +74,7 @@ const CareerPage = () => {
         {
             id: 7,
             title: 'DevOps Engineer',
-            location: 'Boston, MA',
+            location: 'Chandigarh, India',
             type: 'Full-time',
             category: 'DevOps',
             requirements: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', '4+ years experience'],
@@ -101,7 +101,7 @@ const CareerPage = () => {
     });
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+        <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300 pt-20">
 
             <div className="text-center py-16 px-4">
                 <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -159,7 +159,7 @@ const CareerPage = () => {
                                 </div>
                                 <div className="flex items-center text-sm text-gray-600 dark:text-neutral-400 mb-1">
                                     <Briefcase className="w-4 h-4 mr-1" />
-                                    {job.salary}
+                                    { 'To be discussed'}
                                 </div>
                                 <div className="flex items-center text-sm text-gray-600 dark:text-neutral-400">
                                     <Clock className="w-4 h-4 mr-1" />

@@ -11,9 +11,19 @@ import {
     MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { Sun, Moon } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
+
+type Dropdown = {
+  title: string;
+  links: { href: string; label: string }[];
+};
+type NavItemType = {
+  name: string;
+  link: string;
+  dropdown?: Dropdown;
+};
 
 export function MyNavbar() {
     const navItems = [
@@ -63,17 +73,24 @@ export function MyNavbar() {
                 ],
             }
         },
-        { name: "Blog", link: "/blog" },
+        { name: "Blog", link: "https://blogs.mendygo.com/" },
         { name: "Contact", link: "/contact" },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const { theme, setTheme } = useTheme();
+
     const ThemeToggleButton = ({ className = "" }: { className?: string }) => {
+        const toggleTheme = useCallback(
+          () => setTheme(theme === "dark" ? "light" : "dark"),
+          [theme, setTheme]
+        );
+
         return (
             <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={toggleTheme}
                 aria-label="Toggle dark mode"
+                aria-pressed={theme === "dark"}
                 className={`
                     cursor-pointer
                     relative h-8 w-16 rounded-full
@@ -133,7 +150,7 @@ export function MyNavbar() {
     };
 
     return (
-        <div className="relative w-full border-b-2 dark:border-gray-700" style={{ position: 'relative' }}>
+        <div className="relative w-full border-b-2 dark:border-gray-700">
             <Navbar>
                 <NavBody>
                     <NavbarLogo />
@@ -184,7 +201,7 @@ export function MyNavbar() {
     );
 }
 
-const MobileNavItem = ({ item, onClose }: { item: any; onClose: () => void }) => {
+const MobileNavItem = ({ item, onClose }: { item: NavItemType; onClose: () => void }) => {
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
 
@@ -202,7 +219,7 @@ const MobileNavItem = ({ item, onClose }: { item: any; onClose: () => void }) =>
                 </button>
                 {isOpen && (
                     <div className="mt-2 ml-4 space-y-2">
-                        {item.dropdown.links.map((link: any, idx: number) => (
+                        {item.dropdown.links.map((link: { href: string; label: string }, idx: number) => (
                             <button
                                 key={idx}
                                 onClick={(e) => {

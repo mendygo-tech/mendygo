@@ -63,18 +63,18 @@ const Contact = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white dark:bg-black px-4 py-8 md:py-16 text-black dark:text-white relative overflow-hidden">
-            <div className="absolute inset-x-0 top-0 h-64 pointer-events-none z-0 blur-3xl opacity-40 dark:opacity-20 mt-30"
+        <div className="min-h-screen bg-white dark:bg-black px-4 py-8 md:py-16 text-black dark:text-white relative overflow-hidden ">
+            <div className="absolute inset-x-0 top-0 h-64 pointer-events-none z-0 blur-3xl opacity-40 dark:opacity-20 mt-50"
                 style={{ background: "radial-gradient(ellipse at center, #abff02 0%, transparent 80%)" }} />
 
-            <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8">
+            <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 md:space-y-8 mt-20">
                 <button className="text-xs px-4 py-1 rounded-full border dark:border-white/20 border-black/20 dark:text-white text-black hover:bg-[#abff02] hover:text-black transition">
                     Contact
                 </button>
 
                 <h1 className="text-3xl md:text-4xl font-bold">Get in Touch with Us</h1>
                 <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-sm md:text-base">
-                    Have questions or need AI solutions? Let us know by filling out the form, and we'll be in touch!
+                    Have questions or need AI solutions? Let us know by filling out the form, and we&apos;ll be in touch!
                 </p>
 
                 <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -88,7 +88,7 @@ const Contact = () => {
                                 </div>
                                 <span className="font-semibold">E-mail</span>
                             </div>
-                            <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base">admin@mendygo.com</p>
+                            <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base">info@mendygo.com</p>
                         </div>
                     </div>
 

@@ -25,6 +25,15 @@ const ImageWithFade: React.FC<ImageWithFadeProps> = ({
         <div
             className={`relative w-full aspect-[16/9] sm:h-[60vh] rounded-t-lg overflow-hidden ${className}`}
         >
+            {/* Dark image */}
+            <Image
+                src={darkSrc}
+                alt={alt}
+                className={`transition-transform duration-300 hidden dark:block ${objectStyle}`}
+                priority
+                fill
+            />
+            
             {/* Light image */}
             <Image
                 src={lightSrc}
@@ -34,14 +43,7 @@ const ImageWithFade: React.FC<ImageWithFadeProps> = ({
                 fill
             />
 
-            {/* Dark image */}
-            <Image
-                src={darkSrc}
-                alt={alt}
-                className={`transition-transform duration-300 hidden dark:block ${objectStyle}`}
-                priority
-                fill
-            />
+            
 
             {/* Fade overlay */}
             <div className="absolute bottom-0 left-0 w-full h-[15%] pointer-events-none bg-gradient-to-t from-white via-white/80 to-transparent dark:from-[#06060D] dark:via-[#121212] dark:to-transparent" />

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import ind1 from "@/assets/gallery/ind1.png";
+// import ind1 from "@/assets/gallery/ind1.png";
 import ind2 from "@/assets/gallery/ind2.png";
 import ind3 from "@/assets/gallery/ind3.png";
 import ind4 from "@/assets/gallery/ind4.png";
-import ind5 from "@/assets/gallery/ind5.png";
+// import ind5 from "ind5.png";
 import ind6 from "@/assets/gallery/ind6.png";
+import ind7 from "@/assets/gallery/ind7.png";
 
 const products = [
     {
@@ -22,7 +23,7 @@ const products = [
         subtitle: "Digital Checksheets",
         description:
             "Digitize your quality inspections with real-time data capture and IoT integration.",
-        image: ind1,
+        image: "/ind1.png",
     },
     {
         id: 3,
@@ -37,7 +38,7 @@ const products = [
         name: "SmartOEE",
         subtitle: "OEE Dashboard",
         description: "Track efficiency, quality, and equipment availability in real time.",
-        image: ind5,
+        image: "/ind5.png",
     },
     {
         id: 5,
@@ -45,7 +46,7 @@ const products = [
         subtitle: "AR/VR/MR Platform",
         description:
             "Transform industrial training and maintenance with immersive AR/VR/MR solutions.",
-        image: null,
+        image: ind7,
     },
     {
         id: 6,
@@ -61,7 +62,7 @@ const products = [
         subtitle: "Digital Twin Platform",
         description:
             "Visualize, simulate, and optimize industrial operations with MendyLive.",
-        image: null,
+        image: "/ind3.png",
     },
     {
         id: 8,
@@ -77,7 +78,7 @@ const products = [
         subtitle: "Industrial Intelligence Engine",
         description:
             "MendyAI turns raw IIoT data into smart, real-time insights using adaptive machine learning.",
-        image: null,
+        image: "/ind2.png",
     },
 ];
 const IndustrySlideshow = () => {

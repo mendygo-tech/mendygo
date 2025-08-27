@@ -6,8 +6,8 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-import { MenuIcon, X as CrossIcon, HomeIcon, ChevronDown } from "lucide-react";
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import { MenuIcon, X as  HomeIcon, ChevronDown } from "lucide-react";
+import React, { useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

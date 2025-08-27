@@ -108,7 +108,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1508534101075098"
      crossOrigin="anonymous"></script>
-
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${figtree.variable} antialiased`}>
         <ThemeProvider

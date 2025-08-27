@@ -87,7 +87,7 @@ export default function Hero() {
 
                     <div className="mt-4 xl:mt-10" style={{ willChange: 'transform' }}>
                         {/* Move LCP text outside motion/animation for instant render */}
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-black/80 dark:text-gray-200 flex flex-wrap justify-center items-center gap-4">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-black/80 dark:text-gray-200 flex flex-col flex-wrap justify-center items-center">
                             <span style={{fontWeight:600, fontSize:'inherit', letterSpacing:'0.01em'}}>{/* Inline critical styles */}
                                 Join the future with
                             </span>

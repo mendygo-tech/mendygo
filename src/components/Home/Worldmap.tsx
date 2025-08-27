@@ -19,3 +19,5 @@ export const BackgroundMap = React.memo(() => (
     />
   </div>
 ));
+
+BackgroundMap.displayName = 'BackgroundMap';

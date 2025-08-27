@@ -15,7 +15,7 @@ export const WavyBackground = ({
   waveOpacity = 0.5,
   ...props
 }: {
-  children?: any;
+  children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
   colors?: string[];
@@ -24,189 +24,199 @@ export const WavyBackground = ({
   blur?: number;
   speed?: "slow" | "fast";
   waveOpacity?: number;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   const noise = createNoise3D();
-  let w: number,
-    h: number,
-    nt: number,
-    i: number,
-    x: number,
-    ctx: any,
-    canvas: any;
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const sizeRef = useRef({ w: 0, h: 0 });
+  const ntRef = useRef(0);
+  const animationIdRef = useRef<number | null>(null);
+  const initializedRef = useRef(false);
+  const resizeCleanupRef = useRef<null | (() => void)>(null);
+  const bleedRef = useRef(0); // overscan to avoid inner edge from blur
+
+  // Synchronous initial theme to avoid first-paint flash on remount
+  const [isDarkMode, setIsDarkMode] = useState(() =>
+    typeof document !== "undefined"
+      ? document.documentElement.classList.contains("dark")
+      : false
+  );
+  const isDarkRef = useRef(isDarkMode);
+  useEffect(() => {
+    isDarkRef.current = isDarkMode;
+  }, [isDarkMode]);
+
+  // Observe html.class changes to update theme state
   useEffect(() => {
     const checkDarkMode = () => {
-      if (typeof window !== "undefined") {
-        const isDark = document.documentElement.classList.contains('dark');
-        setIsDarkMode(isDark);
-      }
+      const isDark = document.documentElement.classList.contains("dark");
+      setIsDarkMode(isDark);
     };
 
     checkDarkMode();
 
-    // Throttled MutationObserver to reduce performance impact
-    let timeoutId: NodeJS.Timeout;
-    const throttledCheckDarkMode = () => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    const throttledCheck = () => {
       if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(checkDarkMode, 16); // ~60fps throttling
+      timeoutId = setTimeout(checkDarkMode, 16);
     };
 
-    const observer = new MutationObserver(throttledCheckDarkMode);
-    if (typeof window !== "undefined") {
-      observer.observe(document.documentElement, {
-        attributes: true,
-        attributeFilter: ['class'],
-        subtree: false // Only watch the root element, not children
-      });
+    const observer = new MutationObserver(throttledCheck);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
 
-      return () => {
-        observer.disconnect();
-        if (timeoutId) clearTimeout(timeoutId);
-      };
-    }
+    return () => {
+      observer.disconnect();
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
-  const getSpeed = () => {
-    switch (speed) {
-      case "slow":
-        return 0.001;
-      case "fast":
-        return 0.002;
-      default:
-        return 0.001;
-    }
-  };
+  const getSpeed = () => (speed === "fast" ? 0.002 : 0.001);
 
-  let cleanupResize: (() => void) | null = null;
+  const darkModeColors = [
+    "#38bdf8",
+    "#818cf8",
+    "#c084fc",
+    "#f472b6",
+    "#34d399",
+  ];
+  const lightModeColors = [
+    "#ff1a1a",
+    "#ff0066",
+    "#9900ff",
+    "#0033ff",
+    "#00cccc",
+  ];
 
   const init = () => {
-    canvas = canvasRef.current;
+    if (initializedRef.current) return;
+    const canvas = canvasRef.current;
     if (!canvas) return;
 
-    ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
-    ctx.filter = `blur(${blur}px)`;
-    nt = 0;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    const handleResize = () => {
-      if (ctx) {
-        w = ctx.canvas.width = window.innerWidth;
-        h = ctx.canvas.height = window.innerHeight;
-        ctx.filter = `blur(${blur}px)`;
-      }
+    ctxRef.current = ctx;
+
+    const setSize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const bleed = Math.ceil((blur || 10) * 6); // safe spill area for blur
+      bleedRef.current = bleed;
+
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+
+      // internal drawing size (with bleed)
+      const w = vw + bleed * 2;
+      const h = vh + bleed * 2;
+
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+
+      // CSS size and negative offset so the extra area sits outside the viewport
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      canvas.style.top = `-${bleed}px`;
+      canvas.style.left = `-${bleed}px`;
+
+      sizeRef.current = { w, h };
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.filter = `blur(${blur}px)`;
     };
-    
-    window.addEventListener('resize', handleResize);
-    
-    // Store cleanup function
-    cleanupResize = () => window.removeEventListener('resize', handleResize);
+    setSize();
+
+    const onResize = () => setSize();
+    window.addEventListener("resize", onResize);
+    resizeCleanupRef.current = () => window.removeEventListener("resize", onResize);
+
+    initializedRef.current = true;
     render();
   };
 
-  const darkModeColors = [
-    "#38bdf8", // sky blue
-    "#818cf8", // indigo
-    "#c084fc", // purple
-    "#f472b6", // pink
-    "#34d399", // emerald
-  ];
-  const lightModeColors = [
-    "#ff1a1a", // vivid red
-    "#ff0066", // neon pink
-    "#9900ff", // electric purple
-    "#0033ff", // rich blue
-    "#00cccc", // aqua cyan
-  ];
+  const drawWave = (n: number, waveColors: string[]) => {
+    const ctx = ctxRef.current;
+    if (!ctx) return;
+    const { w } = sizeRef.current;
+    const baseY = bleedRef.current + window.innerHeight * 0.5; // center within visible area
+    ntRef.current += getSpeed();
 
-
-
-
-  const waveColors = colors ?? (isDarkMode ? darkModeColors : lightModeColors);
-
-  const drawWave = (n: number) => {
-    nt += getSpeed();
-    for (i = 0; i < n; i++) {
+    for (let i = 0; i < n; i++) {
       ctx.beginPath();
       ctx.lineWidth = waveWidth || 50;
       ctx.strokeStyle = waveColors[i % waveColors.length];
-      for (x = 0; x < w; x += 5) {
-        var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5);
+      for (let x = 0; x < w; x += 5) {
+        const y = noise(x / 800, 0.3 * i, ntRef.current) * 100;
+        if (x === 0) ctx.moveTo(x, y + baseY);
+        else ctx.lineTo(x, y + baseY);
       }
       ctx.stroke();
       ctx.closePath();
     }
   };
 
-  let animationId: number;
   let frameCount = 0;
   const render = () => {
+    const ctx = ctxRef.current;
     if (!ctx) return;
+    const { w, h } = sizeRef.current;
 
-    // Throttle rendering to 30fps instead of 60fps
     frameCount++;
     if (frameCount % 2 !== 0) {
-      animationId = requestAnimationFrame(render);
+      animationIdRef.current = requestAnimationFrame(render);
       return;
     }
 
-    // Clear the canvas first
+    const dark = isDarkRef.current;
+    const waveColors = colors ?? (dark ? darkModeColors : lightModeColors);
+
     ctx.clearRect(0, 0, w, h);
 
-    ctx.fillStyle = backgroundFill || (isDarkMode ? "#000000" : "#ffffff");
+    ctx.fillStyle = backgroundFill || (dark ? "#000000" : "#ffffff");
     ctx.globalAlpha = 1;
     ctx.fillRect(0, 0, w, h);
 
-    // Set wave opacity based on theme
-    ctx.globalAlpha = isDarkMode ? (waveOpacity || 0.6) : (waveOpacity || 0.4);
+    ctx.globalAlpha = dark ? (waveOpacity || 0.6) : (waveOpacity || 0.4);
 
-    drawWave(5); // Reduce from 5 to 3 waves
-    animationId = requestAnimationFrame(render);
+    drawWave(5, waveColors);
+    animationIdRef.current = requestAnimationFrame(render);
   };
 
   useEffect(() => {
-    // Directly call init() without setTimeout for faster startup
-    if (canvasRef.current) {
-      init();
-    }
+    init();
     return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
-      if (cleanupResize) {
-        cleanupResize();
-      }
+      if (animationIdRef.current) cancelAnimationFrame(animationIdRef.current);
+      if (resizeCleanupRef.current) resizeCleanupRef.current();
+      initializedRef.current = false;
+      ctxRef.current = null;
     };
-  }, [isDarkMode]); // Re-initialize when theme changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // Pause animation when tab is not visible
+  // Pause/resume animation when tab visibility changes without re-init
   useEffect(() => {
-    const handleVisibilityChange = () => {
+    const onVis = () => {
       if (document.hidden) {
-        if (animationId) {
-          cancelAnimationFrame(animationId);
-        }
-      } else {
-        if (canvasRef.current && ctx) {
-          render();
-        }
+        if (animationIdRef.current) cancelAnimationFrame(animationIdRef.current);
+        animationIdRef.current = null;
+      } else if (!animationIdRef.current) {
+        render();
       }
     };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener("visibilitychange", onVis);
+    return () => document.removeEventListener("visibilitychange", onVis);
   }, []);
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
     setIsSafari(
       typeof window !== "undefined" &&
-      navigator.userAgent.includes("Safari") &&
-      !navigator.userAgent.includes("Chrome")
+        navigator.userAgent.includes("Safari") &&
+        !navigator.userAgent.includes("Chrome")
     );
   }, []);
 
@@ -220,16 +230,16 @@ export const WavyBackground = ({
       {...props}
     >
       <canvas
-        className="absolute inset-0 z-0"
+        className="absolute z-0" // removed inset-0; we position with style.top/left
         ref={canvasRef}
         id="canvas"
         style={{
-          ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
+          ...(isSafari ? { filter: `blur(${blur}px)` } : undefined),
+          // backgroundColor: isDarkMode ? "#000" : "#fff", // avoids flash before first paint
+          position: "absolute",
         }}
       />
-      <div className={cn("relative z-10 w-full", className)}>
-        {children}
-      </div>
+      <div className={cn("relative z-10 w-full", className)}>{children}</div>
     </div>
   );
 };

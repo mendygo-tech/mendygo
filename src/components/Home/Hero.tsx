@@ -35,10 +35,10 @@ export default function Hero() {
         };
     }, []);
 
-    const fadeUp = (delay = 0.1) => ({
+    const fadeUp = (delay = 0) => ({
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.6, delay },
+        transition: { duration: 0.2, delay },
     });
 
     return (
@@ -56,7 +56,7 @@ export default function Hero() {
 
                 <div className="relative z-20 w-full max-w-7xl flex flex-col items-center justify-center text-center mx-auto px-4">
 
-                    <motion.div {...fadeUp(0.1)} className="mb-6 sm:mb-8 mt-4">
+                    <motion.div {...fadeUp(0)} className="mb-6 sm:mb-8 mt-4">
                         <motion.span
                             className="inline-flex items-center overflow-hidden rounded-full border border-gray-200/50 backdrop-blur-xl shadow-lg hover:shadow-xl hover:shadow-[#abff02]/10 transition-all duration-300 group cursor-pointer dark:border-white/20 dark:bg-black/60 dark:hover:shadow-[#abff02]/20"
                             whileHover={{ scale: 1.05 }}
@@ -85,10 +85,10 @@ export default function Hero() {
                         AI that adapts.
                     </motion.h1>
 
-                    <div className="mt-4 xl:mt-10" style={{ willChange: 'transform' }}>
+                    <motion.div {...fadeUp(0.18)} className="mt-4 xl:mt-10" style={{ willChange: 'transform' }}>
                         {/* Move LCP text outside motion/animation for instant render */}
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-black/80 dark:text-gray-200 flex flex-col flex-wrap justify-center items-center">
-                            <span style={{fontWeight:600, fontSize:'inherit', letterSpacing:'0.01em'}}>{/* Inline critical styles */}
+                            <span style={{fontWeight:600, fontSize:'inherit', letterSpacing:'0.01em'}}>
                                 Join the future with
                             </span>
                             <span className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default function Hero() {
                                 />
                             </span>
                         </h2>
-                    </div>
+                    </motion.div>
 
                     <motion.p
                         {...fadeUp(0.2)}

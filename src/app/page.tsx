@@ -8,6 +8,8 @@ import DashboardDark from '@/assets/dashboard-dark.webp';
 import DashboardLight from '@/assets/dashboard-light.webp';
 import { useTheme } from "next-themes";
 import CompanySlideshow from "@/components/Home/SlideShow";
+// import Lenis from "lenis";
+// import Script from "next/script";
 import IndustrySlideshow from "@/components/Home/IndustriesSlideshow";
 
 const CountdownCard = lazy(() => import("@/components/Home/CountdownCard"));
@@ -34,6 +36,34 @@ export default function Home() {
     [resolvedTheme]
   );
 
+   {/* Lenis smooth scroll after interactive */}
+      // {<Script
+      //   src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"
+      //   strategy="afterInteractive"
+      //   onLoad={() => {
+      //     // Ensure Lenis exists and init safely
+      //     const LenisCtor =
+      //       (window as typeof window & { Lenis?: new (opts?: { duration?: number; easing?: string; smooth?: boolean }) => { raf: (t: number) => void; destroy?: () => void } }).Lenis;
+
+      //     if (!LenisCtor) return;
+
+      //     const lenis = new LenisCtor();
+      //     let rafId = 0;
+      //     const raf = (time: number) => {
+      //       lenis.raf(time);
+      //       rafId = requestAnimationFrame(raf);
+      //     };
+      //     rafId = requestAnimationFrame(raf);
+
+      //     // Stop the loop when page is hidden/unloaded to avoid leaks
+      //     const stop = () => cancelAnimationFrame(rafId);
+      //     window.addEventListener("pagehide", stop, { once: true });
+      //     document.addEventListener("visibilitychange", () => {
+      //       if (document.hidden) cancelAnimationFrame(rafId);
+      //       else rafId = requestAnimationFrame(raf);
+      //     });
+      //   }}
+      // /> }
   return (
     <div className="relative overflow-hidden min-h-screen dark:bg-black dark:text-white text-black">
       <div>

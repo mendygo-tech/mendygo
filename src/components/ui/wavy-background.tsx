@@ -60,7 +60,7 @@ export const WavyBackground = ({
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
     const throttledCheck = () => {
       if (timeoutId) clearTimeout(timeoutId);
-      timeoutId = setTimeout(checkDarkMode, 16);
+      timeoutId = setTimeout(checkDarkMode, 1);
     };
 
     const observer = new MutationObserver(throttledCheck);
@@ -223,19 +223,20 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center justify-center transition-colors duration-300",
-        isDarkMode ? "bg-black" : "bg-white",
+        "h-screen flex flex-col items-center justify-center",
+        // use Tailwind's dark variant instead of JS toggling
+        "bg-white dark:bg-black",
         containerClassName
       )}
       {...props}
     >
       <canvas
-        className="absolute z-0" // removed inset-0; we position with style.top/left
+        // paint correct color on first paint via CSS (no JS needed)
+        className="absolute z-0 bg-white dark:bg-black"
         ref={canvasRef}
         id="canvas"
         style={{
           ...(isSafari ? { filter: `blur(${blur}px)` } : undefined),
-          // backgroundColor: isDarkMode ? "#000" : "#fff", // avoids flash before first paint
           position: "absolute",
         }}
       />

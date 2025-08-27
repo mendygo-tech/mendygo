@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { BackgroundMap } from "./Worldmap";
+// import { BackgroundMap } from "./Worldmap";
 import SuccessModal from "../common/SuccessModal";
 
 export function SignUpForm() {
@@ -63,7 +63,7 @@ export function SignUpForm() {
 
     return (
     <div className="min-h-screen w-full bg-white dark:bg-neutral-950 text-black dark:text-white relative flex flex-col items-center justify-center antialiased overflow-hidden px-4 py-10">
-            <BackgroundMap />
+            {/* <BackgroundMap /> */}
             <div className="max-w-2xl w-full z-10 animate-fade-in">
         <h1 className="text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-600 dark:from-neutral-200 dark:to-neutral-600 text-center font-bold">
                     Join the waitlist

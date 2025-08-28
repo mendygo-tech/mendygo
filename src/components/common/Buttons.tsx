@@ -201,7 +201,7 @@ bg-zinc-800 backdrop-blur-md border border-white/10 hover:bg-zinc-700 hover:bord
 
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden">
                                 <iframe
-                                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                    src="https://www.youtube.com/embed/WFVG1fe--0k?si=vvD6ZAcIu3M8Csy1"
                                     title="Know Us Video"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

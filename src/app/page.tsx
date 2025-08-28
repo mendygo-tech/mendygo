@@ -121,8 +121,8 @@ export default function Home() {
           <p className="mt-2 max-w-xl mx-auto">We design, develop, and implement automation tools that help you work smarter, not harder.</p>
         </div>
 
-        <div className="mt-6 px-8 flex flex-col items-center lg:px-4 space-y-4 sm:space-y-6 -ml-6 lg:ml-0">
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full max-w-6xl justify-center">
+        <div className="mt-6 px-8 flex flex-col items-center lg:px-4 space-y-4 sm:space-y-6  lg:ml-0">
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full max-w-6xl items-center justify-center">
             <Suspense fallback={<div className="h-48 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg flex-1"></div>}>
             <Step1 />
             </Suspense>
@@ -130,7 +130,7 @@ export default function Home() {
             <Step2 />
             </Suspense>
           </div>
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full max-w-6xl justify-center">
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full max-w-6xl justify-center items-center">
             <Suspense fallback={<div className="h-48 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg flex-1"></div>}>
             <Step3 />
             </Suspense>

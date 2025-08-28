@@ -10,7 +10,7 @@ import {
 
 const Faq = () => {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black px-4 text-center space-y-6">
+        <div className="flex flex-col items-center justify-center bg-white dark:bg-black px-4 text-center space-y-6">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ const Faq = () => {
                     className="backdrop-blur-md bg-[#abff02]/20 border border-white/20 text-black dark:text-white mx-auto mb-4 hover:shadow-lg hover:shadow-[#abff02]/30 transition
 "
                 >
-                    <span className="text-sm font-semibold">FAQ's</span>
+                    <span className="text-sm font-semibold">FAQ&apos;s</span>
                 </Badge>
             </motion.div>
 
@@ -28,9 +28,9 @@ const Faq = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gray-900 dark:text-white text-4xl md:text-5xl font-bold max-w-2xl font-geist"
+                className="text-gray-900 dark:text-white text-3xl lg:text-5xl font-bold max-w-2xl font-geist"
             >
-                We've Got the Answers You're Looking For
+                We&apos;ve Got the Answers You&apos;re Looking For
             </motion.h1>
 
             <motion.p

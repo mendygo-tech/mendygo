@@ -1,15 +1,12 @@
 import { Badge } from "../ui/badge";
 import { motion } from "motion/react";
 import {
-    Bolt,
-    TruckElectric,
     Handshake,
     Clock,
     DollarSign,
     PieChart,
     BarChart3,
     BellElectric,
-    Heading1,
 } from "lucide-react";
 
 const benefits = [
@@ -53,7 +50,7 @@ const benefits = [
 
 const Benefits = () => {
     return (
-        <section className="relative bg-white dark:bg-black py-20 px-4 text-gray-900 dark:text-white flex flex-col items-center overflow-hidden">
+        <section className="relative bg-white dark:bg-black py-20 px-14 text-gray-900 dark:text-white flex flex-col items-center overflow-hidden">
             {/* Green fog/shadow effect */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#abff02] rounded-full blur-3xl animate-pulse"></div>

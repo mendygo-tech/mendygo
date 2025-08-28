@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 import {
     ShieldCheck,
     Eye,
@@ -35,12 +35,13 @@ export default function AboutPage() {
                     <CardContent className="p-6">
                         <h2 className="text-2xl font-semibold mb-4">Director</h2>
                         <div className="flex flex-col md:flex-row items-center gap-4">
-                            <Image
+                            
+                                <Image
                                 src={d2}
                                 alt="Sourav Verma"
-                                width={120}
-                                height={120}
-                                className="w-[120px] h-[120px] rounded-full border shadow object-cover"
+                                width={1020}
+                                height={1020}
+                                className="h-[120px] w-[120px] rounded-full border shadow object-cover"
                             />
                             <div>
                                 <h3 className="font-semibold text-lg">Mr. Sourav Verma</h3>
@@ -60,9 +61,9 @@ export default function AboutPage() {
                             <Image
                                 src={d1}
                                 alt="Santosh Verma"
-                                width={120}
-                                height={120}
-                                className="rounded-full border shadow"
+                                width={1020}
+                                height={1020}
+                                className="h-[120px] w-[120px] rounded-full border shadow"
                             />
                             <div>
                                 <h3 className="font-semibold text-lg">Mrs. Santosh Verma</h3>

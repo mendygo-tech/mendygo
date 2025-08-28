@@ -59,12 +59,13 @@ export default function GlassmorphedButtons() {
 
     return (
         <>
-            <motion.button
+            <div className="flex flex-col sm:flex-row items-center justify-center mt-8 sm:mt-12 gap-5 z-20">
+                <motion.button
                 onClick={openModal}
                 className="group relative w-full sm:w-auto overflow-hidden rounded-xl px-8 py-4 text-base sm:text-lg font-bold text-white min-w-[200px]
     transition-all duration-300 cursor-pointer
     bg-black backdrop-blur-md shadow-[0_0_20px_#abff02]/20
-    hover:bg-zinc-900 hover:shadow-[0_0_10px_#abff02]/10 mr-8"
+    hover:bg-zinc-900 hover:shadow-[0_0_10px_#abff02]/10"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
             >
@@ -101,6 +102,7 @@ bg-zinc-800 backdrop-blur-md border border-white/10 hover:bg-zinc-700 hover:bord
                 </span>
                 <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 transition-all duration-300" />
             </motion.button>
+            </div>
 
             <AnimatePresence>
                 {isModalOpen && (

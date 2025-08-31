@@ -19,17 +19,13 @@ export default function Footer() {
     e.preventDefault();
     const emailInput = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
 
-    fetch("/api/contact/create", {
+    fetch("/api/newsletter/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: "Newsletter Subscriber",
         email: emailInput,
-        subject: "Newsletter Signup",
-        phoneNumber: "",
-        message: "User subscribed via newsletter form",
       }),
     })
       .then((res) => {

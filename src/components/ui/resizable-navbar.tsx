@@ -40,12 +40,15 @@ interface NavItem {
   name: string;
   link: string;
   dropdown?: DropdownData;
+  isModal?: boolean;
 }
 
 interface NavItemsProps {
   items: NavItem[];
   className?: string;
   onItemClick?: () => void;
+  onScheduleDemo?: () => void;
+  visible?: boolean;
 }
 
 interface MobileNavProps {
@@ -115,12 +118,19 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         className
       )}
     >
-      {children}
+      {React.Children.map(children, (child) =>
+        React.isValidElement(child) && child.type === NavItems
+          ? React.cloneElement(
+              child as React.ReactElement<NavItemsProps>,
+              { visible }
+            )
+          : child
+      )}
     </motion.div>
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visible }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const router = useRouter();
@@ -185,9 +195,13 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             onClick={(e) => {
               if (!item.dropdown) {
                 e.preventDefault();
-                onItemClick?.();
-                // Use Next.js client-side routing for smooth navigation
-                router.push(item.link);
+                if (item.isModal && onScheduleDemo) {
+                  onScheduleDemo();
+                } else {
+                  onItemClick?.();
+                  // Use Next.js client-side routing for smooth navigation
+                  router.push(item.link);
+                }
               }
             }}
             className="relative px-4 py-2 text-black dark:text-white transition-colors duration-150 flex items-center gap-1"
@@ -195,10 +209,10 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             {/* Animated Background - Optimized for performance */}
             <div
               className={`absolute inset-0 h-full w-full rounded-full bg-[#abff02] z-10 transition-opacity duration-150 ${
-                hovered === idx ? 'opacity-100' : 'opacity-0'
+                hovered === idx || (visible && item.isModal) ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ 
-                willChange: hovered === idx ? 'opacity' : 'auto',
+                willChange: hovered === idx || (visible && item.isModal) ? 'opacity' : 'auto',
                 transform: 'translateZ(0)' // Force hardware acceleration
               }}
             />
@@ -207,7 +221,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             <span
               className={cn(
                 "relative z-20 transition-colors duration-150",
-                hovered === idx ? "text-black" : "text-black dark:text-white"
+                hovered === idx || (visible && item.isModal) ? "text-black" : "text-black dark:text-white"
               )}
             >
               {item.name}
@@ -219,7 +233,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
                 size={14}
                 className={cn(
                   "relative z-20 transition-all duration-300",
-                  hovered === idx ? "text-black" : "text-black dark:text-white",
+                  hovered === idx || (visible && item.isModal) ? "text-black" : "text-black dark:text-white",
                   activeDropdown === idx ? "rotate-180" : ""
                 )}
               />

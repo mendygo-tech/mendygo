@@ -14,6 +14,7 @@ import { Sun, Moon } from "lucide-react";
 import { useState, useCallback } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
+import DemoModal from "./DemoModal";
 
 type Dropdown = {
   title: string;
@@ -23,6 +24,7 @@ type NavItemType = {
   name: string;
   link: string;
   dropdown?: Dropdown;
+  isModal?: boolean;
 };
 
 export function MyNavbar() {
@@ -84,10 +86,11 @@ export function MyNavbar() {
                 ],
             }
         },
-        { name: "Schedule Demo", link: "/schedule-a-call" },
+        { name: "Schedule Demo", link: "#", isModal: true },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
     const { theme, setTheme } = useTheme();
 
     const ThemeToggleButton = ({ className = "" }: { className?: string }) => {
@@ -164,7 +167,10 @@ export function MyNavbar() {
             <Navbar>
                 <NavBody>
                     <NavbarLogo />
-                    <NavItems items={navItems} />
+                    <NavItems 
+                        items={navItems} 
+                        onScheduleDemo={() => setIsDemoModalOpen(true)}
+                    />
                     <div className="flex items-center gap-2">
                         <ThemeToggleButton />
                     </div>
@@ -192,6 +198,10 @@ export function MyNavbar() {
                                 key={`mobile-link-${idx}`}
                                 item={item}
                                 onClose={() => setIsMobileMenuOpen(false)}
+                                onScheduleDemo={() => {
+                                    setIsMobileMenuOpen(false);
+                                    setIsDemoModalOpen(true);
+                                }}
                             />
                         ))}
 
@@ -207,11 +217,16 @@ export function MyNavbar() {
                     </MobileNavMenu>
                 </MobileNav>
             </Navbar>
+
+            <DemoModal 
+                isOpen={isDemoModalOpen} 
+                onClose={() => setIsDemoModalOpen(false)} 
+            />
         </div>
     );
 }
 
-const MobileNavItem = ({ item, onClose }: { item: NavItemType; onClose: () => void }) => {
+const MobileNavItem = ({ item, onClose, onScheduleDemo }: { item: NavItemType; onClose: () => void; onScheduleDemo?: () => void }) => {
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
 
@@ -252,8 +267,12 @@ const MobileNavItem = ({ item, onClose }: { item: NavItemType; onClose: () => vo
         <button
             onClick={(e) => {
                 e.preventDefault();
-                onClose();
-                router.push(item.link);
+                if (item.isModal && onScheduleDemo) {
+                    onScheduleDemo();
+                } else {
+                    onClose();
+                    router.push(item.link);
+                }
             }}
             className="relative w-full text-left text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
         >

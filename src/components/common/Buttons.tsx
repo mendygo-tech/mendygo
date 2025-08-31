@@ -3,54 +3,11 @@
 import React, { useState, useCallback } from "react";
 import { Sparkles, Play, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import SuccessModal from "./SuccessModal";
+import DemoModal from "./DemoModal";
 
 export default function GlassmorphedButtons() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalTwoOpen, setIsModalTwoOpen] = useState(false);
-    const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [modalOpen, setModalOpen] = useState(false);
-    const [modalMessage, setModalMessage] = useState("");
-    const [modalType, setModalType] = useState<"success" | "error">("success");
-
-    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    }, []);
-
-    const handleSubmit = useCallback(async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        try {
-            const res = await fetch("/api/contact/create", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
-
-            const result = await res.json();
-            if (res.ok) {
-                setModalMessage("Submitted successfully!");
-                setModalType("success");
-                setModalOpen(true);
-                setFormData({ name: "", email: "", phone: "" });
-                setIsModalOpen(false);
-            } else {
-                setModalMessage(result.message || "Submission failed.");
-                setModalType("error");
-                setModalOpen(true);
-            }
-        } catch (err) {
-            console.error(err);
-            setModalMessage("Server error. Please try again.");
-            setModalType("error");
-            setModalOpen(true);
-        } finally {
-            setIsSubmitting(false);
-        }
-    }, [formData]);
 
     const openModal = useCallback(() => setIsModalOpen(true), []);
     const closeModal = useCallback(() => setIsModalOpen(false), []);
@@ -77,7 +34,7 @@ export default function GlassmorphedButtons() {
                 />
                 <span className="relative z-10 flex items-center justify-center gap-2">
                     <Sparkles className="h-5 w-5 group-hover:rotate-12 group-hover:drop-shadow-sm" />
-                    Join Now
+                    Schedule Demo
                 </span>
                 <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 transition-all duration-300" />
             </motion.button>
@@ -104,73 +61,7 @@ bg-zinc-800 backdrop-blur-md border border-white/10 hover:bg-zinc-700 hover:bord
             </motion.button>
             </div>
 
-            <AnimatePresence>
-                {isModalOpen && (
-                    <motion.div
-                        className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        <motion.div
-                            initial={{ scale: 0.95, y: 50 }}
-                            animate={{ scale: 1, y: 0 }}
-                            exit={{ scale: 0.95, y: 50 }}
-                            transition={{ duration: 0.3 }}
-                            className="bg-neutral-900 rounded-2xl p-6 w-full max-w-sm text-white shadow-xl border border-white/10 relative"
-                        >
-
-                            <button
-                                onClick={closeModal}
-                                className="absolute top-4 right-4 text-white hover:text-[#abff02] transition"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-
-                            <h2 className="text-xl font-semibold text-center mb-4">
-                                Join the Waitlist
-                            </h2>
-
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
-                                />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
-                                />
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    placeholder="Contact Number"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
-                                />
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full bg-[#abff02] text-black font-semibold py-2 rounded-lg hover:brightness-110 transition disabled:opacity-60"
-                                >
-                                    {isSubmitting ? "Submitting..." : "Submit"}
-                                </button>
-                            </form>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <DemoModal isOpen={isModalOpen} onClose={closeModal} />
 
 
             <AnimatePresence>
@@ -186,7 +77,7 @@ bg-zinc-800 backdrop-blur-md border border-white/10 hover:bg-zinc-700 hover:bord
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.95, y: 50 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-neutral-900 rounded-2xl p-4 w-full max-w-xl text-white shadow-xl border border-white/10 relative"
+                            className="bg-neutral-900 rounded-2xl p-6 w-full max-w-4xl text-white shadow-xl border border-white/10 relative"
                         >
                             <button
                                 onClick={closeModalTwo}
@@ -213,13 +104,6 @@ bg-zinc-800 backdrop-blur-md border border-white/10 hover:bg-zinc-700 hover:bord
                     </motion.div>
                 )}
             </AnimatePresence>
-
-            <SuccessModal
-                isOpen={modalOpen}
-                message={modalMessage}
-                onClose={() => setModalOpen(false)}
-                type={modalType}
-            />
         </>
     );
 }

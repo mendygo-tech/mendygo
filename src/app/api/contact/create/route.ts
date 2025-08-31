@@ -6,31 +6,100 @@ export async function POST(req: NextRequest) {
     try {
         await dbConnect();
         
-        const { name, email, subject, phoneNumber, message } = await req.json();
-        console.log("Received contact data:", { name, email, subject, phoneNumber, message });
+        const body = await req.json();
+        const { source, email, name, companyName, jobTitle, phone, message, subject, phoneNumber } = body;
+        
+        console.log("Received contact data:", body);
 
-        if (!name) {
+        // Validate required fields based on source
+        if (!source || !['newsletter', 'demo_request', 'contact'].includes(source)) {
             return NextResponse.json(
-                { message: "Name and Contact are required." },
+                { message: "Valid source is required (newsletter, demo_request, or contact)." },
                 { status: 400 }
             );
         }
 
-        const contact = new Contact({
-            name,
+        if (!email) {
+            return NextResponse.json(
+                { message: "Email is required." },
+                { status: 400 }
+            );
+        }
+
+        // For demo requests, validate required fields
+        if (source === 'demo_request') {
+            if (!name || !companyName || !jobTitle || !phone) {
+                return NextResponse.json(
+                    { message: "Name, Company Name, Job Title, and Phone are required for demo requests." },
+                    { status: 400 }
+                );
+            }
+        }
+
+        // For contact forms, validate required fields
+        if (source === 'contact') {
+            if (!name) {
+                return NextResponse.json(
+                    { message: "Name is required for contact forms." },
+                    { status: 400 }
+                );
+            }
+        }
+
+        // Check if email already exists for the same source
+        const existingContact = await (Contact as any).findOne({ email, source });
+        if (existingContact) {
+            return NextResponse.json(
+                { message: `Email already exists for ${source === 'newsletter' ? 'newsletter subscription' : 'demo request'}.` },
+                { status: 409 }
+            );
+        }
+
+        // Create contact object based on source
+        const contactData: any = {
+            source,
             email,
-            subject,
-            phoneNumber,
-            message
-        });
+            message: message || undefined
+        };
+
+        if (source === 'demo_request') {
+            contactData.name = name;
+            contactData.companyName = companyName;
+            contactData.jobTitle = jobTitle;
+            contactData.phone = phone;
+        } else if (source === 'contact') {
+            contactData.name = name;
+        }
+
+        // Add legacy fields for backward compatibility
+        if (subject) contactData.subject = subject;
+        if (phoneNumber) contactData.phoneNumber = phoneNumber;
+
+        const contact = new Contact(contactData);
         const newContact = await contact.save();
 
+        const successMessage = source === 'newsletter' 
+            ? "Successfully subscribed to newsletter!" 
+            : source === 'demo_request'
+            ? "Demo request submitted successfully!"
+            : "Contact form submitted successfully!";
+
         return NextResponse.json(
-            { message: "Contact saved successfully", data: newContact },
+            { message: successMessage, data: newContact },
             { status: 201 }
         );
     } catch (error) {
         console.error("Error saving contact:", error);
+        
+        // Handle validation errors
+        if (error.name === 'ValidationError') {
+            const validationErrors = Object.values(error.errors).map((err: any) => err.message);
+            return NextResponse.json(
+                { message: "Validation failed", errors: validationErrors },
+                { status: 400 }
+            );
+        }
+
         return NextResponse.json(
             { message: "Internal Server Error" },
             { status: 500 }

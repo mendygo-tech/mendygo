@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import logo from "@/assets/logo.png"
 import mendygo from "../../assets/mendygo white green wordmark.png";
 import mendygoDark from "../../assets/mendygo black green wordmark.png";
+import logo_shadow from "../../assets/logo_shadow.png";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -352,13 +353,22 @@ export const NavbarLogo = () => (
     href="/"
     className="relative z-20 mr-16 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black dark:text-white"
   >
-    <div className="relative w-[30px] h-[30px]">
+    <div className=" object-cover w-[30px]">
       <Image
-        src={logo}
-        alt="logo light mode"
-        width={30}
-        height={30}
-        style={{ height: '30px', width: 'auto' }}
+      src={logo_shadow}
+      alt="logo light mode"
+      width={30}
+      height={30}
+      style={{ height: 'auto', width: 'auto' }}
+      className="dark:hidden"
+      />
+      <Image
+      src={logo}
+      alt="logo dark mode"
+      width={30}
+      height={30}
+      style={{ height: 'auto', width: 'auto' }}
+      className="hidden dark:block"
       />
     </div>
     <div className="relative h-8 w-auto">

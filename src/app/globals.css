@@ -311,3 +311,66 @@ html.dark {
   }
 
 }
+
+
+::view-transition-group(root) {
+  animation-timing-function: var(--expo-out);
+}
+
+::view-transition-new(root) {
+  mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><filter id="blur"><feGaussianBlur stdDeviation="2"/></filter></defs><circle cx="0" cy="0" r="18" fill="white" filter="url(%23blur)"/></svg>') top left / 0 no-repeat;
+  mask-origin: content-box;
+  animation: scale 1.5s;
+  transform-origin: top left;
+}
+
+::view-transition-old(root),
+  .dark::view-transition-old(root) {
+  animation: scale 1.5s;
+  transform-origin: top right;
+  z-index: -1;
+}
+
+@keyframes scale {
+  to {
+    mask-size: 350vmax;
+  }
+}
+
+/* Custom styles for Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* backdrop-filter: blur(4px); */
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+  color: #fff !important; /* Swiper uses !important, so we need it too */
+  transition: background-color 0.2s ease-in-out;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* .swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px !important;
+  font-weight: 800;
+} */
+
+/* Custom styles for Swiper Pagination Dots */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #4b5563 !important; /* gray-600 */
+  opacity: 0.75;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  width: 28px;
+  border-radius: 9999px;
+  background-color: #3b82f6 !important; /* blue-500 */
+  opacity: 1;
+}

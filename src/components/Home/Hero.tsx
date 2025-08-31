@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+// import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import mendygoBlack from "../../assets/mendygo black green wordmark.png";
 import mendygo from "../../assets/mendygo white green wordmark.png";

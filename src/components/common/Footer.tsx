@@ -19,7 +19,7 @@ export default function Footer() {
     e.preventDefault();
     const emailInput = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
 
-    fetch("https://m.satyamjha.me/contact/create", {
+    fetch("/api/contact/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

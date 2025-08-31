@@ -68,7 +68,7 @@ export default function Hero() {
                             <span className="px-3 sm:px-4 py-1.5 text-sm sm:text-base font-medium text-gray-800 group-hover:text-[#7cb502] transition-colors duration-300 dark:text-white/90 dark:group-hover:text-[#abff02]">
                                 AI based monitoring and alarm system
                             </span>
-                            <ArrowRight className="w-4 h-4 mr-3 text-gray-600 group-hover:text-[#7cb502] group-hover:translate-x-1 transition-all duration-300 dark:text-white/70 dark:group-hover:text-[#abff02]" />
+                            {/* <ArrowRight className="w-4 h-4 mr-3 text-gray-600 group-hover:text-[#7cb502] group-hover:translate-x-1 transition-all duration-300 dark:text-white/70 dark:group-hover:text-[#abff02]" /> */}
                         </motion.span>
                     </motion.div>
 

@@ -27,7 +27,6 @@ type NavItemType = {
 
 export function MyNavbar() {
     const navItems = [
-        { name: "About us", link: "/aboutus" },
         {
             name: "Services",
             link: "/services/engineering",
@@ -74,7 +73,18 @@ export function MyNavbar() {
             }
         },
         { name: "Blog", link: "https://blogs.mendygo.com/" },
-        { name: "Contact", link: "/contact" },
+        {
+            name: "Company",
+            link: "/",
+            dropdown: {
+                title: "Company",
+                links: [
+                    { href: "/contact", label: "Contact Us" },
+                    { href: "/aboutus", label: "About Us" },
+                ],
+            }
+        },
+        { name: "Schedule Demo", link: "/schedule-a-call" },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

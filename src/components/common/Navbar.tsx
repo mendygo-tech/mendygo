@@ -94,10 +94,16 @@ export function MyNavbar() {
     const { theme, setTheme } = useTheme();
 
     const ThemeToggleButton = ({ className = "" }: { className?: string }) => {
-        const toggleTheme = useCallback(
-          () => setTheme(theme === "dark" ? "light" : "dark"),
-          [theme, setTheme]
-        );
+        const toggleTheme = useCallback(() => {
+            const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+            
+            if (!document.startViewTransition) {
+                switchTheme();
+                return;
+            }
+            
+            document.startViewTransition(switchTheme);
+        }, [theme, setTheme]);
 
         return (
             <button

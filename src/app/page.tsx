@@ -12,7 +12,7 @@ import CompanySlideshow from "@/components/Home/SlideShow";
 // import Script from "next/script";
 import IndustrySlideshow from "@/components/Home/IndustriesSlideshow";
 
-const CountdownCard = lazy(() => import("@/components/Home/CountdownCard"));
+// const CountdownCard = lazy(() => import("@/components/Home/CountdownCard"));
 const Faq = lazy(() => import("@/components/Home/Faq"));
 const Benefits = lazy(() => import("@/components/Home/Beniefits"));
 const Step1 = lazy(() => import("@/components/Home/Process/Step1"));
@@ -96,11 +96,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="px-4 py-0 sm:py-0 md:py-8">
+        {/* <div className="px-4 py-0 sm:py-0 md:py-8"> */}
           {/* <Suspense fallback={<div className="h-32 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg"></div>}> */}
-          <CountdownCard />
+          {/* <CountdownCard /> */}
           {/* </Suspense> */}
-        </div>
+        {/* </div> */}
 
         <div className="text-center max-w-2xl mx-auto px-4 space-y-4 mb-4 mt-32">
           <h2 className="text-2xl md:text-2xl font-semibold">AI Solutions That Take Your Business to the Next Level</h2>

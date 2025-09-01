@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
 import Contact from "@/lib/models/Contact";
+import { sendWelcomeEmail } from "@/lib/mailer";
+
+// Ensure Node runtime so nodemailer works in this route too
+export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
     try {
@@ -78,6 +82,15 @@ export async function POST(req: NextRequest) {
         const contact = new Contact(contactData);
         const newContact = await contact.save();
 
+        // Fire-and-forget welcome email (doesn't block response)
+        sendWelcomeEmail({
+            to: email,
+            source,
+            name,
+            companyName,
+            jobTitle,
+        }).catch((e) => console.error("Welcome email failed:", e));
+
         const successMessage = source === 'newsletter' 
             ? "Successfully subscribed to newsletter!" 
             : source === 'demo_request'
@@ -88,7 +101,7 @@ export async function POST(req: NextRequest) {
             { message: successMessage, data: newContact },
             { status: 201 }
         );
-    } catch (error) {
+    } catch (error: any) {
         console.error("Error saving contact:", error);
         
         // Handle validation errors

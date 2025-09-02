@@ -11,6 +11,7 @@ import CompanySlideshow from "@/components/Home/SlideShow";
 // import Lenis from "lenis";
 // import Script from "next/script";
 import IndustrySlideshow from "@/components/Home/IndustriesSlideshow";
+// import BackedUpSlider from "@/components/Home/SlideShowBackedUp";
 
 // const CountdownCard = lazy(() => import("@/components/Home/CountdownCard"));
 const Faq = lazy(() => import("@/components/Home/Faq"));
@@ -146,7 +147,7 @@ export default function Home() {
           {/* </Suspense> */}
         </div>
 
-        <div className="relative mt-8 sm:mt-12 md:mt-12 text-center px-4">
+        <div className="relative mt-8 sm:mt-12 md:mt-12 text-center">
           <Badge className="backdrop-blur-md bg-[#abff02]/20 border border-white/20 text-black dark:text-white mx-auto mb-4">
             <span className="text-sm font-semibold">Our Clients</span>
           </Badge>
@@ -160,7 +161,6 @@ export default function Home() {
         <Faq />
           {/* </Suspense> */}
         </div>
-
         <div className="p-4 md:p-8">
           <TextHoverEffect text="mendygo" />
         </div>

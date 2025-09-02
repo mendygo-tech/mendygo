@@ -6,6 +6,7 @@ import Tata from '../../assets/tata.webp';
 import Smh from '../../assets/smh.webp';
 import Maruti from '../../assets/maruti.webp';
 import Marelli from '../../assets/marelli.png';
+import jsw from '../../assets/jsw.png';
 
 const companies = [
   { name: 'SKH Group', image: Smh },
@@ -14,17 +15,27 @@ const companies = [
   { name: 'Tata Motors', image: Tata },
   { name: 'Dayco', image: Dayco },
   { name: 'Maruti', image: Maruti },
+  { name: 'JSW', image: jsw },
 ];
 
 const CompanySlider = () => {
-  const allLogos = [...companies, ...companies]; // Repeat for infinite loop
+  // Duplicate once to make a seamless 200% width track
+  const allLogos = [...companies, ...companies];
 
   return (
-    <div className="overflow-hidden w-full py-8 bg-white dark:bg-black">
-      <div className="scroll-wrapper">
-        <div className="animate-scroll flex whitespace-nowrap gap-16">
+    <div className="relative w-full overflow-hidden py-8 bg-white dark:bg-black">
+      {/* Edge fade overlays */}
+      <div className="pointer-events-none z-10 absolute inset-y-0 left-0 w-1/8 bg-gradient-to-r from-white dark:from-black"></div>
+      <div className="pointer-events-none z-10 absolute inset-y-0 right-0 w-1/8 bg-gradient-to-l from-white dark:from-black"></div>
+
+      <div className="scroll-wrapper w-full">
+        <div className="animate-scroll flex items-center whitespace-nowrap gap-16 will-change-transform">
           {allLogos.map((company, i) => (
-            <div key={i} className="flex flex-col items-center min-w-[120px]">
+            <div
+              key={`${company.name}-${i}`}
+              className="flex flex-col items-center min-w-[120px]"
+              aria-hidden={i >= companies.length ? true : undefined}
+            >
               <div className="relative w-20 h-20 mb-2">
                 <Image
                   src={company.image}
@@ -48,11 +59,11 @@ const CompanySlider = () => {
         }
 
         .animate-scroll {
-          animation: scroll-left 15s linear infinite; /* Increased speed (was 30s) */
+          animation: scroll-left 18s linear infinite;
         }
 
         .scroll-wrapper:hover .animate-scroll {
-          animation-play-state: paused; /* Pause on hover */
+          animation-play-state: paused;
         }
 
         @keyframes scroll-left {
@@ -61,6 +72,14 @@ const CompanySlider = () => {
           }
           100% {
             transform: translateX(-50%);
+          }
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          .animate-scroll {
+            animation-duration: 0.001s;
+            animation-iteration-count: 1;
           }
         }
       `}</style>

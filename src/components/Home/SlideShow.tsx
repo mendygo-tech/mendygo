@@ -15,7 +15,7 @@ const companies = [
   { name: 'Tata Motors', image: Tata },
   { name: 'Dayco', image: Dayco },
   { name: 'Maruti', image: Maruti },
-  { name: 'JSW', image: jsw },
+  { name: 'JSW Steel', image: jsw },
 ];
 
 const CompanySlider = () => {
@@ -36,7 +36,7 @@ const CompanySlider = () => {
               className="flex flex-col items-center min-w-[120px]"
               aria-hidden={i >= companies.length ? true : undefined}
             >
-              <div className="relative w-20 h-20 mb-2">
+              <div className="relative w-25 h-20 mb-2">
                 <Image
                   src={company.image}
                   alt={company.name}
@@ -75,6 +75,13 @@ const CompanySlider = () => {
           }
         }
 
+        /* Mobile devices */
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation-duration: 7s;
+          }
+        }
+
         /* Respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
           .animate-scroll {
@@ -82,8 +89,9 @@ const CompanySlider = () => {
             animation-iteration-count: 1;
           }
         }
-      `}</style>
-    </div>
+            `}</style>
+        </div>
+    
   );
 };
 

@@ -76,7 +76,7 @@ const Benefits = () => {
                 {benefits.map((item, index) => (
                     <div
                         key={index}
-                        className="relative overflow-hidden bg-white dark:bg-black border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:shadow-xl hover:shadow-[#abff02]/10 transition-all duration-300 ease-in-out"
+                        className="relative overflow-hidden bg-white dark:bg-black border border-gray-200 dark:border-white/10 rounded-2xl p-6 hover:shadow-xl hover:shadow-[#abff02]/10 transition-all duration-300 ease-in-out"
                     >
                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#abff02]/60 via-[#abff02]/80 to-[#abff02]/60" />
                         <div className="mb-4">{item.icon}</div>

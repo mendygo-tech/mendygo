@@ -105,6 +105,11 @@ export function MyNavbar() {
             document.startViewTransition(switchTheme);
         }, [theme, setTheme]);
 
+        // const toggleTheme = useCallback(() => {
+        //     const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+        //     switchTheme();
+        // }, [theme, setTheme]);
+
         return (
             <button
                 onClick={toggleTheme}

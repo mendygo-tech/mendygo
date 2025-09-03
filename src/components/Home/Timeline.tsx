@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import React, { useEffect } from 'react';
+// import Image from 'next/image';
 import NextLink from 'next/link';
 import {
     Link,
@@ -12,14 +12,13 @@ import {
     Settings,
     ArrowRight,
 } from 'lucide-react';
-import logo from '../../assets/logo.png';
+// import logo from '../../assets/logo.png';
 import VennDiagram from './VennDiagram';
 
 const Timeline = () => {
-    const [mounted, setMounted] = useState(false);
+    // const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true);
     }, []);
 
     const steps = [
@@ -69,7 +68,7 @@ const Timeline = () => {
                         How do we do?
                     </h1>
                     <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                        "In a world filled with challenges, solutions can be—simple or complex, and we consistently choose the path of simplicity"
+                        &quot;In a world filled with challenges, solutions can be—simple or complex, and we consistently choose the path of simplicity&quot;
                     </p>
                 </div>
 

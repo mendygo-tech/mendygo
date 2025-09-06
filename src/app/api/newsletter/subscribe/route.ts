@@ -5,6 +5,7 @@ import Contact from "@/lib/models/Contact";
 import { sendWelcomeEmail } from "@/lib/mailer";
 
 export const runtime = "nodejs";
+export const maxDuration = 15;
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,10 +25,13 @@ export async function POST(req: NextRequest) {
     const contact = new (Contact as any)({ source: "newsletter", email });
     const saved = await contact.save();
 
-    // Fire-and-forget welcome email
-    sendWelcomeEmail({ to: email, source: "newsletter", name }).catch((e) =>
-      console.error("Newsletter welcome failed:", e)
-    );
+    // Await in prod so the lambda doesn't exit before SMTP finishes
+    try {
+      await sendWelcomeEmail({ to: email, source: "newsletter", name });
+    } catch (e) {
+      console.error("Newsletter welcome failed:", e);
+      // Don't block subscription on mail failure
+    }
 
     return NextResponse.json({ message: "Subscribed.", data: saved }, { status: 201 });
   } catch (err: any) {

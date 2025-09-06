@@ -5,6 +5,7 @@ import { sendWelcomeEmail } from "@/lib/mailer";
 
 // Ensure Node runtime so nodemailer works in this route too
 export const runtime = "nodejs";
+export const maxDuration = 15;
 
 export async function POST(req: NextRequest) {
     try {
@@ -82,14 +83,19 @@ export async function POST(req: NextRequest) {
         const contact = new Contact(contactData);
         const newContact = await contact.save();
 
-        // Fire-and-forget welcome email (doesn't block response)
-        sendWelcomeEmail({
+        // Await mail to avoid lambda teardown racing SMTP
+        try {
+          await sendWelcomeEmail({
             to: email,
             source,
             name,
             companyName,
             jobTitle,
-        }).catch((e) => console.error("Welcome email failed:", e));
+          });
+        } catch (e) {
+          console.error("Welcome email failed:", e);
+          // continue; do not block API response on mail failure
+        }
 
         const successMessage = source === 'newsletter' 
             ? "Successfully subscribed to newsletter!" 

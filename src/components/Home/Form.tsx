@@ -326,7 +326,7 @@ export function SignUpForm() {
     };
 
     return (
-    <div className="w-full bg-white dark:bg-neutral-950 text-black dark:text-white relative flex flex-col items-center justify-center antialiased overflow-hidden px-4 py-10">
+    <div className="w-full bg-gradient-to-b from-[#f8f9fa] via-[#f8f9fa] to-white dark:from-[#1a1a1a]/40 dark:via-black dark:to-black text-black dark:text-white relative flex flex-col items-center justify-center antialiased overflow-hidden px-4 py-10">
             {/* <BackgroundMap /> */}
             <div className="max-w-2xl w-full z-10 animate-fade-in">
         <h1 className="text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-600 dark:from-neutral-200 dark:to-neutral-600 text-center font-bold">

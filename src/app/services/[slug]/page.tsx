@@ -3,6 +3,16 @@
 import Link from 'next/link';
 import { servicesData } from '../../../data/serviceData';
 import { useParams } from 'next/navigation';
+import {
+  Shield,
+  ClipboardCheck,
+  Zap,
+  BarChart3,
+  Gauge,
+  Eye,
+  Thermometer,
+  Brain,
+} from 'lucide-react';
 
 export default function ServicesPage() {
     const params = useParams();
@@ -16,10 +26,92 @@ export default function ServicesPage() {
             </div>
         );
     }
+    const products = [
+  {
+    name: 'Mendyview',
+    tagline: 'AI-Powered Industrial Access Control',
+    desc: 'Seamless access management with AI-driven image processing and compliance monitoring.',
+    icon: <Shield className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'MendySheets',
+    tagline: 'Digital Quality Inspection Platform',
+    desc: 'Digitized workflows with real-time inspection data, automated reporting, and analytics.',
+    icon: <ClipboardCheck className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'Mendergy',
+    tagline: 'Intelligent Energy Management',
+    desc: 'IIoT-powered energy monitoring, predictive analytics, and automated control.',
+    icon: <Zap className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'SmartOEE',
+    tagline: 'Overall Equipment Effectiveness Dashboard',
+    desc: 'Live factory performance insights to improve productivity and reduce downtime.',
+    icon: <BarChart3 className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'MendyVerse',
+    tagline: 'AR/VR/MR Industrial Platform',
+    desc: 'Immersive industrial training and remote assistance powered by AR/VR/MR.',
+    icon: <Zap className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'MendyOps',
+    tagline: 'Utility Monitoring & Automation',
+    desc: 'Unified control of HVAC, pumps, and energy systems with predictive optimization.',
+    icon: <Gauge className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'MendyLive',
+    tagline: 'Digital Twin Visualization',
+    desc: 'Real-time monitoring and simulation with dynamic digital twin technology.',
+    icon: <Eye className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'Thermendy',
+    tagline: 'Smart Climate Control',
+    desc: 'AI-driven industrial climate management for energy efficiency and comfort.',
+    icon: <Thermometer className="w-6 h-6 text-primary" />,
+  },
+  {
+    name: 'MendyAI',
+    tagline: 'Industrial Intelligence Engine',
+    desc: 'Predictive analytics, automation, and decision support for smarter operations.',
+    icon: <Brain className="w-6 h-6 text-primary" />,
+  },
+];
 
     return (
         <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white px-4 sm:px-6 lg:px-16 py-10 sm:py-12 lg:py-16">
             <main className="max-w-7xl mx-auto mt-30">
+
+                <section className=" dark:bg-black/70 py-16">
+                        <div className="max-w-6xl mx-auto px-4 text-center">
+                          <h2 className="text-4xl font-bold mb-6">Our Solutions</h2>
+                          <p className="text-lg opacity-80 max-w-3xl mx-auto mb-12">
+                            Explore Mendygo’s AI-powered platforms and tools designed for
+                            industrial excellence and sustainability.
+                          </p>
+                
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {products.map((p) => (
+                              <div
+                                key={p.name}
+                                className="rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-black text-left"
+                              >
+                                <div className="flex items-center gap-3 mb-4">
+                                  {p.icon}
+                                  <h3 className="text-xl font-semibold">{p.name}</h3>
+                                </div>
+                                <p className="font-medium text-primary">{p.tagline}</p>
+                                <p className="mt-2 text-sm opacity-80">{p.desc}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </section>
 
                 <section className="text-center mb-10 sm:mb-12">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl mt-16 font-bold mb-4 sm:mb-6 leading-tight">

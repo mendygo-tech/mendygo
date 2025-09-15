@@ -1,21 +1,15 @@
 "use client";
-import { lazy, Suspense, useMemo,useState,useEffect } from "react";
-import Hero from "@/components/Home/Hero";
+import { lazy, Suspense } from "react";
+import Hero2 from "@/components/Home/Hero2";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import DashboardDark from "@/assets/dashboard-dark.webp";
-import DashboardLight from "@/assets/dashboard-light.webp";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import CompanySlideshow from "@/components/Home/SlideShow";
-// import Lenis from "lenis";
-// import Script from "next/script";
-import IndustrySlideshow from "@/components/Home/IndustriesSlideshow";
 import BackedUpSlider from "@/components/Home/SlideShowBackedUp";
-
-// const CountdownCard = lazy(() => import("@/components/Home/CountdownCard"));
+import Products from "@/components/Home/Productsgrid";
+import Ecosystem from "@/components/Home/Ecosystem";
 const Faq = lazy(() => import("@/components/Home/Faq"));
-const Benefits = lazy(() => import("@/components/Home/Beniefits"));
+// const Benefits = lazy(() => import("@/components/Home/Beniefits"));
 const Step1 = lazy(() => import("@/components/Home/Process/Step1"));
 const Step2 = lazy(() => import("@/components/Home/Process/Step2"));
 const Step3 = lazy(() => import("@/components/Home/Process/Step3"));
@@ -28,109 +22,35 @@ const SignUpForm = lazy(() =>
 const Timeline = lazy(() => import("@/components/Home/Timeline"));
 
 export default function Home() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Dashboard image depends on resolved theme
-  const dashboardSrc = useMemo(
-    () => (resolvedTheme === "light" ? DashboardLight : DashboardDark),
-    [resolvedTheme]
-  );
-
-  {
-    /* Lenis smooth scroll after interactive */
-  }
-  // {<Script
-  //   src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"
-  //   strategy="afterInteractive"
-  //   onLoad={() => {
-  //     // Ensure Lenis exists and init safely
-  //     const LenisCtor =
-  //       (window as typeof window & { Lenis?: new (opts?: { duration?: number; easing?: string; smooth?: boolean }) => { raf: (t: number) => void; destroy?: () => void } }).Lenis;
-
-  //     if (!LenisCtor) return;
-
-  //     const lenis = new LenisCtor();
-  //     let rafId = 0;
-  //     const raf = (time: number) => {
-  //       lenis.raf(time);
-  //       rafId = requestAnimationFrame(raf);
-  //     };
-  //     rafId = requestAnimationFrame(raf);
-
-  //     // Stop the loop when page is hidden/unloaded to avoid leaks
-  //     const stop = () => cancelAnimationFrame(rafId);
-  //     window.addEventListener("pagehide", stop, { once: true });
-  //     document.addEventListener("visibilitychange", () => {
-  //       if (document.hidden) cancelAnimationFrame(rafId);
-  //       else rafId = requestAnimationFrame(raf);
-  //     });
-  //   }}
-  // /> }
   return (
-    <div className="relative overflow-hidden min-h-screen dark:bg-black dark:text-white text-black">
+    <div className="relative overflow-hidden min-h-screen bg-[#f8f9fa] dark:bg-black dark:text-white text-black">
       <div>
-        <Hero />
-        <IndustrySlideshow />
-
-        {/* Dashboard showcase */}
-        <div className="px-4 sm:px-6 pb-0 flex justify-center relative mt-24">
-          <div
-            className="w-full sm:w-[90%] md:w-[80%] mb-16 h-full relative rounded-lg overflow-hidden"
-            style={{
-              boxShadow: "0 0 40px rgba(171, 255, 2, 0.25)",
-            }}
-          >
-            <div className="relative w-full h-full">
-              {mounted && (
-                <Image
-                  key={resolvedTheme}
-                  src={dashboardSrc}
-                  alt="Mendygo dashboard"
-                  className="w-full h-full object-cover select-none rounded-t-lg shadow-lg"
-                  placeholder="blur"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 90vw"
-                />
-              )}
-              <div className="absolute bottom-0 left-0 w-full h-[37%] sm:h-[15%] pointer-events-none bg-gradient-to-t from-white via-white/90 via-white/70 via-white/40 to-transparent dark:from-black dark:via-black/90 dark:via-black/70 dark:via-black/40 dark:to-transparent rounded-t-lg" />
-            </div>
-          </div>
-        </div>
-        {/* <div className="px-4 py-0 sm:py-0 md:py-8"> */}
-        {/* <Suspense fallback={<div className="h-32 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg"></div>}> */}
-        {/* <CountdownCard /> */}
-        {/* </Suspense> */}
-        {/* </div> */}
-
-        <div className="text-center max-w-2xl mx-auto px-4 space-y-4 mb-4 mt-32">
-          <h2 className="text-2xl md:text-2xl font-semibold">
-            AI Solutions That Take Your Business to the Next Level
-          </h2>
-          <p className="text-base md:text-lg">
-            We design, develop, and implement automation tools that help you
-            work smarter, not harder.
+        <Hero2 />
+        <div className="relative mt-8 sm:mt-12 md:mt-12 mb-40 text-center pb-20">
+          <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mx-auto mb-4">
+            <span className="text-sm font-semibold">Backed By</span>
+          </Badge>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2 pb-1">
+            Supported by Global Leaders
+          </h1>
+          <p className=" max-w-xl mx-auto font-thin dark:text-gray-300">
+            We are proud to be backed by top startup accelerator programs and
+            global technology leaders.
           </p>
+          <BackedUpSlider />
         </div>
+        <Ecosystem />
+        <Products />
+        <Timeline />
 
-        <div>
-          {/* <Suspense fallback={<div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg mx-4"></div>}> */}
-          <Timeline />
-          {/* </Suspense> */}
-        </div>
-
-        <div className="relative mt-8 sm:mt-12 md:mt-12 text-center px-4">
-          <Badge className="backdrop-blur-md bg-[#abff02]/20 border border-white/20 text-black dark:text-white mx-auto mb-4">
+        <div className="relative pt-30 text-center px-4">
+          <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mx-auto mb-4">
             <span className="text-sm font-semibold">Our Process</span>
           </Badge>
-          <h1 className="text-2xl md:text-4xl font-bold mt-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg font-bold mt-2">
             Our Simple, Smart, and Scalable Process
           </h1>
-          <p className="mt-2 max-w-xl mx-auto">
+          <p className="font-thin dark:text-gray-300 max-w-2xl  mx-auto">
             We design, develop, and implement automation tools that help you
             work smarter, not harder.
           </p>
@@ -171,57 +91,29 @@ export default function Home() {
           </div>
         </div>
 
-
-              <div className="relative mt-8 sm:mt-12 md:mt-12 text-center">
-          <Badge className="backdrop-blur-md bg-[#abff02]/20 border border-white/20 text-black dark:text-white mx-auto mb-4">
-            <span className="text-sm font-semibold">Backed By</span>
-          </Badge>
-          <h1 className="text-2xl md:text-4xl font-bold mt-2">
-            Supported by Global Leaders
-          </h1>
-          <p className="mt-2 max-w-xl mx-auto">
-            We are proud to be backed by top startup accelerator programs and
-            global technology leaders.
-          </p>
-          <BackedUpSlider />
-        </div>
-
-
-        <div className="mt-6 sm:mt-8 md:mt-8">
-          {/* <Suspense fallback={<div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg mx-4"></div>}> */}
-          <Benefits />
-          {/* </Suspense> */}
-        </div>
-
         
 
-
-        <div className="relative mt-8 sm:mt-12 md:mt-12 text-center">
-          <Badge className="backdrop-blur-md bg-[#abff02]/20 border border-white/20 text-black dark:text-white mx-auto mb-4">
+        <div className="relative pt-30 text-center">
+          <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mx-auto mb-4">
             <span className="text-sm font-semibold">Our Clients</span>
           </Badge>
-          <h1 className="text-2xl md:text-4xl font-bold mt-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">
             Trusted by the Best in the Industry
           </h1>
-          <p className="mt-2 max-w-xl mx-auto">
+          <p className="max-w-xl mx-auto font-thin dark:text-gray-300">
             We are proud to serve as the automation provider for top-tier
             automotive and tech clients across the globe.
           </p>
           <CompanySlideshow />
         </div>
 
-        <div className="mt-6 sm:mt-8 md:mt-8">
-          {/* <Suspense fallback={<div className="h-64 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg mx-4"></div>}> */}
+        <div className="pt-30">
           <Faq />
-          {/* </Suspense> */}
         </div>
         <div className="p-4 md:p-8">
-          <TextHoverEffect text="mendygo" />
+          <TextHoverEffect text="mendygo"  />
         </div>
         <div>
-          {/* <Suspense fallback={<div className="h-48 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg mx-4"></div>}>
-        <SignUpForm />
-          </Suspense> */}
           <SignUpForm />
         </div>
       </div>

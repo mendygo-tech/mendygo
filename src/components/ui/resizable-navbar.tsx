@@ -209,7 +209,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
           >
             {/* Animated Background - Optimized for performance */}
             <div
-              className={`absolute inset-0 h-full w-full rounded-full bg-[#abff02] z-10 transition-opacity duration-150 ${
+              className={`absolute inset-0 h-full w-full rounded-full bg-[#9ffb1e] z-10 transition-opacity duration-150 ${
                 hovered === idx || (visible && item.isModal) ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ 

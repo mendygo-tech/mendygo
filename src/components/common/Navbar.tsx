@@ -29,17 +29,21 @@ type NavItemType = {
 
 export function MyNavbar() {
     const navItems = [
+        // {
+        //     name: "Services",
+        //     link: "/services/engineering",
+        //     dropdown: {
+        //         title: "Services",
+        //         links: [
+        //             { href: "/services/engineering", label: "Engineering" },
+        //             { href: "/services/projectManagement", label: "Project Management" },
+        //             { href: "/services/technology", label: "Tech & Integration" },
+        //         ],
+        //     }
+        // },
         {
-            name: "Services",
-            link: "/services/engineering",
-            dropdown: {
-                title: "Services",
-                links: [
-                    { href: "/services/engineering", label: "Engineering" },
-                    { href: "/services/projectManagement", label: "Project Management" },
-                    { href: "/services/technology", label: "Tech & Integration" },
-                ],
-            }
+            name: "Industries",
+            link: "/industries",
         },
         {
             name: "Products",
@@ -51,29 +55,14 @@ export function MyNavbar() {
                     { href: "/products/mendysheets-digital-checksheets", label: "MendySheets" },
                     { href: "/products/mendergy-energy-management-system", label: "Mendergy" },
                     { href: "/products/smartooe-dashboard", label: "SmartOEE" },
-                    { href: "/products/mendygoverse-ar-vr-mr-platform", label: "MendygoVerse" },
                     { href: "/products/mendyops-utility-monitoring-automation", label: "MendyOps" },
-                    { href: "/products/gotwinx-digital-twin-platform", label: "GoTwinX" },
+                    { href: "/products/mendylive-digital-twin-platform", label: "MendyLive" },
                     { href: "/products/thermendy-smart-climate-control", label: "Thermendy" },
                     { href: "/products/mendyai-industrial-intelligence-engine", label: "MendyAI" }
                 ],
             }
         },
-        {
-            name: "Industries",
-            link: "/industries/pulp-fiber",
-            dropdown: {
-                title: "Industries",
-                links: [
-                    { href: "/industries/pulp-fiber", label: "Pulp & Fiber" },
-                    { href: "/industries/chemicals", label: "Chemicals" },
-                    { href: "/industries/food-beverage", label: "Food & Beverage" },
-                    { href: "/industries/buildings", label: "Buildings and Factories" },
-                    { href: "/industries/retail-malls", label: "Retail & Malls" },
-                    { href: "/industries/pharmaceuticals", label: "Pharmaceuticals" },
-                ],
-            }
-        },
+        
         { name: "Blog", link: "https://blogs.mendygo.com/" },
         {
             name: "Company",
@@ -94,21 +83,21 @@ export function MyNavbar() {
     const { theme, setTheme } = useTheme();
 
     const ThemeToggleButton = ({ className = "" }: { className?: string }) => {
-        const toggleTheme = useCallback(() => {
-            const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
-            
-            if (!document.startViewTransition) {
-                switchTheme();
-                return;
-            }
-            
-            document.startViewTransition(switchTheme);
-        }, [theme, setTheme]);
-
         // const toggleTheme = useCallback(() => {
         //     const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
-        //     switchTheme();
+            
+        //     if (!document.startViewTransition) {
+        //         switchTheme();
+        //         return;
+        //     }
+            
+        //     document.startViewTransition(switchTheme);
         // }, [theme, setTheme]);
+
+        const toggleTheme = useCallback(() => {
+            const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+            switchTheme();
+        }, [theme, setTheme]);
 
         return (
             <button
@@ -118,8 +107,8 @@ export function MyNavbar() {
                 className={`
                     cursor-pointer
                     relative h-8 w-16 rounded-full
-                    bg-gray-200 dark:bg-gray-700
-                    border-2 border-gray-300 dark:border-gray-600
+                    bg-gray-200 dark:bg-[#141415]
+                    border-1 border-gray-300 dark:border-gray-600
                     flex items-center
                     transition-all duration-300 ease-in-out
                     hover:bg-gray-300 dark:hover:bg-gray-600
@@ -139,7 +128,7 @@ export function MyNavbar() {
 
                     <Moon
                         size={12}
-                        className="text-gray-400 dark:text-blue-300 transition-all duration-300 
+                        className="text-gray-400 dark:text-[#9FFB1E] transition-all duration-300 
                                  opacity-40 dark:opacity-100 transform scale-90 dark:scale-100"
                     />
                 </div>
@@ -147,13 +136,12 @@ export function MyNavbar() {
                 <div
                     className={`
                         relative h-6 w-6 rounded-full
-                        bg-white dark:bg-gray-800
-                        border-2 border-gray-300 dark:border-gray-500
+                        bg-white dark:bg-[#141415]
+                        border-1 border-gray-300 dark:border-gray-500
                         shadow-lg dark:shadow-xl
                         transform transition-all duration-300 ease-in-out
                         translate-x-0.5 dark:translate-x-8
                         flex items-center justify-center
-                        ring-0 hover:ring-1 hover:ring-blue-300 dark:hover:ring-blue-600
                     `}
                 >
                     <div className="relative w-3 h-3 flex items-center justify-center">
@@ -164,7 +152,7 @@ export function MyNavbar() {
                         />
                         <Moon
                             size={10}
-                            className="text-blue-400 absolute transition-all duration-300
+                            className="text-[#9FFB1E] absolute transition-all duration-300
                                      opacity-0 dark:opacity-100 transform rotate-180 dark:rotate-0 scale-75 dark:scale-100"
                         />
                     </div>

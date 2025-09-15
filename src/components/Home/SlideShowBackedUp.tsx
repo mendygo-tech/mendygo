@@ -46,7 +46,7 @@ const BackedUpSlider = () => {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-sm text-gray-800 dark:text-white font-medium mt-4">
+                <span className="text-sm text-gray-800 dark:text-[#928f8f] font-medium mt-4">
                   {company.name}
                 </span>
               </div>

@@ -23,7 +23,7 @@ const CompanySlider = () => {
   const allLogos = [...companies, ...companies];
 
   return (
-    <div className="relative w-full overflow-hidden py-8 bg-white dark:bg-black">
+    <div className="relative w-full overflow-hidden py-8  dark:bg-black">
       {/* Edge fade overlays */}
       <div className="pointer-events-none z-10 absolute inset-y-0 left-0 w-1/8 bg-gradient-to-r from-white dark:from-black"></div>
       <div className="pointer-events-none z-10 absolute inset-y-0 right-0 w-1/8 bg-gradient-to-l from-white dark:from-black"></div>
@@ -45,7 +45,7 @@ const CompanySlider = () => {
                   className="object-contain"
                 />
               </div>
-              <span className="text-sm text-gray-800 dark:text-white font-medium mt-4">
+              <span className="text-sm text-gray-800 dark:text-[#9B9999] font-medium mt-4">
                 {company.name}
               </span>
             </div>

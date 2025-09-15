@@ -17,14 +17,14 @@ const Step1 = () => {
                 <span className="bg-white/20 dark:bg-white/10 text-gray-900 dark:text-white px-2 py-1 text-xs rounded-md self-start mb-2 backdrop-blur-sm">
                     Step 1
                 </span>
-                <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">Smart Analyzing</h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight">
+                <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">Smart Analyzing</h2>
+                <p className="text-gray-600 dark:text-gray-300 text-xs font-thin leading-tight">
                     We assess your needs and identify AI solutions.
                 </p>
             </div>
 
             <div className="flex">
-                <div className="border-gray-300/30 dark:border-white/30 rounded-lg p-4 border-[1px] backdrop-blur-sm bg-white/5 dark:bg-black/20 shadow-lg">
+                <div className="border-gray-300/30 dark:border-white/30 dark:text-[#9B9999] rounded-lg p-4 border-[1px] backdrop-blur-sm bg-white/5 dark:bg-black/20 shadow-lg">
                     <div className="flex-1 flex flex-col items-center justify-center">
                         <div className="relative w-32 h-32 mb-">
                             <div className="absolute inset-0 rounded-full border border-gray-300/30 dark:border-white/20 bg-white/20 dark:bg-black/50 backdrop-blur-sm shadow-inner">
@@ -66,7 +66,7 @@ const Step1 = () => {
                             className="flex items-center gap-2 px-2 py-1 border border-gray-300/20 dark:border-white/10 rounded text-xs hover:bg-white/10 dark:hover:bg-white/5 transition-colors duration-200 backdrop-blur-sm shadow-sm"
                         >
                             <span className="text-[#abff02] drop-shadow-sm"><step.icon size={16} /></span>
-                            <span className="text-gray-800 dark:text-white/90">{step.label}</span>
+                            <span className="text-gray-800 dark:text-[#9B9999]">{step.label}</span>
                         </div>
                     ))}
                 </div>

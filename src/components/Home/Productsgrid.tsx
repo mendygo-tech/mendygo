@@ -9,8 +9,8 @@ import mendyAiHomeDark from "../../assets/mockups/mendyAiHomeDark.png";
 import mendyAiHomeLight from "../../assets/mockups/mendyAiHomeLight.png";
 import mendySheetsDark from "../../assets/mockups/mendergyDark.png";
 import mendySheetsLight from "../../assets/mockups/mendergyLight.png";
-import smaetOEEdark from "../../assets/mockups/smartOEEDark.png";
-import smaetOEElight from "../../assets/mockups/smartOEELight.png";
+import smaetOEEdark from "../../assets/smartOEEDark.png";
+import smaetOEElight from "../../assets/smartOEELight.png";
 import ThermendyLight from "../../assets/mockups/MainDashboardLight.png";
 import ThermendyDark from "../../assets/mockups/MainDashboardDark.png";
 import customizedIndustryLight from "../../assets/mockups/customizedIndustryLight.png";
@@ -21,7 +21,6 @@ import { Badge } from "../ui/badge";
 // import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-// Data is now configured with specific grid classes for the desired layout
 const Solutions = [
   {
     id: 3,

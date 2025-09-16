@@ -1,3 +1,4 @@
+'use client';
 import { Badge } from "../ui/badge";
 import { motion } from "motion/react";
 import {
@@ -50,7 +51,7 @@ const benefits = [
 
 const Benefits = () => {
     return (
-        <section className="relative bg-white dark:bg-black py-20 px-14 text-gray-900 dark:text-white flex flex-col items-center overflow-hidden">
+        <section className="relative bg-white dark:bg-black  px-14 text-gray-900 dark:text-white flex flex-col items-center overflow-hidden">
             {/* Green fog/shadow effect */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#abff02] rounded-full blur-3xl animate-pulse"></div>
@@ -76,7 +77,7 @@ const Benefits = () => {
                 {benefits.map((item, index) => (
                     <div
                         key={index}
-                        className="relative overflow-hidden bg-white dark:bg-black border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:shadow-xl hover:shadow-[#abff02]/10 transition-all duration-300 ease-in-out"
+                        className="relative overflow-hidden bg-white dark:bg-black border border-gray-200 dark:border-white/10 rounded-2xl p-6 hover:shadow-xl hover:shadow-[#abff02]/10 transition-all duration-300 ease-in-out"
                     >
                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#abff02]/60 via-[#abff02]/80 to-[#abff02]/60" />
                         <div className="mb-4">{item.icon}</div>

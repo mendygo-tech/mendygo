@@ -121,8 +121,6 @@ export const servicesContent: Record<
             "Automated batch record management and digital validation",
             "AI-driven anomaly detection for quality assurance",
             "Process optimization to reduce cycle times and waste",
-            "Compliance with cGMP, FDA, and global regulatory norms",
-            "Secure and scalable data platforms for regulated environments",
         ],
         conclusion:
             "Choose Mendygo to lead your Pharma 4.0 journey—unlocking smarter operations, faster market readiness, and uncompromised product quality.",

@@ -116,15 +116,15 @@ const Step2 = () => {
     };
 
     return (
-        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-xl border border-white/20 dark:border-white/10 text-gray-900 dark:text-white p-6 w-[26rem] h-80 rounded-xl shadow-2xl shadow-black/30 dark:shadow-black/30 flex flex-col">
+        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-xl border  border-white/20 dark:border-white/10 text-gray-900 dark:text-white p-6 w-[26rem] h-80 rounded-xl shadow-2xl shadow-black/30 dark:shadow-black/30 flex flex-col">
             <div className="flex flex-col mb-4">
                 <span className="bg-white/20 dark:bg-white/10 text-gray-900 dark:text-white px-2 py-1 text-xs rounded-md self-start mb-2 backdrop-blur-sm">
                     Step 2
                 </span>
-                <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">
+                <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">
                     AI Development
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight">
+                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight font-thin">
                     Building intelligent automation systems.
                 </p>
             </div>
@@ -133,7 +133,7 @@ const Step2 = () => {
              
                 <div className="flex items-center justify-between bg-white/20 dark:bg-white/5 backdrop-blur-sm px-3 py-1.5 text-xs border-b border-gray-300/20 dark:border-white/10">
                     <div className="flex items-center gap-2">
-                        <span className="font-mono text-gray-900 dark:text-white">
+                        <span className="font-mono text-gray-900 dark:text-[#9B9999]">
                             automation.py
                         </span>
                         <div className="w-1 h-1 bg-green-400 rounded-full animate-pulse shadow-sm shadow-green-400/50" />
@@ -157,9 +157,9 @@ const Step2 = () => {
                         </code>
                     </pre>
 
-                    <div className="absolute left-0 top-3 text-gray-500 dark:text-gray-600 text-xs font-mono select-none pointer-events-none">
+                    <div className="absolute left-0 top-3 text-gray-500 dark:text-gray-600 text-xs font-mono select-none pointer-events-none ">
                         {displayedText.split('\n').map((_, index) => (
-                            <div key={index} className="h-4 opacity-50">
+                            <div key={index} className="h-4 opacity-50 dark:text-[#9B9999]">
                                 {index + 1}
                             </div>
                         ))}

@@ -150,7 +150,7 @@ export default function VennDiagram() {
                         y={center.cy - 20}
                         width="40"
                         height="40"
-                        href="/logo.png"
+                        href="/logo_shadow.png"
                         className="pointer-events-none"
                     />
                 </svg>

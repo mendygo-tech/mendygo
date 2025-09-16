@@ -197,20 +197,6 @@ export const WavyBackground = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Pause/resume animation when tab visibility changes without re-init
-  useEffect(() => {
-    const onVis = () => {
-      if (document.hidden) {
-        if (animationIdRef.current) cancelAnimationFrame(animationIdRef.current);
-        animationIdRef.current = null;
-      } else if (!animationIdRef.current) {
-        render();
-      }
-    };
-    document.addEventListener("visibilitychange", onVis);
-    return () => document.removeEventListener("visibilitychange", onVis);
-  }, []);
-
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
     setIsSafari(
@@ -240,7 +226,7 @@ export const WavyBackground = ({
           position: "absolute",
         }}
       />
-      <div className={cn("relative z-10 w-full", className)}>{children}</div>
+      <div className={cn("relative z-10 w-full  ", className)}>{children}</div>
     </div>
   );
 };

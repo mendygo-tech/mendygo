@@ -139,7 +139,7 @@ const IndustrySlideshow = () => {
               onClick={() => {
                 Router.push(product.href);
               }}
-              className="rounded-2xl p-[1px] bg-gradient-to-br from-[#abff02]/30 via-transparent to-blue-500/30 shadow-[0_8px_30px_rgba(0,0,0,0.12)] h-full cursor-pointer"
+              className="rounded-2xl p-[1px] mx-3 bg-gradient-to-br from-[#abff02]/30 via-transparent to-blue-500/30 shadow-[0_8px_30px_rgba(0,0,0,0.12)] h-full cursor-pointer"
             >
               <article className="bg-white/90 dark:bg-black/70 rounded-2xl overflow-hidden ring-1 ring-black/5 dark:ring-white/10 backdrop-blur-sm h-[420px] flex flex-col">
                 <div className="relative h-64 md:h-72 overflow-hidden shrink-0">

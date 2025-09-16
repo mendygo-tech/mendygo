@@ -23,8 +23,8 @@ const Step3 = () => {
                 <span className="bg-white/20 dark:bg-white/10 text-gray-900 dark:text-white px-2 py-1 text-xs rounded-md self-start mb-2 backdrop-blur-sm">
                     Step 3
                 </span>
-                <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">Integration</h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight">
+                <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">Integration</h2>
+                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight font-thin">
                     Seamless integration with your tools.
                 </p>
             </div>

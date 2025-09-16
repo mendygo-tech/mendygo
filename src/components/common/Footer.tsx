@@ -14,10 +14,14 @@ import SuccessModal from "./SuccessModal";
 export default function Footer() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalMessage, setModalMessage] = React.useState("");
-  const [modalType, setModalType] = React.useState<"success" | "error">("success");
+  const [modalType, setModalType] = React.useState<"success" | "error">(
+    "success"
+  );
   function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-    const emailInput = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
+    const emailInput = (
+      e.currentTarget.elements.namedItem("email") as HTMLInputElement
+    ).value;
 
     fetch("/api/newsletter/subscribe", {
       method: "POST",
@@ -58,13 +62,36 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16 mb-12">
           <div className="col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <Image src={logo} alt="mendygo logo" width={3183} height={2734} className="h-8 w-8" />
-              <Image src={mendygoDark} alt="mendygo dark" width={128} height={440} className="dark:hidden block h-6 sm:h-8 w-auto" />
-              <Image src={mendygo} alt="mendygo light" width={128} height={440}  className="hidden dark:block h-6 sm:h-8 w-auto" />
+              <Image
+                src={logo}
+                alt="mendygo logo"
+                width={3183}
+                height={2734}
+                className="h-8 w-8"
+              />
+              <Image
+                src={mendygoDark}
+                alt="mendygo dark"
+                width={128}
+                height={440}
+                className="dark:hidden block h-6 sm:h-8 w-auto"
+              />
+              <Image
+                src={mendygo}
+                alt="mendygo light"
+                width={128}
+                height={440}
+                className="hidden dark:block h-6 sm:h-8 w-auto"
+              />
             </div>
-            <p className="text-sm text-gray-700 dark:text-gray-300">Join our newsletter</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              Join our newsletter
+            </p>
 
-            <form onSubmit={handleSubmit} className="hidden sm:flex items-center space-x-2">
+            <form
+              onSubmit={handleSubmit}
+              className="hidden sm:flex items-center space-x-2"
+            >
               <Input
                 type="email"
                 name="email"
@@ -72,7 +99,10 @@ export default function Footer() {
                 className="bg-black/10 max-w-[30%] dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder:text-gray-600 dark:placeholder:text-gray-400 text-sm"
                 required
               />
-              <Button type="submit" className="bg-[#abff02] hover:bg-[#abff029f] text-black px-3 py-2 whitespace-nowrap">
+              <Button
+                type="submit"
+                className="bg-[#abff02] hover:bg-[#abff029f] text-black px-3 py-2 whitespace-nowrap"
+              >
                 <Mail className="w-4 h-4 mr-1" /> Register
               </Button>
             </form>
@@ -92,57 +122,101 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-2">
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-3 sm:space-y-4">
-              <h4 className="font-semibold text-sm sm:text-base">Services</h4>
-              <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
-                {[
-                  { href: "/services/engineering", label: "Engineering" },
-                  { href: "/services/projectManagement", label: "Project Management" },
-                  { href: "/services/technology", label: "Tech & Integration" },
-                ].map((link, idx) => (
-                  <li key={idx}>
-                    <Link href={link.href} className="hover:text-[#abff02] block">{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-3 sm:space-y-4">
-              <h4 className="font-semibold text-sm sm:text-base">Industries</h4>
+        <div className="grid lg:grid-cols-1 ">
+          <div className="grid lg:grid-cols-4 lg:px-30 px-10 grid-cols-3 justify-items-center">
+            {/* <div className="space-y-3 sm:space-y-4 w-fit">
+              <h4 className="font-semibold text-sm sm:text-base ">Industries</h4>
               <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
                 {[
                   { href: "/industries/pulp-fiber", label: "Pulp & Fiber" },
                   { href: "/industries/chemicals", label: "Chemicals" },
-                  { href: "/industries/food-beverage", label: "Food & Beverage" },
-                  { href: "/industries/buildings", label: "Buildings and Factories" },
+                  {
+                    href: "/industries/food-beverage",
+                    label: "Food & Beverage",
+                  },
+                  {
+                    href: "/industries/buildings",
+                    label: "Buildings and Factories",
+                  },
                   { href: "/industries/retail-malls", label: "Retail & Malls" },
-                  { href: "/industries/pharmaceuticals", label: "Pharmaceuticals" },
+                  {
+                    href: "/industries/pharmaceuticals",
+                    label: "Pharmaceuticals",
+                  },
                 ].map((link, idx) => (
                   <li key={idx}>
-                    <Link href={link.href} className="hover:text-[#abff02] block">{link.label}</Link>
+                    <Link
+                      href={link.href}
+                      className="hover:text-[#abff02] block"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div> */}
+
+            <div className="space-y-3 sm:space-y-4 hidden lg:block">
+              <h4 className="font-semibold text-sm sm:text-base">Products</h4>
+              <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
+                {[
+                  {
+                    href: "/products/mendergy-energy-management-system",
+                    label: "Mendergy",
+                  },
+                  {
+                    href: "/products/mendysheets-digital-checksheets",
+                    label: "MendySheets",
+                  },
+                  { href: "/products/smartooe-dashboard", label: "SmartOEE" },
+                  {
+                    href: "/products/mendyai-industrial-intelligence-engine",
+                    label: "MendyView",
+                  },
+                  {
+                    href: "/products/thermendy-smart-climate-control",
+                    label: "Thermendy",
+                  },
+                  {
+                    href: "/products/mendyops-utility-monitoring-automation",
+                    label: "MendyOps",
+                  },
+                  {
+                    href: "/products/ai-based-maintenance",
+                    label: "AI Based Maintenance",
+                  },
+                  { href: "/products/mendylive", label: "MendyLive" },
+                ].map((link, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-[#abff02] block"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-6">
             <div className="space-y-3 sm:space-y-4">
               <h4 className="font-semibold text-sm sm:text-base">Links</h4>
               <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
                 {[
                   { href: "/gallery", label: "Gallery" },
                   { href: "/career", label: "Career" },
-                  { href: "/services/engineering", label: "Services" },
-                  { href: "/process", label: "Process" },
-                  { href: "/case-studies", label: "Case studies" },
+                  // { href: "/services/engineering", label: "Services" },
+                  // { href: "/process", label: "Process" },
+                  // { href: "/case-studies", label: "Case studies" },
                   { href: "/benefits", label: "Benefits" },
-                  { href: "/contact", label: "Pricing" },
+                  // { href: "/contact", label: "Pricing" },
                 ].map((link, idx) => (
                   <li key={idx}>
-                    <Link href={link.href} className="hover:text-[#abff02] block">{link.label}</Link>
+                    <Link
+                      href={link.href}
+                      className="hover:text-[#abff02] block"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -154,11 +228,16 @@ export default function Footer() {
                 {[
                   { href: "/", label: "Home" },
                   { href: "/aboutus", label: "About" },
-                  { href: "/blog", label: "Blog" },
+                  { href: "https://blogs.mendygo.com/", label: "Blog" },
                   { href: "/contact", label: "Contact" },
                 ].map((link, idx) => (
                   <li key={idx}>
-                    <Link href={link.href} className="hover:text-[#abff02] block">{link.label}</Link>
+                    <Link
+                      href={link.href}
+                      className="hover:text-[#abff02] block"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -168,9 +247,18 @@ export default function Footer() {
               <h4 className="font-semibold text-sm sm:text-base">Socials</h4>
               <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
                 {[
-                  { href: "https://www.instagram.com/mendygo.ai", label: "Instagram" },
-                  { href: "https://www.facebook.com/share/1Yug6qgHLe", label: "Facebook" },
-                  { href: "https://www.linkedin.com/company/mendygo/", label: "LinkedIn" },
+                  {
+                    href: "https://www.instagram.com/mendygo.ai",
+                    label: "Instagram",
+                  },
+                  {
+                    href: "https://www.facebook.com/share/1Yug6qgHLe",
+                    label: "Facebook",
+                  },
+                  {
+                    href: "https://www.linkedin.com/company/mendygo/",
+                    label: "LinkedIn",
+                  },
                   { href: "https://x.com/MendygoSocial", label: "X" },
                 ].map((link, idx) => (
                   <li key={idx}>

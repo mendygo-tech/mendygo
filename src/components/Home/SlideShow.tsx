@@ -15,7 +15,7 @@ const companies = [
   { name: 'Tata Motors', image: Tata },
   { name: 'Dayco', image: Dayco },
   { name: 'Maruti', image: Maruti },
-  { name: 'JSW', image: jsw },
+  { name: 'JSW Steel', image: jsw },
 ];
 
 const CompanySlider = () => {
@@ -23,7 +23,7 @@ const CompanySlider = () => {
   const allLogos = [...companies, ...companies];
 
   return (
-    <div className="relative w-full overflow-hidden py-8 bg-white dark:bg-black">
+    <div className="relative w-full overflow-hidden py-8  dark:bg-black">
       {/* Edge fade overlays */}
       <div className="pointer-events-none z-10 absolute inset-y-0 left-0 w-1/8 bg-gradient-to-r from-white dark:from-black"></div>
       <div className="pointer-events-none z-10 absolute inset-y-0 right-0 w-1/8 bg-gradient-to-l from-white dark:from-black"></div>
@@ -36,7 +36,7 @@ const CompanySlider = () => {
               className="flex flex-col items-center min-w-[120px]"
               aria-hidden={i >= companies.length ? true : undefined}
             >
-              <div className="relative w-20 h-20 mb-2">
+              <div className="relative w-25 h-20 mb-2">
                 <Image
                   src={company.image}
                   alt={company.name}
@@ -45,7 +45,7 @@ const CompanySlider = () => {
                   className="object-contain"
                 />
               </div>
-              <span className="text-sm text-gray-800 dark:text-white font-medium mt-4">
+              <span className="text-sm text-gray-800 dark:text-[#9B9999] font-medium mt-4">
                 {company.name}
               </span>
             </div>
@@ -75,6 +75,13 @@ const CompanySlider = () => {
           }
         }
 
+        /* Mobile devices */
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation-duration: 7s;
+          }
+        }
+
         /* Respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
           .animate-scroll {
@@ -82,8 +89,9 @@ const CompanySlider = () => {
             animation-iteration-count: 1;
           }
         }
-      `}</style>
-    </div>
+            `}</style>
+        </div>
+    
   );
 };
 

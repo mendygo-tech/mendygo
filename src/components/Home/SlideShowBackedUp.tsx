@@ -26,7 +26,7 @@ const BackedUpSlider = () => {
   return (
     <div className="relative w-full py-8 ">
       <div className="w-full">
-        <div className="grid lg:flex items-center gap-20 justify-center">
+        <div className="grid lg:flex items-center lg:gap-20 gap-10 justify-center">
           {allLogos.map((company, i) => {
             const src = mounted && resolvedTheme === 'dark' && company.darkImage
               ? company.darkImage
@@ -46,6 +46,7 @@ const BackedUpSlider = () => {
                     className="object-contain"
                   />
                 </div>
+
                 <span className="text-sm text-gray-800 dark:text-[#928f8f] font-medium mt-4">
                   {company.name}
                 </span>

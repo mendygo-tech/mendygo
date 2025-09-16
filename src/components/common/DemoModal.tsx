@@ -338,13 +338,13 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.95, y: 50 }}
                             transition={{ duration: 0.3 }}
-                            className="bg-neutral-900 rounded-2xl p-6 w-full max-w-md text-white shadow-xl border border-white/10 relative"
+                            className="dark:bg-neutral-900 bg-[#f8f9fa]/80 rounded-2xl p-6 w-full max-w-md dark:text-white shadow-xl border dark:border-white/10 border-black/20 relative"
                             onClick={(e) => e.stopPropagation()}
                             style={{ zIndex: 1000000 }}
                         >
                             <button
                                 onClick={handleClose}
-                                className="absolute top-4 right-4 text-white hover:text-[#abff02] transition"
+                                className="absolute top-4 right-4 dark:text-white hover:text-[#9FFB1E] transition"
                             >
                                 <X className="w-5 h-5" />
                             </button>
@@ -354,8 +354,8 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                             </h2>
                             
                             <div className="text-center mb-4">
-                                <p className="text-sm font-medium text-white mb-1">Start your Digital Transformation Journey today</p>
-                                <p className="text-xs text-white/70">Use this form to tell us about you, your company, and your business goals. One of our digital transformation experts will be in touch shortly.</p>
+                                <p className="text-sm font-medium dark:text-white mb-1">Start your Digital Transformation Journey today</p>
+                                <p className="text-xs dark:text-white/70">Use this form to tell us about you, your company, and your business goals. One of our digital transformation experts will be in touch shortly.</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">
@@ -366,7 +366,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
+                                    className="w-full rounded-lg border dark:border-white/20 border-black/20 bg-transparent px-4 py-2 dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition"
                                 />
                                 <input
                                     type="text"
@@ -375,7 +375,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                     value={formData.companyName}
                                     onChange={handleChange}
                                     required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
+                                    className="w-full rounded-lg border dark:border-white/20 border-black/20 bg-transparent px-4 py-2 dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition"
                                 />
                                 <input
                                     type="text"
@@ -384,7 +384,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                     value={formData.jobTitle}
                                     onChange={handleChange}
                                     required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
+                                    className="w-full rounded-lg border dark:border-white/20 border-black/20 bg-transparent px-4 py-2 dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition"
                                 />
                                 <input
                                     type="email"
@@ -393,7 +393,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
+                                    className="w-full rounded-lg border dark:border-white/20 border-black/20 bg-transparent px-4 py-2 dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition"
                                 />
                                 <div className="relative">
                                     <div className="flex">
@@ -401,7 +401,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                             <button
                                                 type="button"
                                                 onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                                                className="flex items-center gap-2 px-3 py-2 rounded-l-lg border border-white/20 bg-transparent text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
+                                                className="flex items-center gap-2 px-3 py-2 rounded-l-lg border dark:border-white/20 border-black/20 bg-transparent dark:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition"
                                             >
                                                 <span className="text-lg">{selectedCountry.flag}</span>
                                                 <span className="text-sm">{selectedCountry.phoneCode}</span>
@@ -414,16 +414,16 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                                         initial={{ opacity: 0, y: -10 }}
                                                         animate={{ opacity: 1, y: 0 }}
                                                         exit={{ opacity: 0, y: -10 }}
-                                                        className="absolute top-full left-0 mt-1 w-64 bg-neutral-800 border border-white/20 rounded-lg shadow-xl"
+                                                        className="absolute top-full left-0 mt-1 w-64 bg-neutral-800 border dark:border-white/20 border-black/20 rounded-lg shadow-xl"
                                                         style={{ zIndex: 1000001 }}
                                                     >
-                                                        <div className="p-2 border-b border-white/10">
+                                                        <div className="p-2 border-b dark:border-white/10 border-black/20">
                                                             <input
                                                                 type="text"
                                                                 placeholder="Search countries..."
                                                                 value={countrySearchTerm}
                                                                 onChange={(e) => setCountrySearchTerm(e.target.value)}
-                                                                className="w-full px-3 py-2 bg-neutral-700 border border-white/20 rounded text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] text-sm"
+                                                                className="w-full px-3 py-2 bg-neutral-700 border dark:border-white/20 border-black/20 rounded dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] text-sm"
                                                                 autoFocus
                                                             />
                                                         </div>
@@ -438,15 +438,15 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                                                             setIsCountryDropdownOpen(false);
                                                                             setCountrySearchTerm("");
                                                                         }}
-                                                                        className="w-full flex items-center gap-3 px-3 py-2 text-left text-white hover:bg-white/10 transition"
+                                                                        className="w-full flex items-center gap-3 px-3 py-2 text-left dark:text-white hover:bg-white/10 transition"
                                                                     >
                                                                         <span className="text-lg">{country.flag}</span>
                                                                         <span className="text-sm flex-1">{country.name}</span>
-                                                                        <span className="text-sm text-white/60">{country.phoneCode}</span>
+                                                                        <span className="text-sm dark:text-white/60">{country.phoneCode}</span>
                                                                     </button>
                                                                 ))
                                                             ) : (
-                                                                <div className="px-3 py-4 text-center text-white/60 text-sm">
+                                                                <div className="px-3 py-4 text-center dark:text-white/60 text-sm">
                                                                     No countries found
                                                                 </div>
                                                             )}
@@ -463,7 +463,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             required
-                                            className="flex-1 rounded-r-lg border-l-0 border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition"
+                                            className="flex-1 rounded-r-lg border-l-0 border dark:border-white/20 border-black/20 bg-transparent px-4 py-2 dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition"
                                         />
                                     </div>
                                 </div>
@@ -473,12 +473,12 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full rounded-lg border border-white/20 bg-transparent px-4 py-2 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02] transition resize-none"
+                                    className="w-full rounded-lg border dark:border-white/20 border-black/20 bg-transparent px-4 py-2 dark:text-white placeholder:dark:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#9FFB1E] transition resize-none"
                                 />
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#abff02] text-black font-semibold py-2 rounded-lg hover:brightness-110 transition disabled:opacity-60"
+                                    className="w-full bg-[#9FFB1E] text-black font-semibold py-2 rounded-lg hover:brightness-110 transition disabled:opacity-60"
                                 >
                                     {isSubmitting ? "Submitting..." : "Submit"}
                                 </button>

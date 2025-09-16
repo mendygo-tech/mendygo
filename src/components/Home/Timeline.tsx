@@ -8,7 +8,6 @@ import {
     FileBarChart2,
     SearchCode,
     Settings,
-    ArrowRight,
 } from 'lucide-react';
 // import logo from '../../assets/logo.png';
 import VennDiagram from './VennDiagram';
@@ -61,11 +60,11 @@ const Timeline = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#f8f9fa] via-[#f8f9fa] to-white dark:from-black dark:via-black dark:to-black flex items-center justify-center p-4 pt-18 font-sans">
             <div className="w-full max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg">
+                <div className="text-center lg:mb-16">
+                    <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg">
                         How do we do?
                     </h1>
-                    <p className="text-lg md:text-xl font-thin dark:text-gray-300 text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="lg:text-md px-7 font-thin dark:text-gray-300 text-gray-600 max-w-3xl mx-auto leading-relaxed">
                         &quot;In a world filled with challenges, solutions can be—simple or complex, and we consistently choose the path of simplicity&quot;
                     </p>
                 </div>
@@ -95,9 +94,6 @@ const Timeline = () => {
         </p>
     </div>
 
-    <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-        <ArrowRight className="w-5 h-5 text-gray-900 dark:text-white" />
-    </div>
 
     {/* The gradient overlay div might interfere with the neumorphic background.
         If you want a pure neumorphic look, you might remove or adjust this. */}

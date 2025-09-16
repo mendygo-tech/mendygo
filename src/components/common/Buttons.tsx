@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback } from "react";
 import { Sparkles, Play, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import DemoModal from "./DemoModal";
 
 export default function GlassmorphedButtons() {
@@ -16,50 +16,45 @@ export default function GlassmorphedButtons() {
 
   return (
     <>
-      <div className="flex  items-center justify-center py-5 gap-5">
+      <div className="flex lg:flex-row items-center justify-center py-5 lg:gap-5 gap-2">
         <motion.button
           onClick={openModal}
-          className="group relative w-full overflow-hidden rounded-full px-8 py-4 lg:text-base text-sm font-bold min-w-[200px]
-    transition-all duration-300 cursor-pointer
-    bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/50 to-[#abff01]/30
-    dark:bg-gradient-to-br dark:from-[#abff01]/60 dark:via-[#abff01]/65 dark:to-[#abff01]/35 text-black 
-    "
+          className="
+            flex items-center justify-center gap-2
+            lg:w-full lg:min-w-[200px] min-w-[150px] rounded-full
+            lg:px-6 py-4
+            lg:text-base text-xs font-bold text-black
+            cursor-pointer
+            transition-colors duration-300
+            bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/50 to-[#abff01]/30
+            dark:bg-gradient-to-br dark:from-[#abff01]/60 dark:via-[#abff01]/65 dark:to-[#abff01]/35
+            border border-white/10 hover:border-white/30
+          "
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
         >
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-white/70 rounded-xl opacity-5 mb-5"
-            initial={{ x: "-100%" }}
-            whileHover={{ x: "100%" }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          />
-          <span className="relative z-10 flex items-center justify-center gap-2">
-            <Sparkles className="h-5 w-5 group-hover:rotate-12 group-hover:drop-shadow-sm" />
-            Schedule Demo
-          </span>
-          <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 transition-all duration-300" />
+          <Sparkles className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+          Schedule Demo
         </motion.button>
 
         <motion.button
           onClick={openModalTwo}
-          className="group relative w-full sm:w-auto overflow-hidden rounded-full px-8 py-4 lg:text-base text-sm font-bold   min-w-[200px]
-    transition-all duration-300 cursor-pointer
-    bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/50 to-[#abff01]/30
-    dark:bg-gradient-to-br dark:from-[#abff01]/60 dark:via-[#abff01]/65 dark:to-[#abff01]/35 text-black "
+          className="
+            flex items-center justify-center gap-2
+            w-full lg:min-w-[200px]  min-w-[150px] rounded-full
+            lg:px-6 py-4
+            lg:text-base text-xs font-bold text-black
+            cursor-pointer
+            transition-colors duration-300
+            bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/50 to-[#abff01]/30
+            dark:bg-gradient-to-br dark:from-[#abff01]/60 dark:via-[#abff01]/65 dark:to-[#abff01]/35
+            border border-white/10 hover:border-white/30
+          "
           whileHover={{ scale: 1.02, y: -2 }}
           whileTap={{ scale: 0.98 }}
         >
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 rounded-xl opacity-5 mb-5"
-            initial={{ x: "-100%" }}
-            whileHover={{ x: "100%" }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          />
-          <span className="relative z-10 flex items-center justify-center gap-2">
-            <Play className="h-5 w-5 group-hover:scale-110 group-hover:drop-shadow-sm" />
-            Know Us
-          </span>
-          <div className="absolute inset-0 rounded-xl border border-white/10 group-hover:border-white/30 transition-all duration-300" />
+          <Play className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+          Know Us
         </motion.button>
       </div>
 
@@ -68,7 +63,7 @@ export default function GlassmorphedButtons() {
       <AnimatePresence>
         {isModalTwoOpen && (
           <motion.div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+            className="fixed inset-0  bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -78,11 +73,11 @@ export default function GlassmorphedButtons() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 50 }}
               transition={{ duration: 0.3 }}
-              className="bg-neutral-900 rounded-2xl p-6 w-full max-w-4xl text-white shadow-xl border border-white/10 relative"
+              className="dark:bg-neutral-900 bg-[#f8f9fa]/80 rounded-2xl p-6 w-full max-w-4xl dark:text-white shadow-xl border border-white/10 relative"
             >
               <button
                 onClick={closeModalTwo}
-                className="absolute top-4 right-4 text-white hover:text-[#abff02] transition"
+                className="absolute top-4 right-4 dark:text-white  transition"
               >
                 <X className="w-5 h-5" />
               </button>

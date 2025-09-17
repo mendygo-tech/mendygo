@@ -1,8 +1,8 @@
 import React from "react";
 
 import Image from "next/image";
-import HeroDashboardLight from "@/assets/whiteHero-min.avif";
-import HeroDashboardDark from "@/assets/DarkHero-min.avif";
+// import HeroDashboardLight from "whiteHero.png";
+// import HeroDashboardDark from "DarkHero-min.png";
 // import { motion } from "motion/react";
 import GlassmorphedButtons from "../common/Buttons";
 
@@ -31,24 +31,29 @@ const Hero2 = () => {
       <div className="  pt-10 lg:p-0  flex justify-center relative ">
         <div className="relative w-full h-full">
           <Image
-            src={HeroDashboardLight}
+            src="/whiteHero-min.png"
             alt="Mendygo dashboard"
-            fetchPriority="high"
+            height={1000}
+            width={1000}
+            placeholder="blur"
+            blurDataURL="/whiteHero-min.avif"
+            priority
             className="w-full h-full object-cover dark:hidden "
-            loading="lazy"
             sizes="(max-width: 768px) 100vw, 90vw"
           />
 
           <Image
-            src={HeroDashboardDark}
+            src="/DarkHero-min.png"
             alt="Mendygo dashboard"
             height={1000}
             width={1000}
-            fetchPriority="high"
+            priority
+            placeholder="blur"
+            blurDataURL="/DarkHero-min.avif"
             sizes="(max-width: 768px) 100vw, 90vw"
             className="w-full h-full object-cover hidden dark:block"
-            loading="lazy"
-          />
+
+/>
         </div>
       </div>
     </>

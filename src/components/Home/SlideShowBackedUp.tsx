@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import MicrosoftSt from '../../assets/microsoftForStartups.png';
-import MicrosoftStDark from '../../assets/microsoftForStartupsdark.png';
-import GoogleSt from '../../assets/googleForStartups.png';
-import GoogleStDark from '../../assets/googleForStartupsdark.png';
-import cii from '../../assets/cii.png';
-import ciidark from '../../assets/ciidark.png';
+import MicrosoftSt from '../../assets/company_logo/microsoftForStartups.png';
+import MicrosoftStDark from '../../assets/company_logo/microsoftForStartupsdark.png';
+import GoogleSt from '../../assets/company_logo/googleForStartups.png';
+import GoogleStDark from '../../assets/company_logo/googleForStartupsdark.png';
+import cii from '../../assets/company_logo/cii.png';
+import ciidark from '../../assets/company_logo/ciidark.png';
 import { useTheme } from 'next-themes';
 
 

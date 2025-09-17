@@ -15,8 +15,8 @@ import {
     Factory,
     Component
 } from "lucide-react";
-import d1 from "../../assets/D1.jpeg"
-import d2 from "../../assets/D2.jpeg"
+import d1 from "../../assets/gallery/D1.jpeg"
+import d2 from "../../assets/gallery/D2.jpeg"
 
 export default function AboutPage() {
     return (

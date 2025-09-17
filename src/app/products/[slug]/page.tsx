@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { productsData } from '@/data/productsdata';
 
+
 interface ProductFeature { title: string; description: string }
 interface ProductExtended {
     name: string; tagline: string; description: string; image: string;

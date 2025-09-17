@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -13,6 +12,8 @@ body {
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-urbanist), sans-serif;
+  letter-spacing: 0.04em;
 }
 /* Smooth theme transitions - optimized for performance */
 * {

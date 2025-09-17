@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'  
-import EcosystemLight from "@/assets/LargeImages/ecosystemLight-min.png";
-import EcosystemDark from "@/assets/LargeImages/ecosystemDarklg-min.png";
+import EcosystemLight from "@/assets/LargeImages/ecosystemLight.avif";
+import EcosystemDark from "@/assets/LargeImages/ecosystemDarklg-min.avif";
 
 const Ecosystem = () => {
   return (
@@ -11,10 +11,8 @@ const Ecosystem = () => {
           <Image
           src={EcosystemLight}
           alt="Mendygo Ecosystem"
-          layout='intrinsic'
           height={1000}
           width={950}
-          placeholder='blur'
           priority
           className="dark:hidden pt-15 lg:px-32 px-20 md:px-28  object-contain"
           
@@ -22,9 +20,7 @@ const Ecosystem = () => {
           <Image
           src={EcosystemDark}
           alt="Mendygo Ecosystem"
-          layout='intrinsic'
           height={1000}
-          placeholder='blur'
           priority
           className="hidden dark:block lg:scale-100 lg:-top-10 lg:mt-0 md:-top-30  mt-15 -bottom-5 absolute object-contain"
           

@@ -1,8 +1,8 @@
 import React from "react";
 
 import Image from "next/image";
-import HeroDashboardLight from "@/assets/LargeImages/whiteHero-min.png";
-import HeroDashboardDark from "@/assets/LargeImages/DarkHero-min.png";
+import HeroDashboardLight from "@/assets/LargeImages/whiteHero.avif";
+import HeroDashboardDark from "@/assets/LargeImages/DarkHero.avif";
 // import { motion } from "motion/react";
 import GlassmorphedButtons from "../common/Buttons";
 
@@ -35,7 +35,6 @@ const Hero2 = () => {
             alt="Mendygo dashboard"
             height={1000}
             width={1000}
-            placeholder="blur"
             priority
             className="w-full h-full object-cover dark:hidden "
             sizes="(max-width: 768px) 100vw, 90vw"
@@ -47,7 +46,6 @@ const Hero2 = () => {
             height={1000}
             width={1000}
             priority
-            placeholder="blur"
             sizes="(max-width: 768px) 100vw, 90vw"
             className="w-full h-full object-cover hidden dark:block"
 

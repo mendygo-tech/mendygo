@@ -357,16 +357,18 @@ export const NavbarLogo = () => (
       <Image
       src={logo_shadow}
       alt="logo light mode"
-      width={30}
-      height={30}
+      // width={30}
+      // height={30}
+      priority
       style={{ height: 'auto', width: 'auto' }}
       className="dark:hidden"
       />
       <Image
       src={logo}
       alt="logo dark mode"
-      width={30}
-      height={30}
+      // width={30}
+      // height={30}
+      priority
       style={{ height: 'auto', width: 'auto' }}
       className="hidden dark:block"
       />
@@ -377,8 +379,9 @@ export const NavbarLogo = () => (
         alt="mendygo light mode"
         className="object-contain h-12 w-auto dark:hidden mt-[-1px] lg:mr-24"
         style={{ height: '3rem', width: 'auto' }}
-        width={120}
-        height={48}
+        // width={120}
+        // height={48}
+        priority
         sizes="120px"
       />
       <Image
@@ -386,8 +389,9 @@ export const NavbarLogo = () => (
         alt="mendygo dark mode"
         className="object-contain h-8 w-auto hidden dark:block lg:mr-24"
         style={{ height: '2rem', width: 'auto' }}
-        width={120}
-        height={32}
+        // width={120}
+        // height={32}
+        priority
         sizes="120px"
       />
     </div>

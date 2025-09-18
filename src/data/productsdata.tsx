@@ -139,8 +139,8 @@ export const productsData = {
             { title: "HVAC System Integration", description: "Compatible with Modbus and BACnet protocols for seamless deployment." },
             { title: "Cloud-Based Management", description: "Monitor and control remotely via web or mobile apps." }
         ],
-        image: MendergyLight, // placeholder
-        darkImage: MendergyDark,
+        image: MainDashboardLight, // placeholder
+        darkImage: MainDashboardDark,
     },
     "mendyai-industrial-intelligence-engine": {
         heroTitle: "MendyAI – Industrial Intelligence Engine",

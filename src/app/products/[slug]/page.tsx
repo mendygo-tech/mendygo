@@ -32,7 +32,7 @@ export default function ProductPage() {
                 <div>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg  whitespace-pre-line">{heroTitle}</h1>
                     <h2 className=" md:text-xl font-semibold mt-2 text-slate-700 dark:text-slate-300">{heroSubtitle}</h2>
-                    <p className="pt-2 text-base md:text-md font-thin leading-relaxed max-w-xl text-slate-900 dark:text-slate-300">{heroDescription}</p>
+                    <p className="pt-2 text-base md:text-md font-thin leading-relaxed max-w-xl text-slate-950 dark:text-slate-200">{heroDescription}</p>
                 </div>
                 <div className="flex justify-center  md:justify-end">
                     <div className="relative h-100 w-full hidden md:block lg:block">
@@ -52,7 +52,7 @@ export default function ProductPage() {
                         </div>
                         <div className="flex-1">
                             <h2 className="text-3xl dark:text-gray-300 font-bold text-center md:text-left">Why Choose {product.heroTitle.split('–')[0]}</h2>
-                            <p className="mt-1 text-slate-600 font-thin dark:text-slate-400 text-center md:text-left max-w-2xl">{whyTagline}</p>
+                            <p className="mt-1 text-slate-600 font-thin dark:text-slate-300 text-center md:text-left max-w-2xl">{whyTagline}</p>
                             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                                 {features.map((f, i) => (
                                     <div key={i} className="p-5 rounded-xl bg-white dark:bg-[#141416] border border-slate-200 dark:border-none shadow-sm hover:shadow-md transition flex flex-col">

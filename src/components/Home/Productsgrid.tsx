@@ -354,7 +354,7 @@ const Products = () => {
                                 <p className="text-sm text-gray-900 font-semibold dark:text-gray-300">
                                     {solution.subtitle}
                                 </p>
-                                <p className="text-sm text-gray-600 font-thin pt-1 dark:text-gray-400">
+                                <p className="text-sm text-gray-900 font-thin pt-1 dark:text-gray-300">
                                     {solution.description}
                                 </p>
                             </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import Hero from '../../assets/hmc.svg';
-import Dayco from '../../assets/dayco.png';
-import Tata from '../../assets/tata.webp';
-import Smh from '../../assets/smh.webp';
-import Maruti from '../../assets/maruti.webp';
-import Marelli from '../../assets/marelli.png';
-import jsw from '../../assets/jsw.png';
+import Hero from '../../assets/company_logo/hmc.svg';
+import Dayco from '../../assets/company_logo/dayco.png';
+import Tata from '../../assets/company_logo/tata.webp';
+import Smh from '../../assets/company_logo/smh.webp';
+import Maruti from '../../assets/company_logo/maruti.webp';
+import Marelli from '../../assets/company_logo/marelli.png';
+import jsw from '../../assets/company_logo/jsw.png';
 
 const companies = [
   { name: 'SKH Group', image: Smh },

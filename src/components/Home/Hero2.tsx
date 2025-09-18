@@ -1,8 +1,8 @@
 import React from "react";
 
 import Image from "next/image";
-import HeroDashboardLight from "@/assets/LargeImages/whiteHero.avif";
-import HeroDashboardDark from "@/assets/LargeImages/DarkHero.avif";
+import HeroDashboardLight from "@/assets/LargeImages/whiteHeroResized.webp";
+import HeroDashboardDark from "@/assets/LargeImages/DarkHeroResized.webp";
 // import { motion } from "motion/react";
 import GlassmorphedButtons from "../common/Buttons";
 

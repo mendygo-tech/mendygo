@@ -4,6 +4,7 @@ import Hero2 from "@/components/Home/Hero2";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Badge } from "@/components/ui/badge";
 // import { useTheme } from "next-themes";
+import CountdownCard from "@/components/Home/CountdownCard";
 import CompanySlideshow from "@/components/Home/SlideShow";
 import BackedUpSlider from "@/components/Home/SlideShowBackedUp";
 import Products from "@/components/Home/Productsgrid";
@@ -26,7 +27,7 @@ export default function Home() {
     <div className="relative overflow-hidden min-h-screen bg-[#f8f9fa] dark:bg-black dark:text-white text-black">
       <div>
         <Hero2 />
-        <div className="relative mt-8 sm:mt-12 md:mt-12 mb-40 text-center lg:pb-20">
+        <div className="relative mt-8 sm:mt-12 md:mt-12 mb-10 text-center lg:pb-20">
           <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mx-auto mb-4">
             <span className="text-sm font-semibold">Backed By</span>
           </Badge>
@@ -38,7 +39,10 @@ export default function Home() {
             global technology leaders.
           </p>
           <BackedUpSlider />
+
         </div>
+        <CountdownCard />
+        
         <Ecosystem />
         <Products />
         <Timeline />

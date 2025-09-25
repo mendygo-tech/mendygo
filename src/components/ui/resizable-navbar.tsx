@@ -163,7 +163,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
                                         <div key={colIdx} className="flex flex-col flex-shrink-0">
                                             <div className="inline-block w-max">
                                                 {/* Theming for heading */}
-                                                <h3 className="text-xs font-semibold tracking-widest uppercase text-gray-500 dark:text-gray-400">{column.title}</h3>
+                                                <h3 className="text-xs font-bold tracking-widest uppercase text-gray-500 dark:text-gray-400">{column.title}</h3>
                                                 <div className="mt-2 mb-2 h-[1px] w-full bg-[#9ffb1e]"></div>
                                             </div>
 
@@ -188,9 +188,9 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
                                                 <button
                                                     onClick={() => { onItemClick?.(); router.push(column.viewAllLink.href); }}
                                                     // Theming for "View All" link
-                                                    className="group mt-4 flex items-center gap-2 text-sm font-medium text-[#9ffb1e] transition-colors hover:text-black dark:hover:text-white"
+                                                    className="group mt-4 flex w-fit items-center gap-2 text-sm font-medium text-black  transition-colors hover:text-black dark:hover:text-white"
                                                 >
-                                                    {column.viewAllLink.label}
+                                                    <span className="bg-[#9ffb1e]/50 p-2 rounded-md py-1">{column.viewAllLink.label}</span>
                                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                                                 </button>
                                             )}

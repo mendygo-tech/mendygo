@@ -3,10 +3,10 @@ import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
-const Features = ({ systemData, heading }) => {
+const Features = ({ systemData, heading}) => {
   return (
     <div>
-      <div className="pt-24  bordr-t border-black/10 dark:border-white/10">
+      <div className="pt-24  bordr-t border-black/10 dark:border-white/10 lg:px-20">
         <h2 className="text-3xl text-center font-bold mb-4 relative">
           {heading}
         </h2>
@@ -14,7 +14,7 @@ const Features = ({ systemData, heading }) => {
           Our modular approach allows you to choose the specific solutions you
           need, creating a customized system that fits your unique requirements.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${systemData.modules[0].desc.length > 2 ? "lg:grid-cols-3" : "lg:grid-cols-4"}  gap-16`}>
           {systemData.modules.map((module) => (
             <div
               key={module.title}
@@ -37,7 +37,9 @@ const Features = ({ systemData, heading }) => {
                 <div className="space-y-2 flex-grow">
                   {module.desc.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[#28783B] mt-0.5 flex-shrink-0" />
+                      {module.desc.length > 1 && (
+                        <Check className="w-5 h-5 text-[#28783B] mt-0.5 flex-shrink-0" />
+                      )}
                       <p className="text-sm text-black/70 dark:text-white/70">
                         {point}
                       </p>

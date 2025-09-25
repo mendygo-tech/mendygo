@@ -7,21 +7,27 @@ const HardwareOverview = ({ systemData }) => {
     <div>
         <div className="pt-20 mt-20  border-black/10 dark:border-white/10 px-10">
           <h2 className="text-3xl text-center font-bold pb-10 relative">
-            Hardware Overview
+            {systemData.title || "Hardware Overview"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {systemData.hardwareSpecs.map((spec) => (
+            {systemData.modules.map((spec) => (
               <div
                 key={systemData.title}
                 className="flex flex-col bg-white dark:bg-[#141416] rounded-xl border border-neutral-200 dark:border-neutral-800 "
               >
                 {spec.image && (
-                    <div className="relative w-full h-40 bg-neutral-100 dark:bg-neutral-900 rounded-xl">
+                    <div className="relative w-full h-40 dark:bg-black rounded-xl">
                         <Image
                             src={spec.image}
                             alt={spec.title}
                             layout="fill"
-                            className="object-contain p-10 rounded-t-xl"
+                            className="object-contain p-10 rounded-t-xl dark:hidden"
+                        />
+                        <Image
+                            src={spec.darkImage}
+                            alt={spec.title}
+                            layout="fill"
+                            className="object-contain p-10 rounded-t-xl hidden dark:block"
                         />
                     </div>
                 )}

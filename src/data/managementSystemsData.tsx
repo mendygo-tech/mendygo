@@ -1,7 +1,14 @@
 import { StaticImageData } from "next/image";
 
 // --- ACTION REQUIRED: Replace these placeholder imports with your actual image files ---
-import heroBMS from "@/assets/image.png";
+import heroBMS from "@/assets/buildingManagement.jpeg";
+import warehouseHero from "@/assets/3_warehouse management system .png" // Your hero image for BMS
+import factoryHero from "@/assets/factoryManagement.png"
+import energyHero from "@/assets/energymangement.jpeg"
+import constructionHero from "@/assets/constructionManagement.jpeg"
+import waterManagement from "@/assets/waterManagement.png"
+import hvacManagementHero from "@/assets/havcManagement.png"
+import GensetManageHero from "@/assets/Genset management.png"
 import heroGateway from "@/assets/imagesq.png"
 import hardware from "@/assets/hardwareSimple.png" // Your hero image for BMS
 import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS
@@ -10,11 +17,23 @@ import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS
 import hvacImage from "@/assets/icons/solutions/HVAC Managment.png";
 import energyImage from "@/assets/icons/solutions/Energy Management .png";
 import gensetImage from "@/assets/icons/solutions/Genset Management.png";
-import busbarImage from "@/assets/icon.png";
-import apfcImage from "@/assets/icon.png";
+import busbarImage from "@/assets/icons/features/temperature.png";
+import apfcImage from "@/assets/icons/features/ProactiveService.png";
 import waterImage from "@/assets/icons/solutions/Water Mangment .png";
-import stpImage from "@/assets/icon.png";
-import airImage from "@/assets/icon.png";
+import stpImage from "@/assets/icons/features/remoteImmobilization.png";
+import airImage from "@/assets/icons/solutions/Compressor.png";
+import RealTimeMonitoring from "@/assets/icons/features/live Performance.png";
+import smartOEE from "@/assets/icons/features/crashAnalytics.png";
+import WarehouseImage from "@/assets/icons/solutions/Buliding Management Solution.png";
+import SafetyComplianceImage from "@/assets/icons/features/report.png";
+import AiBasedMaintenanceImage from "@/assets/icons/features/warranty.png";
+import monitorHealth from "@/assets/icons/features/serviceAlerts.png"
+import orderfulfillment from "@/assets/icons/features/Configurability.png"
+import LeakDetection from "@/assets/icons/features/detectionscreen.png"
+import pumpImage from "@/assets/icons/solutions/Chiller Telemetics .png"
+import backupMonitoring from "@/assets/icons/features/Adoptability.png"
+import realTimeMap from "@/assets/icons/features/Geofences.png"
+import fleetManagement from "@/assets/icons/features/fleetManagement.png"
 
 export interface Module {
   title: string;
@@ -196,45 +215,85 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Transform your factory operations with Mendygo’s IoT-driven Factory Management solution. Gain complete visibility into production efficiency, equipment performance, and resource utilization to enhance productivity, reduce downtime, and ensure regulatory compliance.",
     assetsWeTrack: ["Production lines", "Machines & Equipment", "Energy Systems", "Warehouses", "Water & Utility Systems", "Gensets", "STP/ETP units"],
     benefits: ["Optimized Overall Equipment Effectiveness (OEE)", "Reduced downtime & operational costs", "Real-time visibility across production lines and assets", "Predictive maintenance for proactive equipment care", "Safety compliance & risk mitigation", "Energy, water, and utility efficiency", "Data-driven decision-making & reporting", "Trusted by leading industrial operators"],
-    heroImage: heroBMS,
+    heroImage: factoryHero,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Mendergy - EMS",
-            desc: ["Centralized monitoring of energy consumption across machines, departments, and plants.", "Identify inefficiencies, energy spikes, and abnormal usage patterns.", "Benchmark energy performance for continuous improvement."]
+            desc: ["Centralized monitoring of energy consumption across machines, departments, and plants.", "Identify inefficiencies, energy spikes, and abnormal usage patterns.", "Benchmark energy performance for continuous improvement."],
+            image: energyImage
         },
         {
             title: "Smart OEE Optimization",
-            desc: ["Track production performance, availability, and quality in real-time.", "Identify bottlenecks and improve line efficiency.", "Generate actionable insights for maximizing productivity."]
+            desc: ["Track production performance, availability, and quality in real-time.", "Identify bottlenecks and improve line efficiency.", "Generate actionable insights for maximizing productivity."],
+            image: smartOEE
         },
         {
             title: "Real-Time Monitoring",
-            desc: ["Continuous monitoring of machines, sensors, and production parameters.", "Access live dashboards for machine health, production status, and KPIs.", "Reduce downtime with instant alerts on anomalies."]
+            desc: ["Continuous monitoring of machines, sensors, and production parameters.", "Access live dashboards for machine health, production status, and KPIs.", "Reduce downtime with instant alerts on anomalies."],
+            image: RealTimeMonitoring
         },
         {
             title: "AI-Based Maintenance",
-            desc: ["Predict equipment failures using AI/ML models.", "Schedule preventive maintenance to minimize unexpected breakdowns.", "Optimize spare parts inventory and service planning."]
+            desc: ["Predict equipment failures using AI/ML models.", "Schedule preventive maintenance to minimize unexpected breakdowns.", "Optimize spare parts inventory and service planning."],
+            image: AiBasedMaintenanceImage
         },
         {
             title: "Warehouse Management System",
-            desc: ["Monitor storage conditions, stock levels, and movement of goods.", "Improve material handling and logistics efficiency.", "Integrate inventory data with production scheduling for seamless operations."]
+            desc: ["Monitor storage conditions, stock levels, and movement of goods.", "Improve material handling and logistics efficiency.", "Integrate inventory data with production scheduling for seamless operations."],
+            image: WarehouseImage
         },
         {
             title: "Safety Compliance Check",
-            desc: ["Real-time monitoring of machine safety, PPE usage, and environmental conditions.", "Automated alerts for unsafe conditions or violations.", "Compliance reports for audits and regulatory requirements."]
+            desc: ["Real-time monitoring of machine safety, PPE usage, and environmental conditions.", "Automated alerts for unsafe conditions or violations.", "Compliance reports for audits and regulatory requirements."],
+            image: SafetyComplianceImage
         },
         {
             title: "Water Management",
-            desc: ["Track water consumption across processes and sections.", "Detect leakages and abnormal usage patterns.", "Optimize water utilization for cost and sustainability benefits."]
+            desc: ["Track water consumption across processes and sections.", "Detect leakages and abnormal usage patterns.", "Optimize water utilization for cost and sustainability benefits."],
+            image: waterImage
         },
         {
             title: "Genset Management & Telematics",
-            desc: ["Monitor backup power generation and fuel consumption.", "Digital logs of genset performance and load patterns.", "Ensure reliability during power outages with predictive alerts."]
+            desc: ["Monitor backup power generation and fuel consumption.", "Digital logs of genset performance and load patterns.", "Ensure reliability during power outages with predictive alerts."],
+            image:gensetImage
         },
         {
             title: "STP & ETP Management",
-            desc: ["Monitor key water treatment parameters like pH, TDS, turbidity, COD, and BOD.", "Track aeration, filtration, and dosing systems remotely.", "Generate discharge quality, sludge, and pollutant reduction reports."]
+            desc: ["Monitor key water treatment parameters like pH, TDS, turbidity, COD, and BOD.", "Track aeration, filtration, and dosing systems remotely.", "Generate discharge quality, sludge, and pollutant reduction reports."],
+            image:stpImage
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {
@@ -261,33 +320,70 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Mendygo’s IoT-driven Energy Management System provides centralized visibility and control over all energy sources within a facility. From real-time consumption monitoring to predictive analytics, EMS helps optimize energy usage, reduce costs, and improve operational efficiency.",
     assetsWeTrack: ["Mains", "Solar & Wind", "Gensets", "Switchgears", "APFC Panels", "Busbars", "Energy Meters", "Critical Loads"],
     benefits: ["Real-time energy visibility across all sources and loads", "Reduced electricity bills through optimization and demand management", "Quick identification of inefficiencies and abnormal consumption", "Predictive alerts for maintenance and load balancing", "Improved compliance with energy and sustainability standards", "Enhanced operational efficiency and reliability", "Data-backed reporting for management and ESG goals", "Trusted by industrial leaders"],
-    heroImage: heroBMS,
+    heroImage: energyHero,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Active Energy Monitoring",
-            desc: ["Monitor power consumption from mains, renewable sources, and backup systems", "Compare actual vs rated power to detect abnormalities", "Track maximum demand, reactive power, and energy efficiency benchmarks"]
+            desc: ["Monitor power consumption from mains, renewable sources, and backup systems", "Compare actual vs rated power to detect abnormalities", "Track maximum demand, reactive power, and energy efficiency benchmarks"],
+            image: energyImage
         },
         {
             title: "Load Analysis & Optimization",
-            desc: ["Analyze load patterns across machines, departments, or sites", "Smart scheduling to reduce peak demand charges", "Optimize operation of high-energy-consuming equipment"]
+            desc: ["Analyze load patterns across machines, departments, or sites", "Smart scheduling to reduce peak demand charges", "Optimize operation of high-energy-consuming equipment"],
+            image: smartOEE
         },
         {
             title: "Genset Energy Tracking",
-            desc: ["Digital logs of genset fuel and energy usage", "Monitor load distribution and operating efficiency", "Alerts for abnormal consumption and predictive maintenance"]
+            desc: ["Digital logs of genset fuel and energy usage", "Monitor load distribution and operating efficiency", "Alerts for abnormal consumption and predictive maintenance"],
+            image: gensetImage
         },
         {
             title: "APFC Panel & Power Factor Control",
-            desc: ["Track reactive power demand and capacitor bank health", "Optimize capacitor sizing and prevent premature failure", "Perform harmonic distortion analysis for cleaner energy"]
+            desc: ["Track reactive power demand and capacitor bank health", "Optimize capacitor sizing and prevent premature failure", "Perform harmonic distortion analysis for cleaner energy"],
+            image: apfcImage
         },
         {
             title: "Busbar & Switchgear Monitoring",
-            desc: ["Real-time monitoring of temperature, humidity, and current", "Multi-site dashboards with drill-down views", "Predictive alerts for overheating, overcurrent, and failures"]
+            desc: ["Real-time monitoring of temperature, humidity, and current", "Multi-site dashboards with drill-down views", "Predictive alerts for overheating, overcurrent, and failures"],
+            image: busbarImage
         },
         {
             title: "Energy Analytics & Reporting",
-            desc: ["Time-series analysis of energy consumption and cost per kWh", "Benchmark specific energy consumption (SEC) for processes", "ESG and carbon footprint tracking for sustainability reporting", "AI-powered predictive alerts for energy inefficiencies"]
+            desc: ["Time-series analysis of energy consumption and cost per kWh", "Benchmark specific energy consumption (SEC) for processes", "ESG and carbon footprint tracking for sustainability reporting", "AI-powered predictive alerts for energy inefficiencies"],
+            image: SafetyComplianceImage
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {
@@ -314,29 +410,65 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Mendygo’s Warehouse Management System (WMS) provides end-to-end visibility, control, and optimization of warehouse operations. From real-time inventory tracking to AI-driven space and workflow management, the solution ensures operational efficiency, reduced errors, and optimized resource utilization.",
     assetsWeTrack: ["Inventory Items", "Forklifts & Material Handling Equipment", "Racking & Storage Units", "Temperature/Humidity Sensors", "Security Systems"],
     benefits: ["Real-time inventory visibility across multiple locations", "Automated stock management to prevent shortages or overstocking", "Optimized warehouse layout and storage utilization", "Reduced manual errors and operational costs", "Improved order fulfillment speed and accuracy", "Enhanced workforce productivity with task automation", "Compliance with safety and regulatory standards"],
-    heroImage: heroBMS,
+    heroImage: warehouseHero,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Inventory Tracking & Management",
-            desc: ["Monitor stock levels, expiry dates, and batch/lot numbers", "Track inbound/outbound goods and automate replenishments", "Alerts for low stock, damaged goods, or misplaced items"]
+            desc: ["Monitor stock levels, expiry dates, and batch/lot numbers", "Track inbound/outbound goods and automate replenishments", "Alerts for low stock, damaged goods, or misplaced items"],
+            image:apfcImage
         },
         {
             title: "Material Handling & Equipment Monitoring",
-            desc: ["Track forklift, conveyor, and automated guided vehicle (AGV) usage", "Monitor equipment health, fuel/energy consumption, and maintenance needs", "Optimize equipment scheduling to minimize idle time"]
+            desc: ["Track forklift, conveyor, and automated guided vehicle (AGV) usage", "Monitor equipment health, fuel/energy consumption, and maintenance needs", "Optimize equipment scheduling to minimize idle time"],
+            image: monitorHealth
         },
         {
             title: "Warehouse Layout & Space Optimization",
-            desc: ["Map warehouse zones digitally for better inventory placement", "AI-driven recommendations for maximizing storage efficiency", "Optimize picking routes to reduce travel time"]
+            desc: ["Map warehouse zones digitally for better inventory placement", "AI-driven recommendations for maximizing storage efficiency", "Optimize picking routes to reduce travel time"],
+            image:WarehouseImage
         },
         {
             title: "Order Fulfillment & Shipment",
-            desc: ["Real-time picking, packing, and shipping status", "Integration with ERP and transport systems for seamless operations", "Automated reporting for timely order completion and audits"]
+            desc: ["Real-time picking, packing, and shipping status", "Integration with ERP and transport systems for seamless operations", "Automated reporting for timely order completion and audits"],
+            image:orderfulfillment
         },
         {
             title: "Safety & Compliance Monitoring",
-            desc: ["Monitor environmental conditions (temperature, humidity) for sensitive goods", "Track adherence to safety standards and SOPs", "Alerts for unauthorized access or equipment misuse"]
+            desc: ["Monitor environmental conditions (temperature, humidity) for sensitive goods", "Track adherence to safety standards and SOPs", "Alerts for unauthorized access or equipment misuse"],
+            image:SafetyComplianceImage
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {
@@ -363,29 +495,66 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Mendygo’s Genset Management System provides real-time monitoring, predictive maintenance, and energy optimization for backup and primary power generators. The solution ensures uninterrupted power supply, reduces operational costs, and extends the life of gensets while providing actionable insights for operational efficiency.",
     assetsWeTrack: ["Diesel & Gas Gensets", "Automatic Transfer Switches (ATS)", "Fuel Tanks", "Engine Components", "Control Panels"],
     benefits: ["Real-time monitoring of genset performance and fuel consumption", "Predictive maintenance to prevent unplanned downtime", "Optimized load distribution and runtime scheduling", "Reduced fuel consumption and operational costs", "Extended genset lifespan through data-driven insights", "Automated reporting for audits, safety, and compliance", "Trusted by industrial leaders"],
-    heroImage: heroBMS,
+    heroImage: GensetManageHero,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Genset Performance Monitoring",
-            desc: ["Track voltage, frequency, runtime, and load levels", "Monitor engine temperature, oil pressure, and battery health", "Alerts for abnormal operation, overheating, or low oil pressure"]
+            desc: ["Track voltage, frequency, runtime, and load levels", "Monitor engine temperature, oil pressure, and battery health", "Alerts for abnormal operation, overheating, or low oil pressure"],
+            image: gensetImage
         },
         {
             title: "Fuel Consumption Tracking",
-            desc: ["Monitor fuel levels, consumption rates, and refill schedules", "Identify fuel wastage or leaks in real time", "Optimize fuel usage through AI-driven recommendations"]
+            desc: ["Monitor fuel levels, consumption rates, and refill schedules", "Identify fuel wastage or leaks in real time", "Optimize fuel usage through AI-driven recommendations"],
+            image:waterImage
         },
         {
             title: "Predictive Maintenance",
-            desc: ["Forecast component wear and required maintenance", "Alerts for filter changes, oil top-ups, and engine servicing", "Minimize unplanned downtime and extend equipment life"]
+            desc: ["Forecast component wear and required maintenance", "Alerts for filter changes, oil top-ups, and engine servicing", "Minimize unplanned downtime and extend equipment life"],
+            image:smartOEE
+            
         },
         {
             title: "Load Management & Scheduling",
-            desc: ["Optimize load sharing across multiple gensets", "Auto-start/stop based on site load requirements", "Ensure backup readiness during peak demand or outages"]
+            desc: ["Optimize load sharing across multiple gensets", "Auto-start/stop based on site load requirements", "Ensure backup readiness during peak demand or outages"],
+            image:apfcImage
         },
         {
             title: "Compliance & Reporting",
-            desc: ["Maintain logs for inspections, servicing, and regulatory audits", "Automated reports for performance, fuel usage, and emissions", "Integration with ERP systems for operational transparency"]
+            desc: ["Maintain logs for inspections, servicing, and regulatory audits", "Automated reports for performance, fuel usage, and emissions", "Integration with ERP systems for operational transparency"],
+            image:SafetyComplianceImage
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {
@@ -412,34 +581,72 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Unlock the full potential of your facility’s HVAC systems with Mendygo’s IoT-driven HVAC management solution. Access real-time environmental and operational data to enhance energy efficiency, occupant comfort, and equipment lifespan.",
     assetsWeTrack: ["Chillers", "Air Handling Units (AHU)", "Variable Frequency Drives (VFDs)", "Cooling Towers", "Pumps & Motors"],
     benefits: ["Quick issue identification", "Reduced energy consumption & operational costs", "Centralized system visibility", "Adaptive climate control", "Compliance with environmental and safety standards", "Extended equipment life", "Efficient reporting & dashboards", "Trusted by industrial leaders"],
-    heroImage: heroBMS,
+    heroImage: hvacManagementHero,
     heroGateway: heroGateway,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Gain complete HVAC system visibility with digital logs",
-            desc: ["Keep digital records of key HVAC parameters and avoid human errors.", "Access granular data across chillers, AHUs, VFDs, and pumps, not just individual units.", "Monitor all operational parameters in real-time rather than point-in-time snapshots.", "Replicate system layout for a drill-down view of all HVAC components."]
+            desc: ["Keep digital records of key HVAC parameters and avoid human errors.", "Access granular data across chillers, AHUs, VFDs, and pumps, not just individual units.", "Monitor all operational parameters in real-time rather than point-in-time snapshots.", "Replicate system layout for a drill-down view of all HVAC components."],
+            image: AiBasedMaintenanceImage
         },
         {
             title: "Schedule-based operations & intelligent setpoint control",
-            desc: ["Automate temperature and airflow based on occupancy schedules.", "Maintain desired environmental conditions while reducing energy usage.", "Real-time adjustment of VFDs for optimized motor speed and energy efficiency."]
+            desc: ["Automate temperature and airflow based on occupancy schedules.", "Maintain desired environmental conditions while reducing energy usage.", "Real-time adjustment of VFDs for optimized motor speed and energy efficiency."],
+            image: apfcImage
         },
         {
             title: "Benchmarking and trend analysis",
-            desc: ["Compare actual energy and cooling performance with rated parameters.", "Perform time-series analysis on critical metrics like airflow, temperature, and humidity.", "Get alerts on deviations and abnormal energy use."]
+            desc: ["Compare actual energy and cooling performance with rated parameters.", "Perform time-series analysis on critical metrics like airflow, temperature, and humidity.", "Get alerts on deviations and abnormal energy use."],
+            image: smartOEE
         },
         {
             title: "Move closer to sustainability goals",
-            desc: ["Track energy efficiency improvements and CO₂ reduction.", "Monitor HVAC electricity consumption at section-wise or unit-wise levels.", "Visualize energy usage breakdown for informed decision-making."]
+            desc: ["Track energy efficiency improvements and CO₂ reduction.", "Monitor HVAC electricity consumption at section-wise or unit-wise levels.", "Visualize energy usage breakdown for informed decision-making."],
+            image: SafetyComplianceImage
         },
         {
             title: "Specific Energy Consumption (SEC) analysis",
-            desc: ["SEC measures energy required per unit of cooling or conditioned air delivered.", "Helps baseline performance and identify energy-saving opportunities.", "SEC = Energy Input / Cooling Output"]
+            desc: ["SEC measures energy required per unit of cooling or conditioned air delivered.", "Helps baseline performance and identify energy-saving opportunities.", "SEC = Energy Input / Cooling Output"],
+            image: energyImage
         },
         {
             title: "Backup and auxiliary system monitoring",
-            desc: ["Track auxiliary systems like pumps, cooling towers, and backup chillers.", "Monitor operational efficiency and detect potential failures early.", "Maintain digital logs for system diagnostics and predictive maintenance."]
+            desc: ["Track auxiliary systems like pumps, cooling towers, and backup chillers.", "Monitor operational efficiency and detect potential failures early.", "Maintain digital logs for system diagnostics and predictive maintenance."],
+            image:backupMonitoring
+
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {
@@ -466,29 +673,66 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Mendygo’s IoT-driven Water Management System provides centralized monitoring and control of water resources across facilities. From real-time flow monitoring to leak detection and process optimization, WMS helps reduce water wastage, improve efficiency, and ensure regulatory compliance.",
     assetsWeTrack: ["Pumps", "Valves", "Tanks", "Flowmeters", "Sensors", "Filtration Systems", "STP/ETP", "Pipelines"],
     benefits: ["Real-time visibility of water consumption across sections and tanks", "Reduced water wastage through early leak detection", "Optimized pumping and distribution for energy savings", "Compliance with water quality and discharge regulations", "Automated reporting for management and sustainability goals", "Improved operational efficiency and cost control", "Trusted by industrial leaders"],
-    heroImage: heroBMS,
+    heroImage: waterManagement,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Water Consumption Monitoring",
-            desc: ["Track section-wise and tank-wise water usage", "Monitor flow rates, levels, and pressure in real time", "Alerts for consumption deviations and abnormal usage"]
+            desc: ["Track section-wise and tank-wise water usage", "Monitor flow rates, levels, and pressure in real time", "Alerts for consumption deviations and abnormal usage"],
+            image: waterImage
         },
         {
             title: "Leak Detection & Alerts",
-            desc: ["Early detection of leaks in pipelines and storage tanks", "Automatic notifications for overflows, dry tanks, or abnormal pressure drops", "Reduce maintenance costs and prevent downtime"]
+            desc: ["Early detection of leaks in pipelines and storage tanks", "Automatic notifications for overflows, dry tanks, or abnormal pressure drops", "Reduce maintenance costs and prevent downtime"],
+            image:LeakDetection
         },
         {
             title: "Pump & Valve Optimization",
-            desc: ["Monitor pump performance and energy usage", "Optimize valve operations for efficient water distribution", "Predictive maintenance to reduce failures and service costs"]
+            desc: ["Monitor pump performance and energy usage", "Optimize valve operations for efficient water distribution", "Predictive maintenance to reduce failures and service costs"],
+            image:pumpImage
+            
         },
         {
             title: "STP/ETP Monitoring",
-            desc: ["Track key parameters like pH, TDS, turbidity, COD, BOD, and dissolved oxygen", "Ensure compliance with discharge quality regulations", "Remote monitoring of aeration, filtration, and dosing systems"]
+            desc: ["Track key parameters like pH, TDS, turbidity, COD, BOD, and dissolved oxygen", "Ensure compliance with discharge quality regulations", "Remote monitoring of aeration, filtration, and dosing systems"],
+            image:stpImage
         },
         {
             title: "Water Quality & Sustainability Analytics",
-            desc: ["Continuous monitoring of water purity and treatment efficiency", "Generate reports for water consumption, quality, and sustainability metrics", "Track specific water consumption (SWC) per unit of production", "Support ESG and regulatory compliance reporting"]
+            desc: ["Continuous monitoring of water purity and treatment efficiency", "Generate reports for water consumption, quality, and sustainability metrics", "Track specific water consumption (SWC) per unit of production", "Support ESG and regulatory compliance reporting"],
+            image:SafetyComplianceImage
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {
@@ -515,33 +759,71 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     description: "Mendygo’s Construction Fleet Management solution provides centralized control and real-time visibility of all fleet operations. From tracking vehicle health and location to optimizing routes and fuel usage, this system helps improve productivity, reduce downtime, and ensure regulatory compliance across construction sites.",
     assetsWeTrack: ["Earthmoving vehicles", "Cranes", "Excavators", "Dumpers", "Loaders", "Trucks", "GPS & Telematics devices"],
     benefits: ["Real-time visibility of all construction fleet vehicles", "Optimized utilization and reduced idle time", "Improved driver accountability and safety", "Reduced fuel consumption and operational costs", "Preventive maintenance to extend equipment lifespan", "Automated reporting for management and compliance", "Trusted by leading construction companies"],
-    heroImage: heroBMS,
+    heroImage: constructionHero,
     ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Vehicle Health Monitoring",
-            desc: ["Track engine, hydraulics, and critical components", "Monitor fuel usage, operating hours, and load cycles", "Predictive maintenance alerts to prevent breakdowns"]
+            desc: ["Track engine, hydraulics, and critical components", "Monitor fuel usage, operating hours, and load cycles", "Predictive maintenance alerts to prevent breakdowns"],
+            image: monitorHealth
+
         },
         {
             title: "Real-Time GPS & Tracking",
-            desc: ["Monitor vehicle location and movement across construction sites", "Geo-fencing for restricted areas and unauthorized usage alerts", "Historical trip data and route replay for analysis"]
+            desc: ["Monitor vehicle location and movement across construction sites", "Geo-fencing for restricted areas and unauthorized usage alerts", "Historical trip data and route replay for analysis"],
+            image:realTimeMap
         },
         {
             title: "Fuel & Energy Optimization",
-            desc: ["Monitor fuel consumption and identify inefficiencies", "Optimize machine usage based on load and site demands", "AI-driven insights to reduce energy costs and idle time"]
+            desc: ["Monitor fuel consumption and identify inefficiencies", "Optimize machine usage based on load and site demands", "AI-driven insights to reduce energy costs and idle time"],
+            image:energyImage
         },
         {
             title: "Driver Behavior & Safety",
-            desc: ["Track acceleration, braking, and over-speeding events", "Score operators for safe and efficient operation", "Alerts for unsafe behavior to prevent accidents"]
+            desc: ["Track acceleration, braking, and over-speeding events", "Score operators for safe and efficient operation", "Alerts for unsafe behavior to prevent accidents"],
+            image:fleetManagement
         },
         {
             title: "Fleet Scheduling & Utilization",
-            desc: ["Smart scheduling of vehicles to match site requirements", "Load balancing and allocation for maximum productivity", "Benchmark utilization across multiple sites"]
+            desc: ["Smart scheduling of vehicles to match site requirements", "Load balancing and allocation for maximum productivity", "Benchmark utilization across multiple sites"],
+            image:apfcImage
         },
         {
             title: "Compliance & Reporting",
-            desc: ["Maintain logs for equipment inspections and operator certifications", "Automated reports for audits, safety checks, and regulatory compliance", "Integration with ERP for operational and financial management"]
+            desc: ["Maintain logs for equipment inspections and operator certifications", "Automated reports for audits, safety checks, and regulatory compliance", "Integration with ERP for operational and financial management"],
+            image:SafetyComplianceImage
         }
+    ],
+    hardwareSpecs: [
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      {
+        title: "IoT Sensors & Actuators",
+        desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
+
+        ],
+        image :hardware
+      },
+      
     ],
     architecture: [
         {

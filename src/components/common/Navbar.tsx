@@ -87,7 +87,7 @@ export function MyNavbar() {
                         title: "Analytics & AI",
                         links: [
                             { href: "/products/ai/mendy", label: "Mendy AI Copilot", description: "Your AI assistant for operations." },
-                            // { href: "/products/ai/maintenance", label: "Predictive Maintenance", description: "Prevent failures before they happen." },
+                            { href: "/products/ai/computerVision", label: "MendyVision", description: "Computer Vision for industrial applications." },
                         ],
                     },
                 ],

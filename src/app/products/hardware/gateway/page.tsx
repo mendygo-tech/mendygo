@@ -5,15 +5,45 @@ import { gatewayData } from '@/data/gatewayData'
 import HardwareOverview from '@/components/products/HardwareOverview';
 import Features from '@/components/products/Features';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const systemData = gatewayData["building-management"];
+const systemData = gatewayData["gateway"];
 
 const page = () => {
   return (
     <div className='relative overflow-hidden min-h-screen pt-40 bg-[#f8f9fa] dark:bg-black dark:text-white text-black pb-20'>
       <div className="max-w-7xl mx-auto">
       <HardwareHero systemData={systemData} />
-      <HardwareOverview systemData={systemData} />
+      <HardwareOverview systemData={systemData.hardwareSpecs} />
+      {/* <HardwareOverview systemData={systemData.hardwareSpecs2} /> */}
+
+
+
+      {systemData.ecosystemImage && (
+                  <div className="py-24">
+                      <h3 className="text-3xl text-center font-bold relative">Architecture</h3>
+                      <div className="w-full lg:w-3/4 mx-auto mt-12">
+                      <Image src={systemData.ecosystemImage[0]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto dark:hidden" />
+                      <Image src={systemData.ecosystemImage[1]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto hidden dark:block" />
+                      </div>
+                  </div>
+              )}
+
+
+
+      <HardwareOverview systemData={systemData.hardwareSpecs2} />
+
+              {systemData.ecosystemImage2 && (
+                  <div className="py-24">
+                      <h3 className="text-3xl text-center font-bold relative">Architecture</h3>
+                      <div className="w-full lg:w-3/4 mx-auto mt-12">
+                      <Image src={systemData.ecosystemImage2[0]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto dark:hidden" />
+                      <Image src={systemData.ecosystemImage2[1]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto hidden dark:block" />
+                      </div>
+                  </div>
+              )}
+
+
       <Features systemData={systemData} heading="Key Features" />
 
       <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl dark:text-slate-100 py-16 mt-20">

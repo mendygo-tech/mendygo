@@ -164,7 +164,7 @@ const CountdownCard = () => {
           </div>
         </div>
 
-        <h2 className="text-center text-3xl font-semibold">Join the Waitlist</h2>
+        <h2 className="text-center text-3xl font-semibold">Join the Waitlist For Mendy AI</h2>
         <p className="text-center text-gray-600 text-sm dark:text-gray-400">
           Be the first to know when we launch.
         </p>

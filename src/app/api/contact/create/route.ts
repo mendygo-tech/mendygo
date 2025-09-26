@@ -17,9 +17,9 @@ export async function POST(req: NextRequest) {
         console.log("Received contact data:", body);
 
         // Validate required fields based on source
-        if (!source || !['newsletter', 'demo_request', 'contact'].includes(source)) {
+        if (!source || !['newsletter', 'demo_request', 'contact', 'waitlist'].includes(source)) {
             return NextResponse.json(
-                { message: "Valid source is required (newsletter, demo_request, or contact)." },
+                { message: "Valid source is required (newsletter, demo_request, contact, or waitlist)." },
                 { status: 400 }
             );
         }

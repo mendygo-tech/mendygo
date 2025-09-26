@@ -5,7 +5,7 @@ const contactSchema = new mongoose.Schema(
         // Source of the contact (newsletter or demo_request)
         source: {
             type: String,
-            enum: ['newsletter', 'demo_request', 'contact'],
+            enum: ['newsletter', 'demo_request', 'contact','waitlist'],
             required: true,
         },
         

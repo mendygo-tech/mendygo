@@ -16,7 +16,7 @@ export default function GlassmorphedButtons() {
 
   return (
     <>
-      <div className="flex lg:flex-row items-center justify-center py-5 lg:gap-5 gap-2">
+      <div className="flex lg:flex-row items-center justify-center py-5 lg:gap-5 gap-2 ">
         <motion.button
           onClick={openModal}
           className="
@@ -24,10 +24,10 @@ export default function GlassmorphedButtons() {
             lg:w-full lg:min-w-[200px] min-w-[150px] rounded-full
             lg:px-6 py-4
             lg:text-base text-xs font-bold text-black
-            cursor-pointer
+            cursor-pointer z-1
             transition-colors duration-300
-            bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/50 to-[#abff01]/30
-            dark:bg-gradient-to-br dark:from-[#abff01]/60 dark:via-[#abff01]/65 dark:to-[#abff01]/35
+            bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/70 to-[#abff01]/50
+            dark:bg-gradient-to-br dark:from-[#abff01]/80 dark:via-[#abff01]/70 dark:to-[#abff01]/45
             border border-white/10 hover:border-white/30
           "
           whileHover={{ scale: 1.02, y: -2 }}
@@ -44,10 +44,10 @@ export default function GlassmorphedButtons() {
             w-full lg:min-w-[200px]  min-w-[150px] rounded-full
             lg:px-6 py-4
             lg:text-base text-xs font-bold text-black
-            cursor-pointer
+            cursor-pointer z-2
             transition-colors duration-300
-            bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/50 to-[#abff01]/30
-            dark:bg-gradient-to-br dark:from-[#abff01]/60 dark:via-[#abff01]/65 dark:to-[#abff01]/35
+            bg-gradient-to-br from-[#abff01]/90 via-[#abff01]/70 to-[#abff01]/50
+            dark:bg-gradient-to-br dark:from-[#abff01]/80 dark:via-[#abff01]/70 dark:to-[#abff01]/45
             border border-white/10 hover:border-white/30
           "
           whileHover={{ scale: 1.02, y: -2 }}

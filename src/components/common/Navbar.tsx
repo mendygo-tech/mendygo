@@ -5,98 +5,126 @@ import {
     NavItems,
     MobileNav,
     NavbarLogo,
-    NavbarButton,
     MobileNavHeader,
     MobileNavToggle,
     MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, ChevronDown } from "lucide-react";
 import { useState, useCallback } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import DemoModal from "./DemoModal";
 
-type Dropdown = {
-  title: string;
-  links: { href: string; label: string }[];
+// --- UPDATED TYPE DEFINITIONS ---
+type DropdownItem = {
+    href: string;
+    label: string;
+    description: string; // Added description
 };
+type DropdownColumn = {
+    title: string;
+    links: DropdownItem[];
+    viewAllLink?: { href: string; label: string; }; // Added optional "View All" link
+};
+type DropdownData = { columns: DropdownColumn[] };
 type NavItemType = {
-  name: string;
-  link: string;
-  dropdown?: Dropdown;
-  isModal?: boolean;
+    name: string;
+    link: string;
+    dropdown?: DropdownData;
+    isModal?: boolean;
 };
 
 export function MyNavbar() {
-    const navItems = [
-        // {
-        //     name: "Services",
-        //     link: "/services/engineering",
-        //     dropdown: {
-        //         title: "Services",
-        //         links: [
-        //             { href: "/services/engineering", label: "Engineering" },
-        //             { href: "/services/projectManagement", label: "Project Management" },
-        //             { href: "/services/technology", label: "Tech & Integration" },
-        //         ],
-        //     }
-        // },
+    // --- UPDATED NAVIGATION CONTENT ---
+    const navItems: NavItemType[] = [
+        
+        {
+            name: "Solutions",
+            link: "/solutions",
+            dropdown: {
+                columns: [
+                    {
+                        title: "Management Systems",
+                        // This column has more than 5 items, so we add a viewAllLink
+                        viewAllLink: { href: "/solutions", label: "View All Systems" },
+                        links: [
+                            { href: "/solutions/management-systems/building-management", label: "Building Management", description: "Smart automation and control systems." },
+                            { href: "/solutions/management-systems/factory-management", label: "Factory Management", description: "Optimize production and efficiency." },
+                            { href: "/solutions/management-systems/warehouse-management", label: "Warehouse Management", description: "Real-time inventory and logistics." },
+                            { href: "/solutions/management-systems/energy-management", label: "Energy Management", description: "Monitor and reduce energy consumption." },
+                            { href: "/solutions/management-systems/water-management", label: "Water Management", description: "Smart water grid and leakage detection." },
+                            { href: "/solutions/management-systems/construction-fleet-management", label: "Construction Fleet", description: "Track and manage heavy equipment." },
+                            { href: "/solutions/management-systems/genset-management", label: "Genset Management", description: "Remote monitoring for generators." },
+                            { href: "/solutions/management-systems/hvac-management", label: "HVAC Management", description: "Intelligent climate control solutions." },
+                        ],
+                    },
+                    {
+                        title: "Telematics",
+                        links: [
+                            { href: "/solutions/telematics/ev-telematics", label: "EV Telematics", description: "Advanced electric vehicle monitoring." },
+                            { href: "/solutions/telematics/chiller-telematics", label: "Chiller Telematics", description: "Remote performance tracking for chillers." },
+                            { href: "/solutions/telematics/compressor-telematics", label: "Compressor Telematics", description: "Monitor industrial compressor health." },
+                            { href: "/solutions/telematics/earth-moving-telematics", label: "Earth Moving Telematics", description: "Analytics for heavy machinery." },
+                        ],
+                    },
+                ],
+            },
+        },
+        {
+            name: "Products",
+            link: "/products",
+            dropdown: {
+                columns: [
+                    {
+                        title: "Hardware",
+                        links: [
+                            { href: "/products/hardware/gateway", label: "Gateway", description: "Securely connect your devices." },
+                            { href: "/products/hardware/sensors-meters", label: "Sensors & Meters", description: "High-precision data collection." },
+                            { href: "/products/hardware/controllers", label: "Controllers", description: "Automate and control operations." },
+                        ],
+                    },
+                    {
+                        title: "Analytics & AI",
+                        links: [
+                            { href: "/products/ai/mendy", label: "Mendy AI Copilot", description: "Your AI assistant for operations." },
+                            { href: "/products/ai/computerVision", label: "MendyVision", description: "Computer Vision for industrial applications." },
+                        ],
+                    },
+                ],
+            },
+        },
+        { name: "Blog", link: "https://blogs.mendygo.com/" },
+        {
+            name: "Company",
+            link: "/aboutus",
+            dropdown: {
+                columns: [
+                    {
+                        title: "About Mendygo",
+                        links: [
+                            { href: "/aboutus", label: "About Us", description: "Discover our mission and team." },
+                            { href: "/contact", label: "Contact Us", description: "Get in touch with our experts." },
+                        ],
+                    },
+                ],
+            },
+        },
         {
             name: "Industries",
             link: "/industries",
         },
-        {
-            name: "Products",
-            link: "/products/mendyview-ai-access-control",
-            dropdown: {
-                title: "Products",
-                links: [
-                    { href: "/products/mendyview-ai-access-control", label: "MendyView" },
-                    { href: "/products/mendysheets-digital-checksheets", label: "MendySheets" },
-                    { href: "/products/mendergy-energy-management-system", label: "Mendergy" },
-                    { href: "/products/smartooe-dashboard", label: "SmartOEE" },
-                    { href: "/products/mendyops-utility-monitoring-automation", label: "MendyOps" },
-                    { href: "/products/mendylive-digital-twin-platform", label: "MendyLive" },
-                    { href: "/products/thermendy-smart-climate-control", label: "Thermendy" },
-                    { href: "/products/mendyai-industrial-intelligence-engine", label: "MendyAI" }
-                ],
-            }
-        },
-        
-        { name: "Blog", link: "https://blogs.mendygo.com/" },
-        {
-            name: "Company",
-            link: "/",
-            dropdown: {
-                title: "Company",
-                links: [
-                    { href: "/contact", label: "Contact Us" },
-                    { href: "/aboutus", label: "About Us" },
-                ],
-            }
-        },
         { name: "Schedule Demo", link: "#", isModal: true },
     ];
+
+
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
     const { theme, setTheme } = useTheme();
 
     const ThemeToggleButton = ({ className = "" }: { className?: string }) => {
-        // const toggleTheme = useCallback(() => {
-        //     const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
-            
-        //     if (!document.startViewTransition) {
-        //         switchTheme();
-        //         return;
-        //     }
-            
-        //     document.startViewTransition(switchTheme);
-        // }, [theme, setTheme]);
-
         const toggleTheme = useCallback(() => {
-            const switchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
-            switchTheme();
+            setTheme(theme === "dark" ? "light" : "dark");
         }, [theme, setTheme]);
 
         return (
@@ -105,18 +133,12 @@ export function MyNavbar() {
                 aria-label="Toggle dark mode"
                 aria-pressed={theme === "dark"}
                 className={`
-                    cursor-pointer
-                    relative h-8 w-16 rounded-full
+                    cursor-pointer relative h-8 w-16 rounded-full
                     bg-gray-200 dark:bg-[#141415]
-                    border-1 border-gray-300 dark:border-gray-600
-                    flex items-center
+                    border border-gray-300 dark:border-gray-600 flex items-center
                     transition-all duration-300 ease-in-out
-                    hover:bg-gray-300 dark:hover:bg-gray-600
-                    hover:border-gray-400 dark:hover:border-gray-500
-                    focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-black
-                    shadow-inner
-                    ${className}
-                `}
+                    hover:bg-gray-300 dark:hover:bg-gray-700dark:focus:ring-gray-500
+                    shadow-inner ${className}`}
             >
                 <div className="absolute inset-0 flex items-center justify-between px-1.5">
 
@@ -162,12 +184,12 @@ export function MyNavbar() {
     };
 
     return (
-        <div className="relative w-full border-b-2 dark:border-gray-700">
-            <Navbar>
+        <div className="relative w-full">
+            <Navbar className="pt-5">
                 <NavBody>
                     <NavbarLogo />
-                    <NavItems 
-                        items={navItems} 
+                    <NavItems
+                        items={navItems}
                         onScheduleDemo={() => setIsDemoModalOpen(true)}
                     />
                     <div className="flex items-center gap-2">
@@ -178,9 +200,8 @@ export function MyNavbar() {
                 <MobileNav>
                     <MobileNavHeader>
                         <NavbarLogo />
-                        <div className="flex items-center gap-2">
-                            <ThemeToggleButton className="sm:hidden" />
-
+                        <div className="flex items-center gap-4">
+                            <ThemeToggleButton />
                             <MobileNavToggle
                                 isOpen={isMobileMenuOpen}
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -203,23 +224,13 @@ export function MyNavbar() {
                                 }}
                             />
                         ))}
-
-                        <div className="flex w-full flex-col gap-4 mt-4">
-                            <NavbarButton
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                variant="primary"
-                                className="w-full"
-                            >
-                                Signup
-                            </NavbarButton>
-                        </div>
                     </MobileNavMenu>
                 </MobileNav>
             </Navbar>
 
-            <DemoModal 
-                isOpen={isDemoModalOpen} 
-                onClose={() => setIsDemoModalOpen(false)} 
+            <DemoModal
+                isOpen={isDemoModalOpen}
+                onClose={() => setIsDemoModalOpen(false)}
             />
         </div>
     );
@@ -229,32 +240,38 @@ const MobileNavItem = ({ item, onClose, onScheduleDemo }: { item: NavItemType; o
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
 
+    const handleItemClick = (href: string) => {
+        onClose();
+        router.push(href);
+    };
+
     if (item.dropdown) {
         return (
-            <div className="w-full">
+            <div className="w-full py-2">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="relative text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors w-full text-left flex items-center justify-between"
+                    className="flex w-full items-center justify-between text-left text-black transition-colors hover:text-neutral-700 dark:text-white dark:hover:text-neutral-300"
                 >
-                    <span>{item.name}</span>
-                    <span className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
-                        ▼
-                    </span>
+                    <span className="font-medium">{item.name}</span>
+                    <ChevronDown className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} size={16} />
                 </button>
                 {isOpen && (
-                    <div className="mt-2 ml-4 space-y-2">
-                        {item.dropdown.links.map((link: { href: string; label: string }, idx: number) => (
-                            <button
-                                key={idx}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    onClose();
-                                    router.push(link.href);
-                                }}
-                                className="block w-full text-left text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm"
-                            >
-                                {link.label}
-                            </button>
+                    <div className="mt-4 space-y-4 pl-4">
+                        {item.dropdown.columns.map((column, colIdx) => (
+                            <div key={colIdx}>
+                                <h4 className="mb-2 text-sm font-semibold text-gray-500 dark:text-gray-400">{column.title}</h4>
+                                <div className="flex flex-col space-y-2 border-l border-gray-200 pl-4 dark:border-gray-700">
+                                    {column.links.map((link, linkIdx) => (
+                                        <button
+                                            key={linkIdx}
+                                            onClick={() => handleItemClick(link.href)}
+                                            className="block w-full py-1 text-left text-sm text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
+                                        >
+                                            {link.label}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                         ))}
                     </div>
                 )}
@@ -264,16 +281,14 @@ const MobileNavItem = ({ item, onClose, onScheduleDemo }: { item: NavItemType; o
 
     return (
         <button
-            onClick={(e) => {
-                e.preventDefault();
+            onClick={() => {
                 if (item.isModal && onScheduleDemo) {
                     onScheduleDemo();
                 } else {
-                    onClose();
-                    router.push(item.link);
+                    handleItemClick(item.link);
                 }
             }}
-            className="relative w-full text-left text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            className="relative w-full py-2 text-left font-medium text-black transition-colors hover:text-neutral-700 dark:text-white dark:hover:text-neutral-300"
         >
             <span>{item.name}</span>
         </button>

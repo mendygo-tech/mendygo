@@ -6,7 +6,11 @@ module.exports = {
         './components/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
-        extend: {},
+        extend: {
+             colors: {
+        'mendygo-green': '#A3E635', 
+      },
+        },
         fontFamily: {
             sans: ['Montserrat', 'sans-serif'], 
         },

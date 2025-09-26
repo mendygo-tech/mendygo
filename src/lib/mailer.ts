@@ -1,6 +1,6 @@
 //mailer.ts
 import nodemailer, { type Transporter } from "nodemailer";
-export type Source = "newsletter" | "demo_request" | "contact";
+export type Source = "newsletter" | "demo_request" | "contact" | "waitlist";
 
 let transporter: Transporter | null = null;
 
@@ -33,8 +33,7 @@ function buildTemplate(params: {
   const firstName = params.name ? params.name.split(" ")[0] : "there";
   const brandColor = "#A9FE02";
   const darkColor = "#000000";
-  const fontStack =
-    `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif`;
+  const fontStack = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Ubuntu, sans-serif`;
 
   const wrapperTop = `
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f3f4f6;">
@@ -126,8 +125,12 @@ function buildTemplate(params: {
                 params.companyName || params.jobTitle
                   ? `<div style="margin-top:20px;padding:16px;border-radius:8px;background-color:#f9fafb">
                        <p style="margin:0 0 8px 0;font-size:14px;font-weight:bold;color:#111111;">Your Information</p>
-                       <p style="margin:4px 0;font-size:14px;color:#374151;"><b>Company:</b> ${params.companyName || "-"}</p>
-                       <p style="margin:4px 0;font-size:14px;color:#374151;"><b>Role:</b> ${params.jobTitle || "-"}</p>
+                       <p style="margin:4px 0;font-size:14px;color:#374151;"><b>Company:</b> ${
+                         params.companyName || "-"
+                       }</p>
+                       <p style="margin:4px 0;font-size:14px;color:#374151;"><b>Role:</b> ${
+                         params.jobTitle || "-"
+                       }</p>
                      </div>`
                   : ""
               }
@@ -146,6 +149,30 @@ function buildTemplate(params: {
     };
   }
 
+  if (params.source === "waitlist") {
+  return {
+    subject: "You're on the Mendygo Waitlist!",
+
+    // This is the plain text version of the email
+    text: `Hi ${firstName}, Thanks for signing up for the Mendygo waitlist! We're excited to bring you the future of AI-powered industrial insights. You're now one step closer to preventing equipment failures before they happen, with an intelligent assistant right in your pocket. We'll be in touch with more updates soon and will notify you the moment you can get access. Best, The Mendygo Team`,
+    
+    // This is the HTML version of the email
+    html: `
+      ${wrapperTop}
+      <tr>
+        <td style="padding:32px 28px 16px 28px;font-family:${fontStack};color:#111111;line-height:1.6;">
+          <p style="margin:0 0 16px 0;font-size:16px;color:#374151;">Hi ${firstName},</p>
+          <p style="margin:0 0 18px 0;font-size:16px;color:#374151;">Thanks for signing up for the Mendygo waitlist! We're excited to bring you the future of AI-powered industrial insights.</p>
+          <p style="margin:0 0 18px 0;font-size:16px;color:#374151;">You're now one step closer to preventing equipment failures before they happen, with an intelligent assistant right in your pocket.</p>
+          <p style="margin:0 0 18px 0;font-size:16px;color:#374151;">We'll be in touch with more updates soon and will notify you the moment you can get access.</p>
+          <p style="margin:24px 0 0 0;font-size:16px;color:#374151;">Best,</p>
+          <p style="margin:0;font-size:16px;color:#374151;">The Mendygo Team</p>
+        </td>
+      </tr>
+      ${wrapperBottom}
+    `,
+  };
+}
   return {
     subject: "We've received your message",
     text: `Hi ${firstName}, thanks for contacting Mendygo. We’ve received your message and will get back to you soon.`,

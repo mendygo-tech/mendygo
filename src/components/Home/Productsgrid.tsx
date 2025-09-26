@@ -130,7 +130,7 @@ const Solutions = [
        subtitle: "Intelligent Industrial Hardware",
         description:
             "Rugged, IoT-enabled devices built for precision, resilience, and seamless integration.",
-        href: "/products/mendysheets-digital-checksheets",
+        href: "/products/hardware/gateway",
         content: (
             <>
                 <Image

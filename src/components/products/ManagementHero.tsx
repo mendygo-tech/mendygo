@@ -9,8 +9,6 @@ import Link from 'next/link';
 
 const ManagementHero = ({ systemData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  
     const openModal = useCallback(() => setIsModalOpen(true), []);
     const closeModal = useCallback(() => setIsModalOpen(false), []);
   return (

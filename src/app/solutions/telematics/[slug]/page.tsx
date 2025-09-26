@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useCallback,useState } from "react";
 import { useParams, notFound } from "next/navigation";
 import Image from "next/image";
 // import Link from "next/link";
@@ -9,11 +9,16 @@ import { telematicsData } from "@/data/telematicsData";
 // import chiller from "@/assets/chillerbg.jpg";
 import Features from "@/components/products/Features";
 import Benefits from "@/components/products/Benefits";
+import DemoModal from "@/components/common/DemoModal";
+
 
 const TelematicsPage = () => {
   const params = useParams();
   const slug = params.slug as string;
-
+  
+    const [isModalOpen, setIsModalOpen] = useState(false);
+      const openModal = useCallback(() => setIsModalOpen(true), []);
+      const closeModal = useCallback(() => setIsModalOpen(false), []);
   const telematicsSystem = telematicsData[slug];
 
   if (!telematicsSystem) {
@@ -32,8 +37,9 @@ const TelematicsPage = () => {
             Prevent chiller breakdowns through near real time proactive
             monitoring.{" "}
           </p>
-
-          <motion.button
+                <DemoModal isOpen={isModalOpen} onClose={closeModal} />
+      
+          <motion.button onClick={openModal}
             className="w-full sm:w-auto flex items-center justify-center px-8 py-3 rounded-full text-sm font-bold text-black cursor-pointer transition-all duration-300 bg-gradient-to-br from-[#9FFB1E] to-[#a0f000] hover:shadow-lg hover:shadow-[#9FFB1E]/30"
             whileTap={{ scale: 0.98 }}
           >

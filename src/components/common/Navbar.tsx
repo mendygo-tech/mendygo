@@ -14,6 +14,7 @@ import { useState, useCallback } from "react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import DemoModal from "./DemoModal";
+import Link from "next/link";
 
 // --- UPDATED TYPE DEFINITIONS ---
 type DropdownItem = {
@@ -262,13 +263,12 @@ const MobileNavItem = ({ item, onClose, onScheduleDemo }: { item: NavItemType; o
                                 <h4 className="mb-2 text-sm font-semibold text-gray-500 dark:text-gray-400">{column.title}</h4>
                                 <div className="flex flex-col space-y-2 border-l border-gray-200 pl-4 dark:border-gray-700">
                                     {column.links.map((link, linkIdx) => (
-                                        <button
-                                            key={linkIdx}
-                                            onClick={() => handleItemClick(link.href)}
-                                            className="block w-full py-1 text-left text-sm text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
-                                        >
+                                        <Link key={linkIdx} href={link.href}>
+                                            <button
+                                                className="block w-full py-1 text-left text-sm text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
+                                            >
                                             {link.label}
-                                        </button>
+                                        </button></Link>
                                     ))}
                                 </div>
                             </div>

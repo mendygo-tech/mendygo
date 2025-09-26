@@ -123,69 +123,20 @@ export default function Footer() {
         </div>
 
         <div className="grid lg:grid-cols-1 ">
-          <div className="grid lg:grid-cols-4 lg:px-30 px-10 grid-cols-3 justify-items-center">
-            {/* <div className="space-y-3 sm:space-y-4 w-fit">
-              <h4 className="font-semibold text-sm sm:text-base ">Industries</h4>
+          <div className="grid lg:grid-cols-5 lg:px-30 px-10 grid-cols-3 justify-items-center">
+            <div className="space-y-3 sm:space-y-4 lg:block hidden">
+              <h4 className="font-semibold text-sm sm:text-base">Solutions</h4>
               <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
                 {[
-                  { href: "/industries/pulp-fiber", label: "Pulp & Fiber" },
-                  { href: "/industries/chemicals", label: "Chemicals" },
-                  {
-                    href: "/industries/food-beverage",
-                    label: "Food & Beverage",
-                  },
-                  {
-                    href: "/industries/buildings",
-                    label: "Buildings and Factories",
-                  },
-                  { href: "/industries/retail-malls", label: "Retail & Malls" },
-                  {
-                    href: "/industries/pharmaceuticals",
-                    label: "Pharmaceuticals",
-                  },
-                ].map((link, idx) => (
-                  <li key={idx}>
-                    <Link
-                      href={link.href}
-                      className="hover:text-[#abff02] block"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
-
-            <div className="space-y-3 sm:space-y-4 hidden lg:block">
-              <h4 className="font-semibold text-sm sm:text-base">Products</h4>
-              <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
-                {[
-                  {
-                    href: "/products/mendergy-energy-management-system",
-                    label: "Mendergy",
-                  },
-                  {
-                    href: "/products/mendysheets-digital-checksheets",
-                    label: "MendySheets",
-                  },
-                  { href: "/products/smartooe-dashboard", label: "SmartOEE" },
-                  {
-                    href: "/products/mendyai-industrial-intelligence-engine",
-                    label: "MendyView",
-                  },
-                  {
-                    href: "/products/thermendy-smart-climate-control",
-                    label: "Thermendy",
-                  },
-                  {
-                    href: "/products/mendyops-utility-monitoring-automation",
-                    label: "MendyOps",
-                  },
-                  {
-                    href: "/products/ai-based-maintenance",
-                    label: "AI Based Maintenance",
-                  },
-                  { href: "/products/mendylive", label: "MendyLive" },
+                  { href: "/solutions/management-systems/building-management", label: "Building Management" },
+                  { href: "/solutions/management-systems/energy-management", label: "Energy Management" },
+                  { href: "/solutions/management-systems/factory-management", label: "Factory Management" },
+                  { href: "/solutions/management-systems/hvac-management", label: "HVAC Management" },
+                  { href: "/solutions/telematics/chiller-telematics", label: "Chiller Telematics" },
+                  { href: "/solutions/telematics/earth-moving-telematics", label: "Earth Moving Telematics" },
+                  { href: "/solutions/telematics/compressor-telematics", label: "Compressor Telematics" },
+                  { href: "/solutions/telematics/ev-telematics", label: "EV Telematics" },
+                  { href: "/solutions", label: "View All Solutions" },
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link
@@ -198,17 +149,36 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+
+            <div className="space-y-3 sm:space-y-4 lg:block hidden">
+              <h4 className="font-semibold text-sm sm:text-base">Products</h4>
+              <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
+                {[
+                  { href: "/products/hardware/gateway", label: "Gateway" },
+                  { href: "/products/hardware/sensors-meters", label: "Sensors & Meters" },
+                  { href: "/products/hardware/controllers", label: "Controllers" },
+                  { href: "/products/ai/mendy", label: "Mendy AI Copilot" },
+                  { href: "/products/ai/computerVision", label: "MendyVision" },
+                ].map((link, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-[#abff02] block"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
             <div className="space-y-3 sm:space-y-4">
               <h4 className="font-semibold text-sm sm:text-base">Links</h4>
               <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 sm:space-y-2">
                 {[
                   { href: "/gallery", label: "Gallery" },
                   { href: "/career", label: "Career" },
-                  // { href: "/services/engineering", label: "Services" },
-                  // { href: "/process", label: "Process" },
-                  // { href: "/case-studies", label: "Case studies" },
                   { href: "/benefits", label: "Benefits" },
-                  // { href: "/contact", label: "Pricing" },
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link

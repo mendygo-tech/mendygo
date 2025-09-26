@@ -10,6 +10,7 @@ import mendyAiHomeLight from "@/assets/mockup/mendyAiPhoneLight.png";
 import mendySheetsDark from "@/assets/hardware/gateway/gatewaygrid.png";
 import mendySheetsLight from "@/assets/hardware/gateway/gatewaygrid.png";
 import mendyVision from "@/assets/mendyVision.png";
+import mendyVisionDark from "@/assets/mendyVisionDark.png";
 import customizedIndustryLight from "@/assets/mockup/customizedIndustryLight.png";
 import customizedIndustryDark from "@/assets/mockup/customizedIndustryDark.png";
 import AiMaintenanceLight from "@/assets/mockup/AiMaintenenceLight.png";
@@ -86,7 +87,7 @@ const Solutions = [
                     alt="Mendy Vision Light"
                 />
                 <Image
-                    src={mendyVision}
+                    src={mendyVisionDark}
                     className="rounded-2xl hidden dark:block max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}

@@ -1,26 +1,42 @@
 // src/app/products/ai/computerVision/page.tsx
-
+'use client';
 import { Hand, HardHat, Flame, ShieldCheck } from 'lucide-react';
+import React, { useCallback, useState } from 'react';
 import Image from 'next/image';
 import PPE_Detection_Image from '@/assets/ppeDetectionLight.png'; // Import the PPE detection image
-import PPE_Detection_ImageDark from '@/assets/ppeDetectionDark.png'; // Import the PPE detection image for dark mode
+import PPE_Detection_ImageDark from '@/assets/ppeDetectionDark.png';
+import DemoModal from "@/components/common/DemoModal";
+ // Import the PPE detection image for dark mode
 
 export default function ComputerVisionPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+      const openModal = useCallback(() => setIsModalOpen(true), []);
+      const closeModal = useCallback(() => setIsModalOpen(false), []);
   return (
     // Set a light background for the entire page
     <main className="bg-white/70 text-white/70">
       {/* Section 1: Hero with Video Background */}
-      <section className="relative flex h-screen items-center justify-center">
-        {/* Video Background */}
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute z-0 h-full w-full object-cover"
-        >
-          <source src="/cv.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+                <DemoModal isOpen={isModalOpen} onClose={closeModal} />
+      
+      <section
+  className="relative h-screen flex items-center justify-center 
+  
+  /* Bottom Shadow */ 
+  after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1/5 after:bg-gradient-to-t dark:after:from-black after:from-[#F9FAFB] after:to-transparent after:z-10
+  
+  /* Top Shadow */
+  before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-1/3 before:bg-gradient-to-b dark:before:from-black/30 before:from-[#F9FAFB]/30 before:to-transparent before:z-10"
+>
+  {/* Video Background */}
+  <video
+    className="absolute z-0 h-full w-full object-cover"
+    autoPlay
+    loop
+    muted
+  >
+    <source src="/cv.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
         
         {/* Light overlay to soften the video a bit (optional) */}
         <div className="absolute z-10 h-full w-full bg-white/70/10"></div>
@@ -28,17 +44,17 @@ export default function ComputerVisionPage() {
         {/* Hero Content - Text is now dark for readability on a potentially light video */}
         <div className="relative z-20 mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
-              style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.3)' }} >
+               style={{ textShadow: '0px 2px 4px #000' }} >
             Protecting Lives with AI-Powered Safety Monitoring
           </h1>
-          <p className="mt-6 text-lg leading-8 text-white"
+          <p className="mt-6 text-lg leading-8 text-white "
              style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.2)' }} >
             Real-time detection of PPE compliance and fire hazards—because safety
             should never be optional.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="#"
+              onClick={openModal}
               className="rounded-md bg-lime-500 px-4 py-3 text-sm font-semibold text-black shadow-sm hover:bg-lime-400 focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-lime-500"
             >
               Schedule Demo

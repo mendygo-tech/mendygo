@@ -13,7 +13,7 @@ import seamlessIntegration from "@/assets/icons/features/remoteImmobilization.pn
 import connectivity from "@/assets/icons/features/Single Line Diagram View.png"
 import buildtoEndure from "@/assets/icons/features/hammer.png"
 import remoteImmob from "@/assets/icons/features/warranty.png"
-import ITIntegration from "@/assets/icons/features/ITIntegration.png";
+import ITIntegration from "@/assets/icons/features/ItIntegration.png";
 import Adoptability from "@/assets/icons/features/Adoptability.png";
 import easeMounting from "@/assets/icons/features/serviceAlerts.png";
 import detectScreen from "@/assets/icons/features/detectionscreen.png";

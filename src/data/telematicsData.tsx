@@ -27,7 +27,7 @@ import ehbenefit1 from "@/assets/benefits/earthMoving.jpg"
 //compressor images
 import equipmentMonitoring from "@/assets/icons/features/equipment monitoring.png";
 import singleLineDiagram from "@/assets/icons/features/Single Line Diagram View.png";
-import ITIntegration from "@/assets/icons/features/ITIntegration.png";
+import ITIntegration from "@/assets/icons/features/ItIntegration.png";
 import ServiceAlerts from "@/assets/icons/features/serviceAlerts.png";
 import cmbenefit1 from "@/assets/benefits/compressor/1.png"
 import cmbenefit2 from "@/assets/benefits/compressor/2.png"

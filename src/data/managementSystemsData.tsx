@@ -22,7 +22,7 @@ import apfcImage from "@/assets/icons/features/ProactiveService.png";
 import waterImage from "@/assets/icons/solutions/Water Mangment .png";
 import stpImage from "@/assets/icons/features/remoteImmobilization.png";
 import airImage from "@/assets/icons/solutions/Compressor.png";
-import RealTimeMonitoring from "@/assets/icons/features/live Performance.png";
+import RealTimeMonitoring from "@/assets/icons/features/Live performance.png";
 import smartOEE from "@/assets/icons/features/crashAnalytics.png";
 import WarehouseImage from "@/assets/icons/solutions/Buliding Management Solution.png";
 import SafetyComplianceImage from "@/assets/icons/features/report.png";

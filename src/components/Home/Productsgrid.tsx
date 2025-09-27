@@ -26,7 +26,8 @@ const Solutions = [
         description:
             "Streamline operations with AI-driven control, monitoring, and decision-making tools.",
         content: (
-            <div className="relative w-fit lg:h-60 dark:border-2 border-[#5B5B5B] rounded-xl flex items-center justify-center overflow-hidden bg-gray-100 dark:bg-black ">
+            <div className=" w-fit lg:h-60 dark:border-2 border-[#5B5B5B] rounded-xl flex items-center justify-center overflow-hidden bg-gray-100 dark:bg-black ">
+                
                 <Image
                     src={mendyergyLight}
                     className="rounded-xl border-4 border-[#010101] dark:hidden max-h-full w-fit object-contain"
@@ -36,7 +37,7 @@ const Solutions = [
                 />
                 <Image
                     src={mendyergyDark}
-                    className="rounded-2xl border-4 border-black hidden dark:block max-h-full w-fit object-contain"
+                    className="rounded-2xl z-1 border-4 border-black hidden dark:block max-h-full w-fit object-contain"
                     height={1000}
                     width={1000}
                     alt="MendyAI Dark"
@@ -54,6 +55,12 @@ const Solutions = [
             "Real-time tracking, monitoring, and analytics to optimize fleet and asset performance.",
         content: (
             <>
+            {/* <div
+    className="absolute inset-0 rounded-xl z-0 blur-xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.3) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div> */}
                 <Image
                     src={AiMaintenanceLight}
                     className="rounded-2xl dark:hidden max-h-full max-w-full object-contain"
@@ -63,7 +70,7 @@ const Solutions = [
                 />
                 <Image
                     src={AiMaintenanceDark}
-                    className="rounded-2xl hidden dark:block max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-1 hidden dark:block max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="Thermendy Dark"
@@ -79,16 +86,22 @@ const Solutions = [
         description: "Advanced computer vision for real-time detection, tracking, and operational insights.",
         content: (
             <>
+            <div
+    className="absolute inset-0 rounded-xl z-0 blur-xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.3) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div>
                 <Image
                     src={mendyVision}
-                    className="rounded-2xl dark:hidden max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-2 dark:hidden max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="Mendy Vision Light"
                 />
                 <Image
                     src={mendyVisionDark}
-                    className="rounded-2xl hidden dark:block max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-2 hidden dark:block max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="Mendy Vision Dark"
@@ -106,16 +119,22 @@ const Solutions = [
             "MendyAI turns raw IoT data into smart, real-time insights using adaptive machine learning.",
         content: (
             <>
+            {/* <div
+    className="absolute inset-0 rounded-xl z-0 blur-xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.3) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div> */}
                 <Image
                     src={mendyAiHomeLight}
-                    className="rounded-2xl dark:hidden max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-1 dark:hidden max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="Thermendy Light"
                 />
                 <Image
                     src={mendyAiHomeDark}
-                    className="rounded-2xl hidden dark:block max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-1 hidden dark:block max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="Thermendy Dark"
@@ -134,16 +153,22 @@ const Solutions = [
         href: "/products/hardware/gateway",
         content: (
             <>
+            <div
+    className="absolute inset-0 rounded-xl z-0 blur-xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.3) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div>
                 <Image
                     src={mendySheetsLight}
-                    className="rounded-2xl dark:hidden max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-1 dark:hidden max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="MendySheets Light"
                 />
                 <Image
                     src={mendySheetsDark}
-                    className="rounded-2xl hidden dark:block max-h-full max-w-full object-contain"
+                    className="rounded-2xl z-1 hidden dark:block max-h-full max-w-full object-contain"
                     height={1000}
                     width={1000}
                     alt="MendySheets Dark"

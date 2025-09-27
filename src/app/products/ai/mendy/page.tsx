@@ -49,8 +49,8 @@ const Page = () => {
   };
 
   return (
-    <div className="overflow-hidden min-h-screen relative dark:bg-black">
-      <div className="grid lg:grid-cols-[2fr_3fr] grid-cols-1 h-screen items-center justify-center gap-10 lg:gap-0">
+    <div className=" min-h-screen relative dark:bg-black">
+      <div className="grid lg:grid-cols-[2fr_3fr] grid-cols-1 pb-20 lg:pb-0 min-h-screen items-center justify-center gap-10 lg:gap-0">
         <div className="relative flex h-full justify-center lg:pl-20 lg:pt-0 pt-30 w-full">
           {/* Soft glow behind the phone */}
           <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full dark:bg-[#abff02]/50  bg-[#abff02]/30 blur-3xl dark:opacity-40" />
@@ -63,21 +63,21 @@ const Page = () => {
           <Image
             src={aiHomeDark}
             alt="AI workflow assistant dark"
-            className="object-contain z-2 w-80 hidden dark:block"
+            className="object-contain z-2 lg:w-80 w-40 hidden dark:block"
             priority
           />
         </div>
 
-        <div className="flex flex-col h-full justify-center lg:items-start items-center w-full lg:w-2/3 p-10 lg:pr-20 pr-0">
+        <div className="flex flex-col h-full justify-center lg:items-start items-center w-full lg:w-2/3 p-6 lg:pr-20 pr-6">
           <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mb-4">
             <span className="text-sm font-semibold">Coming Soon</span>
           </Badge>
 
-          <h1 className="text-4xl font-semibold tracking-tight">
+          <h1 className="lg:text-4xl text-3xl font-semibold lg:text-left text-center tracking-tight">
             A new way for industry to manage workflows with AI
           </h1>
 
-          <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+          <p className="mt-3 text-neutral-700 lg:text-left text-center dark:text-neutral-300">
             We’re changing how teams collaborate with technology. Sign up for
             early access.
           </p>

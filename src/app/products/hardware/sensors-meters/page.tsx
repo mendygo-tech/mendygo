@@ -25,15 +25,21 @@ const page = () => {
           {systemData.modules.map((module) => (
             <Link key={module.title} href={`/products/hardware/sensors-meters/${module.href}`}>
               <div
-                className="flex flex-col  dark:bg-black rounded-xl border pb-10 shadow-lg border-neutral-200 dark:border-neutral-800  dark:hover:border-neutral-700  transition-all duration-300"
+                className="flex flex-col  dark:bg-black rounded-xl border-2 pb-10 shadow-lg border-neutral-200 dark:border-neutral-800  dark:hover:border-neutral-700  transition-all duration-300"
               >
               {module.image && (
                 <div className="relative h-40  ">
+                  <div
+    className="absolute inset-0 rounded-xl z-0 blur-2xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.1) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div>
                   <Image
                     src={module.image}
                     alt={module.title}
                     layout="fill"
-                    className="object-contain border-b rounded-xl object-center pl-10"
+                    className="object-contain border-b-2 rounded-xl object-center pl-10"
                   />
                 </div>
               )}

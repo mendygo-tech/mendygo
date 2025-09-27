@@ -1,10 +1,10 @@
 import { StaticImageData } from "next/image";
 
-import heroSensor from "@/assets/hardware/sensorsAndMeters/meter.jpeg"
+import heroSensor from "@/assets/hardware/sensorsAndMeters/meter.png"
 import heroFuelSensor from "@/assets/hardware/sensorsAndMeters/FuelSensor.png"
 // import DarkheroImage from "@/assets/hardware/sensorsAndMeters/FuelSensorDark.png"
-import temperaturehero from "@/assets/hardware/sensorsAndMeters/temperatureSensor.png"
-import temperatureheroDark from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.jpeg.jpg" 
+import temperaturehero from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.png"
+import temperatureheroDark from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.png" 
 // import vibrationhero from "@/assets/hardware/sensorsAndMeters/VibrationSensor.jpeg"
 import vibrationheroDark from "@/assets/hardware/sensorsAndMeters/Vibration Sensor.png"
 import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS

@@ -47,17 +47,24 @@ const HardwareHero = ({ systemData }) => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center text-center -mt-4">
+        <div className="flex flex-col items-center text-center -mt-4 relative">
+          
+          <div
+    className="absolute inset-0 rounded-xl blur-xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.3) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div>
           <Image
             src={systemData.heroImage}
             alt={systemData.title}
-            className="rounded-xl dark:hidden border object-cover border-none bg-[#F8F9FA] dark:bg-black  dark:shadow-lg w-full "
+            className="rounded-xl dark:hidden border object-cover border-none  bg-transparent w-full relative z-0"
             priority
           />
           <Image
             src={systemData.DarkheroImage}
             alt={systemData.title}
-            className="rounded-xl hidden dark:block border object-cover border-none bg-[#F8F9FA] dark:bg-black  dark:shadow-lg w-full "
+            className="rounded-xl hidden dark:block border object-cover border-none  bg-transparent w-full relative z-10"
             priority
           />
         </div>

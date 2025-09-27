@@ -7,6 +7,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            backgroundImage: {
+        // ...existing code...
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
              colors: {
         'mendygo-green': '#A3E635', 
       },

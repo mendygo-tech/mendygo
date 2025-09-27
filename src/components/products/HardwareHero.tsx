@@ -48,11 +48,17 @@ const [isModalOpen, setIsModalOpen] = useState(false);
           </div>
         </div>
 
-        <div className="flex flex-col items-center text-center -mt-4">
+        <div className="flex relative flex-col items-center text-center -mt-4">
+          <div
+    className="absolute inset-0 rounded-xl blur-xl scale-110"
+    style={{
+      background: "radial-gradient(circle, rgba(159,251,30,0.2) 0%, rgba(159,251,30,0.1) 50%, transparent 100%)",
+    }}
+  ></div>
           <Image
             src={systemData.heroGateway}
             alt={systemData.title}
-            className="rounded-xl border object-cover border-neutral-200 dark:border-neutral-800 shadow-lg w-full "
+            className="rounded-xl z-2 object-cover w-full "
             priority
           />
         </div>

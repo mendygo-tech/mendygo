@@ -13,17 +13,8 @@ import {
   ShoppingBag,
   Utensils,
   Pill,
-  Shield,
-  ClipboardCheck,
-  Zap,
-  BarChart3,
-  Gauge,
-  Eye,
-  Thermometer,
-  Brain,
   ArrowRight,
   CheckCircle2,
-  Orbit, // NEW: For MendyVerse
 } from 'lucide-react';
 
 const industryIcons: Record<string, React.ReactNode> = {
@@ -35,63 +26,63 @@ const industryIcons: Record<string, React.ReactNode> = {
   pharmaceuticals: <Pill className="w-6 h-6" />,
 };
 
-const products = [
-  {
-    name: 'Mendyview',
-    tagline: 'AI-Powered Industrial Access Control',
-    desc: 'Seamless access management with AI-driven image processing and compliance monitoring.',
-    icon: <Shield className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'MendySheets',
-    tagline: 'Digital Quality Inspection Platform',
-    desc: 'Digitized workflows with real-time inspection data, automated reporting, and analytics.',
-    icon: <ClipboardCheck className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'Mendergy',
-    tagline: 'Intelligent Energy Management',
-    desc: 'IIoT-powered energy monitoring, predictive analytics, and automated control.',
-    icon: <Zap className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'SmartOEE',
-    tagline: 'Equipment Effectiveness Dashboard',
-    desc: 'Live factory performance insights to improve productivity and reduce downtime.',
-    icon: <BarChart3 className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'MendygoVerse',
-    tagline: 'AR/VR/MR Industrial Platform',
-    desc: 'Immersive industrial training and remote assistance powered by AR/VR/MR.',
-    // CHANGED: Using a more appropriate icon for AR/VR
-    icon: <Orbit className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'MendyOps',
-    tagline: 'Utility Monitoring & Automation',
-    desc: 'Unified control of HVAC, pumps, and energy systems with predictive optimization.',
-    icon: <Gauge className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'MendyLive',
-    tagline: 'Digital Twin Visualization',
-    desc: 'Real-time monitoring and simulation with dynamic digital twin technology.',
-    icon: <Eye className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'Thermendy',
-    tagline: 'Smart Climate Control',
-    desc: 'AI-driven industrial climate management for energy efficiency and comfort.',
-    icon: <Thermometer className="w-8 h-8 text-primary" />,
-  },
-  {
-    name: 'MendyAI',
-    tagline: 'Industrial Intelligence Engine',
-    desc: 'Predictive analytics, automation, and decision support for smarter operations.',
-    icon: <Brain className="w-8 h-8 text-primary" />,
-  },
-];
+// const products = [
+//   {
+//     name: 'Mendyview',
+//     tagline: 'AI-Powered Industrial Access Control',
+//     desc: 'Seamless access management with AI-driven image processing and compliance monitoring.',
+//     icon: <Shield className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'MendySheets',
+//     tagline: 'Digital Quality Inspection Platform',
+//     desc: 'Digitized workflows with real-time inspection data, automated reporting, and analytics.',
+//     icon: <ClipboardCheck className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'Mendergy',
+//     tagline: 'Intelligent Energy Management',
+//     desc: 'IIoT-powered energy monitoring, predictive analytics, and automated control.',
+//     icon: <Zap className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'SmartOEE',
+//     tagline: 'Equipment Effectiveness Dashboard',
+//     desc: 'Live factory performance insights to improve productivity and reduce downtime.',
+//     icon: <BarChart3 className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'MendygoVerse',
+//     tagline: 'AR/VR/MR Industrial Platform',
+//     desc: 'Immersive industrial training and remote assistance powered by AR/VR/MR.',
+//     // CHANGED: Using a more appropriate icon for AR/VR
+//     icon: <Orbit className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'MendyOps',
+//     tagline: 'Utility Monitoring & Automation',
+//     desc: 'Unified control of HVAC, pumps, and energy systems with predictive optimization.',
+//     icon: <Gauge className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'MendyLive',
+//     tagline: 'Digital Twin Visualization',
+//     desc: 'Real-time monitoring and simulation with dynamic digital twin technology.',
+//     icon: <Eye className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'Thermendy',
+//     tagline: 'Smart Climate Control',
+//     desc: 'AI-driven industrial climate management for energy efficiency and comfort.',
+//     icon: <Thermometer className="w-8 h-8 text-primary" />,
+//   },
+//   {
+//     name: 'MendyAI',
+//     tagline: 'Industrial Intelligence Engine',
+//     desc: 'Predictive analytics, automation, and decision support for smarter operations.',
+//     icon: <Brain className="w-8 h-8 text-primary" />,
+//   },
+// ];
 
 // NEW: Animation variants for Framer Motion
 const containerVariants = {
@@ -138,7 +129,7 @@ export default function IndustriesAndSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg font-thin opacity-80 max-w-3xl mx-auto"
+              className="text-lg  opacity-80 max-w-3xl mx-auto"
             >
               Mendygo empowers diverse industries with Industry 4.0 solutions to enhance efficiency and innovation.
             </motion.p>
@@ -154,9 +145,8 @@ export default function IndustriesAndSolutions() {
       >
         {Object.entries(servicesContent).map(([slug, content]) => (
           <motion.div key={slug} variants={itemVariants}>
-            {/* CHANGED: Wrapped the card in a Link component for better UX */}
-            <Link
-              href={`/industries/${slug}`}
+            {/* CHANGED: Wrapped the card in a div component for better UX */}
+            <div
               className="group block rounded-2xl overflow-hidden border border-gray-200 dark:border-none shadow-lg hover:shadow-primary/20 dark:shadow-none transition-all duration-300 bg-white dark:bg-neutral-900 hover:-translate-y-1 h-full"
             >
               <div className="relative h-48  w-full overflow-hidden">
@@ -185,63 +175,12 @@ export default function IndustriesAndSolutions() {
                   ))}
                 </div>
               </div>
-            </Link>
+            </div>
           </motion.div>
         ))}
       </motion.div>
 
 
-      <section className="py-20   dark:from-black/80 dark:to-black">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5}}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg"
-          >
-            Our Solutions
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg font-thin opacity-80 max-w-3xl mx-auto mb-16"
-          >
-            Explore Mendygo’s AI-powered platforms designed for industrial
-            excellence and sustainability.
-          </motion.p>
-
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {products.map((p) => (
-              <motion.div
-                key={p.name}
-                variants={itemVariants}
-                className="group rounded-2xl shadow-lg dark:shadow-none dark:border-none hover:shadow-primary/20 transition-all duration-300 p-8 border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900 text-left flex flex-col hover:-translate-y-1 hover:border-primary/50"
-              >
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="p-3 rounded-xl bg-primary/10">{p.icon}</div>
-                  <h3 className="text-xl font-semibold">{p.name}</h3>
-                </div>
-                <p className="font-medium text-primary">{p.tagline}</p>
-                <p className="mt-1 text-sm opacity-70 flex-grow">{p.desc}</p>
-                {/* <div className="mt-6">
-                  <span className="text-sm font-semibold text-primary/80 group-hover:text-primary transition-colors duration-300">
-                    Learn More &rarr;
-                  </span>
-                </div> */}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* NEW: Enhanced CTA Section */}
       <section className="bg-gradient-to-br dark:from-[#abff01]/40 from-[#abff01]/35 via-[#abff01]/0 to-[#abff01]/20 dark:border-white/30 dark:text-white rounded-lg lg:max-w-7xl mx-auto md:max-w-5xl sm:max-w-3xl">

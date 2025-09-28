@@ -124,7 +124,7 @@ const Step2 = () => {
                 <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">
                     AI Development
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight font-thin">
+                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight ">
                     Building intelligent automation systems.
                 </p>
             </div>

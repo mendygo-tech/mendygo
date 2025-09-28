@@ -1,6 +1,5 @@
 // Productsgrid.tsx
 "use client";
-import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import mendyergyDark from "@/assets/mockup/mendergylgDark.png";
 import mendyergyLight from "@/assets/mockup/mendergylgLight.png";
@@ -9,8 +8,8 @@ import mendyAiHomeDark from "@/assets/mockup/mendyAiPhoneDark.png";
 import mendyAiHomeLight from "@/assets/mockup/mendyAiPhoneLight.png";
 import mendySheetsDark from "@/assets/hardware/gateway/gatewaygrid.png";
 import mendySheetsLight from "@/assets/hardware/gateway/gatewaygrid.png";
-import mendyVision from "@/assets/mendyVision.png";
-import mendyVisionDark from "@/assets/mendyVisionDark.png";
+import mendyVision from "@/assets/hardware/mendyVision.png";
+import mendyVisionDark from "@/assets/hardware/mendyVisionDark.png";
 import customizedIndustryLight from "@/assets/mockup/customizedIndustryLight.png";
 import customizedIndustryDark from "@/assets/mockup/customizedIndustryDark.png";
 import AiMaintenanceLight from "@/assets/mockup/AiMaintenenceLight.png";
@@ -282,35 +281,14 @@ const itemVariants = {
 };
 
 const Products = () => {
-    // const [showAll, setShowAll] = useState(false);
-    // const displayedSolutions = showAll ? Solutions : Solutions.slice(0, 5);
-    const [startAnimation, setStartAnimation] = useState(false);
-    const gridRef = useRef<HTMLDivElement | null>(null);
-    useEffect(() => {
-        if (startAnimation) return;
-        const el = gridRef.current;
-        if (!el) return;
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setStartAnimation(true);
-                        observer.disconnect();
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, [startAnimation]);
+    
     return (
         <div className="relative min-h-screen text-gray-950 dark:text-gray-100 flex flex-col items-center">
             <div className="text-center mb-10 px-4">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg">
                     Smart Solutions by Mendygo
                 </h1>
-                <h2 className="text-base sm:text-lg text-gray-600 font-thin dark:text-gray-400 max-w-3xl mx-auto mt-2">
+                <h2 className="text-base sm:text-lg text-gray-600  dark:text-gray-400 max-w-3xl mx-auto mt-2">
                     Innovative digital products crafted to empower businesses, streamline operations, and deliver exceptional customer experiences.
                 </h2>
             </div>
@@ -319,9 +297,6 @@ const Products = () => {
                 layout
                 className="w-full lg:max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4"
                 variants={containerVariants}
-                initial="hidden"
-                animate={startAnimation ? "show" : "hidden"}
-                ref={gridRef}
             >
                 {Solutions.map((solution) => (
                     <motion.a
@@ -347,10 +322,10 @@ const Products = () => {
                             </motion.div>
 
                             <div>
-                                <p className="text-sm text-gray-900 font-semibold dark:text-gray-300">
+                                <p className="text-sm text-gray-900 font-bold dark:text-gray-300">
                                     {solution.subtitle}
                                 </p>
-                                <p className="text-sm text-gray-900 font-thin pt-1 dark:text-gray-300">
+                                <p className="text-sm text-gray-900  pt-1 dark:text-gray-400">
                                     {solution.description}
                                 </p>
                             </div>
@@ -358,25 +333,6 @@ const Products = () => {
                     </motion.a>
                 ))}
             </motion.div>
-            {/* <button
-                onClick={() => {
-                    setShowAll((prev) => {
-                        const next = !prev;
-                        if (prev && gridRef.current) {
-                            const y =
-                                gridRef.current.getBoundingClientRect().top +
-                                window.scrollY +
-                                400;
-                            window.scrollTo({ top: y, behavior: "smooth" });
-                        }
-                        return next;
-                    });
-                }}
-                className="my-10 px-6 py-2 text-md font-medium dark:text-black rounded-full bg-[#9ffb1e]"
-                aria-expanded={showAll}
-            >
-                {showAll ? "Show Less" : "Show More"}
-            </button> */}
 
             <div className="bg-gradient-to-br dark:from-[#abff01]/40 from-[#abff01]/35 via-[#abff01]/0 to-[#abff01]/20 dark:border-white/30 dark:text-white grid lg:grid-cols-[1fr_2fr] w-11xl p-10 pt-10 text-md my-20">
                 <motion.div className="relative h-96 rounded-xl flex items-center justify-center overflow-hidden p-6">
@@ -399,10 +355,10 @@ const Products = () => {
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-100 dark:via-gray-200 w-full lg:w-2/3 dark:to-gray-500 dark:drop-shadow-lg pt-10">
                         Customized Industry 4.0 Solutions
                     </h1>
-                    <p className="text-md pt-3 font-thin dark:text-gray-300">
+                    <p className="text-md pt-3  dark:text-gray-300">
                         We offer tailored solutions to help businesses embrace Industry 4.0 technologies.
                     </p>
-                    <p className="pb-8 font-thin dark:text-gray-300">
+                    <p className="pb-8  dark:text-gray-300">
                         Our expertise includes IoT, AI, and advanced automation to drive efficiency and innovation.
                     </p>
                     <Link href="/contact" className="px-8 py-3 rounded-full dark:text-gray-300 border border-slate-400 dark:hover:border-[#abff01]  transition text-sm font-medium">Contact Us</Link>

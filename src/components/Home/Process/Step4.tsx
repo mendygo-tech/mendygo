@@ -77,7 +77,7 @@ const Step4 = () => {
                     Step 4
                 </span>
                 <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">Optimization</h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight font-thin">
+                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight ">
                     Continuous monitoring and improvement.
                 </p>
             </div>

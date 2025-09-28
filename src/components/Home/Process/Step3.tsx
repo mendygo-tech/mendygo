@@ -24,7 +24,7 @@ const Step3 = () => {
                     Step 3
                 </span>
                 <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">Integration</h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight font-thin">
+                <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight ">
                     Seamless integration with your tools.
                 </p>
             </div>

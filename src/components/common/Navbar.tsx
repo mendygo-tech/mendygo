@@ -45,7 +45,7 @@ export function MyNavbar() {
             dropdown: {
                 columns: [
                     {
-                        title: "Management Systems",
+                        title: "Mendygo Management Systems",
                         // This column has more than 5 items, so we add a viewAllLink
                         viewAllLink: { href: "/solutions", label: "View All Systems" },
                         links: [
@@ -60,7 +60,7 @@ export function MyNavbar() {
                         ],
                     },
                     {
-                        title: "Telematics",
+                        title: "Mendygo Telematics",
                         links: [
                             { href: "/solutions/telematics/ev-telematics", label: "EV Telematics", description: "Advanced electric vehicle monitoring." },
                             { href: "/solutions/telematics/chiller-telematics", label: "Chiller Telematics", description: "Remote performance tracking for chillers." },

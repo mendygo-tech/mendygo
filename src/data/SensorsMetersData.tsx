@@ -7,7 +7,7 @@ import temperaturehero from "@/assets/hardware/sensorsAndMeters/temperatureSenso
 import temperatureheroDark from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.png" 
 // import vibrationhero from "@/assets/hardware/sensorsAndMeters/VibrationSensor.jpeg"
 import vibrationheroDark from "@/assets/hardware/sensorsAndMeters/Vibration Sensor.png"
-import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS
+// import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS
 
 import seamlessIntegration from "@/assets/icons/features/remoteImmobilization.png"
 import connectivity from "@/assets/icons/features/Single Line Diagram View.png"
@@ -37,7 +37,6 @@ export interface sensorsMetersSystem {
   heroImage: StaticImageData;
   heroGateway?: StaticImageData;
   DarkheroImage?: StaticImageData;
-  ecosystemImage: StaticImageData;
   modules: Module[];
 }
 export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
@@ -47,7 +46,7 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
       "An Industrial IoT gateway offering real-time monitoring, flexible connectivity, and robust data management for diverse industrial applications.",
     heroImage: heroSensor,
     heroGateway: heroSensor,
-    ecosystemImage: ecosystemBMS,
+    
     modules: [
       {
         title: "Temperature Sensor",
@@ -83,7 +82,7 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
       "A bluetooth enabled, high-precision capacitive fuel level sensor, which is used to monitor fuel consumption, refueling, draining and theft on all types of vehicles, as well as stationary tanks",
     heroImage: heroFuelSensor,
     DarkheroImage: heroFuelSensor,
-    ecosystemImage: ecosystemBMS,
+    
     modules: [
       {
         title: "Configurability",
@@ -123,7 +122,7 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
       "Industrial application device, the vibration sensor is a cost-effective solution with high sensitivity, fast response, and superior performance ",
     heroImage: vibrationheroDark,
     DarkheroImage: vibrationheroDark,
-    ecosystemImage: ecosystemBMS,
+    
     modules: [
       {
         title: "Ease of mounting",
@@ -163,7 +162,7 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
       "A high-temperature, long-life wireless sensor built for extreme environments. It is suitable for temperature monitoring of bus bar trunking & distribution panel systems. Its 240°C resilience, 15-year battery life, and BLE connectivity enable seamless IoT integration, faster installations, and reliable performance with minimal maintenance.",
     heroImage: temperaturehero,
     DarkheroImage: temperatureheroDark,
-    ecosystemImage: ecosystemBMS,
+    
     modules: [
       {
         title: "High-temperature resilience",

@@ -11,7 +11,7 @@ module.exports = {
         // ...existing code...
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
-             colors: {
+    colors: {
         'mendygo-green': '#A3E635', 
       },
         },

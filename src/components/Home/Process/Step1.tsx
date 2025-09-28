@@ -18,7 +18,7 @@ const Step1 = () => {
                     Step 1
                 </span>
                 <h2 className="text-xl font-bold mb-1 text-gray-900 dark:text-[#9B9999]">Smart Analyzing</h2>
-                <p className="text-gray-600 dark:text-gray-300 text-xs font-thin leading-tight">
+                <p className="text-gray-600 dark:text-gray-300 text-xs  leading-tight">
                     We assess your needs and identify AI solutions.
                 </p>
             </div>

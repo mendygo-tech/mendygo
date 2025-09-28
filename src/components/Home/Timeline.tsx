@@ -13,7 +13,6 @@ import {
 import VennDiagram from './VennDiagram';
 
 const Timeline = () => {
-    // const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
     }, []);
@@ -64,7 +63,7 @@ const Timeline = () => {
                     <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg">
                         How do we do?
                     </h1>
-                    <p className="lg:text-md px-7 font-thin dark:text-gray-300 text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="lg:text-md px-7  dark:text-gray-300 text-gray-600 max-w-3xl mx-auto leading-relaxed">
                         &quot;In a world filled with challenges, solutions can be—simple or complex, and we consistently choose the path of simplicity&quot;
                     </p>
                 </div>

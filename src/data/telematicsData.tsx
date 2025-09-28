@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image";
-import evHero from '@/assets/evbg.jpg'
-import chillerHero from '@/assets/chillerbg.jpg'
-import earthMoving from '@/assets/earthMovingbg.jpg'
-import compressorHero from '@/assets/compressor.webp'
+import evHero from '@/assets/telematics/evbg.jpg'
+import chillerHero from '@/assets/telematics/chillerbg.jpg'
+import earthMoving from '@/assets/telematics/earthMovingbg.jpg'
+import compressorHero from '@/assets/telematics/compressor.webp'
 
 //chiller images
 import warrantyManagementImage from "@/assets/icons/features/warranty.png";

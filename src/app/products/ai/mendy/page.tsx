@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import aiHomelight from "@/assets/3dAIMockupPhoneLight.png";
-import aiHomeDark from "@/assets/3dAIMockupPhoneDark.png";
+import aiHomelight from "@/assets/mockup/3dAIMockupPhoneLight.png";
+import aiHomeDark from "@/assets/mockup/3dAIMockupPhoneDark.png";
 import { Badge } from "@/components/ui/badge";
 
 const Page = () => {

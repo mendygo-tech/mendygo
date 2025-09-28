@@ -111,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${urbanist.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
           storageKey="theme"

@@ -36,18 +36,16 @@ const CompanySlider = () => {
               className="flex flex-col items-center min-w-[120px]"
               aria-hidden={i >= companies.length ? true : undefined}
             >
-              <div className="relative w-25 h-20 mb-2">
+              <div className="relative w-25 h-25 mb-2">
                 <Image
                   src={company.image}
                   alt={company.name}
                   fill
-                  sizes="80px"
+                  sizes="100px"
                   className="object-contain"
                 />
               </div>
-              <span className="text-sm text-gray-800 dark:text-[#9B9999] font-medium mt-4">
-                {company.name}
-              </span>
+             
             </div>
           ))}
         </div>
@@ -62,9 +60,7 @@ const CompanySlider = () => {
           animation: scroll-left 18s linear infinite;
         }
 
-        .scroll-wrapper:hover .animate-scroll {
-          animation-play-state: paused;
-        }
+       
 
         @keyframes scroll-left {
           0% {

@@ -3,14 +3,12 @@
 import React, { useCallback } from "react";
 import { useState } from "react";
 import { useParams, notFound } from "next/navigation";
-// import Image from "next/image";
 import Link from "next/link";
 import DemoModal from "@/components/common/DemoModal";
   
 
 import { managementSystemsData } from "@/data/managementSystemsData";
 import ManagementHero from "@/components/products/ManagementHero";
-// import HardwareOverview from "@/components/products/HardwareOverview";
 import Features from "@/components/products/Features";
 
 const ManagementSystemPage = () => {

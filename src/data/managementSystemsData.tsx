@@ -1,19 +1,16 @@
 import { StaticImageData } from "next/image";
 
-// --- ACTION REQUIRED: Replace these placeholder imports with your actual image files ---
-import heroBMS from "@/assets/buildingManagement.jpeg";
-import warehouseHero from "@/assets/3_warehouse management system .png" // Your hero image for BMS
-import factoryHero from "@/assets/factoryManagement.png"
-import energyHero from "@/assets/energymangement.jpeg"
-import constructionHero from "@/assets/constructionManagement.jpeg"
-import waterManagement from "@/assets/waterManagement.png"
-import hvacManagementHero from "@/assets/havcManagement.png"
-import GensetManageHero from "@/assets/Genset management.png"
-import heroGateway from "@/assets/imagesq.png"
-import hardware from "@/assets/hardwareSimple.png" // Your hero image for BMS
-import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS
+import heroBMS from "@/assets/managementSystems/buildingManagement.jpeg";
+import warehouseHero from "@/assets/managementSystems/3_warehouse management system .png" // Your hero image for BMS
+import factoryHero from "@/assets/managementSystems/factoryManagement.png"
+import energyHero from "@/assets//managementSystems/energymangement.jpeg"
+import constructionHero from "@/assets/managementSystems/constructionManagement.jpeg"
+import waterManagement from "@/assets//managementSystems/waterManagement.png"
+import hvacManagementHero from "@/assets/managementSystems/havcManagement.png"
+import GensetManageHero from "@/assets/managementSystems/Genset management.png"
 
-// --- Placeholder images for modules. Replace them with your actual assets. ---
+
+
 import hvacImage from "@/assets/icons/solutions/HVAC Managment.png";
 import energyImage from "@/assets/icons/solutions/Energy Management .png";
 import gensetImage from "@/assets/icons/solutions/Genset Management.png";
@@ -35,6 +32,7 @@ import backupMonitoring from "@/assets/icons/features/Adoptability.png"
 import realTimeMap from "@/assets/icons/features/Geofences.png"
 import fleetManagement from "@/assets/icons/features/fleetManagement.png"
 
+
 export interface Module {
   title: string;
   desc: string[];
@@ -50,12 +48,11 @@ export interface ManagementSystem {
   hardwareSpecs?: Module[];
   heroImage: StaticImageData;
     heroGateway?: StaticImageData;
-  ecosystemImage: StaticImageData;
   modules: Module[];
-  architecture?: Module[]; // Added architecture field
+  architectureimage?: StaticImageData;
+  architecture?: Module[];
 }
 
-// Main data object. The keys MUST match the URL slugs.
 export const managementSystemsData: Record<string, ManagementSystem> = {
   "building-management": {
     slug: "building-management",
@@ -83,8 +80,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
       "Trusted by leading commercial and industrial facilities",
     ],
     heroImage: heroBMS,
-    heroGateway: heroGateway,
-    ecosystemImage: ecosystemBMS,
     modules: [
       {
         title: "HVAC Management",
@@ -165,28 +160,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -207,7 +202,8 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
             title: "Integration with BMS & ERP",
             desc: ["Seamless integration with legacy BMS, ERP, and energy management systems", "Unified digital platform for operational, energy, and water analytics"]
         }
-    ]
+    ],
+    // architectureimage: hardware
   },
   "factory-management": {
     slug: "factory-management",
@@ -216,7 +212,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Production lines", "Machines & Equipment", "Energy Systems", "Warehouses", "Water & Utility Systems", "Gensets", "STP/ETP units"],
     benefits: ["Optimized Overall Equipment Effectiveness (OEE)", "Reduced downtime & operational costs", "Real-time visibility across production lines and assets", "Predictive maintenance for proactive equipment care", "Safety compliance & risk mitigation", "Energy, water, and utility efficiency", "Data-driven decision-making & reporting", "Trusted by leading industrial operators"],
     heroImage: factoryHero,
-    ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Mendergy - EMS",
@@ -270,28 +265,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -321,7 +316,7 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Mains", "Solar & Wind", "Gensets", "Switchgears", "APFC Panels", "Busbars", "Energy Meters", "Critical Loads"],
     benefits: ["Real-time energy visibility across all sources and loads", "Reduced electricity bills through optimization and demand management", "Quick identification of inefficiencies and abnormal consumption", "Predictive alerts for maintenance and load balancing", "Improved compliance with energy and sustainability standards", "Enhanced operational efficiency and reliability", "Data-backed reporting for management and ESG goals", "Trusted by industrial leaders"],
     heroImage: energyHero,
-    ecosystemImage: ecosystemBMS,
+    
     modules: [
         {
             title: "Active Energy Monitoring",
@@ -360,28 +355,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -411,7 +406,7 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Inventory Items", "Forklifts & Material Handling Equipment", "Racking & Storage Units", "Temperature/Humidity Sensors", "Security Systems"],
     benefits: ["Real-time inventory visibility across multiple locations", "Automated stock management to prevent shortages or overstocking", "Optimized warehouse layout and storage utilization", "Reduced manual errors and operational costs", "Improved order fulfillment speed and accuracy", "Enhanced workforce productivity with task automation", "Compliance with safety and regulatory standards"],
     heroImage: warehouseHero,
-    ecosystemImage: ecosystemBMS,
+    
     modules: [
         {
             title: "Inventory Tracking & Management",
@@ -445,28 +440,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -496,7 +491,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Diesel & Gas Gensets", "Automatic Transfer Switches (ATS)", "Fuel Tanks", "Engine Components", "Control Panels"],
     benefits: ["Real-time monitoring of genset performance and fuel consumption", "Predictive maintenance to prevent unplanned downtime", "Optimized load distribution and runtime scheduling", "Reduced fuel consumption and operational costs", "Extended genset lifespan through data-driven insights", "Automated reporting for audits, safety, and compliance", "Trusted by industrial leaders"],
     heroImage: GensetManageHero,
-    ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Genset Performance Monitoring",
@@ -531,28 +525,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -582,8 +576,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Chillers", "Air Handling Units (AHU)", "Variable Frequency Drives (VFDs)", "Cooling Towers", "Pumps & Motors"],
     benefits: ["Quick issue identification", "Reduced energy consumption & operational costs", "Centralized system visibility", "Adaptive climate control", "Compliance with environmental and safety standards", "Extended equipment life", "Efficient reporting & dashboards", "Trusted by industrial leaders"],
     heroImage: hvacManagementHero,
-    heroGateway: heroGateway,
-    ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Gain complete HVAC system visibility with digital logs",
@@ -623,28 +615,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -674,7 +666,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Pumps", "Valves", "Tanks", "Flowmeters", "Sensors", "Filtration Systems", "STP/ETP", "Pipelines"],
     benefits: ["Real-time visibility of water consumption across sections and tanks", "Reduced water wastage through early leak detection", "Optimized pumping and distribution for energy savings", "Compliance with water quality and discharge regulations", "Automated reporting for management and sustainability goals", "Improved operational efficiency and cost control", "Trusted by industrial leaders"],
     heroImage: waterManagement,
-    ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Water Consumption Monitoring",
@@ -709,28 +700,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],
@@ -760,7 +751,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Earthmoving vehicles", "Cranes", "Excavators", "Dumpers", "Loaders", "Trucks", "GPS & Telematics devices"],
     benefits: ["Real-time visibility of all construction fleet vehicles", "Optimized utilization and reduced idle time", "Improved driver accountability and safety", "Reduced fuel consumption and operational costs", "Preventive maintenance to extend equipment lifespan", "Automated reporting for management and compliance", "Trusted by leading construction companies"],
     heroImage: constructionHero,
-    ecosystemImage: ecosystemBMS,
     modules: [
         {
             title: "Vehicle Health Monitoring",
@@ -800,28 +790,28 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       {
         title: "IoT Sensors & Actuators",
         desc : ["Temperature, humidity, flow, pressure, energy, and water quality sensors for real-time monitoring"
 
         ],
-        image :hardware
+        
       },
       
     ],

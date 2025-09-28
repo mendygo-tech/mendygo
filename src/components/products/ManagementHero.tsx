@@ -11,6 +11,7 @@ const ManagementHero = ({ systemData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = useCallback(() => setIsModalOpen(true), []);
     const closeModal = useCallback(() => setIsModalOpen(false), []);
+    
   return (
     <div>
         <h1 className="text-4xl md:text-5xl text-center font-bold text-black dark:text-gray-200 mb-16">

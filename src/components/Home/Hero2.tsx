@@ -1,14 +1,13 @@
+import HeroDashboardLight from "@/assets/LargeImages/whiteHero.avif";
+import industry from "@/assets/telematics/industry.jpg";
+import industry3 from "@/assets/telematics/evbg.jpg";
+import industry2 from "@/assets/managementSystems/HVAC-management.webp";
+import industry4 from "@/assets/telematics/earthmoving3.jpg";
+import HeroDashboardDark from "@/assets/LargeImages/DarkHero.avif";
 import React, { useState, useEffect } from "react";
-
 import Image from "next/image";
-import HeroDashboardLight from "@/assets/LargeImages/whiteHero-min.png";
-import HeroDashboardDark from "@/assets/LargeImages/DarkHero-min.png";
 import { motion } from "motion/react";
 import GlassmorphedButtons from "../common/Buttons";
-import industry from "@/assets/telematics/industry.jpg";
-import industry2 from "@/assets/managementSystems/HVAC-management.webp";
-import industry3 from "@/assets/telematics/evbg.jpg";
-import industry4 from "@/assets/telematics/earthmoving3.jpg";
 
 const Hero2 = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -1,9 +1,9 @@
-import HeroDashboardLight from "@/assets/LargeImages/whiteHeroResized.webp";
+import HeroDashboardLight from "@/assets/LargeImages/whiteHero_2k.png";
 import industry from "@/assets/telematics/industry.jpg";
 import industry3 from "@/assets/telematics/evbg.jpg";
 import industry2 from "@/assets/managementSystems/HVAC-management.webp";
 import industry4 from "@/assets/telematics/earthmoving3.jpg";
-import HeroDashboardDark from "@/assets/LargeImages/DarkHeroResized.webp";
+import HeroDashboardDark from "@/assets/LargeImages/DarkHero_2k.png";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";

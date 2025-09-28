@@ -1,9 +1,9 @@
-import HeroDashboardLight from "@/assets/LargeImages/whiteHero.avif";
+import HeroDashboardLight from "@/assets/LargeImages/whiteHeroResized.webp";
 import industry from "@/assets/telematics/industry.jpg";
 import industry3 from "@/assets/telematics/evbg.jpg";
 import industry2 from "@/assets/managementSystems/HVAC-management.webp";
 import industry4 from "@/assets/telematics/earthmoving3.jpg";
-import HeroDashboardDark from "@/assets/LargeImages/DarkHero.avif";
+import HeroDashboardDark from "@/assets/LargeImages/DarkHeroResized.webp";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -45,7 +45,7 @@ const Hero2 = () => {
               alt="Mendygo dashboard"
               height={1000}
               width={1000}
-              priority
+              fetchPriority="high"
               className="w-full h-full object-cover dark:hidden "
               sizes="(max-width: 768px) 100vw, 90vw"
             />
@@ -55,7 +55,7 @@ const Hero2 = () => {
               alt="Mendygo dashboard"
               height={1000}
               width={1000}
-              priority
+              fetchPriority="high"
               sizes="(max-width: 768px) 100vw, 90vw"
               className="w-full h-full object-cover hidden dark:block"
             />
@@ -77,7 +77,7 @@ const Hero2 = () => {
                 alt={`Background ${index + 1}`}
                 fill
                 className="object-cover opacity-60"
-                priority={index === 0}
+                fetchPriority="high"
               />
             </motion.div>
           ))}

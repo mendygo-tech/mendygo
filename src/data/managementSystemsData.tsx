@@ -33,6 +33,14 @@ import realTimeMap from "@/assets/icons/features/Geofences.png"
 import fleetManagement from "@/assets/icons/features/fleetManagement.png"
 
 
+//flowcharts 
+import waterManageArchitecture from "@/assets/hardware/flowchart/waterManagementBlack.png"
+import waterManageArchitectureLight from "@/assets/hardware/flowchart/waterManagementWhite.png"
+import buildingManageArchitecture from "@/assets/hardware/flowchart/buildingManagementBlack.png"
+import buildingManageArchitectureLight from "@/assets/hardware/flowchart/buildingmanagementWhite.png"
+import gensetManageArchitecture from "@/assets/hardware/flowchart/gensetManagementBlack.png"
+import gensetManageArchitectureLight from "@/assets/hardware/flowchart/gensetManagementWhite.png"
+
 export interface Module {
   title: string;
   desc: string[];
@@ -47,9 +55,10 @@ export interface ManagementSystem {
   benefits?: string[];
   hardwareSpecs?: Module[];
   heroImage: StaticImageData;
-    heroGateway?: StaticImageData;
+  heroGateway?: StaticImageData;
   modules: Module[];
   architectureimage?: StaticImageData;
+  architectureimageDark?: StaticImageData;
   architecture?: Module[];
 }
 
@@ -59,7 +68,9 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     title: "Mendygo Building Management System",
     description:
       "Mendygo’s IoT-driven Building Management System (BMS) provides a centralized platform for monitoring, controlling, and optimizing building operations. From energy efficiency to water management and air quality, gain actionable insights for smarter, sustainable, and safe building operations.",
-    assetsWeTrack: [
+    architectureimage: buildingManageArchitecture,
+    architectureimageDark: buildingManageArchitectureLight,
+      assetsWeTrack: [
       "HVAC systems",
       "Energy Meters",
       "Gensets",
@@ -203,7 +214,6 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
             desc: ["Seamless integration with legacy BMS, ERP, and energy management systems", "Unified digital platform for operational, energy, and water analytics"]
         }
     ],
-    // architectureimage: hardware
   },
   "factory-management": {
     slug: "factory-management",
@@ -488,6 +498,8 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     slug: "genset-management",
     title: "Mendygo Genset Management System",
     description: "Mendygo’s Genset Management System provides real-time monitoring, predictive maintenance, and energy optimization for backup and primary power generators. The solution ensures uninterrupted power supply, reduces operational costs, and extends the life of gensets while providing actionable insights for operational efficiency.",
+    architectureimage: gensetManageArchitecture,
+    architectureimageDark: gensetManageArchitectureLight,
     assetsWeTrack: ["Diesel & Gas Gensets", "Automatic Transfer Switches (ATS)", "Fuel Tanks", "Engine Components", "Control Panels"],
     benefits: ["Real-time monitoring of genset performance and fuel consumption", "Predictive maintenance to prevent unplanned downtime", "Optimized load distribution and runtime scheduling", "Reduced fuel consumption and operational costs", "Extended genset lifespan through data-driven insights", "Automated reporting for audits, safety, and compliance", "Trusted by industrial leaders"],
     heroImage: GensetManageHero,
@@ -666,6 +678,8 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
     assetsWeTrack: ["Pumps", "Valves", "Tanks", "Flowmeters", "Sensors", "Filtration Systems", "STP/ETP", "Pipelines"],
     benefits: ["Real-time visibility of water consumption across sections and tanks", "Reduced water wastage through early leak detection", "Optimized pumping and distribution for energy savings", "Compliance with water quality and discharge regulations", "Automated reporting for management and sustainability goals", "Improved operational efficiency and cost control", "Trusted by industrial leaders"],
     heroImage: waterManagement,
+    architectureimage: waterManageArchitecture,
+    architectureimageDark: waterManageArchitectureLight,
     modules: [
         {
             title: "Water Consumption Monitoring",

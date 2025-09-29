@@ -24,7 +24,7 @@ const Hero2 = () => {
   return (
     <>
       <div className="relative overflow-hidden select-none">
-        <div className="h-120 w-full pt-45 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="lg:h-120 w-full pt-45 flex flex-col items-center justify-center gap-2 text-center px-4 sm:px-6 lg:px-8 relative z-20">
           <h1 className="text-5xl z-1 bg-gradient-to-b from-gray-900  via-gray-700 to-gray-500 bg-clip-text drop-shadow-sm text-transparent dark:from-gray-100 dark:via-gray-300 dark:to-gray-500 dark:drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight   ">
             AI That Adapts
           </h1>
@@ -62,7 +62,7 @@ const Hero2 = () => {
           </div>
         </div>
 
-        <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute lg:block md:block hidden inset-0 w-full h-full z-0">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={index}

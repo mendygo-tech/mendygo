@@ -5,7 +5,6 @@ import { gatewayData } from '@/data/gatewayData'
 import HardwareOverview from '@/components/products/HardwareOverview';
 import Features from '@/components/products/Features';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const systemData = gatewayData["gateway"];
 
@@ -19,30 +18,7 @@ const page = () => {
 
 
 
-      {systemData.ecosystemImage && (
-                  <div className="py-24">
-                      <h3 className="text-3xl text-center font-bold relative">Architecture</h3>
-                      <div className="w-full lg:w-3/4 mx-auto mt-12">
-                      <Image src={systemData.ecosystemImage[0]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto dark:hidden" />
-                      <Image src={systemData.ecosystemImage[1]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto hidden dark:block" />
-                      </div>
-                  </div>
-              )}
-
-
-
       <HardwareOverview systemData={systemData.hardwareSpecs2} />
-
-              {systemData.ecosystemImage2 && (
-                  <div className="py-24">
-                      <h3 className="text-3xl text-center font-bold relative">Architecture</h3>
-                      <div className="w-full lg:w-3/4 mx-auto mt-12">
-                      <Image src={systemData.ecosystemImage2[0]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto dark:hidden" />
-                      <Image src={systemData.ecosystemImage2[1]} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto hidden dark:block" />
-                      </div>
-                  </div>
-              )}
-
 
       <Features systemData={systemData} heading="Key Features" />
 

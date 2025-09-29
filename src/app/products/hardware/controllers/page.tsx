@@ -5,7 +5,7 @@ import { controllersData } from '@/data/controllersData'
 // import HardwareOverview from '@/components/products/HardwareOverview';
 import Features from '@/components/products/Features';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const systemData = controllersData["controller"];
 
@@ -18,16 +18,6 @@ const page = () => {
       <Features systemData={systemData} heading="Key Features" />
 
       
-
-        {systemData.ecosystemImage && (
-            <div className="py-24">
-                <h3 className="text-3xl text-center font-bold relative">Architecture</h3>
-                <div className="w-full lg:w-3/4 mx-auto mt-12">
-                <Image src={systemData.ecosystemImage} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto dark:hidden" />
-                <Image src={systemData.darkEcosystemImage} alt="Mendygo Ecosystem Diagram" className="rounded-xl w-full h-auto hidden dark:block" />
-                </div>
-            </div>
-        )}
 
 
         <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl dark:text-slate-100 py-16 mt-20">

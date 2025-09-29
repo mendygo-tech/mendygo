@@ -49,7 +49,7 @@ export default function Home() {
         <Products />
         <Timeline />
 
-        <div className="relative pt-30 text-center px-4">
+        <div className="relative pt-30 text-center  px-4">
           <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mx-auto mb-4">
             <span className="text-sm font-semibold">Our Process</span>
           </Badge>
@@ -62,8 +62,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-6 px-8 flex flex-col items-center lg:px-4 space-y-4 sm:space-y-6  lg:ml-0">
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full max-w-6xl items-center justify-center">
+        <div className="mt-6 px-8 flex flex-col items-center space-y-4 sm:space-y-6  lg:ml-0">
+          <div className="flex flex-col  md:flex-row gap-4 sm:gap-6 w-full max-w-6xl items-center justify-center">
             <Suspense
               fallback={
                 <div className="h-48 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-lg flex-1"></div>

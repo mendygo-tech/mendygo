@@ -13,7 +13,7 @@ const page = () => {
       <div className="max-w-7xl mx-auto">
       <HardwareHero systemData={systemData} />
       <div>
-      <div className="pt-24  bordr-t border-black/10 dark:border-white/10 px-30">
+      <div className="pt-24  bordr-t border-black/10 dark:border-white/10 lg:px-30 px-8">
         <h2 className="text-3xl text-center font-bold mb-4 relative">
           Available Sensors & Meters
         </h2>

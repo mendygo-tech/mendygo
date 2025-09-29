@@ -3,13 +3,6 @@ import { StaticImageData } from "next/image";
 // --- ACTION REQUIRED: Replace these placeholder imports with your actual image files ---
 // import heroBMS from "@/assets/image.png";
 import heroGateway from "@/assets/hardware/Gateway.png"
-// import hardware from "@/assets/hardwareSimple.png" // Your hero image for BMS
-import series1architecture from "@/assets/hardware/flowchart/GatewaySeries1.png";
-import architecture from "@/assets/hardware/flowchart/GatewaySeries1Dark.png"
-
-import architectureDark from "@/assets/hardware/flowchart/GatewaySeries2.png";
-import series2architecture from "@/assets/hardware/flowchart/GatewaySeries2Dark.png";
-// Your hardware image for BMS
 
 
 import realtimeInsights from "@/assets/icons/features/realTimeInsights.png"
@@ -48,14 +41,7 @@ export interface GatewaySystem {
   };
   heroImage: StaticImageData;
     heroGateway?: StaticImageData;
-  ecosystemImage: [
-    lightImage: StaticImageData,
-    darkImage: StaticImageData
-  ];
-  ecosystemImage2: [
-    lightImage: StaticImageData,
-    darkImage: StaticImageData
-  ];
+  
   modules: Module[];
 }
 export const gatewayData: Record<string, GatewaySystem> = {
@@ -65,8 +51,6 @@ export const gatewayData: Record<string, GatewaySystem> = {
       "An Industrial IoT gateway offering real-time monitoring, flexible connectivity, and robust data management for diverse industrial applications.",
     heroImage: heroGateway,
     heroGateway: heroGateway,
-    ecosystemImage: [architecture,series1architecture],
-    ecosystemImage2: [series2architecture,architectureDark],
     modules: [
       {
         title: "Gain Real-Time Insights, remotely",

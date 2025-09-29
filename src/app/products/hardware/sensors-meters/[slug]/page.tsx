@@ -3,7 +3,6 @@ import React from 'react'
 import { useParams,notFound  } from 'next/navigation';
 import ControllerHero from '@/components/products/ControllerHero'
 import { sensorsMetersData } from '@/data/SensorsMetersData';
-// import HardwareOverview from '@/components/products/HardwareOverview';
 import Features from '@/components/products/Features';
 import Link from 'next/link';
 
@@ -22,7 +21,6 @@ const systemData = sensorsMetersData[slug];
     <div className='relative overflow-hidden min-h-screen pt-40 bg-[#f8f9fa] dark:bg-black dark:text-white text-black pb-20'>
       <div className="max-w-7xl mx-auto">
       <ControllerHero systemData={systemData} />
-      {/* <HardwareOverview systemData={systemData.hardwareSpecs} /> */}
       <Features systemData={systemData} heading="Key Features" />
 
       <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl dark:text-slate-100 py-16 mt-20">

@@ -14,14 +14,14 @@ const HardwareHero = ({ systemData }) => {
     const closeModal = useCallback(() => setIsModalOpen(false), []);
   return (
     <div className="h-fit">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] h-120  gap-12 items-center px-20">
-        <div className="flex flex-col justify-center items-start gap-6">
+      <div className="lg:grid flex flex-col-reverse lg:grid-cols-[1fr_1fr] lg:h-120  gap-12 items-center lg:px-20 px-10">
+        <div className="flex flex-col lg:text-left md:text-left text-center justify-center items-start gap-6">
           <div className="">
             <h2>Mendygo Products</h2>
           <h1 className="text-3xl font-bold">{systemData.title}</h1>
           </div>
           {systemData.description && (
-            <p className="mt-8 max-w-2xl w-3/4 text-black/70 dark:text-white/70">
+            <p className="mt-8 max-w-2xl lg:w-3/4 text-black/70 dark:text-white/70">
               {systemData.description}
             </p>
           )}

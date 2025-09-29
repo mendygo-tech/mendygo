@@ -116,7 +116,7 @@ const Step2 = () => {
     };
 
     return (
-        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-xl border  border-white/20 dark:border-white/10 text-gray-900 dark:text-white p-6 w-[26rem] h-80 rounded-xl shadow-2xl shadow-black/30 dark:shadow-black/30 flex flex-col">
+        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-xl border  border-white/20 dark:border-white/10 text-gray-900 dark:text-white p-6 lg:w-[26rem] w-[22rem] h-80 rounded-xl shadow-2xl shadow-black/30 dark:shadow-black/30 flex flex-col">
             <div className="flex flex-col mb-4">
                 <span className="bg-white/20 dark:bg-white/10 text-gray-900 dark:text-white px-2 py-1 text-xs rounded-md self-start mb-2 backdrop-blur-sm">
                     Step 2

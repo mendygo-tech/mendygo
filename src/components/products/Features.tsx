@@ -18,7 +18,7 @@ const Features = ({ systemData, heading}) => {
           {systemData.modules.map((module) => (
             <div
               key={module.title}
-              className="flex flex-col  dark:bg-black rounded-xl borde border-neutral-200 dark:border-neutral-800  dark:hover:border-neutral-700  transition-all duration-300"
+              className="flex flex-col lg:text-left md:text-left text-center dark:bg-black rounded-xl borde border-neutral-200 dark:border-neutral-800  dark:hover:border-neutral-700  transition-all duration-300"
             >
               {module.image && (
                 <div className="relative h-20  ">
@@ -26,7 +26,7 @@ const Features = ({ systemData, heading}) => {
                     src={module.image}
                     alt={module.title}
                     layout="fill"
-                    className="object-contain object-left pl-10"
+                    className="object-contain lg:object-left pl-10"
                   />
                 </div>
               )}

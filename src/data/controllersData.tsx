@@ -1,11 +1,6 @@
 import { StaticImageData } from "next/image";
 
-// --- ACTION REQUIRED: Replace these placeholder imports with your actual image files ---
-// import heroBMS from "@/assets/image.png";
 import heroGateway from "@/assets/hardware/Controller.png"
-// import hardware from "@/assets/hardwareSimple.png" // Your hero image for BMS
-import architectureDark from "@/assets/hardware/flowchart/Controller.png"; // Your hardware image for BMS
-import architecture from "@/assets/hardware/flowchart/ControllerDark.png"; // Your hardware image for BMS
 
 
 import realtimeInsights from "@/assets/icons/features/realTimeInsights.png"
@@ -39,8 +34,6 @@ export interface GatewaySystem {
   heroImage: StaticImageData;
   DarkheroImage?: StaticImageData;
     heroGateway?: StaticImageData;
-  ecosystemImage: StaticImageData;
-  darkEcosystemImage?: StaticImageData;
   modules: Module[];
 }
 export const controllersData: Record<string, GatewaySystem> = {
@@ -51,8 +44,6 @@ export const controllersData: Record<string, GatewaySystem> = {
     heroImage: heroGateway,
     DarkheroImage: heroGateway,
     heroGateway: heroGateway,
-    ecosystemImage: architecture,
-    darkEcosystemImage: architectureDark,
     modules: [
       {
         title: "Gain Real-Time Insights, remotely",

@@ -36,7 +36,6 @@ type NavItemType = {
 };
 
 export function MyNavbar() {
-    // --- UPDATED NAVIGATION CONTENT ---
     const navItems: NavItemType[] = [
         
         {
@@ -46,8 +45,7 @@ export function MyNavbar() {
                 columns: [
                     {
                         title: "Mendygo Management Systems",
-                        // This column has more than 5 items, so we add a viewAllLink
-                        viewAllLink: { href: "/solutions", label: "View All Systems" },
+                        viewAllLink: { href: "/solutions/management-systems", label: "View All Systems" },
                         links: [
                             { href: "/solutions/management-systems/building-management", label: "Building Management", description: "Smart automation and control systems." },
                             { href: "/solutions/management-systems/factory-management", label: "Factory Management", description: "Optimize production and efficiency." },
@@ -243,6 +241,7 @@ const MobileNavItem = ({ item, onClose, onScheduleDemo }: { item: NavItemType; o
 
     const handleItemClick = (href: string) => {
         onClose();
+        setIsOpen(false);
         router.push(href);
     };
 
@@ -263,12 +262,20 @@ const MobileNavItem = ({ item, onClose, onScheduleDemo }: { item: NavItemType; o
                                 <h4 className="mb-2 text-sm font-semibold text-gray-500 dark:text-gray-400">{column.title}</h4>
                                 <div className="flex flex-col space-y-2 border-l border-gray-200 pl-4 dark:border-gray-700">
                                     {column.links.map((link, linkIdx) => (
-                                        <Link key={linkIdx} href={link.href}>
+                                        <Link 
+                                            key={linkIdx} 
+                                            href={link.href}
+                                            onClick={() => {
+                                                onClose(); // Close mobile menu
+                                                setIsOpen(false); // Close dropdown
+                                            }}
+                                        >
                                             <button
                                                 className="block w-full py-1 text-left text-sm text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
                                             >
-                                            {link.label}
-                                        </button></Link>
+                                                {link.label}
+                                            </button>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>

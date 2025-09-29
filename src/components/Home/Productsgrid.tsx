@@ -335,7 +335,7 @@ const Products = () => {
         ))}
       </motion.div>
 
-      <div className="bg-gradient-to-br dark:from-[#abff01]/40 from-[#abff01]/35 via-[#abff01]/0 to-[#abff01]/20 dark:border-white/30 dark:text-white grid lg:grid-cols-[1fr_2fr] p-10 px-20 pt-10 text-md my-20">
+      <div className="bg-gradient-to-br dark:from-[#abff01]/40 from-[#abff01]/35 via-[#abff01]/0 to-[#abff01]/20 dark:border-white/30 dark:text-white grid lg:grid-cols-[1fr_2fr] p-10 lg:px-20 md:px-20 pt-10 text-md my-20">
         <motion.div className="relative h-96 rounded-xl flex items-center justify-center overflow-hidden p-6">
           <Image
             src={customizedIndustryLight}

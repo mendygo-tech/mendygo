@@ -16,7 +16,7 @@ import ev from "@/assets/icons/solutions/ev.png"
 
 //
 import gatewayWithPCBDark from "@/assets/hardware/gateway/gatewayDarkPCB.png";
-import gatewayWithPCB from "@/assets/hardware/gateway/gatewayWithPCB.png";
+// import gatewayWithPCB from "@/assets/hardware/gateway/gatewayWithPCB.png";
 import series1 from "@/assets/hardware/gateway/series1.png"
 
 
@@ -117,7 +117,7 @@ export const gatewayData: Record<string, GatewaySystem> = {
         desc : ["Versatile telematics controller with full I/Os, GNSS, CAN, and WiFi—ideal for fleet tracking, condition monitoring, and remote diagnostics."
 
         ],
-        image :gatewayWithPCB,
+        image :gatewayWithPCBDark,
         darkImage:gatewayWithPCBDark
       },
       {
@@ -125,7 +125,7 @@ export const gatewayData: Record<string, GatewaySystem> = {
         desc : ["Compact GNSS controllers with CAN, RS485, and cellular, ideal for GPS-based telematics, asset tracking, and equipment diagnostics."
 
         ],
-        image :gatewayWithPCB,
+        image :gatewayWithPCBDark,
         darkImage:gatewayWithPCBDark
       },
     ]

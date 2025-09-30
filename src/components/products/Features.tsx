@@ -10,7 +10,7 @@ const Features = ({ systemData, heading}) => {
         <h2 className="text-3xl text-center font-bold mb-4 relative">
           {heading}
         </h2>
-        <p className="text-center text-black/60 dark:text-white/60 max-w-2xl mx-auto mb-16">
+        <p className="text-center text-black/60 dark:text-white/60 max-w-2xl text-lg  mx-auto mb-16">
           Our modular approach allows you to choose the specific solutions you
           need, creating a customized system that fits your unique requirements.
         </p>
@@ -26,7 +26,7 @@ const Features = ({ systemData, heading}) => {
                     src={module.image}
                     alt={module.title}
                     layout="fill"
-                    className="object-contain lg:object-left pl-10"
+                    className="object-contain lg:object-left lg:pl-10"
                   />
                 </div>
               )}
@@ -40,7 +40,7 @@ const Features = ({ systemData, heading}) => {
                       {module.desc.length > 1 && (
                         <Check className="w-5 h-5 text-[#28783B] mt-0.5 flex-shrink-0" />
                       )}
-                      <p className="text-sm text-black/70 dark:text-white/70">
+                      <p className="text-md text-black/70 dark:text-white/70">
                         {point}
                       </p>
                     </div>

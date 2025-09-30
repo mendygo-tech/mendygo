@@ -288,7 +288,7 @@ const Products = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg">
           Smart Solutions by Mendygo
         </h1>
-        <h2 className="text-base sm:text-lg text-gray-600  dark:text-gray-400 max-w-3xl mx-auto mt-2">
+        <h2 className="text-lg  text-gray-600  dark:text-gray-400 max-w-3xl mx-auto mt-2">
           Innovative digital products crafted to empower businesses, streamline
           operations, and deliver exceptional customer experiences.
         </h2>
@@ -323,10 +323,10 @@ const Products = () => {
               </motion.div>
 
               <div>
-                <p className="text-sm text-gray-900 font-bold dark:text-gray-300">
+                <p className=" text-md  text-gray-900 font-bold dark:text-gray-300">
                   {solution.subtitle}
                 </p>
-                <p className="text-sm text-gray-900  pt-1 dark:text-gray-400">
+                <p className=" text-md  text-gray-900  pt-1 dark:text-gray-400">
                   {solution.description}
                 </p>
               </div>
@@ -356,11 +356,11 @@ const Products = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-100 dark:via-gray-200 w-full lg:w-2/3 dark:to-gray-500 dark:drop-shadow-lg pt-10">
             Customized Industry 4.0 Solutions
           </h1>
-          <p className="text-md pt-3  dark:text-gray-300">
+          <p className=" text-lg  pt-3  dark:text-gray-300">
             We offer tailored solutions to help businesses embrace Industry 4.0
             technologies.
           </p>
-          <p className="pb-8  dark:text-gray-300">
+          <p className="pb-8  text-lg  dark:text-gray-300">
             Our expertise includes IoT, AI, and advanced automation to drive
             efficiency and innovation.
           </p>

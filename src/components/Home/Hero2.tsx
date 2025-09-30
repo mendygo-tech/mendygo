@@ -11,7 +11,7 @@ import GlassmorphedButtons from "../common/Buttons";
 
 const Hero2 = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const backgroundImages = [industry, industry3, industry2, industry4];
+  const backgroundImages = [industry3, industry, industry2, industry4];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,7 +28,7 @@ const Hero2 = () => {
           <h1 className="text-5xl z-1 bg-gradient-to-b from-gray-900  via-gray-700 to-gray-500 bg-clip-text drop-shadow-sm text-transparent dark:from-gray-100 dark:via-gray-300 dark:to-gray-500 dark:drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] tracking-tight   ">
             AI That Adapts
           </h1>
-          <p className="lg:text-lg text-sm  lg:w-full w-3/4  pb-3 dark:text-gray-100">
+          <p className="lg:text-lg  text-lg lg:w-full w-3/4  pb-3 dark:text-gray-100">
             Transform your business with intelligent automation that learns,
             adapts, and scales with your needs.
           </p>

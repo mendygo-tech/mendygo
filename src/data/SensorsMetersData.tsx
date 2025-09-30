@@ -2,12 +2,12 @@ import { StaticImageData } from "next/image";
 
 import heroSensor from "@/assets/hardware/sensorsAndMeters/meter.png"
 import heroFuelSensor from "@/assets/hardware/sensorsAndMeters/FuelSensor.png"
-// import DarkheroImage from "@/assets/hardware/sensorsAndMeters/FuelSensorDark.png"
 import temperaturehero from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.png"
-import temperatureheroDark from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.png" 
-// import vibrationhero from "@/assets/hardware/sensorsAndMeters/VibrationSensor.jpeg"
+import temperatureheroDark from "@/assets/hardware/sensorsAndMeters/temperatureSensorBlack.png"
 import vibrationheroDark from "@/assets/hardware/sensorsAndMeters/Vibration Sensor.png"
-// import ecosystemBMS from "@/assets/image2.png"; // Your hardware image for BMS
+import gasMeter from "@/assets/hardware/sensorsAndMeters/gasMeter.png"
+import waterMeter from "@/assets/hardware/sensorsAndMeters/waterMeter.png"
+import fireDetector from "@/assets/hardware/sensorsAndMeters/fireSensor.png"
 
 import seamlessIntegration from "@/assets/icons/features/remoteImmobilization.png"
 import connectivity from "@/assets/icons/features/Single Line Diagram View.png"
@@ -44,8 +44,8 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
     title: "Mendygo Sensors and Meters",
     description:
       "An Industrial IoT gateway offering real-time monitoring, flexible connectivity, and robust data management for diverse industrial applications.",
-    heroImage: heroSensor,
-    heroGateway: heroSensor,
+    heroImage: gasMeter,
+    heroGateway: gasMeter,
     
     modules: [
       {
@@ -72,7 +72,38 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
         image:vibrationheroDark ,
         href:"/vibration-sensor"
       },
-      
+      {
+        title: "Water Meter",
+        desc: [
+          "Accurately measure and monitor water usage in real-time.",
+        ],
+        image: waterMeter,
+        href:"/water-meter"
+      },
+      {
+        title: "Gas Meter",
+        desc: [
+          "Track gas consumption efficiently with our smart gas meter.",
+        ],
+        image: gasMeter,
+        href:"/gas-meter"
+      },
+      {
+        title: "Fire Detector",
+        desc: [
+          "Ensure safety with real-time fire detection and alerts.",
+        ],
+        image: fireDetector,
+        href:"/smoke-and-fire-detector"
+      },
+      {
+        title: "Power Monitoring Unit",
+        desc: [
+          "compact power monitoring unit that tracks 68 electrical parameters ",
+        ],
+        image: heroSensor,
+        href:"/power-monitoring-unit"
+      }
     ],
   
   },
@@ -196,4 +227,165 @@ export const sensorsMetersData: Record<string, sensorsMetersSystem> = {
     ],
   
   },
+  "gas-meter": {
+    title: "Mendygo Gas Meter",
+    description:
+      "A rugged, IoT-enabled meter designed for accurate measurement of industrial and utility-grade gas consumption. It ensures precision flow monitoring, long operational life, and seamless connectivity for smarter energy management. With multi-interface outputs and robust build, the Mendygo Gas Meter makes deployment simple while enabling predictive insights and operational efficiency.",
+    heroImage: gasMeter,
+    DarkheroImage: gasMeter,
+    
+    modules: [
+      {
+        title: "High-precision measurement",
+        desc: [
+          "Delivers accurate readings across a wide dynamic range for industrial-grade gas monitoring.​",
+        ],
+        image: temp,
+      },
+      {
+        title: "Long operational life",
+        desc: [
+          "Built for durability with minimal maintenance, ensuring reliable long-term performance.",
+        ],
+        image: battery,
+      },
+      {
+        title: "Smart connectivity",
+        desc: [
+          "Supports Pulse, Modbus, and IoT protocols for easy integration into existing and new systems.",
+        ],
+        image: Wireless,
+      },
+      {
+        title: "Easy deployment",
+        desc: [
+          "Flexible mounting and plug-and-play compatibility simplify setup in diverse industrial environments.​",
+        ],
+        image: easeMounting,
+      },
+      
+    ],
+  
+  },
+  "water-meter": {
+    title: "Mendygo Water Meter",
+    description:
+      "A precision, IoT-enabled water meter sensor built for industrial and utility-grade deployments. It delivers real-time flow monitoring, leak detection, and advanced analytics, enabling smarter water management. With rugged design, seamless connectivity, and long-term reliability, the Mendygo Water Meter transforms water usage tracking into actionable intelligence.",
+    heroImage: waterMeter,
+    DarkheroImage: waterMeter,
+
+    modules: [
+      {
+        title: "High-precision flow tracking",
+        desc: [
+          "Measures flow rates across wide dynamic ranges with minimal error.​",
+        ],
+        image: temp,
+      },
+      {
+        title: "Leak & anomaly detection",
+        desc: [
+          "Rapid alerts on unusual consumption or pipeline leakage for proactive maintenance.",
+        ],
+        image: battery,
+      },
+      {
+        title: "Smart connectivity",
+        desc: [
+          "Compatible with Pulse, 4–20 mA, Modbus, LoRa, and IoT platforms for easy integration.",
+        ],
+        image: seamlessIntegration,
+      },
+      {
+        title: "Rugged & reliable",
+        desc: [
+          "IP68 protection, anti-corrosion build, and wide temperature tolerance for harsh environments.​",
+        ],
+        image: buildtoEndure,
+      },
+      
+    ],
+  
+  },
+  "smoke-and-fire-detector": {
+    title: "Mendygo Smoke & Fire Detector",
+    description:
+      "A high-sensitivity, IoT-enabled detector designed for early warning and reliable fire safety in industrial, commercial, and utility environments. Built for resilience and seamless connectivity, it ensures rapid detection of smoke and fire risks, empowering proactive safety management and minimizing downtime.",
+    heroImage: fireDetector,
+    DarkheroImage: fireDetector,
+
+    modules: [
+      {
+        title: "High-sensitivity detection",
+        desc: [
+          "Accurately identifies smoke and fire at early stages to minimize risks.​",
+        ],
+        image: temp,
+      },
+      {
+        title: "Long-life reliability",
+        desc: [
+          "Extended battery life and low-maintenance design ensure consistent protection.",
+        ],
+        image: battery,
+      },
+      {
+        title: "Wireless connectivity",
+        desc: [
+          "BLE, LoRa, or NB-IoT support for seamless integration into IoT safety ecosystems.",
+        ],
+        image: seamlessIntegration,
+      },
+      {
+        title: "Rugged design",
+        desc: [
+          "Operates effectively across challenging industrial conditions with durable housing.​",
+        ],
+        image: buildtoEndure,
+      },
+      
+    ],
+  
+  },
+  "power-monitoring-unit": {
+    title: "Mendygo Power Monitoring Unit",
+    description:
+      "A robust, IoT-enabled power monitoring solution designed for real-time energy management in industrial and commercial settings. It provides comprehensive insights into power consumption, enabling proactive optimization and cost savings.",
+    heroImage: heroSensor,
+    DarkheroImage: heroSensor,
+
+    modules: [
+      {
+        title: "High-precision monitoring",
+        desc: [
+          "Provides real-time insights into power consumption patterns and anomalies.",
+        ],
+        image: temp,
+      },
+      {
+        title: "Long-life reliability",
+        desc: [
+          "Extended battery life and low-maintenance design ensure consistent protection.",
+        ],
+        image: battery,
+      },
+      {
+        title: "Wireless connectivity",
+        desc: [
+          "BLE, LoRa, or NB-IoT support for seamless integration into IoT safety ecosystems.",
+        ],
+        image: seamlessIntegration,
+      },
+      {
+        title: "Rugged design",
+        desc: [
+          "Operates effectively across challenging industrial conditions with durable housing.​",
+        ],
+        image: buildtoEndure,
+      },
+      
+    ],
+  
+  },
+  
 };

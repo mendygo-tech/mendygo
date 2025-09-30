@@ -118,7 +118,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
     };
 
     return (
-        <div className={cn("hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium lg:flex", className)}>
+        <div className={cn("hidden flex-1 transform flex-row items-center justify-center space-x-2 lg:flex", className)}>
             {items.map((item, idx) => (
                 <div
                     key={`nav-item-${idx}`}
@@ -128,7 +128,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
                 >
                     <button
                         onClick={() => handleItemClick(item)}
-                        className="relative flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+                        className="relative transfrom flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
                     >
                         <AnimatePresence>
                             {(hovered === idx || (visible && item.isModal)) && (
@@ -140,7 +140,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
                                 />
                             )}
                         </AnimatePresence>
-                        <span className={cn("relative z-10 font-semibold text-md transition-colors duration-150", (hovered === idx || (visible && item.isModal)) ? "text-black dark:text-black" : "text-black dark:text-white")}>
+                        <span className={cn("relative z-10 font-semibold text-[15px] transition-colors duration-150", (hovered === idx || (visible && item.isModal)) ? "text-black dark:text-black" : "text-black dark:text-white")}>
                             {item.name}
                         </span>
                         {item.dropdown && (

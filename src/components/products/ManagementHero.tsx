@@ -26,8 +26,8 @@ const ManagementHero = ({ systemData }) => {
               <ul className="space-y-3">
                 {systemData.assetsWeTrack.map((asset, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-lime-400/10 dark:bg-lime-400/20 rounded-full flex items-center justify-center">
-                        <Check className="w-4 h-4 text-[#28783B]" />
+                    <div className="w-6 h-6 bg-lime-400/10 dark:bg-lime-400/30 rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-[#28783B] dark:text-[#A0F30B]" />
                     </div>
                     <span className="text-sm text-black/80 dark:text-white/80">{asset}</span>
                   </li>
@@ -45,7 +45,7 @@ const ManagementHero = ({ systemData }) => {
               priority
             />
             {systemData.description && (
-                <p className="mt-8 max-w-3xl text-black/70 dark:text-white/70">
+                <p className="mt-8 max-w-3xl text-lg  text-black/70 dark:text-white/70">
                     {systemData.description}
                 </p>
             )}
@@ -75,8 +75,8 @@ const ManagementHero = ({ systemData }) => {
               <ul className="space-y-3">
                 {systemData.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-lime-400/10 dark:bg-lime-400/20 rounded-full flex items-center justify-center">
-                        <Check className="w-6 h-4  text-[#28783B]" />
+                    <div className="w-6 h-6 bg-lime-400/10 dark:bg-lime-400/30 rounded-full flex items-center justify-center">
+                        <Check className="w-6 h-4  text-[#28783B] dark:text-[#A0F30B]" />
                     </div>
                     <span className="text-sm text-black/80 dark:text-white/80">{benefit}</span>
                   </li>

@@ -332,7 +332,7 @@ export function SignUpForm() {
         <h1 className="text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-900 to-neutral-600 dark:from-neutral-200 dark:to-neutral-600 text-center font-bold">
         Demo Request
                 </h1>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-lg mx-auto my-3 text-sm text-center">
+        <p className="text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto my-3  text-lg  text-center">
         Ready to learn more about MendyGo and see it in action? Request a demo to know more about our capabilities.
                 </p>
 

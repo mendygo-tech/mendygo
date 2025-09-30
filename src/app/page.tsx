@@ -36,7 +36,7 @@ export default function Home() {
           <h1 className="text-3xl px-10 sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2 pb-1">
             Supported by Global Leaders
           </h1>
-          <p className=" max-w-xl px-15 mx-auto dark:text-gray-300">
+          <p className=" max-w-2xl px-15 text-lg mx-auto dark:text-gray-300">
             We are proud to be backed by top startup accelerator programs and
             global technology leaders.
           </p>
@@ -56,7 +56,7 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg font-bold mt-2">
             Our Simple, Smart, and Scalable Process
           </h1>
-          <p className=" dark:text-gray-300 max-w-2xl  mx-auto">
+          <p className=" dark:text-gray-300 max-w-2xl text-lg   mx-auto">
             We design, develop, and implement automation tools that help you
             work smarter, not harder.
           </p>
@@ -106,7 +106,7 @@ export default function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">
             Trusted by the Best in the Industry
           </h1>
-          <p className="max-w-xl mx-auto  dark:text-gray-300">
+          <p className="max-w-xl  text-lg  mx-auto  dark:text-gray-300">
             We are proud to serve as the automation provider for top-tier
             automotive and tech clients across the globe.
           </p>
@@ -126,3 +126,7 @@ export default function Home() {
     </div>
   );
 }
+
+// add hardware in ecosystem
+
+// add 

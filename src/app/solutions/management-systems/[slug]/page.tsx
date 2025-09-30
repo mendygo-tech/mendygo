@@ -33,9 +33,6 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         
         <ManagementHero systemData={systemData} />
         {/* <HardwareOverview systemData={systemData} /> */}
-        <Features systemData={systemData} heading="Key Modules" />
-        <DemoModal isOpen={isModalOpen} onClose={closeModal} />
-
 {systemData.architectureimage && (
                   <div className="py-24">
                       <h3 className="text-3xl text-center font-bold relative">Architecture</h3>
@@ -45,6 +42,10 @@ const [isModalOpen, setIsModalOpen] = useState(false);
                       </div>
                   </div>
               )}
+        <Features systemData={systemData} heading="Key Modules" />
+        <DemoModal isOpen={isModalOpen} onClose={closeModal} />
+
+
         <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl mt-10 dark:text-slate-100 py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h3 className="text-3xl font-bold dark:text-gray-300">Ready to Optimize Your Operations?</h3>

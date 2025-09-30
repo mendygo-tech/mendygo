@@ -155,7 +155,7 @@ const CountdownCard = () => {
         <div className="h-full w-full bg-[radial-gradient(80%_60%_at_50%_0%,#9FFB1E33,transparent_60%)]" />
       </div>
 
-      <Card className="relative rounded-2xl shadow-xl border border-black/5 dark:border-white/10 bg-gradient-to-br from-[#9FFB1E]/45 via-white/60 to-white/80 dark:from-[#9FFB1E14] dark:via-white/5 dark:to-white/[0.03] backdrop-blur-md p-6">
+      <Card className="relative rounded-2xl shadow-xl border border-black/5 dark:border-white/10 bg-gradient-to-br from-[#9FFB1E]/45 via-transparent to-[#9FFB1E]/15 dark:from-[#9FFB1E14] dark:via-white/5 dark:to-white/[0.03] backdrop-blur-md p-6">
         <div className="flex justify-center">
           <div className="rounded-full border px-3 py-1 text-xs sm:text-sm border-black/10 bg-white/80 shadow-sm dark:border-white/15 dark:bg-white/5">
             <span className="text-gray-800 dark:text-white">
@@ -165,7 +165,7 @@ const CountdownCard = () => {
         </div>
 
         <h2 className="text-center text-3xl font-semibold">Join the Waitlist For Mendy AI</h2>
-        <p className="text-center text-gray-600 text-sm dark:text-gray-400">
+        <p className="text-center  text-lg  text-gray-600 dark:text-gray-400">
           Be the first to know when we launch.
         </p>
 

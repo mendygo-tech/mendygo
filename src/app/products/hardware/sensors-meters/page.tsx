@@ -39,7 +39,7 @@ const page = () => {
                     src={module.image}
                     alt={module.title}
                     layout="fill"
-                    className="object-contain border-b-2 rounded-xl object-center pl-10"
+                    className="object-contain border-b-2 rounded-xl object-center"
                   />
                 </div>
               )}

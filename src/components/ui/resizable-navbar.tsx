@@ -85,9 +85,9 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       transition={{ type: "spring", stiffness: 200, damping: 50 }}
       style={{ minWidth: "1000px" }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between rounded-full bg-transparent  dark:bg-transparent  px-4 py-2 lg:flex",
+        "bg-white/70 dark:bg-neutral-950/80 relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between rounded-full  px-4 py-2 lg:flex",
         visible &&
-        " bg-white/80 dark:bg-neutral-950/80 border-b border-neutral-200/20 dark:border-white/10",
+        "  border-b border-neutral-200/20 dark:border-white/10",
         className
       )}
     >
@@ -128,7 +128,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
                 >
                     <button
                         onClick={() => handleItemClick(item)}
-                        className="relative transfrom flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
+                        className="relative transform flex items-center gap-1.6 rounded-full px-4 py-2 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
                     >
                         <AnimatePresence>
                             {(hovered === idx || (visible && item.isModal)) && (

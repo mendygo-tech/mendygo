@@ -184,12 +184,13 @@ export function MyNavbar() {
 
     return (
         <div className="relative w-full">
-            <Navbar className="pt-5">
+            <Navbar className="pt-5 px-4">
                 <NavBody>
                     <NavbarLogo />
                     <NavItems
                         items={navItems}
                         onScheduleDemo={() => setIsDemoModalOpen(true)}
+                        className=""
                     />
                     <div className="flex items-center gap-2">
                         <ThemeToggleButton />

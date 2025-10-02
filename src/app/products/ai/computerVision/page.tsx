@@ -33,7 +33,10 @@ export default function ComputerVisionPage() {
     autoPlay
     loop
     muted
+    preload='metadata'
   >
+    <Image src="/cvPoster.png" width={100} height={100} alt="Computer Vision Poster" className='absolute z-0 h-full w-full object-cover' />
+    <source src="/cv.webm" type="video/webm" />
     <source src="/cv.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>

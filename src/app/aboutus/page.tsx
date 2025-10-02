@@ -1,171 +1,195 @@
 "use client";
+import React, { useCallback } from "react";
+import { useState } from "react";
+import Image, { StaticImageData } from "next/image";
+// import { Separator } from "@/components/ui/separator";
+import d1 from "@/assets/gallery/DirectorMamPicture.png";
+import d2 from "@/assets/gallery/souravPicture.png";
+// import { Badge } from "@/components/ui/badge";
+import CompanySlideshow from "@/components/Home/SlideShow";
 
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
-// import { cn } from "@/lib/utils";
-import {
-    ShieldCheck,
-    Eye,
-    Cpu,
-    Cloud,
-    Gauge,
-    LayoutGrid,
-    Activity,
-    Factory,
-    Component
-} from "lucide-react";
-import d1 from "../../assets/gallery/D1.jpeg"
-import d2 from "../../assets/gallery/D2.jpeg"
+import Link from "next/link";
+import DemoModal from "@/components/common/DemoModal";
+import holistic1 from "@/assets/aboutUs/holistic1.png";
+import holistic2 from "@/assets/aboutUs/holistic2.png";
+import solution1 from "@/assets/aboutUs/solution1.png";
+import solution2 from "@/assets/aboutUs/solution2.png";
+import solution3 from "@/assets/aboutUs/solution3.png";
+
+// --- Reusable Components ---
+
+type LeaderCardProps = {
+  imgSrc: StaticImageData;
+  name: string;
+  title: string;
+  description: string;
+};
+
+function LeaderCard({ imgSrc, name, title, description }: LeaderCardProps) {
+  return (
+    <div className="text-center">
+      <Image
+        src={imgSrc}
+        alt={name}
+        width={120}
+        height={120}
+        className="h-[120px] w-[120px] rounded-full mx-auto mb-4 border-2 border-gray-200 dark:border-gray-700 shadow-sm object-cover"
+      />
+      <h3 className="font-semibold text-xl text-gray-900 dark:text-gray-50">{name}</h3>
+      <p className="text-lime-600 dark:text-lime-400 font-medium text-sm mb-2">{title}</p>
+      <p className="mt-2 text-sm text-white/70">{description}</p>
+    </div>
+  );
+}
+
+type FeatureCardProps = {
+  imgSrc: StaticImageData
+  title: string;
+  description: string;
+  reverse?: boolean;
+};
+
+function FeatureCard({ imgSrc, title, description, reverse }: FeatureCardProps) {
+  return (
+    <div className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""} items-center gap-12`}>
+      <div className="w-full h-85 rounded-lg overflow-hidden flex items-center justify-center ">
+        <Image
+          src={imgSrc}
+          alt={title}
+          className="object-cover w-full h-full"
+          placeholder="blur"
+        />
+      </div>
+      <div className="space-y-3 p-6 rounded-xl  backdrop-blur  border-gray-200/70 dark:border-gray-800">
+        <h3 className="text-xl font-semibold">{title}</h3>
+        <p className="text-white/70 text-base leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+
+
+// --- About Page ---
 
 export default function AboutPage() {
-    return (
-        <div className="min-h-screen px-4 md:px-16 py-10 bg-white text-black dark:bg-[#0a0a0a] dark:text-[#eaeaea]">
-            <div className="text-center space-y-2 mb-10 mt-30">
-                <h1 className="text-4xl font-bold">About Us</h1>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Unlock the Power of Your Enterprise Insights
-                </p>
-            </div>
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
+      
+        const openModal = useCallback(() => setIsModalOpen(true), []);
+        const closeModal = useCallback(() => setIsModalOpen(false), []);
+    
+  return (
+    <div className="min-h-screen md:px-16 py-10 bg-white text-black dark:bg-black px-10">
+      {/* Hero Section */}
+      <div className="text-center space-y-4 mb-16 mt-20">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">
+          Pioneering the Future of Industrial Operations
+        </h1>
+        <p className="text-white/70 text-lg max-w-3xl mx-auto">
+          We bridge the gap between your physical machinery and intelligent data, unlocking unprecedented efficiency and operational excellence for your enterprise.
+        </p>
+      </div>
 
-            <section className="grid md:grid-cols-2 gap-10 mb-16">
-
-
-                <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                    <CardContent className="p-6">
-                        <h2 className="text-2xl font-semibold mb-4">Director</h2>
-                        <div className="flex flex-col md:flex-row items-center gap-4">
-                            
-                                <Image
-                                src={d2}
-                                alt="Sourav Verma"
-                                width={1020}
-                                height={1020}
-                                className="h-[120px] w-[120px] rounded-full border shadow object-cover"
-                            />
-                            <div>
-                                <h3 className="font-semibold text-lg">Mr. Sourav Verma</h3>
-                                <p className="mt-2 text-sm text-muted-foreground">
-                                    Driving digital transformation and automation excellence with a futuristic approach.
-                                </p>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-
-
-                <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                    <CardContent className="p-6">
-                        <h2 className="text-2xl font-semibold mb-4">Director</h2>
-                        <div className="flex flex-col md:flex-row items-center gap-4">
-                            <Image
-                                src={d1}
-                                alt="Santosh Verma"
-                                width={1020}
-                                height={1020}
-                                className="h-[120px] w-[120px] rounded-full border shadow"
-                            />
-                            <div>
-                                <h3 className="font-semibold text-lg">Mrs. Santosh Verma</h3>
-                                <p className="mt-2 text-sm text-muted-foreground">
-                                    Pioneering digital transformation and automation with a future-ready vision.
-                                </p>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-            </section>
-
-            <section className="space-y-8">
-                <h2 className="text-3xl font-bold">What We Offer</h2>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h3 className="text-xl font-semibold flex items-center gap-2"><Factory className="h-5 w-5" /> Industrial Digitalisation Solution</h3>
-                            <p>
-                                Solutions across Industry 4.0 shop-floor optimization, remote monitoring of sensors, transformers, pumps, and PLC-controlled machines.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h3 className="text-xl font-semibold flex items-center gap-2"><Component className="h-5 w-5" /> Industrial Parts</h3>
-                            <p>
-                                Supply of industrial plants, machinery, engineering products, and branded spares & equipment.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </div>
-
-                <Separator />
-
-                <h2 className="text-3xl font-bold">Our Solutions</h2>
-
-                <div className="grid md:grid-cols-3 gap-6">
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="text-lg font-semibold flex items-center gap-2"><Eye className="h-5 w-5" /> IoT for Industry Sensors</h4>
-                            <p>Monitor temperature, humidity, gas, pressure, proximity sensors, RFID tags and more in one dashboard.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="text-lg font-semibold flex items-center gap-2"><Gauge className="h-5 w-5" /> Smart Manufacturing</h4>
-                            <p>Track production, OEE, and enable preventive maintenance with automation.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="text-lg font-semibold flex items-center gap-2"><Activity className="h-5 w-5" /> Machine Monitoring</h4>
-                            <p>Reduce service time & cost, ensure optimal usage with real-time monitoring.</p>
-                        </CardContent>
-                    </Card>
-                </div>
-
-                <Separator />
-
-                <h2 className="text-3xl font-bold">Why Choose Mendygo?</h2>
-                <div className="grid md:grid-cols-2 gap-6">
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="font-semibold flex items-center gap-2"><ShieldCheck className="h-5 w-5" /> End-to-End IIoT Solutions</h4>
-                            <p>Monitor and control machines, assets, resources, appliances, and sensors remotely.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="font-semibold flex items-center gap-2"><Eye className="h-5 w-5" /> Analytics & Insights</h4>
-                            <p>Gain efficiency and business continuity through insights and automation.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="font-semibold flex items-center gap-2"><Cpu className="h-5 w-5" /> Hardware + Software</h4>
-                            <p>We handle the full setup: IoT platform, hardware installation, and environment configuration.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="font-semibold flex items-center gap-2"><Cloud className="h-5 w-5" /> SaaS Based Platform</h4>
-                            <p>Cloud-based deployment with seamless updates and no server hassles.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="shadow-md dark:shadow-lg dark:bg-[#111]">
-                        <CardContent className="p-6 space-y-2">
-                            <h4 className="font-semibold flex items-center gap-2"><LayoutGrid className="h-5 w-5" /> Improve Quality</h4>
-                            <p>Detect component failure early and track machine metrics with 24x7 live monitoring.</p>
-                        </CardContent>
-                    </Card>
-                </div>
-            </section>
+      {/* Leadership Section */}
+      <section className="mb-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">Meet The Leadership</h2>
+          <p className="text-white/70 mt-2">The visionaries driving our mission forward.</p>
         </div>
-    );
+        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+          <LeaderCard
+            imgSrc={d2}
+            name="Mr. Sourav Verma"
+            title="Director, Technology & Innovation"
+            description="As the architect of our technology, Sourav leads the charge in developing cutting-edge IIoT solutions that are robust, scalable, and intuitive."
+          />
+          <LeaderCard
+            imgSrc={d1}
+            name="Mrs. Santosh Verma"
+            title="Director, Strategy & Growth"
+            description="Santosh provides the strategic vision that steers Mendygo's growth, ensuring our solutions align perfectly with industry needs and market evolution."
+          />
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="mb-16 bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent p-8 rounded-lg border lg:w-2/3 mx-auto border-lime-200 dark:border-none">
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">Our Mission</h2>
+          <p className="text-base text-white/70">
+            To empower industrial enterprises with robust, end-to-end digital solutions that transform traditional factories into smart, connected, and future-proof ecosystems. We are committed to making Industry 4.0 accessible, scalable, and impactful.
+          </p>
+        </div>
+      </section>
+
+      {/* Holistic Approach Section */}
+      <section className="space-y-20 my-16 lg:px-30">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">A Holistic Approach to Industrial Digitalisation</h2>
+        </div>
+        <FeatureCard
+          imgSrc={holistic1}
+          title="End-to-End Digital Transformation"
+          description="From shop-floor optimization to remote asset monitoring, we provide complete Industry 4.0 solutions, integrating sensors, PLCs, and machinery into a unified, intelligent platform."
+        />
+        <FeatureCard
+          reverse
+          imgSrc={holistic2}
+          title="Strategic Hardware & Spares Supply"
+          description="Beyond software, we are your trusted partner for sourcing and supplying high-quality industrial plants, machinery, branded spares, and essential engineering products."
+        />
+      </section>
+        {/* Trusted By Section */}
+        <div className="relative  text-center py-20">
+         
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">
+            Trusted by the Best in the Industry
+          </h1>
+          <p className="max-w-xl  text-lg  mx-auto  dark:text-gray-300">
+            We are proud to serve as the automation provider for top-tier
+            automotive and tech clients across the globe.
+          </p>
+          <CompanySlideshow />
+        </div>
+
+      {/* Core Solutions Section */}
+      <section className="space-y-20 my-16 lg:px-30">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">Our Core Solutions</h2>
+        </div>
+        <FeatureCard
+          imgSrc={solution1}
+          title="Unified Sensor Monitoring"
+          description="Aggregate data from sensors into a single, real-time dashboard for complete visibility, empowering you with the insights needed to make critical decisions instantly."
+        />
+        <FeatureCard
+          reverse
+          imgSrc={solution2}
+          title="Smart Manufacturing & OEE"
+          description="Boost your Overall Equipment Effectiveness (OEE) by tracking production cycles, minimizing costly downtime, and enabling a proactive, predictive maintenance schedule."
+        />
+        <FeatureCard
+          imgSrc={solution3}
+          title="Remote Machine Intelligence"
+          description="Drastically reduce service costs and ensure optimal asset utilization with 24/7 real-time monitoring, remote diagnostics, and detailed performance analytics."
+        />
+      </section>
+
+      
+        {/* Call to Action Section */}
+        <DemoModal isOpen={isModalOpen} onClose={closeModal} />
+
+          <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl mt-10 dark:text-slate-100 py-16">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h3 className="text-3xl font-bold dark:text-gray-300">Ready to Optimize Your Operations?</h3>
+            <p className="mt-4 dark:text-slate-300 text-sm md:text-base">Reach out for a tailored walkthrough and discover how Mendygo can transform your facility.</p>
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+              <div onClick={openModal} className="px-8 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold shadow hover:shadow-md transition text-sm md:text-base">Request Demo</div>
+              <Link href="/aboutus" className="px-8 py-3 rounded-full dark:text-gray-300 border border-slate-400  transition text-sm font-medium">Discover More</Link>
+            </div>
+          </div>
+        </section>
+    </div>
+  );
 }

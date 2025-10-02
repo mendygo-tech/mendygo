@@ -52,7 +52,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
             <p className="mt-4 dark:text-slate-300 text-sm md:text-base">Reach out for a tailored walkthrough and discover how Mendygo can transform your facility.</p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <div onClick={openModal} className="px-8 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold shadow hover:shadow-md transition text-sm md:text-base">Request Demo</div>
-              <Link href="/aboutus" className="px-8 py-3 rounded-full dark:text-gray-300 border border-slate-400 hover:bg-slate-700/40 transition text-sm font-medium">Discover More</Link>
+              <Link href="/aboutus" className="px-8 py-3 rounded-full dark:text-gray-300 border border-slate-400  transition text-sm font-medium">Discover More</Link>
             </div>
           </div>
         </section>

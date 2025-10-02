@@ -37,7 +37,7 @@ function LeaderCard({ imgSrc, name, title, description }: LeaderCardProps) {
       />
       <h3 className="font-semibold text-xl text-gray-900 dark:text-gray-50">{name}</h3>
       <p className="text-lime-600 dark:text-lime-400 font-medium text-sm mb-2">{title}</p>
-      <p className="mt-2 text-sm text-white/70">{description}</p>
+      <p className="mt-2 text-sm dark:text-white/70">{description}</p>
     </div>
   );
 }
@@ -62,7 +62,7 @@ function FeatureCard({ imgSrc, title, description, reverse }: FeatureCardProps) 
       </div>
       <div className="space-y-3 p-6 rounded-xl  backdrop-blur  border-gray-200/70 dark:border-gray-800">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-white/70 text-base leading-relaxed">{description}</p>
+        <p className="dark:text-white/70 text-base leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -80,13 +80,13 @@ export default function AboutPage() {
         const closeModal = useCallback(() => setIsModalOpen(false), []);
     
   return (
-    <div className="min-h-screen md:px-16 py-10 bg-white text-black dark:bg-black px-10">
+    <div className="min-h-screen md:px-16 py-10 bg-white text-black dark:bg-black  px-10">
       {/* Hero Section */}
       <div className="text-center space-y-4 mb-16 mt-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">
           Pioneering the Future of Industrial Operations
         </h1>
-        <p className="text-white/70 text-lg max-w-3xl mx-auto">
+        <p className="dark:text-white/70 text-lg max-w-3xl mx-auto">
           We bridge the gap between your physical machinery and intelligent data, unlocking unprecedented efficiency and operational excellence for your enterprise.
         </p>
       </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
       <section className="mb-16">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">Meet The Leadership</h2>
-          <p className="text-white/70 mt-2">The visionaries driving our mission forward.</p>
+          <p className="dark:text-white/70 mt-2">The visionaries driving our mission forward.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           <LeaderCard
@@ -117,7 +117,7 @@ export default function AboutPage() {
       <section className="mb-16 bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent p-8 rounded-lg border lg:w-2/3 mx-auto border-lime-200 dark:border-none">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">Our Mission</h2>
-          <p className="text-base text-white/70">
+          <p className="text-base dark:text-white/70">
             To empower industrial enterprises with robust, end-to-end digital solutions that transform traditional factories into smart, connected, and future-proof ecosystems. We are committed to making Industry 4.0 accessible, scalable, and impactful.
           </p>
         </div>

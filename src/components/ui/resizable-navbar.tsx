@@ -156,7 +156,7 @@ export const NavItems = ({ items, className, onItemClick, onScheduleDemo, visibl
                                 exit={{ opacity: 0, y: 10 }}
                                 transition={{ duration: 0.2, ease: "easeOut" }}
                                 // --- FIX 1 & 2: Added theme support and corrected padding ---
-                                className="absolute top-full left-1/2 -translate-x-1/2 w-auto mt-1 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141415] p-8 shadow-lg"
+                                className="absolute top-full left-1/2 -translate-x-1/2 w-auto mt-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#141415] p-8 shadow-lg"
                             >
                                 <div className="flex justify-center gap-x-12">
                                     {item.dropdown.columns.map((column, colIdx) => (
@@ -269,7 +269,7 @@ export const NavbarLogo = () => (
         src={mendygoDark}
         alt="mendygo light mode"
         className="object-contain h-8 w-auto dark:hidden"
-        style={{ height: '2rem', width: 'auto' }}
+        style={{ height: '2.1rem', width: 'auto' }}
         // width={120}
         // height={48}
         priority

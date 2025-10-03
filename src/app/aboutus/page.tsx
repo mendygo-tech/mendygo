@@ -61,7 +61,7 @@ function FeatureCard({ imgSrc, title, description, reverse }: FeatureCardProps) 
         />
       </div>
       <div className="space-y-3 p-6 rounded-xl  backdrop-blur  border-gray-200/70 dark:border-gray-800">
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-xl dark:text-white/70 font-semibold">{title}</h3>
         <p className="dark:text-white/70 text-base leading-relaxed">{description}</p>
       </div>
     </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
         const closeModal = useCallback(() => setIsModalOpen(false), []);
     
   return (
-    <div className="min-h-screen md:px-16 py-10 bg-white text-black dark:bg-black  px-10">
+    <div className="min-h-screen md:px-16 py-10 bg-white text-black dark:text-white/70 dark:bg-black  px-10">
       {/* Hero Section */}
       <div className="text-center space-y-4 mb-16 mt-20">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg mt-2">
@@ -182,7 +182,7 @@ export default function AboutPage() {
 
           <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl mt-10 dark:text-slate-100 py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h3 className="text-3xl font-bold dark:text-gray-300">Ready to Optimize Your Operations?</h3>
+            <h3 className="text-3xl font-bold text-black dark:text-gray-300">Ready to Optimize Your Operations?</h3>
             <p className="mt-4 dark:text-slate-300 text-sm md:text-base">Reach out for a tailored walkthrough and discover how Mendygo can transform your facility.</p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
               <div onClick={openModal} className="px-8 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold shadow hover:shadow-md transition text-sm md:text-base">Request Demo</div>

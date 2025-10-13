@@ -142,7 +142,7 @@ export const productsData = {
         image: MainDashboardLight, // placeholder
         darkImage: MainDashboardDark,
     },
-    "mendyai-industrial-intelligence-engine": {
+    "mendy": {
         heroTitle: "MendyAI – Industrial Intelligence Engine",
         heroSubtitle: "AI-Powered Insights for Smarter Industrial Operations",
         heroDescription: `MendyAI transforms IIoT data into actionable insights using adaptive machine learning, driving predictive maintenance, process optimization, and operational automation.`,

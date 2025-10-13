@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Urbanist,Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+// import MendyChatbot from "@/components/Home/MendyChatbot";
 import { MyNavbar } from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import { Analytics } from "@vercel/analytics/next";
@@ -118,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           <MyNavbar />
           {children}
+          {/* <MendyChatbot /> */}
           <Footer />
           <Analytics /> {/* Vercel Analytics */}
         </ThemeProvider>

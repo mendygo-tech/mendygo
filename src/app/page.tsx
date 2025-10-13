@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 import Hero2 from "@/components/Home/Hero2";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { Badge } from "@/components/ui/badge";
-import CountdownCard from "@/components/Home/CountdownCard";
+// import CountdownCard from "@/components/Home/CountdownCard";
 import CompanySlideshow from "@/components/Home/SlideShow";
 import BackedUpSlider from "@/components/Home/SlideShowBackedUp";
 import Products from "@/components/Home/Productsgrid";
@@ -43,7 +43,7 @@ export default function Home() {
           <BackedUpSlider />
 
         </div>
-        <CountdownCard />
+        {/* <CountdownCard /> */}
         
         <Ecosystem />
         <Products />

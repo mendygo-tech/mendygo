@@ -1,201 +1,75 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
-import aiHomelight from "@/assets/mockup/3dAIMockupPhoneLight.png";
-import aiHomeDark from "@/assets/mockup/3dAIMockupPhoneDark.png";
-import { Badge } from "@/components/ui/badge";
+import { notFound} from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { productsData } from '@/data/productsdata';
 
-const Page = () => {
-  const [email, setEmail] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [openModal, setOpenModal] = useState(false);
+export default function ProductPage() {
+    const product = productsData['mendy']
+    if (!product) return notFound();
 
-  const isValidEmail = (val: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+    const heroTitle = product.heroTitle || product.heroTitle;
+    const heroSubtitle = product.heroSubtitle 
+    const heroDescription = product.heroDescription
+    const features = product.features || [];
+    const whyTagline = product.whyTagline 
+    const ctaHeading = `Start Your ${product.heroTitle.split('–')[0]} Journey Today`;
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
+    return (
+        <main className="lg:min-h-screen bg-[#f3f7fa] dark:bg-black text-slate-900dark:text-[#9B9999] pb-10">
+            {/* Hero */}
+            <section className="bg-gradient-to-br from-[#abff01]/50 dark:from-[#abff01]/30 via-transparent to-black/5  lg:h-150 pb-10 px-16 lg:pl-30 pt-26 md:pt-24 grid md:grid-cols-2 lg:gap-12 items-center">
+                <div>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg  whitespace-pre-line">{heroTitle}</h1>
+                    <h2 className=" md:text-xl font-semibold mt-2 text-slate-700 dark:text-slate-300">{heroSubtitle}</h2>
+                    <p className="pt-2 text-base md:text-md  leading-relaxed max-w-xl text-slate-950 dark:text-slate-200">{heroDescription}</p>
+                </div>
+                <div className="flex justify-center  md:justify-end">
+                    <div className="relative h-100 w-full hidden md:block lg:block">
+                        <Image src={product.image} alt={product.heroTitle} fill className="object-contain dark:hidden bg-transparent" priority />
+                        <Image src={product.darkImage} alt={product.heroTitle} fill className="object-contain hidden dark:block bg-transparent" priority />
+                    </div>
+                </div>
+            </section>
 
-    if (!isValidEmail(email)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
+            {/* Why Families Love Section */}
+            <section className="lg:mt-20 bg-[#f0f6fa] dark:bg-black  py-20">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex flex-col md:flex-row gap-12 items-start md:items-center mb-14">
+                        <div className="relative w-72 h-100   mx-auto">
+                            <Image src={product.smallImageLight || product.image} alt={product.heroTitle + ' mockup'} fill className="object-contain" />
+                            <Image src={product.smallImageDark || product.darkImage} alt={product.heroTitle + ' mockup'} fill className="object-contain hidden dark:block" />
+                        </div>
+                        <div className="flex-1">
+                            <h2 className="text-3xl dark:text-gray-300 font-bold text-center md:text-left">Why Choose {product.heroTitle.split('–')[0]}</h2>
+                            <p className="mt-1 text-slate-600  dark:text-slate-300 text-center md:text-left max-w-2xl">{whyTagline}</p>
+                            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                {features.map((f, i) => (
+                                    <div key={i} className="p-5 rounded-xl bg-white dark:bg-[#141416] border border-slate-200 dark:border-none shadow-sm hover:shadow-md transition flex flex-col">
+                                        <div className="h-9 w-9 rounded-lg bg-[#abff01]/45 flex items-center justify-center text-xs font-bold text-slate-800 dark:text-slate-100 mb-3">{i+1}</div>
+                                        <h3 className="font-semibold dark:text-gray-300 text-sm leading-snug">{f.title}</h3>
+                                        <p className="text-xs leading-relaxed  text-slate-600 dark:text-slate-300">{f.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    setSubmitting(true);
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
 
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setError(data?.message || "Something went wrong. Please try again.");
-        return;
-      }
-
-      // Success
-      setOpenModal(true);
-      setEmail("");
-    } catch {
-      setError("Network error. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  return (
-    <div className=" min-h-screen relative dark:bg-black">
-      <div className="grid lg:grid-cols-[2fr_3fr] grid-cols-1 pb-20 lg:pb-0 min-h-screen items-center justify-center gap-10 lg:gap-0">
-        <div className="relative flex h-full justify-center lg:pl-20 lg:pt-0 pt-30 w-full">
-          {/* Soft glow behind the phone */}
-          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full dark:bg-[#abff02]/50  bg-[#abff02]/30 blur-3xl dark:opacity-40" />
-          <Image
-            src={aiHomelight}
-            alt="AI workflow assistant light"
-            className="object-contain z-2 lg:w-80 w-40 dark:hidden"
-            priority
-          />
-          <Image
-            src={aiHomeDark}
-            alt="AI workflow assistant dark"
-            className="object-contain z-2 lg:w-80 w-40 hidden dark:block"
-            priority
-          />
-        </div>
-
-        <div className="flex flex-col h-full justify-center lg:items-start items-center w-full lg:w-2/3 p-6 lg:pr-20 pr-6">
-          <Badge className="backdrop-blur-md bg-[#abff02]/30 border py-1 px-3 border-white/20 text-black dark:text-white mb-4">
-            <span className="text-sm font-semibold">Coming Soon</span>
-          </Badge>
-
-          <h1 className="lg:text-4xl text-3xl font-semibold lg:text-left text-center tracking-tight">
-            A new way for industry to manage workflows with AI
-          </h1>
-
-          <p className="mt-3 text-neutral-700 lg:text-left text-center dark:text-neutral-300">
-            We’re changing how teams collaborate with technology. Sign up for
-            early access.
-          </p>
-
-          <form
-            onSubmit={handleSubmit}
-            className="mt-20 w-full max-w-md space-y-2"
-          >
-            <label htmlFor="email" className="sr-only">
-              Work email
-            </label>
-            <div className="flex gap-2">
-              <input
-                id="email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                placeholder="you@company.com"
-                className="flex-1 rounded-md border border-black/10 dark:border-white/10 bg-white dark:bg-neutral-900 p-3 text-sm outline-none ring-0 focus:border-[#abff02] focus:ring-2 focus:ring-[#abff02]/40 transition"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={submitting}
-                aria-invalid={!!error}
-                aria-describedby={error ? "email-error" : undefined}
-              />
-              <button
-                type="submit"
-                disabled={submitting}
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-black text-white dark:bg-[#abff02] dark:text-black px-4 py-3 text-sm font-medium border border-black/10 dark:border-white/10 hover:opacity-90 disabled:opacity-50 transition"
-              >
-                {submitting ? (
-                  <span className="inline-flex items-center gap-2">
-                    <svg
-                      className="h-4 w-4 animate-spin"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                      />
-                    </svg>
-                    Subscribing...
-                  </span>
-                ) : (
-                  "Get early access"
-                )}
-              </button>
-            </div>
-
-            {error && (
-              <p
-                id="email-error"
-                className="text-sm text-red-600 dark:text-red-400"
-              >
-                {error}
-              </p>
-            )}
-
-            <p className="flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-              Get early access to Mendy.
-            </p>
-          </form>
-        </div>
-      </div>
-
-      {/* Success Modal */}
-      {openModal && (
-        <div
-          className="fixed inset-0 z-50 grid place-items-center bg-black/50 backdrop-blur-sm p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="waitlist-title"
-          aria-describedby="waitlist-desc"
-        >
-          <div className="w-full max-w-md rounded-2xl bg-white p-6 text-center shadow-2xl dark:bg-neutral-900 border border-black/10 dark:border-white/10">
-            <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M9 16.2l-3.5-3.5L4 14.2 9 19l11-11-1.5-1.5z" />
-              </svg>
-            </div>
-            <h3 id="waitlist-title" className="text-xl font-semibold">
-              Welcome to the waitlist!
-            </h3>
-            <p
-              id="waitlist-desc"
-              className="mt-1 text-sm text-neutral-600 dark:text-neutral-300"
-            >
-              Thanks for joining. We’ll email you as soon as early access is
-              available.
-            </p>
-            <button
-              onClick={() => setOpenModal(false)}
-              className="mt-6 inline-flex items-center justify-center rounded-md bg-black text-white dark:bg-[#abff02] dark:text-black px-4 py-2 text-sm font-medium hover:opacity-90 transition"
-            >
-              Awesome
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default Page;
+            {/* CTA */}
+            <section className="bg-gradient-to-br from-[#abff01]/30 via-[#abff01]/8 to-transparent w-md lg:w-5xl md:w-2xl mx-auto rounded-xl  dark:text-slate-100 lg:py-24 py-10">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <h3 className="text-3xl font-bold dark:text-gray-300">{ctaHeading}</h3>
+                    <p className="mt-4 dark:text-slate-300 text-sm  md:text-base">Ready to explore more? Reach out for a tailored walkthrough.</p>
+                    <div className="mt-10 flex flex-wrap gap-4 justify-center">
+                        <Link href="/contact" className="px-8 py-3 rounded-full bg-[#abff01] text-black font-semibold shadow hover:shadow-md transition text-sm md:text-base">Request Demo</Link>
+                        <Link href="/aboutus" className="px-8 py-3 rounded-full dark:text-gray-300 border border-slate-400 hover:bg-slate-700/40 transition text-sm font-medium">Discover More</Link>
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
+}

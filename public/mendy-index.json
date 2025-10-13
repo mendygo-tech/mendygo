@@ -1,0 +1,226 @@
+[ 
+  {
+    "id": 1,
+    "title": "what are you?",
+    "url": "/",
+    "content": "I am Mendygo Assistant, an AI-powered chatbot designed to help you learn about Mendygo's Industrial IoT and AI platform...",
+    "type": "faq",
+    "keywords": ["who are you", "what is mendygo assistant", "what can you do"]
+  },
+  {
+    "id":2,
+    "title": "Mendygo Platform Overview",
+    "url": "/",
+    "content": "Mendygo is an Industrial IoT and AI platform that empowers businesses to optimize operations, enhance efficiency, and drive sustainability...",
+    "type": "overview",
+    "keywords": ["mendygo", "overview", "platform", "what is mendygo"]
+  },
+  {
+    "id": 8,
+    "title": "Mendygo Company Information",
+    "url": "/",
+    "content": "Mendygo is an Industrial IoT and AI platform that empowers businesses to optimize operations, enhance efficiency, and drive sustainability...",
+    "type": "company_info",
+    "keywords": ["mendygo", "company", "about us", "who are you"]
+  },
+  {
+    "id": 9,
+    "title": "MendyAI – Industrial Intelligence Engine",
+    "url": "/products/mendyai-industrial-intelligence-engine",
+    "content": "AI-Powered Insights for Smarter Industrial Operations MendyAI transforms IIoT data into actionable insights using adaptive machine learning...",
+    "type": "specific_product",
+    "keywords": ["mendyai", "ai engine", "artificial intelligence", "machine learning", "ml"]
+  },
+  {
+    "id": 10,
+    "title": "Mendygo Building Management System",
+    "url": "/solutions/management-systems/building-management",
+    "content": "Mendygo’s IoT-driven Building Management System (BMS) provides a centralized platform for monitoring, controlling, and optimizing building operations...",
+    "type": "specific_solution",
+    "keywords": ["building management", "bms", "smart building", "hospitals", "malls", "hotels"]
+  },
+  {
+    "id": 11,
+    "title": "Mendygo Factory Management System",
+    "url": "/solutions/management-systems/factory-management",
+    "content": "Transform your factory operations with Mendygo’s IoT-driven Factory Management solution. Gain complete visibility into production efficiency...",
+    "type": "specific_solution",
+    "keywords": ["factory management", "smart factory", "oee", "overall equipment effectiveness", "production efficiency"]
+  },
+  {
+    "id": 12,
+    "title": "Mendygo Energy Management System",
+    "url": "/solutions/management-systems/energy-management",
+    "content": "Mendygo’s IoT-driven Energy Management System provides centralized visibility and control over all energy sources within a facility...",
+    "type": "specific_solution",
+    "keywords": ["energy management", "ems", "reduce electricity", "energy consumption", "power monitoring"]
+  },
+  {
+    "id": 13,
+    "title": "Mendygo Warehouse Management System",
+    "url": "/solutions/management-systems/warehouse-management",
+    "content": "Mendygo’s Warehouse Management System (WMS) provides end-to-end visibility, control, and optimization of warehouse operations...",
+    "type": "specific_solution",
+    "keywords": ["warehouse management", "wms", "inventory", "logistics"]
+  },
+  {
+    "id": 14,
+    "title": "Mendygo Genset Management System",
+    "url": "/solutions/management-systems/genset-management",
+    "content": "Mendygo’s Genset Management System provides real-time monitoring, predictive maintenance, and energy optimization for backup and primary power generators...",
+    "type": "specific_solution",
+    "keywords": ["genset management", "generator", "backup power"]
+  },
+  {
+    "id": 15,
+    "title": "HVAC Management System",
+    "url": "/solutions/management-systems/hvac-management",
+    "content": "Unlock the full potential of your facility’s HVAC systems with Mendygo’s IoT-driven HVAC management solution...",
+    "type": "specific_solution",
+    "keywords": ["hvac", "air conditioning", "chillers", "cooling"]
+  },
+  {
+    "id": 16,
+    "title": "Mendygo Water Management System",
+    "url": "/solutions/management-systems/water-management",
+    "content": "Mendygo’s IoT-driven Water Management System provides centralized monitoring and control of water resources across facilities...",
+    "type": "specific_solution",
+    "keywords": ["water management", "leak detection", "stp", "etp"]
+  },
+  {
+    "id": 17,
+    "title": "Mendygo Construction Fleet Management System",
+    "url": "/solutions/management-systems/construction-fleet-management",
+    "content": "Mendygo’s Construction Fleet Management solution provides centralized control and real-time visibility of all fleet operations...",
+    "type": "specific_solution",
+    "keywords": ["construction fleet", "fleet management", "excavators", "cranes"]
+  },
+  {
+    "id": 18,
+    "title": "Mendygo Sensors and Meters",
+    "url": "/products/hardware/sensors-meters/sensor",
+    "content": "We offer a wide variety of industrial IoT sensors and meters to capture critical data from your operations, including temperature, vibration, fuel, water, gas, and more.",
+    "type": "product_category",
+    "keywords": ["all sensors", "list of sensors", "sensor types", "meters", "hardware", "iot devices", "sensors you offer"]
+  },
+  {
+    "id": 19,
+    "title": "Mendygo Fuel Sensor",
+    "url": "/products/hardware/sensors-meters/fuel-sensor",
+    "content": "A bluetooth enabled, high-precision capacitive fuel level sensor, which is used to monitor fuel consumption...",
+    "type": "specific_product",
+    "keywords": ["fuel sensor", "fuel consumption", "fuel theft"]
+  },
+  {
+    "id": 20,
+    "title": "Mendygo Vibration Sensor",
+    "url": "/products/hardware/sensors-meters/vibration-sensor",
+    "content": "Industrial application device, the vibration sensor is a cost-effective solution with high sensitivity, fast response...",
+    "type": "specific_product",
+    "keywords": ["vibration sensor", "condition monitoring"]
+  },
+  {
+    "id": 21,
+    "title": "Mendygo Temperature Sensor",
+    "url": "/products/hardware/sensors-meters/temperature-sensor",
+    "content": "A high-temperature, long-life wireless sensor built for extreme environments. It is suitable for temperature monitoring of bus bar...",
+    "type": "specific_product",
+    "keywords": ["temperature sensor", "heat monitoring", "busbar sensor"]
+  },
+  {
+    "id": 22,
+    "title": "Mendygo Gas Meter",
+    "url": "/products/hardware/sensors-meters/gas-meter",
+    "content": "A rugged, IoT-enabled meter designed for accurate measurement of industrial and utility-grade gas consumption...",
+    "type": "specific_product",
+    "keywords": ["gas meter", "gas consumption"]
+  },
+  {
+    "id": 23,
+    "title": "Mendygo Water Meter",
+    "url": "/products/hardware/sensors-meters/water-meter",
+    "content": "A precision, IoT-enabled water meter sensor built for industrial and utility-grade deployments...",
+    "type": "specific_product",
+    "keywords": ["water meter", "water flow"]
+  },
+  {
+    "id": 24,
+    "title": "Mendygo Smoke & Fire Detector",
+    "url": "/products/hardware/sensors-meters/smoke-and-fire-detector",
+    "content": "A high-sensitivity, IoT-enabled detector designed for early warning and reliable fire safety...",
+    "type": "specific_product",
+    "keywords": ["smoke detector", "fire detector", "fire safety"]
+  },
+  {
+    "id": 25,
+    "title": "Mendygo Power Monitoring Unit",
+    "url": "/products/hardware/sensors-meters/power-monitoring-unit",
+    "content": "A robust, IoT-enabled power monitoring solution designed for real-time energy management...",
+    "type": "specific_product",
+    "keywords": ["power monitoring unit", "pmu", "electrical parameters"]
+  },
+  {
+    "id": 33,
+    "title": "Mendygo Controller",
+    "url": "/products/hardware/controllers",
+    "content": "An advanced IoT-enabled industrial solution designed for optimizing system performance, offering precise control and real-time monitoring.",
+    "type": "product_category",
+    "keywords": ["controller", "iot controller", "hardware", "controller hardware"]
+  },
+  {
+    "id": 34,
+    "title": "Mendygo Gateway",
+    "url": "/products/hardware/gateway",
+    "content": "Our IoT Gateway connects your sensors and machines, enabling you to monitor your industrial equipment's health from any location.",
+    "type": "product_category",
+    "keywords": ["gateway", "iot gateway", "telematics controller", "hardware", "telematics device"]
+  },
+  {
+    "id": 39,
+    "title": "Greeting",
+    "url": "/",
+    "content": "Hello! I'm the Mendygo Assistant. I'm here to help you learn about our Industrial IoT and AI platform. What can I help you find today?",
+    "type": "faq",
+    "keywords": ["hi", "hello", "hey", "how are you", "yo"]
+  },
+  {
+    "id": 41,
+    "title": "Pricing Information",
+    "url": "/#contact",
+    "content": "Our pricing is customized based on the specific needs, scale, and complexity of your operation. To get a detailed quote that fits your requirements, the best step is to connect with our sales team...",
+    "type": "faq",
+    "keywords": ["pricing", "price", "cost", "quote", "how much"]
+  },
+  {
+    "id": 42,
+    "title": "Difference: Building vs. Factory Management",
+    "url": "/solutions/management-systems",
+    "content": "The main difference is their focus. Our Building Management System (BMS) is for commercial or residential buildings... Our Factory Management System is for industrial environments...",
+    "type": "faq",
+    "keywords": ["difference building factory", "compare bms fms", "building vs factory"]
+  },
+  {
+    "id": 46,
+    "title": "Predictive Maintenance Explanation",
+    "url": "/solutions/management-systems/factory-management",
+    "content": "Predictive maintenance works by using sensors (like vibration and temperature sensors) to continuously monitor the health of your equipment...",
+    "type": "faq",
+    "keywords": ["predictive maintenance", "how predictive maintenance works", "preventive maintenance"]
+  },
+  {
+    "id": 47,
+    "title": "Our Hardware Products",
+    "url": "/products/hardware/sensors-meters/sensor",
+    "content": "We offer a range of industrial-grade IoT hardware. Our main categories include: 1. IoT Sensors and Meters for data collection. 2. IoT Gateways for data transmission. 3. IoT Controllers for system management. Ask about a category to learn more!",
+    "type": "product_overview",
+    "keywords": ["hardware", "our hardware", "devices", "physical products", "iot devices", "list of hardware"]
+  },
+  {
+    "id": 48,
+    "title": "Valediction / Goodbye",
+    "url": "/",
+    "content": "Goodbye! Have a great day. Feel free to ask if you have more questions in the future.",
+    "type": "faq",
+    "keywords": ["bye", "goodbye", "cya", "see you", "later", "cheers"]
+  }
+]

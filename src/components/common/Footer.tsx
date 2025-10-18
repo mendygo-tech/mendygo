@@ -128,7 +128,7 @@ export default function Footer() {
 
           
           <div className="space-y-3 col-span-2 md:col-span-1 lg:block hidden">
-            <h4 className="font-semibold text-sm sm:text-base">Solutions</h4>
+            <h4 className="font-semibold text-sm sm:text-[15px]">Management Systems</h4>
             <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5">
               {[
                 { href: "/solutions/management-systems/building-management", label: "Building Management" },
@@ -147,7 +147,7 @@ export default function Footer() {
           </div>
           
           <div className="space-y-3">
-            <h4 className="font-semibold text-sm sm:text-base">Socials</h4>
+            <h4 className="font-semibold text-sm sm:text-[15px]">Socials</h4>
             <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
               {[
                 { href: "https://www.instagram.com/mendygo.ai", label: "Instagram" },
@@ -169,7 +169,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-3">
-            <h4 className="font-semibold text-sm sm:text-base">Links</h4>
+            <h4 className="font-semibold text-sm sm:text-[15px]">Links</h4>
             <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
               {[
                 { href: "/gallery", label: "Gallery" },
@@ -186,7 +186,7 @@ export default function Footer() {
           </div>
           
 <div className="space-y-3 col-span-2 md:col-span-1 lg:block hidden">
-            <h4 className="font-semibold text-sm sm:text-base">Products</h4>
+            <h4 className="font-semibold text-sm sm:text-[15px]">Products</h4>
             <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
               {[
                 { href: "/products/hardware/gateway", label: "Gateway" },
@@ -204,7 +204,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-3">
-            <h4 className="font-semibold text-sm sm:text-base">Pages</h4>
+            <h4 className="font-semibold text-sm sm:text-[15px]">Pages</h4>
             <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
               {[
                 { href: "/", label: "Home" },
@@ -226,7 +226,7 @@ export default function Footer() {
           
 
           <div className="space-y-3 col-span-2 md:col-span-1 lg:block hidden">
-            <h4 className="font-semibold text-sm sm:text-base">Telematics</h4>
+            <h4 className="font-semibold text-sm sm:text-[15px]">Telematics</h4>
             <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
               {[
                   { href: "/solutions/telematics/chiller-telematics", label: "Chiller Telematics" },

@@ -14,6 +14,10 @@ const page = () => {
     <div className='relative overflow-hidden min-h-screen pt-40 bg-[#f8f9fa] dark:bg-black dark:text-white text-black pb-20'>
       <div className="max-w-7xl mx-auto">
       <ControllerHero systemData={systemData} />
+       <p className="max-w-4xl text-center mt-16 text-sm text-red-400 dark:text-red-300 px-4 mx-auto ">
+          Disclaimer: The actual hardware design may differ from the images
+          shown and can vary based on specific requirements.
+        </p>
       {/* <HardwareOverview systemData={systemData.hardwareSpecs} /> */}
       <Features systemData={systemData} heading="Key Features" />
 

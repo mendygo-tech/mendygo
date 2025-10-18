@@ -21,6 +21,10 @@ const systemData = sensorsMetersData[slug];
     <div className='relative overflow-hidden min-h-screen pt-40 bg-[#f8f9fa] dark:bg-black dark:text-white text-black pb-20'>
       <div className="max-w-7xl mx-auto">
       <ControllerHero systemData={systemData} />
+      <p className="max-w-4xl text-center mt-16 text-sm text-red-400 dark:text-red-300 px-4 mx-auto ">
+          Disclaimer: The actual hardware design may differ from the images
+          shown and can vary based on specific requirements.
+        </p>
       <Features systemData={systemData} heading="Key Features" />
 
       <section className="bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent max-w-5xl mx-auto rounded-xl dark:text-slate-100 py-16 mt-20">

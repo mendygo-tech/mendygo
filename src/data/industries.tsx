@@ -1,129 +1,163 @@
 import { StaticImageData } from "next/image";
-import ind4 from "../assets/gallery/ind1.png";
-import ind1 from "../assets/gallery/ind2.png";
-import ind6 from "../assets/gallery/ind3.png";
-import ind3 from "../assets/gallery/ind4.png";
-import ind5 from "../assets/gallery/ind5.png";
-import ind2 from "../assets/gallery/ind6.png";
+
+import smartCity from "../assets/industries/smart-city.png";
+import smartAgriculture from "../assets/industries/sensor.png";
+import smartBuilding from "../assets/industries/smart-house(1).png";
+import smartPoultry from "../assets/industries/animal.png";
+import smartRetail from "../assets/industries/store.png";
+import smartHealthcare from "../assets/industries/hospital.png";
+import industrial4 from "../assets/industries/smart Automation.v1.png";
+import connectedVehicles from "../assets/industries/conncted_vehicles.png";
 
 export type IndustrySlug =
-    | "pulp-fiber"
-    | "chemicals"
-    | "food-beverage"
-    | "buildings"
-    | "retail-malls"
-    | "pharmaceuticals";
+  | "SmartCity"
+  | "SmartAgriculture"
+  | "SmartBuilding"
+  | "SmartPoultry"
+  | "SmartRetail"
+  | "SmartHealthcare"
+  | "Industrial4"
+  | "ConnectedVehicles";
 
 export const servicesContent: Record<
-    IndustrySlug,
-    {
-        title: string;
-        abstract: string;
-        intro: string;
-        highlights: string[];
-        conclusion: string;
-        image: StaticImageData;
-    }
+  IndustrySlug,
+  {
+    title: string;
+    abstract: string;
+    intro: string;
+    highlights: string[];
+    conclusion: string;
+    image: StaticImageData;
+  }
 > = {
-    "pulp-fiber": {
-        title: "Pulp & Fiber",
-        abstract:
-            "Smart manufacturing solutions tailored for the pulp & fiber industry—boosting maintenance, quality, and sustainability.",
-        intro:
-            "As the Pulp & Fiber sector adopts Industry 4.0, Mendygo enables predictive maintenance, real‑time monitoring, and compliance with precision.",
-        highlights: [
-            "Predictive maintenance for pulp equipment",
-            "Real‑time production dashboards",
-            "AI-driven quality control & compliance",
-            "Resource optimization to reduce waste",
-            "Data-driven product R&D innovations",
-        ],
-        conclusion:
-            "Partner with Mendygo to modernize pulp & fiber operations—cutting downtime, boosting efficiency, and supporting sustainability-driven growth.",
-        image: ind1,
-    },
-    chemicals: {
-        title: "Chemicals",
-        abstract:
-            "Industry 4.0 solutions designed for chemical manufacturing—enhancing efficiency, compliance, and agility.",
-        intro:
-            "The chemicals sector stands at the forefront of smart manufacturing. Mendygo offers real‑time analytics, sustainable resource use, and product innovation capabilities.",
-        highlights: [
-            "Dynamic resource & energy optimization",
-            "Real‑time process monitoring",
-            "Quality control with reduced defects",
-            "Agile supply‑chain resilience",
-            "Accelerated product development via AI",
-        ],
-        conclusion:
-            "Transform your chemical operations with Mendygo—delivering smarter, greener, and more innovative manufacturing processes.",
-        image: ind2,
-    },
-    "food-beverage": {
-        title: "Food & Beverage",
-        abstract:
-            "Smart manufacturing strategies for food & beverage—focusing on efficiency, safety, and innovation.",
-        intro:
-            "By integrating Industry 4.0 technologies, Mendygo empowers food & beverage producers to scale sustainably and innovate quality-driven offerings.",
-        highlights: [
-            "Efficient production with real‑time analytics",
-            "Resource and waste optimization",
-            "Automated quality & food‑safety monitoring",
-            "Resilient, data‑backed supply chains",
-            "Personalized product innovation via analytics",
-        ],
-        conclusion:
-            "Partner with Mendygo to revolutionize food & beverage operations—improving sustainability, quality, and customer-level innovation.",
-        image: ind3,
-    },
-    buildings: {
-        title: "Buildings & Large Facilities",
-        abstract:
-            "Smart-facility solutions for large buildings—integrating data, automation, and occupant comfort.",
-        intro:
-            "Mendygo helps large buildings adopt Industry 4.0 frameworks—bringing intelligence to HVAC, energy, safety, and facility management.",
-        highlights: [
-            "Real‑time resource & energy management",
-            "Predictive HVAC and maintenance monitoring",
-            "Smart lighting and occupant comfort systems",
-            "AI-driven security and access control",
-            "Data insights to improve facility operations",
-        ],
-        conclusion:
-            "Work with Mendygo to turn facilities into intelligent, sustainable, and secure spaces for occupants and operators alike.",
-        image: ind4,
-    },
-    "retail-malls": {
-        title: "Retail & Malls",
-        abstract:
-            "Next‑gen retail facility solutions—enhancing energy use, operations, and customer experience via smart tech.",
-        intro:
-            "From energy optimization to visitor analytics, Mendygo equips retail environments with smart systems for efficiency and insights.",
-        highlights: [
-            "Energy‑efficient facility management",
-            "Customer flow and engagement analytics",
-            "Predictive maintenance for mall infrastructure",
-            "Security and access automation",
-            "Smart Facility insights for operations teams",
-        ],
-        conclusion:
-            "Elevate retail facility management with Mendygo—merging sustainability, intelligence, and seamless visitor experiences.",
-        image: ind5,
-    },
-    pharmaceuticals: {
-        title: "Pharmaceuticals",
-        abstract:
-            "Smart pharmaceutical manufacturing enabled by Mendygo—ensuring quality, compliance, and innovation through advanced digital solutions.",
-        intro:
-            "Pharma 4.0 is transforming how medicines are made. Mendygo’s advanced analytics, real-time tracking, and validation tools help pharmaceutical companies maintain high-quality standards, accelerate production, and achieve regulatory compliance.",
-        highlights: [
-            "End-to-end traceability of drug manufacturing processes",
-            "Automated batch record management and digital validation",
-            "AI-driven anomaly detection for quality assurance",
-            "Process optimization to reduce cycle times and waste",
-        ],
-        conclusion:
-            "Choose Mendygo to lead your Pharma 4.0 journey—unlocking smarter operations, faster market readiness, and uncompromised product quality.",
-        image: ind6,
-    },
+  SmartCity: {
+    title: "Smart City",
+    abstract:
+      "IoT and analytics solutions for efficient, connected, and sustainable urban living.",
+    intro:
+      "Mendygo’s Smart City platform connects infrastructure, data, and automation to improve city operations.",
+    highlights: [
+      "IoT-enabled infrastructure monitoring",
+      "Data-driven urban planning",
+      "Smart traffic, water, and waste systems",
+      "Public safety with smart surveillance",
+    ],
+    conclusion: "Transform your city into a connected and efficient ecosystem.",
+    image: smartCity,
+  },
+
+  SmartAgriculture: {
+    title: "Smart Agriculture",
+    abstract:
+      "Precision farming with sensor data, automation, and actionable insights.",
+    intro:
+      "We combine soil, weather, and crop data to drive smarter, faster farm decisions.",
+    highlights: [
+      "Soil moisture and weather tracking",
+      "Automated irrigation control",
+      "Cold-chain quality monitoring",
+      "Pest and disease alerts",
+    ],
+    conclusion: "Boost yield and sustainability with precision farming tools.",
+    image: smartAgriculture,
+  },
+
+  SmartBuilding: {
+    title: "Smart Building",
+    abstract:
+      "Unified building automation for energy, comfort, and safety optimization.",
+    intro:
+      "Connect HVAC, lighting, and security systems into one intelligent control platform.",
+    highlights: [
+      "Real-time energy metering",
+      "Predictive HVAC maintenance",
+      "Smart lighting and occupancy analytics",
+      "Access and alarm integration",
+    ],
+    conclusion: "Create efficient and comfortable spaces with smart automation.",
+    image: smartBuilding,
+  },
+
+  SmartPoultry: {
+    title: "Smart Poultry",
+    abstract:
+      "IoT-powered poultry management for better health and productivity.",
+    intro:
+      "Monitor shed conditions and automate feed and water systems for optimal performance.",
+    highlights: [
+      "Temperature and humidity tracking",
+      "Feed and water automation",
+      "Health and mortality alerts",
+      "Energy and biosecurity optimization",
+    ],
+    conclusion:
+      "Ensure healthy flocks and efficient operations with real-time insights.",
+    image: smartPoultry,
+  },
+
+  SmartRetail: {
+    title: "Smart Retail",
+    abstract:
+      "IoT-driven store analytics and automation for efficient retail operations.",
+    intro:
+      "Gain live insights into energy, refrigeration, and customer behavior.",
+    highlights: [
+      "Cold-chain and temperature monitoring",
+      "Energy and HVAC analytics",
+      "Footfall and dwell tracking",
+      "POS and operations dashboards",
+    ],
+    conclusion:
+      "Run efficient, data-aware stores that enhance customer experience.",
+    image: smartRetail,
+  },
+
+  SmartHealthcare: {
+    title: "Smart Healthcare",
+    abstract:
+      "Connected hospital infrastructure for asset tracking and safety.",
+    intro:
+      "Integrate biomedical devices, utilities, and environmental systems into one dashboard.",
+    highlights: [
+      "Asset and equipment tracking",
+      "Vaccine cold-chain monitoring",
+      "Indoor air quality analytics",
+      "Energy and utility metering",
+    ],
+    conclusion: "Deliver safer care through connected healthcare systems.",
+    image: smartHealthcare,
+  },
+
+  Industrial4: {
+    title: "Industrial 4.0",
+    abstract:
+      "Machine connectivity, predictive maintenance, and OEE analytics for factories.",
+    intro:
+      "Connect machines and sensors for real-time visibility and production optimization.",
+    highlights: [
+      "OEE and downtime analytics",
+      "Predictive maintenance",
+      "PLC and machine connectivity",
+      "Quality and process digitization",
+    ],
+    conclusion: "Achieve reliable, data-driven manufacturing performance.",
+    image: industrial4,
+  },
+
+  ConnectedVehicles: {
+    title: "Connected Vehicles",
+    abstract:
+      "Fleet intelligence and telematics for safer, optimized transport.",
+    intro:
+      "Monitor and manage vehicles in real time with data-driven insights.",
+    highlights: [
+      "GPS and utilization tracking",
+      "Driver behavior scoring",
+      "Predictive maintenance alerts",
+      "Fuel and route optimization",
+    ],
+    conclusion:
+      "Operate efficient and safe fleets with connected vehicle solutions.",
+    image: connectedVehicles,
+  },
 };

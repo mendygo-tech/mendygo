@@ -2,87 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { servicesContent } from '../../data/industries';
-// NEW: Import motion for animations
 import { motion } from 'framer-motion';
 
-// ICONS: Added ArrowRight, CheckCircle2, and Orbit for UI enhancements
-import {
-  Briefcase,
-  Building2,
-  FlaskConical,
-  ShoppingBag,
-  Utensils,
-  Pill,
-  ArrowRight,
-  CheckCircle2,
-} from 'lucide-react';
-
-const industryIcons: Record<string, React.ReactNode> = {
-  'pulp-fiber': <Briefcase className="w-6 h-6" />,
-  chemicals: <FlaskConical className="w-6 h-6" />,
-  'food-beverage': <Utensils className="w-6 h-6" />,
-  buildings: <Building2 className="w-6 h-6" />,
-  'retail-malls': <ShoppingBag className="w-6 h-6" />,
-  pharmaceuticals: <Pill className="w-6 h-6" />,
-};
-
-// const products = [
-//   {
-//     name: 'Mendyview',
-//     tagline: 'AI-Powered Industrial Access Control',
-//     desc: 'Seamless access management with AI-driven image processing and compliance monitoring.',
-//     icon: <Shield className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'MendySheets',
-//     tagline: 'Digital Quality Inspection Platform',
-//     desc: 'Digitized workflows with real-time inspection data, automated reporting, and analytics.',
-//     icon: <ClipboardCheck className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'Mendergy',
-//     tagline: 'Intelligent Energy Management',
-//     desc: 'IIoT-powered energy monitoring, predictive analytics, and automated control.',
-//     icon: <Zap className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'SmartOEE',
-//     tagline: 'Equipment Effectiveness Dashboard',
-//     desc: 'Live factory performance insights to improve productivity and reduce downtime.',
-//     icon: <BarChart3 className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'MendygoVerse',
-//     tagline: 'AR/VR/MR Industrial Platform',
-//     desc: 'Immersive industrial training and remote assistance powered by AR/VR/MR.',
-//     // CHANGED: Using a more appropriate icon for AR/VR
-//     icon: <Orbit className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'MendyOps',
-//     tagline: 'Utility Monitoring & Automation',
-//     desc: 'Unified control of HVAC, pumps, and energy systems with predictive optimization.',
-//     icon: <Gauge className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'MendyLive',
-//     tagline: 'Digital Twin Visualization',
-//     desc: 'Real-time monitoring and simulation with dynamic digital twin technology.',
-//     icon: <Eye className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'Thermendy',
-//     tagline: 'Smart Climate Control',
-//     desc: 'AI-driven industrial climate management for energy efficiency and comfort.',
-//     icon: <Thermometer className="w-8 h-8 text-primary" />,
-//   },
-//   {
-//     name: 'MendyAI',
-//     tagline: 'Industrial Intelligence Engine',
-//     desc: 'Predictive analytics, automation, and decision support for smarter operations.',
-//     icon: <Brain className="w-8 h-8 text-primary" />,
-//   },
-// ];
+// Keep only the icons used in the UI
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 // NEW: Animation variants for Framer Motion
 const containerVariants = {
@@ -129,7 +52,7 @@ export default function IndustriesAndSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg  opacity-80 max-w-3xl mx-auto"
+              className="text-lg  opacity-80 max-w-3xl mx-auto text-black dark:text-white/80 "
             >
               Mendygo empowers diverse industries with Industry 4.0 solutions to enhance efficiency and innovation.
             </motion.p>
@@ -145,42 +68,40 @@ export default function IndustriesAndSolutions() {
       >
         {Object.entries(servicesContent).map(([slug, content]) => (
           <motion.div key={slug} variants={itemVariants}>
-            {/* CHANGED: Wrapped the card in a div component for better UX */}
-            <div
-              className="group block rounded-2xl overflow-hidden border border-gray-200 dark:border-none shadow-lg hover:shadow-primary/20 dark:shadow-none transition-all duration-300 bg-white dark:bg-neutral-900 hover:-translate-y-1 h-full"
-            >
-              <div className="relative h-48  w-full overflow-hidden">
-                <Image
-                  src={content.image}
-                  alt={content.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent" />
-                <h2 className="absolute bottom-5 left-5 text-2xl font-semibold text-white flex items-center gap-3 drop-shadow">
-                  <span className="text-primary">{industryIcons[slug]}</span>
+            {/* FIXED: Proper card layout with compact centered icon */}
+            <article className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-neutral-900">
+              {/* Header: icon + title */}
+              <div className="px-6 pt-8 flex flex-col">
+                <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-gray-200 bg-gray-50 dark:border-white/10 dark:bg-white/5">
+                  <Image
+                    src={content.image}
+                    alt={`${content.title} icon`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 object-contain"
+                  />
+                </div>
+                <h2 className="mt-4 text-2xl font-semibold text-gray-900 dark:text-white">
                   {content.title}
                 </h2>
               </div>
 
+              {/* Body: abstract + bullet highlights */}
               <div className="p-6 space-y-4">
-                <p className="opacity-80 text-sm">{content.abstract}</p>
-                <div className="space-y-2">
+                <p className="opacity-80 text-sm text-black dark:text-white/80 ">{content.abstract}</p>
+                <ul className="space-y-2">
                   {content.highlights.map((point, i) => (
-                    // NEW: Improved styling for highlight points
-                    <div key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
-                      <span className="opacity-90">{point}</span>
-                    </div>
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
+                      <span className="opacity-90 text-black dark:text-white/80 ">{point}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
-            </div>
+            </article>
           </motion.div>
         ))}
       </motion.div>
-
-
 
       {/* NEW: Enhanced CTA Section */}
       <section className="bg-gradient-to-br dark:from-[#abff01]/40 from-[#abff01]/35 via-[#abff01]/0 to-[#abff01]/20 dark:border-white/30 dark:text-white rounded-lg lg:max-w-7xl mx-auto md:max-w-5xl sm:max-w-3xl">

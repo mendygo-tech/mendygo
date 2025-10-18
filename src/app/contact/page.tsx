@@ -379,7 +379,7 @@ const Contact = () => {
                             onChange={handleChange}
                             placeholder="Full Name*"
                             required
-                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-white/30 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
+                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-black/20 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
                         />
                         <input
                             type="email"
@@ -388,7 +388,7 @@ const Contact = () => {
                             onChange={handleChange}
                             placeholder="Email*"
                             required
-                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-white/30 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
+                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-black/20 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
                         />
                         <input
                             type="text"
@@ -396,7 +396,7 @@ const Contact = () => {
                             value={formData.subject}
                             onChange={handleChange}
                             placeholder="Subject"
-                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-white/30 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
+                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-black/20 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
                         />
                         <div className="relative">
                             <div className="flex">
@@ -404,7 +404,7 @@ const Contact = () => {
                                     <button
                                         type="button"
                                         onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                                        className="flex items-center gap-2 px-3 py-3 rounded-l-lg border border-white/30 dark:border-white/20 bg-white/60 dark:bg-white/5 backdrop-blur-sm text-black dark:text-white hover:bg-white/80 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 transition-all"
+                                        className="flex items-center gap-2 px-3 py-3 rounded-l-lg border border-black/20 dark:border-white/20 bg-white/60 dark:bg-white/5 backdrop-blur-sm text-black dark:text-white hover:bg-white/80 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 transition-all"
                                     >
                                         <span className="text-lg">{selectedCountry.flag}</span>
                                         <span className="text-sm">{selectedCountry.phoneCode}</span>
@@ -417,7 +417,7 @@ const Contact = () => {
                                                 initial={{ opacity: 0, y: -10 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: -10 }}
-                                                className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-neutral-800 border border-white/30 dark:border-white/20 rounded-lg shadow-xl z-50"
+                                                className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-neutral-800 border border-black/20 dark:border-white/20 rounded-lg shadow-xl z-50"
                                             >
                                                 <div className="p-2 border-b border-white/20 dark:border-white/10">
                                                     <input
@@ -425,7 +425,7 @@ const Contact = () => {
                                                         placeholder="Search countries..."
                                                         value={countrySearchTerm}
                                                         onChange={(e) => setCountrySearchTerm(e.target.value)}
-                                                        className="w-full px-3 py-2 bg-gray-100 dark:bg-neutral-700 border border-white/30 dark:border-white/20 rounded text-black dark:text-white placeholder:text-gray-600 dark:placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 text-sm"
+                                                        className="w-full px-3 py-2 bg-gray-100 dark:bg-neutral-700 border border-black/20 dark:border-white/20 rounded text-black dark:text-white placeholder:text-gray-600 dark:placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 text-sm"
                                                         autoFocus
                                                     />
                                                 </div>
@@ -464,7 +464,7 @@ const Contact = () => {
                                     value={formData.phoneNumber}
                                     onChange={handleChange}
                                     placeholder="Phone Number"
-                                    className="flex-1 rounded-r-lg border-l-0 border border-white/30 dark:border-white/20 bg-white/60 dark:bg-white/5 backdrop-blur-sm px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
+                                    className="flex-1 rounded-r-lg border-l-0 border border-black/20 dark:border-white/20 bg-white/60 dark:bg-white/5 backdrop-blur-sm px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
                                 />
                             </div>
                         </div>
@@ -474,7 +474,7 @@ const Contact = () => {
                             onChange={handleChange}
                             placeholder="Message..."
                             rows={4}
-                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-white/30 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 sm:col-span-2 resize-none focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
+                            className="bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-black/20 dark:border-white/20 rounded-lg px-4 py-3 text-sm md:text-base dark:text-white text-black placeholder:dark:text-white placeholder:text-gray-600 sm:col-span-2 resize-none focus:outline-none focus:ring-2 focus:ring-[#abff02]/50 focus:border-[#abff02]/50 transition-all"
                         />
                         <button
                             type="submit"

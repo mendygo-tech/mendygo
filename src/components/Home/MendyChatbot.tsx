@@ -211,7 +211,7 @@ export default function MendyChatbot() {
     keywordResults.sort((a, b) => b.score - a.score);
 
     // --- 3. ENHANCED FALLBACK SEARCH ---
-    let fallbackResults: any[] = [];
+    let fallbackResults: unknown[] = [];
     if (keywordResults.length === 0 || keywordResults[0].score < 1) {
       // Try different search strategies
       const searchStrategies = [

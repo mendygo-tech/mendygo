@@ -13,6 +13,8 @@ const companies = [
   { name: 'Microsoft for Startups', image: MicrosoftSt,darkImage: MicrosoftStDark },
   { name: 'Google for Startups', image: GoogleSt,darkImage: GoogleStDark },
   { name: 'CII', image: cii , darkImage: ciidark },
+   // { name: 'Renu Automation', image: Renu },
+  // { name: 'IGSCS', image: IGSCS },
 ];
 
 

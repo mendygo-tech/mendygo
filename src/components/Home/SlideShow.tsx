@@ -7,6 +7,8 @@ import Smh from '../../assets/company_logo/smh.webp';
 import Maruti from '../../assets/company_logo/maruti.webp';
 import Marelli from '../../assets/company_logo/marelli.png';
 import jsw from '../../assets/company_logo/jsw.png';
+import renu from '../../assets/company_logo/renu.jpg';
+import igscs from '../../assets/company_logo/igscs.jpg';
 
 const companies = [
   { name: 'SKH Group', image: Smh },
@@ -15,7 +17,9 @@ const companies = [
   { name: 'Tata Motors', image: Tata },
   { name: 'Dayco', image: Dayco },
   { name: 'Maruti', image: Maruti },
+  { name: 'igscs', image: igscs },
   { name: 'JSW Steel', image: jsw },
+  { name: 'renu', image: renu },
 ];
 
 const CompanySlider = () => {

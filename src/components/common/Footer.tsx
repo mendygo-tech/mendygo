@@ -1,47 +1,47 @@
 "use client";
+
 import React from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
 import { motion } from "motion/react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Mail, Instagram, Facebook, Linkedin, Twitter,MapPinHouse, ExternalLinkIcon} from "lucide-react";
+// import terms from "../../app/pages/term"
+// import cookies from "../../app/pages/cookie"
+// import disclamer from "../../app/pages/disclamer"
+
 import mendygo from "../../assets/mendygo white green wordmark.png";
-import mendygoDark from "../../assets/mendygo black green wordmark.png";
+
+import logo from "@/assets/l_shadow.jpg";
+// import mendygoLight from "@/assets/mendygo white green wordmark.png";
+import mendygoDark from "@/assets/mendygo black green wordmark.png";
 import SuccessModal from "./SuccessModal";
 
 export default function Footer() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [modalMessage, setModalMessage] = React.useState("");
-  const [modalType, setModalType] = React.useState<"success" | "error">("success");
-  
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
+  const [modalType, setModalType] =
+    React.useState<"success" | "error">("success");
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const emailInput = (
+    const email = (
       e.currentTarget.elements.namedItem("email") as HTMLInputElement
     ).value;
 
     fetch("/api/newsletter/subscribe", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: emailInput,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
     })
       .then((res) => {
-        if (!res.ok) throw new Error("Network response was not ok");
-        return res.json();
-      })
-      .then(() => {
+        if (!res.ok) throw new Error();
         setModalMessage("Successfully subscribed to newsletter!");
         setModalType("success");
         setModalOpen(true);
       })
-      .catch((err) => {
-        console.error("Subscription error:", err);
+      .catch(() => {
         setModalMessage("Subscription failed. Please try again.");
         setModalType("error");
         setModalOpen(true);
@@ -49,7 +49,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="w-full bg-white dark:bg-black text-black dark:text-white relative overflow-hidden border-t border-black/10 dark:border-white/10">
+       <footer className="w-full bg-white dark:bg-black text-black dark:text-white relative overflow-hidden border-t border-black/10 dark:border-white/10">
       <motion.div
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 0.08, scale: 1.3 }}
@@ -69,6 +69,7 @@ export default function Footer() {
                 height={2734}
                 className="h-8 w-8"
               />
+             
               <Image
                 src={mendygoDark}
                 alt="mendygo dark"
@@ -122,135 +123,98 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Links Sections */}
-        <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12 px-3 justify-start  justify-items-center ">
-          
-
-          
-          <div className="space-y-3 col-span-2 md:col-span-1 lg:block hidden">
-            <h4 className="font-semibold text-sm sm:text-[15px]">Management Systems</h4>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-1.5">
-              {[
-                { href: "/solutions/management-systems/building-management", label: "Building Management" },
-                { href: "/solutions/management-systems/energy-management", label: "Energy Management" },
-                { href: "/solutions/management-systems/factory-management", label: "Factory Management" },
-                { href: "/solutions/management-systems/hvac-management", label: "HVAC Management" },
-                { href: "/solutions/management-systems", label: "View all" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#82bf07] block">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="space-y-3">
-            <h4 className="font-semibold text-sm sm:text-[15px]">Socials</h4>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
-              {[
-                { href: "https://www.instagram.com/mendygo.ai", label: "Instagram" },
-                { href: "https://www.facebook.com/share/1Yug6qgHLe", label: "Facebook" },
-                { href: "https://www.linkedin.com/company/mendygo/", label: "LinkedIn" },
-                { href: "https://x.com/MendygoSocial", label: "X" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[#82bf07] block"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h4 className="font-semibold text-sm sm:text-[15px]">Links</h4>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
-              {[
-                { href: "/gallery", label: "Gallery" },
-                { href: "/career", label: "Career" },
-                { href: "/benefits", label: "Benefits" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#82bf07] block">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-<div className="space-y-3 col-span-2 md:col-span-1 lg:block hidden">
-            <h4 className="font-semibold text-sm sm:text-[15px]">Products</h4>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
-              {[
-                { href: "/products/hardware/gateway", label: "Gateway" },
-                { href: "/products/hardware/sensors-meters", label: "Sensors & Meters" },
-                { href: "/products/hardware/controllers", label: "Controllers" },
-                { href: "/products/ai/mendy", label: "Mendy AI Copilot" },
-                { href: "/products/ai/computerVision", label: "MendyVision" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#82bf07] block">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h4 className="font-semibold text-sm sm:text-[15px]">Pages</h4>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/aboutus", label: "About" },
-                { href: "https://blogs.mendygo.com/", label: "Blog" },
-                { href: "/contact", label: "Contact" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#82bf07] block">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+    
+        {/* Links Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+          {/* About */}
+          <div>
+            <h4 className="font-semibold mb-3">About Mendygo</h4>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li><Link href="/aboutus">Company Overview</Link></li>
+              <li><Link href="/career">Careers</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="https://blogs.mendygo.com/">Blog</Link></li>
+              <li><Link href="/certificates">Certificates</Link></li>
             </ul>
           </div>
 
-          
-
-          
-
-          <div className="space-y-3 col-span-2 md:col-span-1 lg:block hidden">
-            <h4 className="font-semibold text-sm sm:text-[15px]">Telematics</h4>
-            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1.5">
-              {[
-                  { href: "/solutions/telematics/chiller-telematics", label: "Chiller Telematics" },
-                { href: "/solutions/telematics/compressor-telematics", label: "Compressor Telematics" },
-                { href: "/solutions/telematics/ev-telematics", label: "EV Telematics" },
-                { href: "/solutions/telematics/earth-moving-telematics", label: "Earth Moving Telematics" },
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link href={link.href} className="hover:text-[#82bf07] block">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+          {/* Products */}
+          <div>
+            <h4 className="font-semibold mb-3">Products</h4>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li><Link href="/products/hardware/gateway">Gateway</Link></li>
+              <li><Link href="/products/hardware/sensors-meters">Sensors & Meters</Link></li>
+              <li><Link href="/products/hardware/controllers">Controllers</Link></li>
+              <li><Link href="/products/ai/mendy">AI Copilot</Link></li>
+              <li><Link href="/products/ai/computerVision">Computer Vision</Link></li>
             </ul>
           </div>
 
-          
+          {/* Solutions */}
+          <div>
+            <h4 className="font-semibold mb-3">Solutions</h4>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li>Building Management</li>
+              <li>Energy Management</li>
+              <li>Factory Management</li>
+              <li>HVAC Management</li>
+            </ul>
+          </div>
+
+          {/* Socials */}
+          <div>
+            <h4 className="font-semibold mb-3">Follow Us</h4>
+            <div className="flex items-center gap-4">
+              <SocialIcon href="https://www.instagram.com/mendygo.ai" icon={<Instagram />} />
+              <SocialIcon href="https://www.facebook.com/share/1Yug6qgHLe" icon={<Facebook />} />
+              <SocialIcon href="https://www.linkedin.com/company/mendygo/" icon={<Linkedin />} />
+              <SocialIcon href="https://x.com/MendygoSocial" icon={<Twitter />} />
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Copyright */}
-      <div className="border-t border-black/10 dark:border-white/10 text-center text-xs sm:text-sm text-gray-600 dark:text-gray-500 py-3 px-4">
-        <p>© Mendygo Pvt. Ltd. 2025. All rights reserved.</p>
-        <p className="mt-1">ISO 9001:2015 Certified | MSME Registered</p>
+        {/* Bottom */}
+
+    
+
+        <div className="mt-12 pt-6 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600 dark:text-gray-500">
+          <div className="text-center md:text-left">
+            <p>© 2025 Mendygo Technologies Pvt. Ltd.</p>
+            <p className="text-xs">ISO 9001:2015 Certified | MSME Registered</p>
+           
+             
+             
+          </div>
+         
+
+          <div className="text-center md:text-left flex flex-col gap-3  w-1/2 ">
+           <div className="flex gap-2"><MapPinHouse className="md: w-20 h-5  sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
+            <p>Mendygo Technologies Private Limited
+              3rd Floor
+              Unit No. 304
+              Eros Group Corporate Park
+              Sector 2, IMT Manesar
+              Manesar, Gurugram
+              Haryana – 122052
+              India</p>
+              </div>
+            {/* <p className="text-xs">ISO 9001:2015 Certified | MSME Registered</p> */}
+            <div className=" flex  justify-start gap-3 space-y-1 md:flex flex-col gap-2">
+            <div className="flex gap-2">< ExternalLinkIcon className=" sm:w-4 sm:h-4  md:w-4 md:h-4   lg:w-4 h-4  text-gray-600 hover:text-[#abff02] transition-colors   "  />
+            <h3 className="text-xs">GSTIN: 06AATCM5686Q1Z8</h3>
+            </div>
+            <div className="flex gap-2">< ExternalLinkIcon className="w-4 h-4  text-gray-600 hover:text-[#abff02] transition-colors "  />
+            <h3 className="text-xs">CIN: U62090HR2025PTC133785</h3>
+            </div>
+            </div>
+          </div>
+
+          <div className="flex gap-6">
+           <Link href="/disclaimer">Disclaimer</Link>
+           <Link href="/cookie">Cookies</Link>
+            <Link href="/privacy">T&C</Link>
+          </div>
+        </div>
       </div>
 
       <SuccessModal
@@ -260,5 +224,18 @@ export default function Footer() {
         type={modalType}
       />
     </footer>
+  );
+}
+
+function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
+    >
+      {icon}
+    </a>
   );
 }

@@ -62,7 +62,7 @@ const Hero2 = () => {
           </div>
         </div>
 
-        <div className="absolute block inset-0 w-full h-full z-0">
+        <div className="absolute block  inset-0 w-full h-full z-0">
           {backgroundImages.map((image, index) => (
             <motion.div
               key={index}

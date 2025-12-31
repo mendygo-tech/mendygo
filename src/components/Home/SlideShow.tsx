@@ -7,8 +7,8 @@ import Smh from '../../assets/company_logo/smh.webp';
 import Maruti from '../../assets/company_logo/maruti.webp';
 import Marelli from '../../assets/company_logo/marelli.png';
 import jsw from '../../assets/company_logo/jsw.png';
-import renu from '../../assets/company_logo/renu.jpg';
-import igscs from '../../assets/company_logo/igscs.jpg';
+import renu from '../../assets/company_logo/renu.png';
+import igscs from '../../assets/company_logo/igscs.png';
 
 const companies = [
   { name: 'SKH Group', image: Smh },

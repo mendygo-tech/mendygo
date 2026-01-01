@@ -254,23 +254,30 @@ export default function Footer() {
                 icon={< X />}
                  
               /> */}
-              {theme === "dark" ? (
-                <Image
-                  src="/icon/white.png"
-                  alt="X (Twitter)"
-                  width={20}
-                  height={20}
-                  className="opacity-80 hover:opacity-100 w-10 h-10 p-3 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
-                />
-              ) : (
-                <Image
-                  src="/icon/black.png"
-                  alt="X (Twitter)"
-                  width={20}
-                  height={20}
-                  className="opacity-80 hover:opacity-100 w-10 h-10 p-2 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
-                />
-              )}
+              <Link
+                href="https://x.com/MendygoSocial" // ← put your X link here
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit us on X"
+              >
+                {theme === "dark" ? (
+                  <Image
+                    src="/icon/white.png"
+                    alt="X (Twitter)"
+                    width={20}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 w-10 h-10 p-3 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
+                  />
+                ) : (
+                  <Image
+                    src="/icon/black.png"
+                    alt="X (Twitter)"
+                    width={20}
+                    height={20}
+                    className="opacity-80 hover:opacity-100 w-10 h-10 p-2 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
+                  />
+                )}
+              </Link>
               {/* <Image
                 src= {theme==="dark"? "/icon/white.png":"/icon/black.png"}
                 alt="X (Twitter)"

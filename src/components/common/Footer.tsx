@@ -136,11 +136,7 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
-        {/* <div
-          className=" grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-8   md:gap-8
-           text-center md:text-left
-             place-items-center md:place-items-start"
-        > */}
+
         <div
           className=" grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-8   md:gap-8
            text-center md:text-left

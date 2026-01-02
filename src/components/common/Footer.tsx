@@ -22,7 +22,7 @@ import { useTheme } from "next-themes";
 
 import mendygo from "../../assets/mendygo white green wordmark.png";
 
-import logo from "@/assets/l_shadow.jpg";
+import logo from "@/assets/logo_shadow.png";
 // import mendygoLight from "@/assets/mendygo white green wordmark.png";
 import mendygoDark from "@/assets/mendygo black green wordmark.png";
 import SuccessModal from "./SuccessModal";
@@ -136,10 +136,15 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
+        {/* <div
+          className=" grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-8   md:gap-8
+           text-center md:text-left
+             place-items-center md:place-items-start"
+        > */}
         <div
           className=" grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-8   md:gap-8
-    text-center md:text-left
-    place-items-center md:place-items-start"
+           text-center md:text-left
+             place-items-center md:place-items-start"
         >
           {/* About */}
           <div className="space-y-4">
@@ -234,121 +239,132 @@ export default function Footer() {
           </div>
 
           {/* Socials */}
-          <div>
-            <h4 className="font-semibold mb-3">Follow Us</h4>
-            <div className="flex items-center gap-4">
-              <SocialIcon
-                href="https://www.instagram.com/mendygo.ai"
-                icon={<Instagram />}
-              />
-              <SocialIcon
-                href="https://www.facebook.com/share/1Yug6qgHLe"
-                icon={<Facebook />}
-              />
-              <SocialIcon
-                href="https://www.linkedin.com/company/mendygo/"
-                icon={<Linkedin />}
-              />
-              {/* <SocialIcon
-                href="https://x.com/MendygoSocial"
-                icon={< X />}
-                 
-              /> */}
-              <Link
-                href="https://x.com/MendygoSocial" // ← put your X link here
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit us on X"
-              >
-                {theme === "dark" ? (
-                  <Image
-                    src="/icon/white.png"
-                    alt="X (Twitter)"
-                    width={20}
-                    height={20}
-                    className="opacity-80 hover:opacity-100 w-10 h-10 p-3 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
-                  />
-                ) : (
-                  <Image
-                    src="/icon/black.png"
-                    alt="X (Twitter)"
-                    width={20}
-                    height={20}
-                    className="opacity-80 hover:opacity-100 w-10 h-10 p-2 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
-                  />
-                )}
-              </Link>
-              {/* <Image
-                src= {theme==="dark"? "/icon/white.png":"/icon/black.png"}
-                alt="X (Twitter)"
-                width={20}
-                height={20}
-                className="opacity-80 hover:opacity-100 w-8 h-10 flex items-center justify-center rounded-lg border border-gray-200 dark:border-white/20 text-gray-600 dark:text-gray-400 hover:border-[#abff02] hover:text-black dark:hover:text-white hover:bg-[#abff02]/10 transition"
-              /> */}
+          <div className="flex flex-col gap-6 items-center md:items-start">
+            {/* ---------- FOLLOW US ---------- */}
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
+                Follow Us
+              </h4>
+
+              <div className="flex items-center gap-3">
+                <SocialIcon
+                  href="https://www.instagram.com/mendygo.ai"
+                  icon={<Instagram />}
+                />
+                <SocialIcon
+                  href="https://www.facebook.com/share/1Yug6qgHLe"
+                  icon={<Facebook />}
+                />
+                <SocialIcon
+                  href="https://www.linkedin.com/company/mendygo/"
+                  icon={<Linkedin />}
+                />
+
+                {/* X */}
+                <Link
+                  href="https://x.com/MendygoSocial"
+                  target="_blank"
+                  aria-label="Visit us on X"
+                  className="w-9 h-9 flex items-center justify-center rounded-md border border-gray-200 dark:border-white/20 hover:border-[#abff02] hover:bg-[#abff02]/10 transition"
+                >
+                  {theme === "dark" ? (
+                    <Image
+                      src={"/icon/white.png"}
+                      alt="X"
+                      width={16}
+                      height={16}
+                      className="opacity-70 hover:opacity-100 transition "
+                    />
+                  ) : (
+                    <Image
+                      src={"/icon/black.png"}
+                      alt="X"
+                      width={25}
+                      height={25}
+                      className="opacity-70 hover:opacity-100 transition "
+                    />
+                  )}
+                </Link>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-gray-200 dark:bg-white/10" />
+
+            {/* ---------- ADDRESS ---------- */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-xs md:max-w-sm mx-auto gap-3">
+              <div className="flex items-start gap-3 w-full">
+                <MapPinHouse className="w-4 h-4 mt-1 text-gray-400 shrink-0 hidden md:block" />
+
+                <div className="w-full space-y-1.5">
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">
+                    Mendygo Technologies Pvt. Ltd.
+                  </p>
+
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed break-words">
+                    3rd Floor, Unit No. 304, Eros Group Corporate Park, Sector
+                    2, IMT Manesar, Gurugram, Haryana – 122052, India.
+                  </p>
+
+                  {/* GST / CIN */}
+                  <div className="pt-1.5 flex flex-col gap-1 text-[11px] text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center justify-center md:justify-start gap-2">
+                      <ReceiptText className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                      <span className="break-all sm:break-normal ">
+                        GSTIN: 06AATCM5686Q1Z8
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-center md:justify-start gap-2">
+                      <Building2 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                      <span className="break-all sm:break-normal">
+                        CIN: U62090HR2025PTC133785
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-
-        <div className="mt-12 pt-6 border-t  border-black/10 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600 dark:text-gray-500 ">
-          <div className="text-center px-2 md:text-left mr-2">
-            <p className="font-bold  dark:text-white">
-              © 2025 Mendygo Technologies Pvt. Ltd.
-            </p>
-            <p className="text-xs">ISO 9001:2015 Certified | MSME Registered</p>
-          </div>
-
-          <div className="text-center mb-3 md:text-left flex flex-col gap-3  w-1/2 ">
-            <div className="flex gap-2">
-              <MapPinHouse className="md: w-20 h-5  sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
-              <div className="sm:w-1/2 md:w-full lg:w-full">
-                <h1 className="font-bold  dark:text-white">
-                  Mendygo Technologies Private Limited.
-                </h1>
-                <p>
-                  3rd Floor, Unit No. 304, Eros Group Corporate Park, Sector 2,
-                  IMT Manesar, Gurugram, Haryana – 122052, India.
-                </p>
-              </div>
+        <div className="mt-12 pt-6 border-t border-black/10 dark:border-white/10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-xs text-gray-500 dark:text-gray-400">
+            {/* LEFT */}
+            <div className="text-center md:text-left space-y-1">
+              <p className=" text-gray-900 font-medium  dark:text-white ">
+                © 2026 Mendygo Technologies Pvt. Ltd.
+              </p>
+              <p>ISO 9001:2015 Certified | MSME Registered</p>
             </div>
-            {/* <p className="text-xs">ISO 9001:2015 Certified | MSME Registered</p> */}
-            <div className="flex flex-col items-start gap-6 md:flex-row md:justify-start md:items-center dark:text-white">
-              <div className="flex gap-2">
-                <ReceiptText className=" sm:w-4 sm:h-4  md:w-4 md:h-4   lg:w-4 h-4  text-gray-600 hover:text-[#abff02] transition-colors   " />
-                <h3 className="text-xs">GSTIN: 06AATCM5686Q1Z8</h3>
-              </div>
-              <div className="flex gap-2">
-                <Building2 className="w-4 h-4  text-gray-600 hover:text-[#abff02] transition-colors " />
-                <h3 className="text-xs">CIN: U62090HR2025PTC133785</h3>
-              </div>
+
+            {/* RIGHT – LEGAL LINKS */}
+            <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3">
+              <Link
+                href="/disclaimer"
+                className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <AlertTriangle className="w-4 h-4 text-gray-400 shrink-0" />
+                <span>Disclaimer</span>
+              </Link>
+
+              <Link
+                href="/cookie"
+                className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <Cookie className="w-4 h-4 text-gray-400 shrink-0" />
+                <span>Cookies</span>
+              </Link>
+
+              <Link
+                href="/privacy"
+                className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <FileText className="w-4 h-4 text-gray-400 shrink-0" />
+                <span>T&amp;C</span>
+              </Link>
             </div>
-          </div>
-
-          <div className="flex flex-wrap gap-6 text-sm font-bold text-muted-foreground dark:text-white">
-            <Link
-              href="/disclaimer"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
-            >
-              <AlertTriangle className="h-4 w-4" />
-              <span>Disclaimer</span>
-            </Link>
-
-            <Link
-              href="/cookie"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
-            >
-              <Cookie className="h-4 w-4" />
-              <span>Cookies</span>
-            </Link>
-
-            <Link
-              href="/privacy"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
-            >
-              <FileText className="h-4 w-4" />
-              <span>T&amp;C</span>
-            </Link>
           </div>
         </div>
       </div>

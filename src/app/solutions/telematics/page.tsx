@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { StaticImageData } from "next/image";
-import Ecosystem from '@/components/Home/Ecosystem';
+import Ecosystem from "@/components/Home/Ecosystem";
 
-// Feature icons
+// Icons
 import equipmentMonitoring from "@/assets/icons/features/equipment monitoring.png";
 import fuelConsumption from "@/assets/icons/features/Fuel Consumption insights.png";
 import geofences from "@/assets/icons/features/Geofences.png";
@@ -13,119 +13,156 @@ import nearRealtimeTracking from "@/assets/icons/features/Real time vechicle tra
 import BirdEye from "@/assets/icons/features/BirdEye.png";
 import forklift from "@/assets/icons/features/forklift.png";
 import FleetManagement from "@/assets/icons/features/fleetManagement.png";
-
 import ev from "@/assets/icons/features/ev.png";
 import chiller from "@/assets/icons/solutions/Chiller Telemetics .png";
 import compressor from "@/assets/icons/solutions/Compressor.png";
-import EarthMoving from "@/assets/icons/solutions/earthMovingManagement.png"
+import EarthMoving from "@/assets/icons/solutions/earthMovingManagement.png";
+
 type Feature = { title: string; desc: string; icon: StaticImageData };
 type Solution = { title: string; sub: string; icon: StaticImageData; href?: string };
 
 const features: Feature[] = [
-  { title: "Map view of all vehicles", desc: "View vehicle location, status, and speed on an online map.", icon: mapAllVehicles },
-  { title: "Near real-time vehicle tracking", desc: "Get GPS location and speed updated every 60 seconds.", icon: nearRealtimeTracking },
-  { title: "Fuel consumption insights", desc: "Track refills and monitor consumption trends.", icon: fuelConsumption },
-  { title: "Geofences", desc: "Alerts on perimeter breaches at specific locations and times.", icon: geofences },
-  { title: "Manage fleet productivity", desc: "Monitor productive run time using RPM measurement.", icon: FleetManagement },
-  { title: "EV management", desc: "Track state of charge and distance-to-empty for EVs.", icon: ev },
-  { title: "Forklift monitoring", desc: "Monitor forklift performance, track-on and lift-on times.", icon: forklift },
-  { title: "Bird's eye view of all equipment", desc: "Attach equipment to sites across large geographical areas.", icon: BirdEye },
-  { title: "Comprehensive equipment monitoring", desc: "Integrate sensors for end-to-end equipment monitoring.", icon: equipmentMonitoring },
+  { title: "Map view of all vehicles", desc: "View live vehicle locations, speed, and status in one unified map.", icon: mapAllVehicles },
+  { title: "Near real-time tracking", desc: "Receive GPS updates every minute for accurate fleet visibility.", icon: nearRealtimeTracking },
+  { title: "Fuel consumption insights", desc: "Monitor refills and analyze fuel efficiency trends.", icon: fuelConsumption },
+  { title: "Geofencing alerts", desc: "Get instant alerts when vehicles enter or exit defined zones.", icon: geofences },
+  { title: "Fleet productivity", desc: "Track productive runtime using RPM-based metrics.", icon: FleetManagement },
+  { title: "EV management", desc: "Monitor battery health, charge level, and range.", icon: ev },
+  { title: "Forklift monitoring", desc: "Analyze forklift usage and lift cycles.", icon: forklift },
+  { title: "Bird’s-eye equipment view", desc: "Manage assets across large geographical sites.", icon: BirdEye },
+  { title: "Equipment monitoring", desc: "Integrate sensors for comprehensive equipment insights.", icon: equipmentMonitoring },
 ];
 
 const solutions: Solution[] = [
-  {
-    title: "Chiller Telematics",
-    sub: "For Chiller OEMs",
-    icon: chiller,
-    href: "/solutions/telematics/chiller-telematics",
-  },
-  {
-    title: "Compressor Telematics",
-    sub: "For Compressor OEMs",
-    icon: compressor,
-    href: "/solutions/telematics/compressor-telematics",
-  },
-  {
-    title: "Electric Vehicle Telematics",
-    sub: "For 2W, 3W and 4W EV OEMs as well as Battery OEMs",
-    icon: ev,
-    href: "/solutions/telematics/ev-telematics",
-  },
-  {
-    title: "Earth Moving Equipment Telematics",
-    sub: "For Earth Moving Equipment OEMs",
-    icon: EarthMoving,
-    href: "/solutions/telematics/earth-moving-telematics",
-  },
+  { title: "Chiller Telematics", sub: "For Chiller OEMs", icon: chiller, href: "/solutions/telematics/chiller-telematics" },
+  { title: "Compressor Telematics", sub: "For Compressor OEMs", icon: compressor, href: "/solutions/telematics/compressor-telematics" },
+  { title: "EV Telematics", sub: "For EV & Battery OEMs", icon: ev, href: "/solutions/telematics/ev-telematics" },
+  { title: "Earth Moving Telematics", sub: "For Heavy Equipment OEMs", icon: EarthMoving, href: "/solutions/telematics/earth-moving-telematics" },
 ];
 
 export default function Page() {
   return (
-    <main className="min-h-screen pt-30 dark:bg-black">
+    <main className="min-h-screen dark:bg-black">
 
+      {/* HERO / ECOSYSTEM */}
       <Ecosystem />
-    
-      {/* Solutions */}
-      <section className="mx-auto  px-4 sm:px-6 lg:px-40 py-20  bg-[#F9FAFB] dark:bg-black">
-        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg pb-10'>Mendygo Telematics</h1>
-          
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-12">
-          {solutions.map((s) => {
-            const Wrapper = s.href ? Link : "div";
-            return (
-              <Wrapper
+
+      {/* SOLUTIONS */}
+      <section className="py-24 bg-gray-50 dark:bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-green-600 dark:text-green-400 text-sm font-medium">
+              Solutions
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+              Mendygo Telematics
+            </h2>
+            <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Purpose-built telematics solutions designed for OEMs and fleet operators.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {solutions.map((s) => (
+              <Link
                 key={s.title}
-                href={s.href as string | undefined}
-                className={`group flex items-start gap-4 rounded-xl transition hover:bg-neutral-200 dark:hover:bg-neutral-900 p-3`}
+                href={s.href || "#"}
+                className="group rounded-2xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 p-6 hover:shadow-lg transition"
               >
-                <Image
-                  src={s.icon}
-                  alt={s.title}
-                  width={56}
-                  height={56}
-                  className="w-14 h-14 object-contain shrink-0"
-                />
-                <div>
-                  <h3 className="text-md  font-semibold group-hover: transition-colors">
-                    {s.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{s.sub}</p>
-                </div>
-              </Wrapper>
-            );
-          })}
+                <Image src={s.icon} alt={s.title} width={70} height={70} />
+                <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+                  {s.title}
+                </h3>
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  {s.sub}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-       {/* Divider */}
-      {/* <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-px w-full bg-neutral-200 dark:bg-neutral-800" />
-      </div> */}
+      {/* FEATURES */}
+     {/* FEATURES */}
+<section className="py-28 bg-white dark:bg-black">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    {/* Section Header */}
+    <div className="text-center mb-20">
+      <p className="text-green-600 dark:text-green-400 text-sm font-medium">
+        Platform Capabilities
+      </p>
+      <h2 className="mt-2 text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+        Everything You Need to Operate Smarter
+      </h2>
+      <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        A unified telematics platform designed to give you full visibility,
+        control, and intelligence across your fleet and equipment.
+      </p>
+    </div>
 
-      {/* Features */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl z-3 text-center font-bold leading-[1.3] tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent drop-shadow-sm dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 dark:drop-shadow-lg py-10'>Features</h1>
-          
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
-          {features.map((f) => (
-            <div key={f.title} className="flex flex-col">
-              <Image
-                src={f.icon}
-                alt={f.title}
-                className="w-14 h-14 object-cover  rounded"
-                width={56}
-                height={56}
-                priority
-              />
-              <h3 className="mt-4 text-lg font-semibold leading-snug">{f.title}</h3>
-              <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">{f.desc}</p>
-            </div>
-          ))}
+    {/* Core Features */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {features.slice(0, 6).map((f) => (
+        <div
+          key={f.title}
+          className="group flex gap-6 rounded-2xl bg-gray-50 dark:bg-zinc-900 border border-gray-200 dark:border-white/10 p-8 transition hover:shadow-lg"
+        >
+          <Image
+            src={f.icon}
+            alt={f.title}
+            width={70}
+            height={70}
+            className="shrink-0"
+          />
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              {f.title}
+            </h3>
+            <p className="mt-2 text-gray-600 dark:text-gray-400 leading-relaxed">
+              {f.desc}
+            </p>
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
 
-     
+    {/* Advanced Features */}
+    <div className="mt-28">
+      <div className="text-center mb-16">
+        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+          Advanced Monitoring
+        </p>
+        <h3 className="mt-2 text-3xl font-semibold text-gray-900 dark:text-white">
+          Built for Scale & Complexity
+        </h3>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {features.slice(6).map((f) => (
+          <div
+            key={f.title}
+            className="rounded-xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 p-6 hover:shadow-md transition"
+          >
+            <Image
+              src={f.icon}
+              alt={f.title}
+              width={70}
+              height={70}
+            />
+            <h4 className="mt-4 font-semibold text-gray-900 dark:text-white">
+              {f.title}
+            </h4>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+              {f.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
 
     </main>
   );

@@ -50,6 +50,7 @@ export interface Module {
 export interface ManagementSystem {
   slug: string;
   title: string;
+  brochure? :string;
   description?: string;
   assetsWeTrack?: string[];
   benefits?: string[];
@@ -60,12 +61,17 @@ export interface ManagementSystem {
   architectureimage?: StaticImageData;
   architectureimageDark?: StaticImageData;
   architecture?: Module[];
+  
 }
 
 export const managementSystemsData: Record<string, ManagementSystem> = {
+
+
+
   "building-management": {
     slug: "building-management",
     title: "Mendygo Building Management System",
+    brochure: "/brochures/building-management-system.pdf",
     description:
       "Mendygo’s IoT-driven Building Management System (BMS) provides a centralized platform for monitoring, controlling, and optimizing building operations. From energy efficiency to water management and air quality, gain actionable insights for smarter, sustainable, and safe building operations.",
     architectureimage: buildingManageArchitecture,
@@ -215,9 +221,16 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ],
   },
+
+
+
+
+
+
   "factory-management": {
     slug: "factory-management",
     title: "Mendygo Factory Management System",
+    brochure: "/brochures/factory-management-system.pdf",
     description: "Transform your factory operations with Mendygo’s IoT-driven Factory Management solution. Gain complete visibility into production efficiency, equipment performance, and resource utilization to enhance productivity, reduce downtime, and ensure regulatory compliance.",
     assetsWeTrack: ["Production lines", "Machines & Equipment", "Energy Systems", "Warehouses", "Water & Utility Systems", "Gensets", "STP/ETP units"],
     benefits: ["Optimized Overall Equipment Effectiveness (OEE)", "Reduced downtime & operational costs", "Real-time visibility across production lines and assets", "Predictive maintenance for proactive equipment care", "Safety compliance & risk mitigation", "Energy, water, and utility efficiency", "Data-driven decision-making & reporting", "Trusted by leading industrial operators"],
@@ -319,9 +332,13 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ]
   },
+
+
+
   "energy-management": {
     slug: "energy-management",
     title: "Mendygo Energy Management System",
+    brochure: "/brochures/energy-management-system.pdf",
     description: "Mendygo’s IoT-driven Energy Management System provides centralized visibility and control over all energy sources within a facility. From real-time consumption monitoring to predictive analytics, EMS helps optimize energy usage, reduce costs, and improve operational efficiency.",
     assetsWeTrack: ["Mains", "Solar & Wind", "Gensets", "Switchgears", "APFC Panels", "Busbars", "Energy Meters", "Critical Loads"],
     benefits: ["Real-time energy visibility across all sources and loads", "Reduced electricity bills through optimization and demand management", "Quick identification of inefficiencies and abnormal consumption", "Predictive alerts for maintenance and load balancing", "Improved compliance with energy and sustainability standards", "Enhanced operational efficiency and reliability", "Data-backed reporting for management and ESG goals", "Trusted by industrial leaders"],
@@ -409,9 +426,13 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ]
   },
+
+
+
   "warehouse-management": {
     slug: "warehouse-management",
     title: "Mendygo Warehouse Management System",
+    brochure: "/brochures/warehouse-management-system.pdf",
     description: "Mendygo’s Warehouse Management System (WMS) provides end-to-end visibility, control, and optimization of warehouse operations. From real-time inventory tracking to AI-driven space and workflow management, the solution ensures operational efficiency, reduced errors, and optimized resource utilization.",
     assetsWeTrack: ["Inventory Items", "Forklifts & Material Handling Equipment", "Racking & Storage Units", "Temperature/Humidity Sensors", "Security Systems"],
     benefits: ["Real-time inventory visibility across multiple locations", "Automated stock management to prevent shortages or overstocking", "Optimized warehouse layout and storage utilization", "Reduced manual errors and operational costs", "Improved order fulfillment speed and accuracy", "Enhanced workforce productivity with task automation", "Compliance with safety and regulatory standards"],
@@ -494,6 +515,10 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ]
   },
+
+
+
+  
   "genset-management": {
     slug: "genset-management",
     title: "Mendygo Genset Management System",
@@ -581,9 +606,14 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ]
   },
+
+
+
+
   "hvac-management": {
     slug: "hvac-management",
     title: "HVAC Management System",
+    brochure: "/brochures/hvac-management-system.pdf",
     description: "Unlock the full potential of your facility’s HVAC systems with Mendygo’s IoT-driven HVAC management solution. Access real-time environmental and operational data to enhance energy efficiency, occupant comfort, and equipment lifespan.",
     assetsWeTrack: ["Chillers", "Air Handling Units (AHU)", "Variable Frequency Drives (VFDs)", "Cooling Towers", "Pumps & Motors"],
     benefits: ["Quick issue identification", "Reduced energy consumption & operational costs", "Centralized system visibility", "Adaptive climate control", "Compliance with environmental and safety standards", "Extended equipment life", "Efficient reporting & dashboards", "Trusted by industrial leaders"],
@@ -671,9 +701,13 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ]
   },
+
+
+
   "water-management": {
     slug: "water-management",
     title: "Mendygo Water Management System",
+    brochure: "/brochures/water-management-system.pdf",
     description: "Mendygo’s IoT-driven Water Management System provides centralized monitoring and control of water resources across facilities. From real-time flow monitoring to leak detection and process optimization, WMS helps reduce water wastage, improve efficiency, and ensure regulatory compliance.",
     assetsWeTrack: ["Pumps", "Valves", "Tanks", "Flowmeters", "Sensors", "Filtration Systems", "STP/ETP", "Pipelines"],
     benefits: ["Real-time visibility of water consumption across sections and tanks", "Reduced water wastage through early leak detection", "Optimized pumping and distribution for energy savings", "Compliance with water quality and discharge regulations", "Automated reporting for management and sustainability goals", "Improved operational efficiency and cost control", "Trusted by industrial leaders"],
@@ -758,6 +792,12 @@ export const managementSystemsData: Record<string, ManagementSystem> = {
         }
     ]
   },
+
+
+
+
+
+  //  no brochures added
   "construction-fleet-management": {
     slug: "construction-fleet-management",
     title: "Mendygo Construction Fleet Management System",

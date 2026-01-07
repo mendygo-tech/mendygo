@@ -49,58 +49,66 @@ const solutions: Solution[] = [
 
 export default function Page() {
   return (
-    <main className="min-h-screen dark:bg-black">
+    <main className="min-h-screen bg-white text-gray-900 dark:bg-black dark:text-gray-200">
 
       {/* HERO */}
       <Ecosystem />
 
-      {/* SOLUTIONS */}
-      <section className="py-24 bg-gray-50 dark:bg-black">
+      {/* ================= SOLUTIONS ================= */}
+      <section className="py-28 bg-gray-50 dark:bg-black">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-20">
             <p className="text-sm font-medium text-green-600 dark:text-green-400">
               Solutions
             </p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="mt-3 text-4xl md:text-5xl font-semibold">
               Mendygo Management Systems
             </h2>
-            <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="mt-5 text-gray-600 dark:text-gray-400">
               Intelligent management platforms designed to improve efficiency,
               visibility, and control across facilities and operations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {solutions.map((s) => (
               <Link
                 key={s.title}
                 href={s.href || "#"}
-                className="rounded-2xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 p-6 hover:shadow-lg transition"
+                className="group rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-zinc-900 p-8 transition hover:shadow-xl"
               >
-                <Image src={s.icon} alt={s.title} width={48} height={48} />
-                <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-500/10">
+                  <Image src={s.icon} alt={s.title} width={36} height={36} />
+                </div>
+
+                <h3 className="mt-6 text-lg font-semibold">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+
+                <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                   {s.sub}
                 </p>
+
+                <div className="mt-6 text-sm font-medium text-green-600 dark:text-green-400 opacity-0 group-hover:opacity-100 transition">
+                  Learn more →
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section className="py-24">
+      {/* ================= FEATURES ================= */}
+      <section className="py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-20">
             <p className="text-sm font-medium text-green-600 dark:text-green-400">
               Platform Capabilities
             </p>
-            <h2 className="mt-2 text-4xl md:text-5xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="mt-3 text-4xl md:text-5xl font-semibold">
               Key Features
             </h2>
-            <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="mt-5 text-gray-600 dark:text-gray-400">
               Advanced tools built to give you actionable insights and complete
               operational control.
             </p>
@@ -110,13 +118,17 @@ export default function Page() {
             {features.map((f) => (
               <div
                 key={f.title}
-                className="rounded-2xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 p-6"
+                className="rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-zinc-900 p-8 hover:shadow-lg transition"
               >
-                <Image src={f.icon} alt={f.title} width={40} height={40} />
-                <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10">
+                  <Image src={f.icon} alt={f.title} width={32} height={32} />
+                </div>
+
+                <h3 className="mt-6 text-lg font-semibold">
                   {f.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+
+                <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                   {f.desc}
                 </p>
               </div>

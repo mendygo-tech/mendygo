@@ -161,6 +161,9 @@ export default function ProductPage() {
 </section>
 
 
+
+
+
     </main>
   );
 }

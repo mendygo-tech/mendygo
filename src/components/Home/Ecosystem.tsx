@@ -30,8 +30,8 @@ const Ecosystem = () => {
           <Image
             src={EcosystemLight}
             alt="Mendygo Ecosystem"
-            width={500}
-            height={500}
+            width={900}
+            height={900}
             priority
             className="p-8  dark:hidden"
           />

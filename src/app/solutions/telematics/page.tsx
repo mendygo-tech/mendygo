@@ -69,7 +69,7 @@ export default function Page() {
                 href={s.href || "#"}
                 className="group rounded-2xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-white/10 p-6 hover:shadow-lg transition"
               >
-                <Image src={s.icon} alt={s.title} width={70} height={70} />
+                <Image src={s.icon} alt={s.title} width={80} height={40} />
                 <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
                   {s.title}
                 </h3>
@@ -111,8 +111,8 @@ export default function Page() {
           <Image
             src={f.icon}
             alt={f.title}
-            width={70}
-            height={70}
+            width={80}
+            height={40}
             className="shrink-0"
           />
           <div>
@@ -147,8 +147,8 @@ export default function Page() {
             <Image
               src={f.icon}
               alt={f.title}
-              width={70}
-              height={70}
+              width={80}
+              height={40}
             />
             <h4 className="mt-4 font-semibold text-gray-900 dark:text-white">
               {f.title}

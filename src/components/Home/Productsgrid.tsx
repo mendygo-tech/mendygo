@@ -282,6 +282,7 @@ const itemVariants = {
 };
 
 const Products = () => {
+
   return (
     <div className="relative min-h-screen text-gray-950 dark:text-gray-100 flex flex-col items-center">
       <div className="text-center mb-10 px-4">
@@ -323,10 +324,10 @@ const Products = () => {
               </motion.div>
 
               <div>
-                <p className=" text-md  text-gray-900 font-bold dark:text-gray-300">
+                <p className=" text-md  text-gray-900 font-bold dark:text-gray-100">
                   {solution.subtitle}
                 </p>
-                <p className=" text-md  text-gray-900  pt-1 dark:text-gray-400">
+                <p className=" text-md  text-gray-900  pt-1 dark:text-gray-200">
                   {solution.description}
                 </p>
               </div>

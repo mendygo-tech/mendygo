@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
 
-import heroBMS from "@/assets/managementSystems/buildingManagement.jpeg";
-import warehouseHero from "@/assets/managementSystems/3_warehouse management system .png" // Your hero image for BMS
-import factoryHero from "@/assets/managementSystems/factoryManagement.png"
-import energyHero from "@/assets//managementSystems/energymangement.jpeg"
+import heroBMS from "@/assets/managementSystems/building.png";
+import warehouseHero from "@/assets/managementSystems/warehouse.png" // Your hero image for BMS
+import factoryHero from "@/assets/managementSystems/factorymanagementlogo.png"
+import energyHero from "@/assets//managementSystems/energy.png"
 import constructionHero from "@/assets/managementSystems/constructionManagement.jpeg"
-import waterManagement from "@/assets//managementSystems/waterManagement.png"
+import waterManagement from "@/assets//managementSystems/water.png"
 import hvacManagementHero from "@/assets/managementSystems/havcManagement.png"
 import GensetManageHero from "@/assets/managementSystems/Genset management.png"
 
@@ -36,8 +36,8 @@ import fleetManagement from "@/assets/icons/features/fleetManagement.png"
 //flowcharts 
 import waterManageArchitecture from "@/assets/hardware/flowchart/waterManagementBlack.png"
 import waterManageArchitectureLight from "@/assets/hardware/flowchart/waterManagementWhite.png"
-import buildingManageArchitecture from "@/assets/hardware/flowchart/buildingManagementBlack.png"
-import buildingManageArchitectureLight from "@/assets/hardware/flowchart/buildingmanagementWhite.png"
+import buildingManageArchitecture from "@/assets/hardware/flowchart/buildingmanagement.png"
+import buildingManageArchitectureLight from "@/assets/hardware/flowchart/buildingmanagement.png"
 import gensetManageArchitecture from "@/assets/hardware/flowchart/gensetManagementBlack.png"
 import gensetManageArchitectureLight from "@/assets/hardware/flowchart/gensetManagementWhite.png"
 
@@ -55,7 +55,7 @@ export interface ManagementSystem {
   assetsWeTrack?: string[];
   benefits?: string[];
   hardwareSpecs?: Module[];
-  heroImage: StaticImageData;
+  heroImage: StaticImageData; // ✅ REQUIRED
   heroGateway?: StaticImageData;
   modules: Module[];
   architectureimage?: StaticImageData;

@@ -10,7 +10,6 @@ import ManagementHero from "@/components/products/ManagementHero";
 import Features from "@/components/products/Features";
 
 import { managementSystemsData } from "@/data/managementSystemsData";
-// import { BROCHURES } from "@/config/brochures";
 
 const ManagementSystemPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,14 +28,18 @@ const ManagementSystemPage = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
-        {/* ---------------- Hero ---------------- */}
-        <ManagementHero systemData={systemData} />
 
-        {/* ---------------- Architecture ---------------- */}
+        {/* ================= Overview ================= */}
+        <section id="overview">
+          <ManagementHero systemData={systemData} />
+        </section>
+
+        {/* ================= Architecture ================= */}
         {systemData.architectureimage && (
-          <section className="py-28">
+          <section id="architecture" className="py-28">
             <div className="max-w-6xl mx-auto px-6">
               <h3 className="text-4xl font-bold text-center">Architecture</h3>
+
               <p className="mt-4 text-center text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                 A scalable IoT-driven architecture that connects on-site assets
                 with cloud intelligence for real-time monitoring and control.
@@ -58,15 +61,18 @@ const ManagementSystemPage = () => {
           </section>
         )}
 
-        {/* ---------------- Features ---------------- */}
-        <Features systemData={systemData} heading="Key Modules" />
+        {/* ================= Features ================= */}
+        <section id="features">
+          <Features systemData={systemData} heading="Key Modules" />
+        </section>
 
-        {/* ---------------- Resources / Brochure ---------------- */}
-        <section className="mt-28">
+        {/* ================= Brochure ================= */}
+        <section id="brochure" className="mt-28">
           <div className="max-w-5xl mx-auto px-6">
             <h3 className="text-3xl font-bold text-center">
               Product Resources
             </h3>
+
             <p className="mt-4 text-center text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Download the complete product brochure to explore system
               capabilities, architecture, integrations, and deployment models.
@@ -90,41 +96,32 @@ const ManagementSystemPage = () => {
                       scalability, and real-world use cases.
                     </p>
                   </div>
-{/* 
-                  <a
-                    href={BROCHURES.BUILDING_MANAGEMENT}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 sm:mt-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold text-sm hover:opacity-90 transition"
-                  >
-                    Download Brochure
-                    <span aria-hidden>↗</span>
-                  </a> */}
 
                   {systemData.brochure && (
-  <a
-    href={systemData.brochure}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-4 sm:mt-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold text-sm hover:opacity-90 transition"
-  >
-    Download Brochure
-    <span aria-hidden>↗</span>
-  </a>
-)}
+                    <a
+                      href={systemData.brochure}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 sm:mt-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold text-sm hover:opacity-90 transition"
+                    >
+                      Download Brochure
+                      <span aria-hidden>↗</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ---------------- Final CTA ---------------- */}
-        <section className="mt-32">
+        {/* ================= Final CTA ================= */}
+        <section id="cta" className="mt-32">
           <div className="max-w-6xl mx-auto px-6">
             <div className="rounded-3xl bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent p-12 text-center">
               <h3 className="text-3xl font-bold dark:text-gray-100">
                 Ready to Optimize Your Operations?
               </h3>
+
               <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
                 Schedule a personalized demo and see how Mendygo’s management
                 systems deliver automation, visibility, and control.
@@ -133,14 +130,14 @@ const ManagementSystemPage = () => {
               <div className="mt-10 flex flex-wrap gap-4 justify-center">
                 <button
                   onClick={openModal}
-                  className="px-8 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold shadow hover:shadow-md transition text-sm md:text-base"
+                  className="px-8 py-3 rounded-full bg-[#9FFB1E] text-black font-semibold shadow hover:shadow-md transition"
                 >
                   Request Demo
                 </button>
 
                 <Link
                   href="/aboutus"
-                  className="px-8 py-3 rounded-full border border-gray-400 dark:border-gray-600 text-gray-900 dark:text-gray-200 font-medium transition hover:bg-white/50 dark:hover:bg-white/10 text-sm md:text-base"
+                  className="px-8 py-3 rounded-full border border-gray-400 dark:border-gray-600 text-gray-900 dark:text-gray-200 font-medium transition hover:bg-white/50 dark:hover:bg-white/10"
                 >
                   Learn More About Mendygo
                 </Link>

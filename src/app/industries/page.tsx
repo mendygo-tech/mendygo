@@ -29,6 +29,51 @@ const itemVariants = {
   },
 };
 
+/* ------------------ Table Data ------------------ */
+const industryTableData = [
+  {
+    industry: "Manufacturing",
+    useCases: "Motor, pump, conveyor monitoring",
+    benefit: "Reduce unexpected production stoppages; increase OEE",
+  },
+  {
+    industry: "Oil & Gas",
+    useCases: "Compressor, turbine, centrifugal pump monitoring",
+    benefit: "Prevent catastrophic failures; ensure operational safety",
+  },
+  {
+    industry: "Cement & Steel",
+    useCases: "Ball mill, kiln, crusher monitoring",
+    benefit: "Optimize scheduled maintenance; extend asset lifespan",
+  },
+  {
+    industry: "Chemicals & Petrochemicals",
+    useCases: "Rotating equipment, agitator, centrifuge monitoring",
+    benefit: "Ensure process safety and regulatory compliance",
+  },
+  {
+    industry: "Food & Beverage",
+    useCases: "Production line and packaging equipment",
+    benefit: "Maintain uptime during seasonal demand peaks",
+  },
+  {
+    industry: "Automotive",
+    useCases: "Conveyor systems, robotic arm monitoring",
+    benefit: "Predictive maintenance for supply-chain reliability",
+  },
+  {
+    industry: "Utilities & Power",
+    useCases: "Generator, transformer, fan monitoring",
+    benefit: "Ensure grid reliability and equipment longevity",
+  },
+  {
+    industry: "Pulp & Paper",
+    useCases: "Paper machine, pump, motor monitoring",
+    benefit: "Reduce unplanned shutdowns in continuous processes",
+  },
+];
+
+
 export default function IndustriesAndSolutions() {
   return (
     <main className="min-h-screen bg-[#f8f9fa] px-15 pb-15 dark:bg-black text-black dark:text-gray-300">
@@ -103,6 +148,97 @@ export default function IndustriesAndSolutions() {
         ))}
       </motion.div>
 
+
+
+        {/* ------------------ PROFESSIONAL IOT TABLE ------------------ */}
+
+{/* ------------------ RESPONSIVE INDUSTRIAL IOT TABLE ------------------ */}
+<section className="py-28 px-6">
+  <div className="max-w-7xl mx-auto">
+    {/* Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500 bg-clip-text text-transparent dark:from-gray-200 dark:via-gray-400 dark:to-gray-700">
+        Primary Industry Verticals Served
+      </h2>
+      <p className="mt-4 text-lg max-w-3xl mx-auto text-black/80 dark:text-white/80">
+        Real-world Industrial IoT use cases delivering measurable business outcomes.
+      </p>
+    </div>
+
+    {/* ================= DESKTOP TABLE ================= */}
+    <div className="hidden md:block overflow-x-auto rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-900 shadow-lg">
+      <table className="min-w-full text-sm">
+        <thead className="bg-gray-50 dark:bg-white/5 border-b border-gray-200 dark:border-white/10">
+          <tr>
+            <th className="px-6 py-4 text-left font-medium text-gray-900 dark:text-white/90">
+              Industry
+            </th>
+            <th className="px-6 py-4 text-left font-medium text-gray-900 dark:text-white/90">
+              Key Use Cases
+            </th>
+            <th className="px-6 py-4 text-left font-medium text-gray-900 dark:text-white/90">
+              Business Impact
+            </th>
+          </tr>
+        </thead>
+
+        <tbody className="divide-y divide-gray-200 dark:divide-white/10">
+          {industryTableData.map((row, index) => (
+            <tr
+              key={index}
+              className="hover:bg-gray-50 dark:hover:bg-white/[0.04] transition"
+            >
+              <td className="px-6 py-5 font-semibold text-gray-900 dark:text-white">
+                {row.industry}
+              </td>
+              <td className="px-6 py-5 text-gray-700 dark:text-white/75">
+                {row.useCases}
+              </td>
+              <td className="px-6 py-5">
+                <span className="inline-block rounded-full bg-lime-500/10 text-lime-600 dark:text-lime-400 px-3 py-1 text-xs font-medium">
+                  {row.benefit}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    {/* ================= MOBILE CARDS ================= */}
+    <div className="md:hidden space-y-4">
+      {industryTableData.map((row, index) => (
+        <div
+          key={index}
+          className="rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-neutral-900 p-5 shadow-sm"
+        >
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            {row.industry}
+          </h3>
+
+          <p className="mt-3 text-sm text-gray-700 dark:text-white/75">
+            <span className="font-medium text-gray-900 dark:text-white">
+              Use Cases:
+            </span>{" "}
+            {row.useCases}
+          </p>
+
+          <p className="mt-2 text-sm text-gray-700 dark:text-white/75">
+            <span className="font-medium text-gray-900 dark:text-white">
+              Impact:
+            </span>{" "}
+            {row.benefit}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+
       {/* NEW: Enhanced CTA Section */}
       <section className="bg-gradient-to-br dark:from-[#abff01]/40 from-[#abff01]/35 via-[#abff01]/0 to-[#abff01]/20 dark:border-white/30 dark:text-white rounded-lg lg:max-w-7xl mx-auto md:max-w-5xl sm:max-w-3xl">
         <div className="max-w-4xl mx-auto text-center py-20 px-4">
@@ -143,3 +279,4 @@ export default function IndustriesAndSolutions() {
     </main>
   );
 }
+

@@ -34,8 +34,8 @@ import fleetManagement from "@/assets/icons/features/fleetManagement.png"
 
 
 //flowcharts 
-import waterManageArchitecture from "@/assets/hardware/flowchart/waterManagementBlack.png"
-import waterManageArchitectureLight from "@/assets/hardware/flowchart/waterManagementWhite.png"
+import waterManageArchitecture from "@/assets/hardware/flowchart/water.png"
+import waterManageArchitectureLight from "@/assets/hardware/flowchart/water.png"
 import buildingManageArchitecture from "@/assets/hardware/flowchart/buildingmanagement.png"
 import buildingManageArchitectureLight from "@/assets/hardware/flowchart/buildingmanagement.png"
 import gensetManageArchitecture from "@/assets/hardware/flowchart/gensetManagementBlack.png"

@@ -102,6 +102,7 @@ export function MyNavbar() {
                         title: "About Mendygo",
                         links: [
                             { href: "/aboutus", label: "About Us", description: "Discover our mission and team." },
+                            { href: "/successstories", label: "Success Stories", description: "Celebrating our team’s glory and success." },
                             { href: "/contact", label: "Contact Us", description: "Get in touch with our experts." },
                         ],
                     },

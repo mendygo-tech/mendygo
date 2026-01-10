@@ -34,41 +34,83 @@ const ManagementHero: React.FC<ManagementHeroProps> = ({ systemData }) => {
       </h1>
 
    
-{/* 🔗 STICKY SECTION NAVIGATION */}
-<div className="sticky top-10 z-40 mb-16 flex justify-center">
-  <div
-    className="
-      flex items-center gap-6 px-6 py-3
+
+{/* 🔗 PROFESSIONAL STICKY SECTION NAVIGATION */}
+<div className="sticky top-10 z-40 mb-16">
+  {/* Desktop Navigation */}
+  <div className="hidden md:flex justify-center">
+    <div
+      className="
+      flex items-center gap-6 px-2 py-1
       rounded-full
-      bg-white/95 dark:bg-black/85
+      bg-white dark:bg-black
       backdrop-blur-md
-      border border-black/10 dark:border-white/10
+      border border-[#9ef30f] dark:border-[#9ef30f]
       shadow-lg shadow-black/5 dark:shadow-black/50
     "
-  >
-    {[
-      { label: "Overview", href: "#overview" },
-      { label: "Architecture", href: "#architecture" },
-      { label: "Features", href: "#features" },
-      { label: "Brochure", href: "#brochure" },
-    ].map((item) => (
-      <a
-        key={item.href}
-        href={item.href}
-        className="
-          px-4 py-2
-          rounded-full
-          text-sm font-semibold
-          text-black dark:text-white
-          transition-all duration-300 ease-out
-          hover:bg-[#9FFB1E] dark:hover:text-black
-        "
-      >
-        {item.label}
-      </a>
-    ))}
+    >
+      {[
+        { label: "Overview", href: "#overview" },
+        { label: "Architecture", href: "#architecture" },
+        { label: "Features", href: "#features" },
+        { label: "Brochure", href: "#brochure" },
+      ].map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          className="
+            px-6 py-3
+            text-sm font-semibold
+            text-black dark:text-white
+            transition-all
+            hover:text-black hover:rounded-full dark:hover:text-black
+            hover:bg-[#9FFB1E]
+            focus-visible:outline-none
+          "
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  {/* Mobile Navigation */}
+<div className="md:hidden px-4">
+  <div className="relative">
+    {/* Custom arrow */}
+    <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-black dark:text-white">
+      ▾
+    </span>
+
+    <select
+      className="
+        w-full
+        appearance-none
+        rounded-xl
+        px-4 py-3 pr-12
+        text-sm font-semibold
+        bg-white dark:bg-black
+        text-black dark:text-white
+        border border-[#9ef30f] dark:border-[#9ef30f]
+        shadow-sm
+      "
+      onChange={(e) => {
+        const target = document.querySelector(e.target.value);
+        target?.scrollIntoView({ behavior: "smooth" });
+      }}
+      defaultValue="#overview"
+    >
+      <option value="#overview">Overview</option>
+      <option value="#architecture">Architecture</option>
+      <option value="#features">Features</option>
+      <option value="#brochure">Brochure</option>
+    </select>
   </div>
 </div>
+
+ 
+</div>
+
 
 
       {/* HERO CONTENT */}

@@ -22,7 +22,6 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
     const ctx = chartRef.current.getContext("2d");
     if (!ctx) return;
 
-    /* 🔹 Stronger, professional gradient */
     const gradient = ctx.createLinearGradient(0, 0, 0, 320);
     gradient.addColorStop(0, "rgba(22,163,74,0.45)");
     gradient.addColorStop(1, "rgba(22,163,74,0.10)");
@@ -34,7 +33,7 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
         datasets: [
           {
             data: Array.from({ length: 30 }, () => 66),
-            borderColor: "#15803d", // darker green for light mode
+            borderColor: "#15803d",
             backgroundColor: gradient,
             fill: true,
             tension: 0.42,
@@ -54,10 +53,15 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
         scales: {
           x: {
             ticks: {
-              color: "#4b5563", // darker labels
+              color: "#4b5563",
               maxTicksLimit: 5,
             },
-            grid: { display: false },
+            grid: {
+              display: false,
+            },
+            border: {
+              display: false,
+            },
           },
           y: {
             min: 50,
@@ -66,10 +70,12 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
               color: "#4b5563",
               callback: (v) => `${v}%`,
             },
-          grid: {
-          color: "rgba(0,0,0,0.08)", // visible but subtle
-          borderColor: "transparent",
-          },
+            grid: {
+              color: "rgba(0,0,0,0.08)",
+            },
+            border: {
+              display: false,
+            },
           },
         },
       },
@@ -94,7 +100,7 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
 
       setStats({
         avg: Math.round(avg),
-        peak: Math.round(peak), 
+        peak: Math.round(peak),
         trend:
           data[data.length - 1] > data[data.length - 5]
             ? "Rising"
@@ -113,13 +119,10 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
   return (
     <section
       className={
-        compact
-          ? ""
-          : "px-4 sm:px-6 py-12 max-w-7xl mx-auto"
+        compact ? "" : "px-4 sm:px-6 py-12 max-w-7xl mx-auto"
       }
     >
       <div className="rounded-3xl border border-gray-300 dark:border-white/25 bg-white dark:bg-zinc-900 shadow-xl p-4 sm:p-6">
-        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-green-700 dark:text-green-400">
@@ -142,7 +145,6 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
           </div>
         </div>
 
-        {/* KPIs */}
         <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
           <Metric label="Avg Load" value={`${stats.avg}%`} />
           <Metric label="Peak Load" value={`${stats.peak}%`} />
@@ -151,7 +153,6 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
 
         <div className="my-4 h-px bg-gray-300 dark:bg-white/15" />
 
-        {/* Chart */}
         <div
           className={
             compact

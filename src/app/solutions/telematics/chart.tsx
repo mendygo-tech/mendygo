@@ -66,10 +66,10 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
               color: "#4b5563",
               callback: (v) => `${v}%`,
             },
-            grid: {
-              color: "rgba(0,0,0,0.08)", // visible but subtle
-              drawBorder: false,
-            },
+          grid: {
+          color: "rgba(0,0,0,0.08)", // visible but subtle
+          borderColor: "transparent",
+          },
           },
         },
       },

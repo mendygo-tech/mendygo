@@ -94,7 +94,7 @@ export default function LiveTelemetry({ compact = false }: LiveTelemetryProps) {
 
       setStats({
         avg: Math.round(avg),
-        peak: Math.round(peak),
+        peak: Math.round(peak), 
         trend:
           data[data.length - 1] > data[data.length - 5]
             ? "Rising"

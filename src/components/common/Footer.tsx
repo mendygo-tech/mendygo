@@ -17,6 +17,7 @@ import {
   AlertTriangle,
   Cookie,
   FileText,
+  RotateCcw 
 } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -359,6 +360,15 @@ export default function Footer() {
               >
                 <FileText className="w-4 h-4 text-gray-400 shrink-0" />
                 <span>T&amp;C</span>
+              </Link>
+
+
+              <Link
+                href="/refund"
+                className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <RotateCcw  className="w-4 h-4 text-gray-400 shrink-0" />
+                <span>Refund</span>
               </Link>
             </div>
           </div>

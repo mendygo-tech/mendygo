@@ -1,71 +1,59 @@
 // src/app/products/ai/computerVision/page.tsx
-"use client";
-
-import React, { useCallback, useState } from "react";
-import Image from "next/image";
-import { Hand, HardHat, Flame, ShieldCheck } from "lucide-react";
+'use client';
+import { Hand, HardHat, Flame, ShieldCheck } from 'lucide-react';
+import React, { useCallback, useState } from 'react';
+import Image from 'next/image';
+import PPE_Detection_Image from '@/assets/ppeDetectionLight.png'; // Import the PPE detection image
+import PPE_Detection_ImageDark from '@/assets/ppeDetectionDark.png';
 import DemoModal from "@/components/common/DemoModal";
-
-import PPE_Detection_Image from "@/assets/firesafety.png";
-import PPE_Detection_ImageDark from "@/assets/firesafety.png";
+ // Import the PPE detection image for dark mode
 
 export default function ComputerVisionPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = useCallback(() => setIsModalOpen(true), []);
-  const closeModal = useCallback(() => setIsModalOpen(false), []);
-
+      const openModal = useCallback(() => setIsModalOpen(true), []);
+      const closeModal = useCallback(() => setIsModalOpen(false), []);
   return (
     // Set a light background for the entire page
     <main className="bg-white/70 text-white/70">
       {/* Section 1: Hero with Video Background */}
-      <DemoModal isOpen={isModalOpen} onClose={closeModal} />
-
+                <DemoModal isOpen={isModalOpen} onClose={closeModal} />
+      
       <section
-        className="relative h-screen flex items-center justify-center 
+  className="relative h-screen flex items-center justify-center 
   
   /* Bottom Shadow */ 
   after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1/5 after:bg-gradient-to-t dark:after:from-black after:from-[#F9FAFB] after:to-transparent after:z-10
   
   /* Top Shadow */
   before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-1/3 before:bg-gradient-to-b dark:before:from-black/30 before:from-[#F9FAFB]/30 before:to-transparent before:z-10"
-      >
-        {/* Video Background */}
-        <video
-          className="absolute z-0 h-full w-full object-cover"
-          autoPlay
-          loop
-          muted
-          preload="metadata"
-        >
-          <Image
-            src="/cvPoster.png"
-            width={100}
-            height={100}
-            alt="Computer Vision Poster"
-            className="absolute z-0 h-full w-full object-cover"
-          />
-          <source src="/cv.webm" type="video/webm" />
-          <source src="/cv.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
+>
+  {/* Video Background */}
+  <video
+    className="absolute z-0 h-full w-full object-cover"
+    autoPlay
+    loop
+    muted
+    preload='metadata'
+  >
+    <Image src="/cvPoster.png" width={100} height={100} alt="Computer Vision Poster" className='absolute z-0 h-full w-full object-cover' />
+    <source src="/cv.webm" type="video/webm" />
+    <source src="/cv.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+        
         {/* Light overlay to soften the video a bit (optional) */}
         <div className="absolute z-10 h-full w-full bg-white/70/10"></div>
 
         {/* Hero Content - Text is now dark for readability on a potentially light video */}
         <div className="relative z-20 mx-auto max-w-4xl text-center">
-          <h1
-            className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
-            style={{ textShadow: "0px 2px 4px #000" }}
-          >
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+               style={{ textShadow: '0px 2px 4px #000' }} >
             Protecting Lives with AI-Powered Safety Monitoring
           </h1>
-          <p
-            className="mt-6 text-lg leading-8 text-white "
-            style={{ textShadow: "0px 2px 4px rgba(0,0,0,0.2)" }}
-          >
-            Real-time detection of PPE compliance and fire hazards—because
-            safety should never be optional.
+          <p className="mt-6 text-lg leading-8 text-white "
+             style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.2)' }} >
+            Real-time detection of PPE compliance and fire hazards—because safety
+            should never be optional.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
@@ -100,8 +88,7 @@ export default function ComputerVisionPage() {
                   Real-Time Detection
                 </dt>
                 <dd className="mt-2 text-base leading-7 ">
-                  Detects gloves, helmets, and vests using advanced computer
-                  vision.
+                  Detects gloves, helmets, and vests using advanced computer vision.
                 </dd>
               </div>
               {/* Repeat for other features... */}
@@ -174,19 +161,11 @@ export default function ComputerVisionPage() {
               </p>
             </div>
           </div>
-          <Image
-            height={1000}
-            src={PPE_Detection_Image}
-            alt="PPE Detection"
-            className="mt-20 dark:hidden rounded-2xl"
-          />
-          <Image
-            height={1000}
-            src={PPE_Detection_ImageDark}
-            alt="PPE Detection"
-            className="mt-20 hidden rounded-2xl dark:block"
-          />
+          <Image height={1000} src={PPE_Detection_Image} alt="PPE Detection" className='mt-20 dark:hidden rounded-2xl' />
+          <Image height={1000} src={PPE_Detection_ImageDark} alt="PPE Detection" className='mt-20 hidden rounded-2xl dark:block' />
+
         </div>
+
       </section>
 
       {/* Section 4: Fire/Smoke Detection */}
@@ -204,9 +183,8 @@ export default function ComputerVisionPage() {
                     Real-Time Alerts.
                   </dt>
                   <dd className="inline">
-                    {" "}
-                    Sends alerts to emergency response teams upon detecting
-                    smoke or fire.
+                    {' '}
+                    Sends alerts to emergency response teams upon detecting smoke or fire.
                   </dd>
                 </div>
                 <div className="relative pl-9">
@@ -215,7 +193,7 @@ export default function ComputerVisionPage() {
                     Works Anywhere.
                   </dt>
                   <dd className="inline">
-                    {" "}
+                    {' '}
                     Effective in low-light and high-noise environments.
                   </dd>
                 </div>
@@ -225,7 +203,7 @@ export default function ComputerVisionPage() {
                     Minimize Damage.
                   </dt>
                   <dd className="inline">
-                    {" "}
+                    {' '}
                     Reduces response time to prevent catastrophic damage.
                   </dd>
                 </div>
@@ -233,14 +211,14 @@ export default function ComputerVisionPage() {
             </div>
             <div className="relative flex h-80 items-center justify-center rounded-lg bg-gray-200">
               <video
-                autoPlay
-                loop
-                muted
-                className="absolute rounded-lg  z-0 h-full w-full object-cover"
-              >
-                <source src="/fireDetection.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+          autoPlay
+          loop
+          muted
+          className="absolute rounded-lg  z-0 h-full w-full object-cover"
+        >
+          <source src="/fireDetection.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
             </div>
           </div>
         </div>
@@ -272,7 +250,7 @@ export default function ComputerVisionPage() {
               {/* Text */}
               <div>
                 <h3 className="text-xl font-semibold text-black dark:text-white">
-                  Mendygo Warehouse Management System – Brochure
+                  Mendy Vision – Brochure
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 max-w-xl">
                   Detailed documentation covering features, system design,
@@ -283,7 +261,7 @@ export default function ComputerVisionPage() {
 
             {/* Right CTA */}
             <a
-              href="/brochures/Mendy-Vision-AI.pdf"
+              href="/brochures/mendy-vision-ai.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2

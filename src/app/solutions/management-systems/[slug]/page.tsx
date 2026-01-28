@@ -8,11 +8,16 @@ import Image from "next/image";
 import DemoModal from "@/components/common/DemoModal";
 import ManagementHero from "@/components/products/ManagementHero";
 import Features from "@/components/products/Features";
+import PipeSizeSelector from "@/components/products/PipeSizeSelector";
+import FlowMeterTable from "@/components/products/FlowMeterTable";
+import FlowAnimation from "@/components/products/FlowAnimation";
+import WaterCalculator from "@/components/products/WaterCalculator";
 
 import { managementSystemsData } from "@/data/managementSystemsData";
 
 const ManagementSystemPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPipe, setSelectedPipe] = useState(null); // 👈 Add state for pipe
 
   const openModal = useCallback(() => setIsModalOpen(true), []);
   const closeModal = useCallback(() => setIsModalOpen(false), []);
@@ -24,6 +29,12 @@ const ManagementSystemPage = () => {
   if (!systemData) {
     notFound();
   }
+
+  // Handler for pipe size change
+  const handlePipeSizeChange = (pipe) => {
+    setSelectedPipe(pipe);
+    console.log("Pipe changed to:", pipe.size);
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
@@ -85,6 +96,45 @@ const ManagementSystemPage = () => {
         {/* ================= Features ================= */}
         <section id="features">
           <Features systemData={systemData} heading="Key Modules" />
+        </section>
+
+        
+
+        {/* ================= Flow Meter Table ================= */}
+        <section id="FlowMeterTable" className="py-28">
+          <div className="max-w-6xl mx-auto px-6">
+            <FlowMeterTable />
+          </div>
+        </section>
+
+        {/* ================= Pipe Size Selector ================= */}
+        <section id="PipeSelector" className="pb-28">
+          <div className="max-w-6xl mx-auto px-6">
+            <PipeSizeSelector />
+          </div>
+        </section>
+        
+        {/* ================= Water Calculator (NEW) ================= */}
+        <section>
+          <WaterCalculator />
+        </section>
+
+        {/* ================= Flow Animation (NEW) ================= */}
+        <section id="flow-animation" className="py-28">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h3 className="text-4xl font-bold">Water Flow Visualization</h3>
+              <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                Interactive visualization showing real-time water flow through various pipe sizes.
+                Adjust the pipe size to see how it affects flow rate.
+              </p>
+            </div>
+            
+            <FlowAnimation 
+              selectedPipeSize={selectedPipe}
+              onPipeSizeChange={handlePipeSizeChange}
+            />
+          </div>
         </section>
 
         {/* ================= Brochure ================= */}

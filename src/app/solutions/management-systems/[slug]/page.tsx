@@ -26,7 +26,7 @@ const ManagementSystemPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-gray-300">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
 
         {/* ================= Overview ================= */}
@@ -38,14 +38,35 @@ const ManagementSystemPage = () => {
         {systemData.architectureimage && (
           <section id="architecture" className="py-28">
             <div className="max-w-6xl mx-auto px-6">
-              <h3 className="text-4xl font-bold text-center">Architecture</h3>
+              <h3
+                className="
+                  text-4xl
+                  font-bold
+                  text-center
+                  tracking-tight
+                  bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500
+                  bg-clip-text text-transparent
+                  dark:from-gray-200 dark:via-gray-400 dark:to-gray-700
+                "
+              >
+                Architecture
+              </h3>
 
-              <p className="mt-4 text-center text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              <p className="mt-4 text-center text-black/90 dark:text-white/90 max-w-3xl mx-auto">
                 A scalable IoT-driven architecture that connects on-site assets
                 with cloud intelligence for real-time monitoring and control.
               </p>
 
-              <div className="mt-16 bg-white dark:bg-neutral-900 rounded-3xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
+              <div
+                className="
+                  mt-16
+                  rounded-3xl
+                  border border-neutral-200 dark:border-neutral-800
+                  bg-white dark:bg-neutral-950
+                  p-6
+                  shadow-lg
+                "
+              >
                 <Image
                   src={systemData.architectureimage}
                   alt="System Architecture"
@@ -69,17 +90,37 @@ const ManagementSystemPage = () => {
         {/* ================= Brochure ================= */}
         <section id="brochure" className="mt-28">
           <div className="max-w-5xl mx-auto px-6">
-            <h3 className="text-3xl font-bold text-center">
+            <h3
+              className="
+                text-3xl
+                font-bold
+                text-center
+                tracking-tight
+                bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500
+                bg-clip-text text-transparent
+                dark:from-gray-200 dark:via-gray-400 dark:to-gray-700
+              "
+            >
               Product Resources
             </h3>
 
-            <p className="mt-4 text-center text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="mt-4 text-center text-black/90 dark:text-white/90 max-w-3xl mx-auto">
               Download the complete product brochure to explore system
               capabilities, architecture, integrations, and deployment models.
             </p>
 
             <div className="mt-14">
-              <div className="relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-neutral-900 p-8 shadow-sm hover:shadow-md transition">
+              <div
+                className="
+                  relative
+                  rounded-3xl
+                  border border-neutral-200 dark:border-neutral-800
+                  bg-white dark:bg-neutral-950
+                  p-8
+                  shadow-lg
+                  transition
+                "
+              >
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#9FFB1E]/10 via-transparent to-transparent opacity-0 hover:opacity-100 transition" />
 
                 <div className="relative flex flex-col sm:flex-row gap-6 items-start sm:items-center">
@@ -88,10 +129,10 @@ const ManagementSystemPage = () => {
                   </div>
 
                   <div className="flex-1">
-                    <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                    <h4 className="text-xl font-semibold text-black/90 dark:text-white/90">
                       {systemData.title} – Brochure
                     </h4>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-2 text-sm text-black/60 dark:text-white/60">
                       Detailed documentation covering features, system design,
                       scalability, and real-world use cases.
                     </p>
@@ -118,11 +159,20 @@ const ManagementSystemPage = () => {
         <section id="cta" className="mt-32">
           <div className="max-w-6xl mx-auto px-6">
             <div className="rounded-3xl bg-gradient-to-br from-[#9FFB1E]/30 via-[#9FFB1E]/10 to-transparent p-12 text-center">
-              <h3 className="text-3xl font-bold dark:text-gray-100">
+              <h3
+                className="
+                  text-3xl
+                  font-bold
+                  tracking-tight
+                  bg-gradient-to-b from-gray-950 via-gray-800 to-gray-500
+                  bg-clip-text text-transparent
+                  dark:from-gray-200 dark:via-gray-400 dark:to-gray-700
+                "
+              >
                 Ready to Optimize Your Operations?
               </h3>
 
-              <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+              <p className="mt-4 text-black/70 dark:text-white/70 max-w-2xl mx-auto">
                 Schedule a personalized demo and see how Mendygo’s management
                 systems deliver automation, visibility, and control.
               </p>
@@ -137,7 +187,7 @@ const ManagementSystemPage = () => {
 
                 <Link
                   href="/aboutus"
-                  className="px-8 py-3 rounded-full border border-gray-400 dark:border-gray-600 text-gray-900 dark:text-gray-200 font-medium transition hover:bg-white/50 dark:hover:bg-white/10"
+                  className="px-8 py-3 rounded-full border border-black/50 dark:border-white/50 text-black dark:text-white font-medium transition hover:bg-black/5 dark:hover:bg-white/10"
                 >
                   Learn More About Mendygo
                 </Link>
